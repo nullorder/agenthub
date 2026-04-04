@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "agenthub",
+  "version": "1.0.0",
+  "metadata": {
+    "description": "A community-driven marketplace for Claude Code plugins. Open to all contributors."
+  },
+  "owner": {
+    "name": "nullorder"
+  },
+  "plugins": [
+    {
+      "name": "test-plugin",
+      "source": {
+        "source": "github",
+        "repo": "test/test-plugin"
+      },
+      "description": "A test",
+      "version": "1.0.0",
+      "author": {
+        "name": "Test"
+      },
+      "category": "development"
+    }
+  ]
+}

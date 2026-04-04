@@ -1,0 +1,25 @@
+## Update Plugin
+
+**Plugin name:**
+
+### Update type
+
+<!-- Check all that apply -->
+
+- [ ] Version bump
+- [ ] Description change
+- [ ] Category change
+- [ ] Source change (e.g. moved repo, switched to npm)
+- [ ] Author/metadata update
+- [ ] Other <!-- If other, please describe in "Reason for update" below -->
+
+### Checklist
+
+- [ ] I have read and understood the [contributing guidelines](../../CONTRIBUTING.md)
+- [ ] I am the original author or maintainer of this plugin
+- [ ] Only my plugin's file in `plugins/` is modified (do not edit `marketplace.json`)
+- [ ] Tested locally with `/plugin marketplace add` and `/plugin install`
+
+### Reason for update
+
+<!-- Why is this change needed? -->

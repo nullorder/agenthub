@@ -1,0 +1,95 @@
+name: Validate plugin submission
+
+on:
+  pull_request:
+    paths:
+      - 'plugins/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Validate plugin JSON files
+        run: |
+          errors=0
+          for f in plugins/*.json; do
+            [ -f "$f" ] || continue
+            echo "Validating $f..."
+
+            if ! jq empty "$f" 2>/dev/null; then
+              echo "  ERROR: Invalid JSON"
+              errors=$((errors + 1))
+              continue
+            fi
+
+            for field in name description version; do
+              val=$(jq -r ".$field // empty" "$f")
+              if [ -z "$val" ]; then
+                echo "  ERROR: Missing required field '$field'"
+                errors=$((errors + 1))
+              fi
+            done
+
+            source_type=$(jq -r '.source.source // empty' "$f")
+            case "$source_type" in
+              github)
+                repo=$(jq -r '.source.repo // empty' "$f")
+                if [ -z "$repo" ]; then
+                  echo "  ERROR: source type 'github' requires 'source.repo'"
+                  errors=$((errors + 1))
+                fi
+                ;;
+              url)
+                url=$(jq -r '.source.url // empty' "$f")
+                if [ -z "$url" ]; then
+                  echo "  ERROR: source type 'url' requires 'source.url'"
+                  errors=$((errors + 1))
+                fi
+                ;;
+              git-subdir)
+                url=$(jq -r '.source.url // empty' "$f")
+                path=$(jq -r '.source.path // empty' "$f")
+                if [ -z "$url" ]; then
+                  echo "  ERROR: source type 'git-subdir' requires 'source.url'"
+                  errors=$((errors + 1))
+                fi
+                if [ -z "$path" ]; then
+                  echo "  ERROR: source type 'git-subdir' requires 'source.path'"
+                  errors=$((errors + 1))
+                fi
+                ;;
+              npm)
+                package=$(jq -r '.source.package // empty' "$f")
+                if [ -z "$package" ]; then
+                  echo "  ERROR: source type 'npm' requires 'source.package'"
+                  errors=$((errors + 1))
+                fi
+                ;;
+              *)
+                echo "  ERROR: Invalid or missing source type '$source_type'. Must be one of: github, url, git-subdir, npm"
+                errors=$((errors + 1))
+                ;;
+            esac
+
+            category=$(jq -r '.category // empty' "$f")
+            valid_categories="development testing devops security documentation productivity data design other"
+            if [ -n "$category" ] && ! echo "$valid_categories" | grep -qw "$category"; then
+              echo "  ERROR: Invalid category '$category'. Must be one of: $valid_categories"
+              errors=$((errors + 1))
+            fi
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo "Validation failed with $errors error(s)."
+            exit 1
+          fi
+
+          echo "All plugin files are valid."
+
+      - name: Test marketplace build
+        run: ./scripts/build-marketplace.sh
