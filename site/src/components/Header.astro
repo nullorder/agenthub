@@ -1,0 +1,27 @@
+---
+interface Props {
+  pluginCount: number;
+  contributorCount: number;
+}
+
+const { pluginCount, contributorCount } = Astro.props;
+---
+
+<header class="mb-10 text-center">
+  <h1 class="mb-2 text-4xl font-bold tracking-tight text-white">AgentHub</h1>
+  <p class="text-lg text-gray-400">
+    Community-driven plugin marketplace for Claude Code
+  </p>
+  <div
+    class="mt-4 flex items-center justify-center gap-6 text-sm text-gray-500"
+  >
+    <span><strong class="text-white">{pluginCount}</strong> plugins</span>
+    <span><strong class="text-white">{contributorCount}</strong> hackers</span>
+  </div>
+  <div class="mt-4">
+    <code
+      class="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-sm text-gray-300"
+      >/plugin marketplace add nullorder/agenthub</code
+    >
+  </div>
+</header>
