@@ -1,0 +1,13 @@
+{
+  "name": "superpowers",
+  "source": {
+    "source": "github",
+    "repo": "obra/superpowers"
+  },
+  "description": "Agentic skills framework and software development methodology with structured TDD workflow",
+  "version": "1.0.0",
+  "author": {
+    "name": "obra"
+  },
+  "category": "development"
+}

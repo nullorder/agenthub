@@ -1,0 +1,13 @@
+{
+  "name": "claude-code-safety-net",
+  "source": {
+    "source": "github",
+    "repo": "kenryu42/claude-code-safety-net"
+  },
+  "description": "Hook that catches destructive git and filesystem commands before execution",
+  "version": "1.0.0",
+  "author": {
+    "name": "kenryu42"
+  },
+  "category": "security"
+}

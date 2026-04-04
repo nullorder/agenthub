@@ -1,0 +1,13 @@
+{
+  "name": "ccpm",
+  "source": {
+    "source": "github",
+    "repo": "automazeio/ccpm"
+  },
+  "description": "Project management for Claude Code using GitHub Issues",
+  "version": "1.0.0",
+  "author": {
+    "name": "automazeio"
+  },
+  "category": "devops"
+}

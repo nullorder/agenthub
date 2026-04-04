@@ -1,0 +1,13 @@
+{
+  "name": "claude-code-workflows",
+  "source": {
+    "source": "github",
+    "repo": "shinpr/claude-code-workflows"
+  },
+  "description": "Production-ready development workflows with specialized agents for requirements analysis, TDD, QA, and code review",
+  "version": "1.0.0",
+  "author": {
+    "name": "shinpr"
+  },
+  "category": "productivity"
+}

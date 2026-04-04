@@ -8,5 +8,332 @@
   "owner": {
     "name": "nullorder"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "aws-agent-plugins",
+      "source": {
+        "source": "github",
+        "repo": "awslabs/agent-plugins"
+      },
+      "description": "7 plugins for AWS services including Amplify, Serverless, DB, Deploy, Migration, and SageMaker",
+      "version": "1.0.0",
+      "author": {
+        "name": "awslabs"
+      },
+      "category": "devops"
+    },
+    {
+      "name": "cc-devops-skills",
+      "source": {
+        "source": "github",
+        "repo": "akin-ozer/cc-devops-skills"
+      },
+      "description": "31 DevOps skills covering Terraform, Helm, kubectl, GitHub Actions with linting, security checks, and dry-run validation",
+      "version": "1.0.0",
+      "author": {
+        "name": "akin-ozer"
+      },
+      "category": "devops"
+    },
+    {
+      "name": "ccpm",
+      "source": {
+        "source": "github",
+        "repo": "automazeio/ccpm"
+      },
+      "description": "Project management for Claude Code using GitHub Issues",
+      "version": "1.0.0",
+      "author": {
+        "name": "automazeio"
+      },
+      "category": "devops"
+    },
+    {
+      "name": "ccusage",
+      "source": {
+        "source": "github",
+        "repo": "ryoppippi/ccusage"
+      },
+      "description": "CLI usage dashboard for tracking Claude Code token consumption",
+      "version": "1.0.0",
+      "author": {
+        "name": "ryoppippi"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "claude-aws-cost-saver",
+      "source": {
+        "source": "github",
+        "repo": "prajapatimehul/claude-aws-cost-saver"
+      },
+      "description": "Finds AWS cost savings with 163 checks across 30+ services",
+      "version": "1.0.0",
+      "author": {
+        "name": "prajapatimehul"
+      },
+      "category": "devops"
+    },
+    {
+      "name": "claude-code-builder",
+      "source": {
+        "source": "github",
+        "repo": "alexanderop/claude-code-builder"
+      },
+      "description": "Guided commands to generate skills, subagents, hooks, slash commands, and plugins with proper scaffolding",
+      "version": "1.0.0",
+      "author": {
+        "name": "alexanderop"
+      },
+      "category": "development"
+    },
+    {
+      "name": "claude-code-nvim",
+      "source": {
+        "source": "github",
+        "repo": "greggh/claude-code.nvim"
+      },
+      "description": "Seamless Neovim integration for Claude Code",
+      "version": "1.0.0",
+      "author": {
+        "name": "greggh"
+      },
+      "category": "other"
+    },
+    {
+      "name": "claude-code-safety-net",
+      "source": {
+        "source": "github",
+        "repo": "kenryu42/claude-code-safety-net"
+      },
+      "description": "Hook that catches destructive git and filesystem commands before execution",
+      "version": "1.0.0",
+      "author": {
+        "name": "kenryu42"
+      },
+      "category": "security"
+    },
+    {
+      "name": "claude-code-workflows",
+      "source": {
+        "source": "github",
+        "repo": "shinpr/claude-code-workflows"
+      },
+      "description": "Production-ready development workflows with specialized agents for requirements analysis, TDD, QA, and code review",
+      "version": "1.0.0",
+      "author": {
+        "name": "shinpr"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "claude-hub",
+      "source": {
+        "source": "github",
+        "repo": "claude-did-this/claude-hub"
+      },
+      "description": "Webhook service connecting Claude Code to GitHub for automated workflows",
+      "version": "1.0.0",
+      "author": {
+        "name": "claude-did-this"
+      },
+      "category": "devops"
+    },
+    {
+      "name": "claude-hud",
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      },
+      "description": "Real-time statusline showing context window usage, active tools, running agents, git info, and todo progress",
+      "version": "1.0.0",
+      "author": {
+        "name": "jarrodwatts"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "claude-night-market",
+      "source": {
+        "source": "github",
+        "repo": "athola/claude-night-market"
+      },
+      "description": "19 production-ready plugins covering code review, spec-driven development, architecture patterns, and Python specialist tools",
+      "version": "1.0.0",
+      "author": {
+        "name": "athola"
+      },
+      "category": "other"
+    },
+    {
+      "name": "claude-scientific-skills",
+      "source": {
+        "source": "github",
+        "repo": "K-Dense-AI/claude-scientific-skills"
+      },
+      "description": "Ready-to-use skills for research, science, and engineering documentation",
+      "version": "1.0.0",
+      "author": {
+        "name": "K-Dense-AI"
+      },
+      "category": "documentation"
+    },
+    {
+      "name": "claude-sdlc",
+      "source": {
+        "source": "github",
+        "repo": "danielscholl/claude-sdlc"
+      },
+      "description": "Software development lifecycle automation with SDLC workflow commands and a four-layer skill testing framework",
+      "version": "1.0.0",
+      "author": {
+        "name": "danielscholl"
+      },
+      "category": "testing"
+    },
+    {
+      "name": "communitytools",
+      "source": {
+        "source": "github",
+        "repo": "transilienceai/communitytools"
+      },
+      "description": "AI-powered penetration testing automation with OWASP Top 10 coverage, CVSS 3.1 scoring, and MITRE ATT&CK mappings",
+      "version": "1.0.0",
+      "author": {
+        "name": "transilienceai"
+      },
+      "category": "security"
+    },
+    {
+      "name": "compound-engineering",
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-engineering-plugin"
+      },
+      "description": "Structured workflow emphasizing 80% planning/review and 20% execution with ideate, brainstorm, plan, work, and review phases",
+      "version": "1.0.0",
+      "author": {
+        "name": "EveryInc"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "container-use",
+      "source": {
+        "source": "github",
+        "repo": "dagger/container-use"
+      },
+      "description": "Isolated development environments for coding agents using containers",
+      "version": "1.0.0",
+      "author": {
+        "name": "dagger"
+      },
+      "category": "development"
+    },
+    {
+      "name": "documentation-plugin",
+      "source": {
+        "source": "github",
+        "repo": "danielrosehill/documentation-plugin"
+      },
+      "description": "Documentation generation, technical writing, README creation, and documentation management workflows",
+      "version": "1.0.0",
+      "author": {
+        "name": "danielrosehill"
+      },
+      "category": "documentation"
+    },
+    {
+      "name": "edamame-claude-code",
+      "source": {
+        "source": "github",
+        "repo": "edamametechnologies/edamame_claude_code"
+      },
+      "description": "Runtime behavioral monitoring plugin that detects divergence between stated intent and actual system behavior",
+      "version": "1.0.0",
+      "author": {
+        "name": "edamametechnologies"
+      },
+      "category": "security"
+    },
+    {
+      "name": "libre-uiux",
+      "source": {
+        "source": "github",
+        "repo": "HermeticOrmus/LibreUIUX-Claude-Code"
+      },
+      "description": "Complete UI/UX system with 152 agents, 74 skills, and 76 commands for structured design communication using design tokens",
+      "version": "1.0.0",
+      "author": {
+        "name": "HermeticOrmus"
+      },
+      "category": "design"
+    },
+    {
+      "name": "recall",
+      "source": {
+        "source": "github",
+        "repo": "zippoxer/recall"
+      },
+      "description": "Full-text search your Claude Code sessions",
+      "version": "1.0.0",
+      "author": {
+        "name": "zippoxer"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "statistical-research",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Data-Wise/claude-plugins.git",
+        "path": "plugins/statistical-research"
+      },
+      "description": "13 commands and 17 skills for academic workflows including literature management, manuscript writing, and arXiv/Crossref/BibTeX integration",
+      "version": "1.0.0",
+      "author": {
+        "name": "Data-Wise"
+      },
+      "category": "data"
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      },
+      "description": "Agentic skills framework and software development methodology with structured TDD workflow",
+      "version": "1.0.0",
+      "author": {
+        "name": "obra"
+      },
+      "category": "development"
+    },
+    {
+      "name": "tdd-guard",
+      "source": {
+        "source": "github",
+        "repo": "nizos/tdd-guard"
+      },
+      "description": "Automated TDD enforcement that monitors agent actions and blocks violations in real-time",
+      "version": "1.0.0",
+      "author": {
+        "name": "nizos"
+      },
+      "category": "testing"
+    },
+    {
+      "name": "vercel-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "vercel-labs/agent-skills"
+      },
+      "description": "Vercel's official collection of agent skills for deployment workflows",
+      "version": "1.0.0",
+      "author": {
+        "name": "vercel-labs"
+      },
+      "category": "development"
+    }
+  ]
 }

@@ -1,0 +1,13 @@
+{
+  "name": "ccusage",
+  "source": {
+    "source": "github",
+    "repo": "ryoppippi/ccusage"
+  },
+  "description": "CLI usage dashboard for tracking Claude Code token consumption",
+  "version": "1.0.0",
+  "author": {
+    "name": "ryoppippi"
+  },
+  "category": "productivity"
+}

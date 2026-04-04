@@ -1,0 +1,13 @@
+{
+  "name": "claude-hud",
+  "source": {
+    "source": "github",
+    "repo": "jarrodwatts/claude-hud"
+  },
+  "description": "Real-time statusline showing context window usage, active tools, running agents, git info, and todo progress",
+  "version": "1.0.0",
+  "author": {
+    "name": "jarrodwatts"
+  },
+  "category": "productivity"
+}

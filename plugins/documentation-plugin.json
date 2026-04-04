@@ -1,0 +1,13 @@
+{
+  "name": "documentation-plugin",
+  "source": {
+    "source": "github",
+    "repo": "danielrosehill/documentation-plugin"
+  },
+  "description": "Documentation generation, technical writing, README creation, and documentation management workflows",
+  "version": "1.0.0",
+  "author": {
+    "name": "danielrosehill"
+  },
+  "category": "documentation"
+}

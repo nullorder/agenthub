@@ -1,0 +1,13 @@
+{
+  "name": "communitytools",
+  "source": {
+    "source": "github",
+    "repo": "transilienceai/communitytools"
+  },
+  "description": "AI-powered penetration testing automation with OWASP Top 10 coverage, CVSS 3.1 scoring, and MITRE ATT&CK mappings",
+  "version": "1.0.0",
+  "author": {
+    "name": "transilienceai"
+  },
+  "category": "security"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "claude-scientific-skills",
+  "source": {
+    "source": "github",
+    "repo": "K-Dense-AI/claude-scientific-skills"
+  },
+  "description": "Ready-to-use skills for research, science, and engineering documentation",
+  "version": "1.0.0",
+  "author": {
+    "name": "K-Dense-AI"
+  },
+  "category": "documentation"
+}

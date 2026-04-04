@@ -1,0 +1,13 @@
+{
+  "name": "edamame-claude-code",
+  "source": {
+    "source": "github",
+    "repo": "edamametechnologies/edamame_claude_code"
+  },
+  "description": "Runtime behavioral monitoring plugin that detects divergence between stated intent and actual system behavior",
+  "version": "1.0.0",
+  "author": {
+    "name": "edamametechnologies"
+  },
+  "category": "security"
+}

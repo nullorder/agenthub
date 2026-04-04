@@ -1,0 +1,13 @@
+{
+  "name": "claude-aws-cost-saver",
+  "source": {
+    "source": "github",
+    "repo": "prajapatimehul/claude-aws-cost-saver"
+  },
+  "description": "Finds AWS cost savings with 163 checks across 30+ services",
+  "version": "1.0.0",
+  "author": {
+    "name": "prajapatimehul"
+  },
+  "category": "devops"
+}

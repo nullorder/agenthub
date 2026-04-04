@@ -1,0 +1,13 @@
+{
+  "name": "tdd-guard",
+  "source": {
+    "source": "github",
+    "repo": "nizos/tdd-guard"
+  },
+  "description": "Automated TDD enforcement that monitors agent actions and blocks violations in real-time",
+  "version": "1.0.0",
+  "author": {
+    "name": "nizos"
+  },
+  "category": "testing"
+}

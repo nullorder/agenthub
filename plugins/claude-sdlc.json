@@ -1,0 +1,13 @@
+{
+  "name": "claude-sdlc",
+  "source": {
+    "source": "github",
+    "repo": "danielscholl/claude-sdlc"
+  },
+  "description": "Software development lifecycle automation with SDLC workflow commands and a four-layer skill testing framework",
+  "version": "1.0.0",
+  "author": {
+    "name": "danielscholl"
+  },
+  "category": "testing"
+}

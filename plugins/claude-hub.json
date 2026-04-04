@@ -1,0 +1,13 @@
+{
+  "name": "claude-hub",
+  "source": {
+    "source": "github",
+    "repo": "claude-did-this/claude-hub"
+  },
+  "description": "Webhook service connecting Claude Code to GitHub for automated workflows",
+  "version": "1.0.0",
+  "author": {
+    "name": "claude-did-this"
+  },
+  "category": "devops"
+}

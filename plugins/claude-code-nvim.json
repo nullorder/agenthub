@@ -1,0 +1,13 @@
+{
+  "name": "claude-code-nvim",
+  "source": {
+    "source": "github",
+    "repo": "greggh/claude-code.nvim"
+  },
+  "description": "Seamless Neovim integration for Claude Code",
+  "version": "1.0.0",
+  "author": {
+    "name": "greggh"
+  },
+  "category": "other"
+}

@@ -34,4 +34,23 @@ jq -n \
     "plugins": $plugins
   }' > "$OUTPUT"
 
-echo "Built marketplace.json with $(echo "$plugins_array" | jq 'length') plugin(s)."
+plugin_count=$(echo "$plugins_array" | jq 'length')
+contributor_count=$(echo "$plugins_array" | jq '[.[].author.name] | unique | length')
+
+echo "Built marketplace.json with $plugin_count plugin(s) from $contributor_count contributor(s)."
+
+# Update README stats
+README="$REPO_ROOT/README.md"
+if [ -f "$README" ]; then
+  awk -v pc="$plugin_count" -v cc="$contributor_count" '
+    /<!-- STATS:START -->/ {
+      print "<!-- STATS:START -->"
+      print "**" pc "** plugins | **" cc "** contributors"
+      print "<!-- STATS:END -->"
+      skip=1; next
+    }
+    /<!-- STATS:END -->/ { skip=0; next }
+    !skip { print }
+  ' "$README" > "$README.tmp" && mv "$README.tmp" "$README"
+  echo "Updated README.md stats."
+fi

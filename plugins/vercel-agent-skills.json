@@ -1,0 +1,13 @@
+{
+  "name": "vercel-agent-skills",
+  "source": {
+    "source": "github",
+    "repo": "vercel-labs/agent-skills"
+  },
+  "description": "Vercel's official collection of agent skills for deployment workflows",
+  "version": "1.0.0",
+  "author": {
+    "name": "vercel-labs"
+  },
+  "category": "development"
+}

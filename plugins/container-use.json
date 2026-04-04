@@ -1,0 +1,13 @@
+{
+  "name": "container-use",
+  "source": {
+    "source": "github",
+    "repo": "dagger/container-use"
+  },
+  "description": "Isolated development environments for coding agents using containers",
+  "version": "1.0.0",
+  "author": {
+    "name": "dagger"
+  },
+  "category": "development"
+}
