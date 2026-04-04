@@ -3,7 +3,7 @@
 A community-driven plugin marketplace for Claude Code. Open to everyone.
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://discord.gg/5YrbwNRGaE)
-[![X (Twitter)](https://img.shields.io/badge/X-@orderofnull-000000?logo=x&logoColor=white)](https://x.com/orderofnull)
+[![X (Twitter)](https://img.shields.io/badge/@orderofnull-000000?logo=x&logoColor=white)](https://x.com/orderofnull)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <!-- STATS:START -->
