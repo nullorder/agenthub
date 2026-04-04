@@ -147,3 +147,7 @@ If you need to change the marketplace entry itself (description, category, versi
 ## Removing a plugin
 
 Open a PR removing your file from `plugins/`, or open an issue requesting removal.
+
+## Need help?
+
+If you have questions or need help with your submission, join our [Discord](https://discord.gg/5YrbwNRGaE) and ask in the community channels. You can also reach us on [X (@orderofnull)](https://x.com/orderofnull).
