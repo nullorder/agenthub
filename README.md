@@ -3,7 +3,7 @@
 A community-driven plugin marketplace for Claude Code. Open to everyone.
 
 <!-- STATS:START -->
-**25** plugins | **25** hackers
+**25** plugins | **25** contributors
 <!-- STATS:END -->
 
 ## Install
