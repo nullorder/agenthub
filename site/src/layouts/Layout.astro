@@ -29,11 +29,19 @@ const base = import.meta.env.BASE_URL;
       }
     </style>
     <title>{title}</title>
+    <script is:inline>
+      (function() {
+        var t = localStorage.getItem('theme') || 'dark';
+        var e = t === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : t;
+        document.documentElement.classList.add(e);
+      })();
+    </script>
   </head>
   <body class="font-nunito text-gray-100 min-h-screen relative flex flex-col">
     <div class="fixed inset-0 -z-10">
-      <img src={`${base}bg.webp`} alt="" class="h-full w-full object-cover" />
-      <div class="absolute inset-0 bg-gray-950/70"></div>
+      <img src={`${base}bg.webp`} alt="" class="bg-dark h-full w-full object-cover" />
+      <img src={`${base}bg-light.png`} alt="" class="bg-light absolute inset-0 h-full w-full object-cover" />
+      <div class="bg-overlay absolute inset-0"></div>
     </div>
     <!-- Loader overlay -->
     <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950 transition-opacity duration-700">

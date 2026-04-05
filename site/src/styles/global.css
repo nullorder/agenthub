@@ -48,3 +48,174 @@ summary {
 .animate-spin-slow-reverse {
   animation: spin-slow-reverse 15s linear infinite;
 }
+
+/* Modal */
+.modal-backdrop { background-color: rgba(0, 0, 0, 0.6); }
+.modal-content { background-color: rgba(17, 17, 30, 0.95); }
+
+html.light .modal-backdrop { background-color: rgba(0, 0, 0, 0.3); }
+html.light .modal-content { background-color: rgba(255, 255, 255, 0.95); }
+
+.text-always-white { color: #fff !important; }
+
+/* Background image toggle */
+.bg-dark { display: block; }
+.bg-light { display: none; }
+.bg-overlay { background-color: rgba(10, 10, 15, 0.7); }
+
+html.light .bg-dark { display: none; }
+html.light .bg-light { display: block; }
+html.light .bg-overlay { background-color: rgba(255, 255, 255, 0.7); }
+
+/* Light mode overrides */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  color: #111;
+}
+
+html.light .text-white {
+  color: #111;
+}
+
+html.light .text-gray-100 {
+  color: #111;
+}
+
+html.light .text-gray-200 {
+  color: #222;
+}
+
+html.light .text-gray-300 {
+  color: #333;
+}
+
+html.light .text-gray-400 {
+  color: #444;
+}
+
+html.light .text-gray-500 {
+  color: #555;
+}
+
+html.light .text-blue-400 {
+  color: #1d4ed8;
+}
+
+html.light .text-blue-300 {
+  color: #1e40af;
+}
+
+html.light .text-green-300 {
+  color: #166534;
+}
+
+html.light .text-orange-300 {
+  color: #9a3412;
+}
+
+html.light .text-red-300 {
+  color: #991b1b;
+}
+
+html.light .text-purple-300 {
+  color: #6b21a8;
+}
+
+html.light .text-yellow-300 {
+  color: #854d0e;
+}
+
+html.light .text-cyan-300 {
+  color: #155e75;
+}
+
+html.light .text-pink-300 {
+  color: #9d174d;
+}
+
+html.light .font-mono {
+  color: #333;
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+html.light .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+html.light .bg-white\/15 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+html.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+html.light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html.light .hover\:bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+html.light .hover\:bg-white\/15:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+html.light .hover\:border-white\/20:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+html.light .hover\:text-white:hover {
+  color: #000;
+}
+
+html.light .hover\:text-gray-200:hover {
+  color: #222;
+}
+
+html.light .bg-gray-950 {
+  background-color: #f0f0f0;
+}
+
+html.light .placeholder-gray-400::placeholder {
+  color: #777;
+}
+
+html.light .group-hover\:text-blue-400 {
+  color: inherit;
+}
+
+html.light .group:hover .group-hover\:text-blue-400 {
+  color: #1d4ed8;
+}
+
+html.light .group-hover\:bg-white\/15 {
+  background-color: inherit;
+}
+
+html.light .group:hover .group-hover\:bg-white\/15 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+html.light .hover\:text-blue-300 {
+  color: inherit;
+}
+
+html.light .hover\:text-blue-300:hover {
+  color: #1e40af;
+}
+
+html.light .shadow-black\/20 {
+  --tw-shadow-color: rgba(0, 0, 0, 0.08);
+}
