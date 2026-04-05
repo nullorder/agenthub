@@ -1,5 +1,5 @@
 ---
-
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer
@@ -16,7 +16,7 @@
       rel="noopener noreferrer"
       class="hover:opacity-80 transition-opacity"
     >
-      <img src="/nullorder.png" alt="nullorder" class="h-8 w-8 rounded-full" />
+      <img src={`${base}nullorder.png`} alt="nullorder" class="h-8 w-8 rounded-full" />
     </a>
 
     <div class="flex items-center gap-4">
