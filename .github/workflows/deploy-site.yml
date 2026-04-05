@@ -1,12 +1,15 @@
 name: Build and deploy site
 
 on:
+  # Chain after marketplace build completes
+  workflow_run:
+    workflows: ["Build marketplace.json"]
+    types: [completed]
+  # Also trigger on site-only changes
   push:
     branches: [main]
     paths:
-      - 'plugins/**'
       - 'site/**'
-      - 'marketplace.json'
   workflow_dispatch:
 
 permissions:
@@ -21,8 +24,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Skip if triggered by workflow_run that failed
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Ensure we get the latest commit (including the marketplace rebuild commit)
+          ref: main
 
       - uses: pnpm/action-setup@v4
         with:
