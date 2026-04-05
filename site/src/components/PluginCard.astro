@@ -63,27 +63,27 @@ const categoryColor = categoryColors[category] || categoryColors.other;
     data-tags={tags.join(',')}
   >
     <div class="mb-3 flex items-start justify-between gap-2">
-      <h3 class="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+      <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
         {name}
       </h3>
-      <span class={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${categoryColor}`}>
+      <span class={`shrink-0 rounded-full px-2.5 py-0.5 text-base font-medium ${categoryColor}`}>
         {category}
       </span>
     </div>
 
-    <p class="mb-3 text-sm leading-relaxed text-gray-400">{description}</p>
+    <p class="mb-3 text-base leading-relaxed text-gray-400">{description}</p>
 
     {tags.length > 0 && (
       <div class="mb-3 flex flex-wrap gap-1.5">
         {tags.map((tag) => (
-          <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] font-medium text-gray-400">
+          <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-xs font-medium text-gray-400">
             {tag}
           </span>
         ))}
       </div>
     )}
 
-    <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-xs text-gray-500">
+    <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
       {authorUrl ? (
         <span class="text-blue-400 hover:text-blue-300 transition-colors" onclick={`event.preventDefault(); event.stopPropagation(); window.open('${authorUrl}', '_blank')`}>
           {authorDisplay}
@@ -105,25 +105,25 @@ const categoryColor = categoryColors[category] || categoryColors.other;
     data-tags={tags.join(',')}
   >
     <div class="mb-3 flex items-start justify-between gap-2">
-      <h3 class="text-lg font-semibold text-white">{name}</h3>
-      <span class={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${categoryColor}`}>
+      <h3 class="text-xl font-semibold text-white">{name}</h3>
+      <span class={`shrink-0 rounded-full px-2.5 py-0.5 text-base font-medium ${categoryColor}`}>
         {category}
       </span>
     </div>
 
-    <p class="mb-3 text-sm leading-relaxed text-gray-400">{description}</p>
+    <p class="mb-3 text-base leading-relaxed text-gray-400">{description}</p>
 
     {tags.length > 0 && (
       <div class="mb-3 flex flex-wrap gap-1.5">
         {tags.map((tag) => (
-          <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] font-medium text-gray-400">
+          <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-xs font-medium text-gray-400">
             {tag}
           </span>
         ))}
       </div>
     )}
 
-    <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-xs text-gray-500">
+    <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
       {authorUrl ? (
         <a href={authorUrl} target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors">
           {authorDisplay}

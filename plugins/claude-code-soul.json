@@ -1,0 +1,9 @@
+{
+  "name": "claude-code-soul",
+  "source": { "source": "github", "repo": "israelmirsky/claude-code-soul" },
+  "description": "Identity persistence plugin that preserves Claude Code instance identity across context compaction",
+  "version": "1.0.0",
+  "author": { "username": "israelmirsky" },
+  "category": "productivity",
+  "tags": ["hooks"]
+}

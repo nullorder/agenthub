@@ -1,0 +1,9 @@
+{
+  "name": "cto-toolkit",
+  "source": { "source": "github", "repo": "camilooscargbaptista/cto-toolkit" },
+  "description": "Engineering leadership plugin with 54 skills, 6 agents, 9 hooks, and CI/CD automation scripts",
+  "version": "1.0.0",
+  "author": { "username": "camilooscargbaptista" },
+  "category": "development",
+  "tags": ["skills", "agents", "hooks", "commands"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "astral-plugins",
+  "source": { "source": "github", "repo": "astral-sh/claude-code-plugins" },
+  "description": "Official Astral tools plugin with ruff, ty, and uv skills plus LSP for Python",
+  "version": "1.0.0",
+  "author": { "username": "astral-sh" },
+  "category": "development",
+  "tags": ["skills", "lsp-servers"]
+}

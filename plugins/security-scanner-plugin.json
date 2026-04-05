@@ -1,0 +1,9 @@
+{
+  "name": "security-scanner-plugin",
+  "source": { "source": "github", "repo": "harish-garg/security-scanner-plugin" },
+  "description": "Code vulnerability scanning using GitHub's official CVE data with /security-scan and /explain-cve commands",
+  "version": "1.0.0",
+  "author": { "username": "harish-garg" },
+  "category": "security",
+  "tags": ["commands", "agents"]
+}

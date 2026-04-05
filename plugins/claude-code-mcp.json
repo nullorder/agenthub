@@ -1,0 +1,9 @@
+{
+  "name": "claude-code-mcp",
+  "source": { "source": "github", "repo": "steipete/claude-code-mcp" },
+  "description": "MCP server exposing Claude Code as a tool for other MCP clients, enabling agent-in-agent patterns",
+  "version": "1.0.0",
+  "author": { "username": "steipete" },
+  "category": "development",
+  "tags": ["mcp-servers"]
+}

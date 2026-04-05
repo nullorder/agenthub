@@ -21,7 +21,7 @@ const categories = [
 const allTags = [
   ...new Set(plugins.flatMap((p: any) => p.tags || [])),
 ].sort() as string[];
-const contributorCount = [...new Set(plugins.map((p: any) => p.author.username))]
+const authorCount = [...new Set(plugins.map((p: any) => p.author.username))]
   .length;
 
 const PLUGINS_PER_PAGE = 24;
@@ -31,12 +31,12 @@ const PLUGINS_PER_PAGE = 24;
   <Navbar />
 
   <div class="mx-auto max-w-7xl px-4 py-10 flex-1">
-    <Header pluginCount={plugins.length} contributorCount={contributorCount} />
+    <Header pluginCount={plugins.length} authorCount={authorCount} />
     <SearchBar />
 
     <div class="mb-4">
       <p
-        class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500"
+        class="mb-2 text-base font-medium uppercase tracking-wider text-gray-500"
       >
         Category
       </p>
@@ -45,7 +45,7 @@ const PLUGINS_PER_PAGE = 24;
 
     <div class="mb-4">
       <p
-        class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500"
+        class="mb-2 text-base font-medium uppercase tracking-wider text-gray-500"
       >
         Type
       </p>
@@ -128,8 +128,8 @@ const PLUGINS_PER_PAGE = 24;
           btn.textContent = i;
           btn.className =
             i === currentPage
-              ? "rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm font-medium text-white"
-              : "rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-sm text-gray-400 hover:border-white/20 hover:text-white transition-colors";
+              ? "rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-base font-medium text-white"
+              : "rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-base text-gray-400 hover:border-white/20 hover:text-white transition-colors";
           btn.addEventListener("click", () => {
             currentPage = i;
             render();

@@ -1,0 +1,9 @@
+{
+  "name": "gstack",
+  "source": { "source": "github", "repo": "garrytan/gstack" },
+  "description": "23+ tools with multi-agent Conductor for parallel sessions, serving as CEO, Designer, Eng Manager, and QA",
+  "version": "1.0.0",
+  "author": { "username": "garrytan" },
+  "category": "development",
+  "tags": ["skills", "agents", "commands"]
+}

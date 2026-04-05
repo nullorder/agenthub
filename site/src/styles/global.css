@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-@theme {
-  --font-nunito: 'Nunito', sans-serif;
-  --font-pixel: 'Silkscreen', cursive;
+@font-face {
+  font-family: "Pixeled";
+  src: url("/fonts/Pixeled.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-a, button, label, [role="button"], input[type="submit"], input[type="button"], select, summary {
+@theme {
+  --font-nunito: "Space Grotesk", sans-serif;
+  --font-pixel: "Pixeled", monospace;
+}
+
+a,
+button,
+label,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+select,
+summary {
   cursor: pointer;
 }
 
 .font-pixel {
   font-family: var(--font-pixel);
+  padding-bottom: 0.42em;
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin-slow-reverse {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 .animate-spin-slow {

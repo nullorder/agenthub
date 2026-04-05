@@ -1,0 +1,9 @@
+{
+  "name": "callstack-agent-skills",
+  "source": { "source": "github", "repo": "callstackincubator/agent-skills" },
+  "description": "React Native skills covering profiling, FPS, re-renders, brownfield migration, and GitHub Actions for RN builds",
+  "version": "1.0.0",
+  "author": { "username": "callstackincubator" },
+  "category": "development",
+  "tags": ["skills"]
+}

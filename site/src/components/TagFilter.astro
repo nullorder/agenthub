@@ -8,14 +8,14 @@ const { tags } = Astro.props;
 
 <div class="mb-8 flex flex-wrap gap-2" id="tag-filters">
   <button
-    class="tag-btn active rounded-full border border-white/20 bg-white/15 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white transition-colors"
+    class="tag-btn active rounded-full border border-white/20 bg-white/15 backdrop-blur-sm px-3 py-1 text-base font-medium text-white transition-colors"
     data-tag="all"
   >
     All
   </button>
   {tags.map((tag) => (
     <button
-      class="tag-btn rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1 text-xs font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
+      class="tag-btn rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1 text-base font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
       data-tag={tag}
     >
       {tag}

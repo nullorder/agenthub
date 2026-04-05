@@ -1,0 +1,9 @@
+{
+  "name": "claude-starter",
+  "source": { "source": "github", "repo": "raintree-technology/claude-starter" },
+  "description": "Advanced framework with 40+ skills and TOON format for 30-60% token savings",
+  "version": "1.0.0",
+  "author": { "username": "raintree-technology" },
+  "category": "development",
+  "tags": ["skills", "commands", "hooks"]
+}

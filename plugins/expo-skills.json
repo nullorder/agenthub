@@ -1,0 +1,9 @@
+{
+  "name": "expo-skills",
+  "source": { "source": "github", "repo": "expo/skills" },
+  "description": "Official Expo team AI agent skills for building, deploying, and debugging Expo apps",
+  "version": "1.0.0",
+  "author": { "username": "expo" },
+  "category": "development",
+  "tags": ["skills"]
+}

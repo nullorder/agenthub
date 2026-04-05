@@ -1,0 +1,9 @@
+{
+  "name": "claude-hooks-ts",
+  "source": { "source": "github", "repo": "johnlindquist/claude-hooks" },
+  "description": "Type-safe TypeScript hook system with auto-completion and strongly-typed payloads",
+  "version": "1.0.0",
+  "author": { "username": "johnlindquist" },
+  "category": "development",
+  "tags": ["hooks"]
+}

@@ -10,6 +10,23 @@
   },
   "plugins": [
     {
+      "name": "astral-plugins",
+      "source": {
+        "source": "github",
+        "repo": "astral-sh/claude-code-plugins"
+      },
+      "description": "Official Astral tools plugin with ruff, ty, and uv skills plus LSP for Python",
+      "version": "1.0.0",
+      "author": {
+        "username": "astral-sh"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "lsp-servers"
+      ]
+    },
+    {
       "name": "aws-agent-plugins",
       "source": {
         "source": "github",
@@ -28,6 +45,57 @@
       ]
     },
     {
+      "name": "bmad-plugin",
+      "source": {
+        "source": "github",
+        "repo": "PabloLION/bmad-plugin"
+      },
+      "description": "Agile AI-driven development with 10 specialized agent personas and 26 guided workflow skills",
+      "version": "1.0.0",
+      "author": {
+        "username": "PabloLION"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands"
+      ]
+    },
+    {
+      "name": "boostvolt-lsps",
+      "source": {
+        "source": "github",
+        "repo": "boostvolt/claude-code-lsps"
+      },
+      "description": "LSP servers for 23 languages providing go-to-definition, find-references, hover, and diagnostics",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt"
+      },
+      "category": "development",
+      "tags": [
+        "lsp-servers",
+        "hooks"
+      ]
+    },
+    {
+      "name": "callstack-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "callstackincubator/agent-skills"
+      },
+      "description": "React Native skills covering profiling, FPS, re-renders, brownfield migration, and GitHub Actions for RN builds",
+      "version": "1.0.0",
+      "author": {
+        "username": "callstackincubator"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ]
+    },
+    {
       "name": "cc-devops-skills",
       "source": {
         "source": "github",
@@ -41,6 +109,23 @@
       "category": "devops",
       "tags": [
         "skills"
+      ]
+    },
+    {
+      "name": "cc-hooks-audio",
+      "source": {
+        "source": "github",
+        "repo": "husniadil/cc-hooks"
+      },
+      "description": "Audio feedback for Claude Code with TTS announcements, sound effects, and contextual AI messages",
+      "version": "1.0.0",
+      "author": {
+        "username": "husniadil"
+      },
+      "category": "productivity",
+      "tags": [
+        "hooks",
+        "commands"
       ]
     },
     {
@@ -96,6 +181,24 @@
       ]
     },
     {
+      "name": "claude-canary",
+      "source": {
+        "source": "github",
+        "repo": "geoffrey-young/anthropic-hackathon-2026"
+      },
+      "description": "Early warning system for plugin security with automated review of all plugin files before execution",
+      "version": "1.0.0",
+      "author": {
+        "username": "geoffrey-young"
+      },
+      "category": "security",
+      "tags": [
+        "hooks",
+        "agents",
+        "skills"
+      ]
+    },
+    {
       "name": "claude-code-builder",
       "source": {
         "source": "github",
@@ -109,6 +212,22 @@
       "category": "development",
       "tags": [
         "commands"
+      ]
+    },
+    {
+      "name": "claude-code-mcp",
+      "source": {
+        "source": "github",
+        "repo": "steipete/claude-code-mcp"
+      },
+      "description": "MCP server exposing Claude Code as a tool for other MCP clients, enabling agent-in-agent patterns",
+      "version": "1.0.0",
+      "author": {
+        "username": "steipete"
+      },
+      "category": "development",
+      "tags": [
+        "mcp-servers"
       ]
     },
     {
@@ -145,6 +264,22 @@
       ]
     },
     {
+      "name": "claude-code-soul",
+      "source": {
+        "source": "github",
+        "repo": "israelmirsky/claude-code-soul"
+      },
+      "description": "Identity persistence plugin that preserves Claude Code instance identity across context compaction",
+      "version": "1.0.0",
+      "author": {
+        "username": "israelmirsky"
+      },
+      "category": "productivity",
+      "tags": [
+        "hooks"
+      ]
+    },
+    {
       "name": "claude-code-workflows",
       "source": {
         "source": "github",
@@ -159,6 +294,40 @@
       "tags": [
         "skills",
         "agents"
+      ]
+    },
+    {
+      "name": "claude-context-optimizer",
+      "source": {
+        "source": "github",
+        "repo": "egorfedorov/claude-context-optimizer"
+      },
+      "description": "Tracks token usage and saves 30-50% on API costs with smart caching, ContextShield, and auto-compact",
+      "version": "1.0.0",
+      "author": {
+        "username": "egorfedorov"
+      },
+      "category": "productivity",
+      "tags": [
+        "hooks",
+        "commands",
+        "agents"
+      ]
+    },
+    {
+      "name": "claude-hooks-ts",
+      "source": {
+        "source": "github",
+        "repo": "johnlindquist/claude-hooks"
+      },
+      "description": "Type-safe TypeScript hook system with auto-completion and strongly-typed payloads",
+      "version": "1.0.0",
+      "author": {
+        "username": "johnlindquist"
+      },
+      "category": "development",
+      "tags": [
+        "hooks"
       ]
     },
     {
@@ -191,6 +360,24 @@
       "category": "productivity",
       "tags": [
         "commands"
+      ]
+    },
+    {
+      "name": "claude-k8s-plugin",
+      "source": {
+        "source": "github",
+        "repo": "Sagart-cactus/claude-k8s-plugin"
+      },
+      "description": "Build Kubernetes CRD operators with safety hooks restricting operations to local clusters",
+      "version": "1.0.0",
+      "author": {
+        "username": "Sagart-cactus"
+      },
+      "category": "devops",
+      "tags": [
+        "skills",
+        "commands",
+        "hooks"
       ]
     },
     {
@@ -247,6 +434,42 @@
       ]
     },
     {
+      "name": "claude-starter",
+      "source": {
+        "source": "github",
+        "repo": "raintree-technology/claude-starter"
+      },
+      "description": "Advanced framework with 40+ skills and TOON format for 30-60% token savings",
+      "version": "1.0.0",
+      "author": {
+        "username": "raintree-technology"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands",
+        "hooks"
+      ]
+    },
+    {
+      "name": "claudelint",
+      "source": {
+        "source": "github",
+        "repo": "pdugan20/claudelint"
+      },
+      "description": "Linter for Claude Code projects validating CLAUDE.md, skills, settings, hooks, MCP servers, and plugins",
+      "version": "1.0.0",
+      "author": {
+        "username": "pdugan20"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands",
+        "hooks"
+      ]
+    },
+    {
       "name": "communitytools",
       "source": {
         "source": "github",
@@ -297,6 +520,61 @@
       ]
     },
     {
+      "name": "cto-toolkit",
+      "source": {
+        "source": "github",
+        "repo": "camilooscargbaptista/cto-toolkit"
+      },
+      "description": "Engineering leadership plugin with 54 skills, 6 agents, 9 hooks, and CI/CD automation scripts",
+      "version": "1.0.0",
+      "author": {
+        "username": "camilooscargbaptista"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "hooks",
+        "commands"
+      ]
+    },
+    {
+      "name": "developer-kit",
+      "source": {
+        "source": "github",
+        "repo": "giuseppe-trisciuoglio/developer-kit"
+      },
+      "description": "116 skills, 43 agents, and 44 commands across Java, TypeScript, Python, PHP, and AWS with LSP support",
+      "version": "1.0.0",
+      "author": {
+        "username": "giuseppe-trisciuoglio"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks",
+        "lsp-servers"
+      ]
+    },
+    {
+      "name": "docker-plugins",
+      "source": {
+        "source": "github",
+        "repo": "docker/claude-plugins"
+      },
+      "description": "Official Docker Desktop MCP integration for containerized MCP servers",
+      "version": "1.0.0",
+      "author": {
+        "username": "docker"
+      },
+      "category": "devops",
+      "tags": [
+        "mcp-servers"
+      ]
+    },
+    {
       "name": "documentation-plugin",
       "source": {
         "source": "github",
@@ -332,6 +610,59 @@
       ]
     },
     {
+      "name": "everything-claude-code",
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
+      },
+      "description": "Agent harness with 28 agents, 119 skills, and 60 commands for full workflow optimization",
+      "version": "1.0.0",
+      "author": {
+        "username": "affaan-m"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks"
+      ]
+    },
+    {
+      "name": "expo-skills",
+      "source": {
+        "source": "github",
+        "repo": "expo/skills"
+      },
+      "description": "Official Expo team AI agent skills for building, deploying, and debugging Expo apps",
+      "version": "1.0.0",
+      "author": {
+        "username": "expo"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ]
+    },
+    {
+      "name": "gstack",
+      "source": {
+        "source": "github",
+        "repo": "garrytan/gstack"
+      },
+      "description": "23+ tools with multi-agent Conductor for parallel sessions, serving as CEO, Designer, Eng Manager, and QA",
+      "version": "1.0.0",
+      "author": {
+        "username": "garrytan"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands"
+      ]
+    },
+    {
       "name": "libre-uiux",
       "source": {
         "source": "github",
@@ -350,6 +681,40 @@
       ]
     },
     {
+      "name": "pg-aiguide",
+      "source": {
+        "source": "github",
+        "repo": "timescale/pg-aiguide"
+      },
+      "description": "PostgreSQL skills and MCP server with version-aware docs for schema design, indexing, and performance tuning",
+      "version": "1.0.0",
+      "author": {
+        "username": "timescale"
+      },
+      "category": "data",
+      "tags": [
+        "skills",
+        "mcp-servers"
+      ]
+    },
+    {
+      "name": "ralph-claude-code",
+      "source": {
+        "source": "github",
+        "repo": "frankbria/ralph-claude-code"
+      },
+      "description": "Autonomous AI development loop with intelligent exit detection, rate limiting, and circuit breakers",
+      "version": "1.0.0",
+      "author": {
+        "username": "frankbria"
+      },
+      "category": "productivity",
+      "tags": [
+        "hooks",
+        "commands"
+      ]
+    },
+    {
       "name": "recall",
       "source": {
         "source": "github",
@@ -361,6 +726,39 @@
         "username": "zippoxer"
       },
       "category": "productivity",
+      "tags": [
+        "commands"
+      ]
+    },
+    {
+      "name": "security-scanner-plugin",
+      "source": {
+        "source": "github",
+        "repo": "harish-garg/security-scanner-plugin"
+      },
+      "description": "Code vulnerability scanning using GitHub's official CVE data with /security-scan and /explain-cve commands",
+      "version": "1.0.0",
+      "author": {
+        "username": "harish-garg"
+      },
+      "category": "security",
+      "tags": [
+        "commands",
+        "agents"
+      ]
+    },
+    {
+      "name": "snyk-agent-scan",
+      "source": {
+        "source": "github",
+        "repo": "snyk/agent-scan"
+      },
+      "description": "Security scanner for AI agents, MCP servers, and skills detecting 15+ security risks",
+      "version": "1.0.0",
+      "author": {
+        "username": "snyk"
+      },
+      "category": "security",
       "tags": [
         "commands"
       ]
@@ -381,6 +779,23 @@
       "tags": [
         "skills",
         "commands"
+      ]
+    },
+    {
+      "name": "superpowers-chrome",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-chrome"
+      },
+      "description": "Direct Chrome browser control via DevTools Protocol with zero dependencies and MCP server mode",
+      "version": "1.0.0",
+      "author": {
+        "username": "obra"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "mcp-servers"
       ]
     },
     {
@@ -433,6 +848,24 @@
       "category": "development",
       "tags": [
         "skills"
+      ]
+    },
+    {
+      "name": "wshobson-agents",
+      "source": {
+        "source": "github",
+        "repo": "wshobson/agents"
+      },
+      "description": "182 specialized AI agents, 147 skills, and 95 commands organized into 75 single-purpose plugins",
+      "version": "1.0.0",
+      "author": {
+        "username": "wshobson"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands"
       ]
     }
   ]

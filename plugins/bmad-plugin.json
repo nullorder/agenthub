@@ -1,0 +1,9 @@
+{
+  "name": "bmad-plugin",
+  "source": { "source": "github", "repo": "PabloLION/bmad-plugin" },
+  "description": "Agile AI-driven development with 10 specialized agent personas and 26 guided workflow skills",
+  "version": "1.0.0",
+  "author": { "username": "PabloLION" },
+  "category": "development",
+  "tags": ["skills", "agents", "commands"]
+}
