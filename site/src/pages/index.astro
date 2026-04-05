@@ -1,20 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Header from '../components/Header.astro';
-import SearchBar from '../components/SearchBar.astro';
-import CategoryFilter from '../components/CategoryFilter.astro';
-import PluginCard from '../components/PluginCard.astro';
-import Footer from '../components/Footer.astro';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Header from "../components/Header.astro";
+import SearchBar from "../components/SearchBar.astro";
+import CategoryFilter from "../components/CategoryFilter.astro";
+import TagFilter from "../components/TagFilter.astro";
+import PluginCard from "../components/PluginCard.astro";
+import Cta from "../components/Cta.astro";
+import Footer from "../components/Footer.astro";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 
-const marketplacePath = resolve(process.cwd(), '../marketplace.json');
-const marketplace = JSON.parse(readFileSync(marketplacePath, 'utf-8'));
+const marketplacePath = resolve(process.cwd(), "../marketplace.json");
+const marketplace = JSON.parse(readFileSync(marketplacePath, "utf-8"));
 const plugins = marketplace.plugins || [];
 
-const categories = [...new Set(plugins.map((p: any) => p.category))].sort() as string[];
-const contributorCount = [...new Set(plugins.map((p: any) => p.author.name))].length;
+const categories = [
+  ...new Set(plugins.map((p: any) => p.category)),
+].sort() as string[];
+const allTags = [
+  ...new Set(plugins.flatMap((p: any) => p.tags || [])),
+].sort() as string[];
+const contributorCount = [...new Set(plugins.map((p: any) => p.author.username))]
+  .length;
 
 const PLUGINS_PER_PAGE = 24;
 ---
@@ -22,16 +30,34 @@ const PLUGINS_PER_PAGE = 24;
 <Layout title="AgentHub — Claude Code Plugin Marketplace">
   <Navbar />
 
-  <div class="mx-auto max-w-6xl px-4 py-10 flex-1">
+  <div class="mx-auto max-w-7xl px-4 py-10 flex-1">
     <Header pluginCount={plugins.length} contributorCount={contributorCount} />
     <SearchBar />
-    <CategoryFilter categories={categories} />
+
+    <div class="mb-4">
+      <p
+        class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500"
+      >
+        Category
+      </p>
+      <CategoryFilter categories={categories} />
+    </div>
+
+    <div class="mb-4">
+      <p
+        class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500"
+      >
+        Type
+      </p>
+      <TagFilter tags={allTags} />
+    </div>
 
     <!-- Plugin grid -->
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="plugin-grid">
-      {plugins.map((plugin: any) => (
-        <PluginCard {...plugin} />
-      ))}
+    <div
+      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+      id="plugin-grid"
+    >
+      {plugins.map((plugin: any) => <PluginCard {...plugin} />)}
     </div>
 
     <!-- No results -->
@@ -42,20 +68,24 @@ const PLUGINS_PER_PAGE = 24;
     <!-- Pagination -->
     <div id="pagination" class="mt-8 flex items-center justify-center gap-2">
     </div>
+
+    <Cta />
   </div>
 
   <Footer />
 
   <script define:vars={{ PLUGINS_PER_PAGE }}>
-    const grid = document.getElementById('plugin-grid');
-    const cards = Array.from(grid.querySelectorAll('.plugin-card'));
-    const searchInput = document.getElementById('search-input');
-    const categoryBtns = document.querySelectorAll('.category-btn');
-    const pagination = document.getElementById('pagination');
-    const noResults = document.getElementById('no-results');
+    const grid = document.getElementById("plugin-grid");
+    const cards = Array.from(grid.querySelectorAll(".plugin-card"));
+    const searchInput = document.getElementById("search-input");
+    const categoryBtns = document.querySelectorAll(".category-btn");
+    const tagBtns = document.querySelectorAll(".tag-btn");
+    const pagination = document.getElementById("pagination");
+    const noResults = document.getElementById("no-results");
 
-    let currentCategory = 'all';
-    let currentSearch = '';
+    let currentCategory = "all";
+    let currentTag = "all";
+    let currentSearch = "";
     let currentPage = 1;
 
     function getVisibleCards() {
@@ -63,9 +93,16 @@ const PLUGINS_PER_PAGE = 24;
         const name = card.dataset.name.toLowerCase();
         const desc = card.dataset.description.toLowerCase();
         const cat = card.dataset.category;
-        const matchesSearch = !currentSearch || name.includes(currentSearch) || desc.includes(currentSearch);
-        const matchesCategory = currentCategory === 'all' || cat === currentCategory;
-        return matchesSearch && matchesCategory;
+        const cardTags = (card.dataset.tags || "").split(",");
+        const matchesSearch =
+          !currentSearch ||
+          name.includes(currentSearch) ||
+          desc.includes(currentSearch);
+        const matchesCategory =
+          currentCategory === "all" || cat === currentCategory;
+        const matchesTag =
+          currentTag === "all" || cardTags.includes(currentTag);
+        return matchesSearch && matchesCategory && matchesTag;
       });
     }
 
@@ -79,49 +116,63 @@ const PLUGINS_PER_PAGE = 24;
       const pageItems = new Set(visible.slice(start, end));
 
       cards.forEach((card) => {
-        card.style.display = pageItems.has(card) ? '' : 'none';
+        card.style.display = pageItems.has(card) ? "" : "none";
       });
 
-      noResults.classList.toggle('hidden', visible.length > 0);
+      noResults.classList.toggle("hidden", visible.length > 0);
 
-      pagination.innerHTML = '';
+      pagination.innerHTML = "";
       if (pages > 1) {
         for (let i = 1; i <= pages; i++) {
-          const btn = document.createElement('button');
+          const btn = document.createElement("button");
           btn.textContent = i;
-          btn.className = i === currentPage
-            ? 'rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm font-medium text-white'
-            : 'rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-sm text-gray-400 hover:border-white/20 hover:text-white transition-colors';
-          btn.addEventListener('click', () => {
+          btn.className =
+            i === currentPage
+              ? "rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm font-medium text-white"
+              : "rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-sm text-gray-400 hover:border-white/20 hover:text-white transition-colors";
+          btn.addEventListener("click", () => {
             currentPage = i;
             render();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: "smooth" });
           });
           pagination.appendChild(btn);
         }
       }
     }
 
-    searchInput.addEventListener('input', (e) => {
+    searchInput.addEventListener("input", (e) => {
       currentSearch = e.target.value.toLowerCase().trim();
       currentPage = 1;
       render();
     });
 
+    function toggleFilterBtn(btns, clickedBtn) {
+      btns.forEach((b) => {
+        const isActive = b === clickedBtn;
+        b.classList.toggle("active", isActive);
+        b.classList.toggle("bg-white/15", isActive);
+        b.classList.toggle("border-white/20", isActive);
+        b.classList.toggle("text-white", isActive);
+        b.classList.toggle("text-gray-400", !isActive);
+        b.classList.toggle("bg-white/5", !isActive);
+        b.classList.toggle("border-white/10", !isActive);
+      });
+    }
+
     categoryBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener("click", () => {
         currentCategory = btn.dataset.category;
         currentPage = 1;
-        categoryBtns.forEach((b) => {
-          const isActive = b === btn;
-          b.classList.toggle('active', isActive);
-          b.classList.toggle('bg-white/15', isActive);
-          b.classList.toggle('border-white/20', isActive);
-          b.classList.toggle('text-white', isActive);
-          b.classList.toggle('text-gray-400', !isActive);
-          b.classList.toggle('bg-white/5', !isActive);
-          b.classList.toggle('border-white/10', !isActive);
-        });
+        toggleFilterBtn(categoryBtns, btn);
+        render();
+      });
+    });
+
+    tagBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        currentTag = btn.dataset.tag;
+        currentPage = 1;
+        toggleFilterBtn(tagBtns, btn);
         render();
       });
     });

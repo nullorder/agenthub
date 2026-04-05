@@ -7,7 +7,10 @@
   "description": "Guided commands to generate skills, subagents, hooks, slash commands, and plugins with proper scaffolding",
   "version": "1.0.0",
   "author": {
-    "name": "alexanderop"
+    "username": "alexanderop"
   },
-  "category": "development"
+  "category": "development",
+  "tags": [
+    "commands"
+  ]
 }

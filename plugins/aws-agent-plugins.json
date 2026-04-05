@@ -7,7 +7,12 @@
   "description": "7 plugins for AWS services including Amplify, Serverless, DB, Deploy, Migration, and SageMaker",
   "version": "1.0.0",
   "author": {
-    "name": "awslabs"
+    "username": "awslabs"
   },
-  "category": "devops"
+  "category": "devops",
+  "tags": [
+    "skills",
+    "hooks",
+    "mcp-servers"
+  ]
 }

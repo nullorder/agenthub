@@ -7,7 +7,11 @@
   "description": "Structured workflow emphasizing 80% planning/review and 20% execution with ideate, brainstorm, plan, work, and review phases",
   "version": "1.0.0",
   "author": {
-    "name": "EveryInc"
+    "username": "EveryInc"
   },
-  "category": "productivity"
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "agents"
+  ]
 }

@@ -7,7 +7,13 @@
   "description": "Runtime behavioral monitoring plugin that detects divergence between stated intent and actual system behavior",
   "version": "1.0.0",
   "author": {
-    "name": "edamametechnologies"
+    "username": "edamametechnologies"
   },
-  "category": "security"
+  "category": "security",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "mcp-servers"
+  ]
 }

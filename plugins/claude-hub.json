@@ -7,7 +7,10 @@
   "description": "Webhook service connecting Claude Code to GitHub for automated workflows",
   "version": "1.0.0",
   "author": {
-    "name": "claude-did-this"
+    "username": "claude-did-this"
   },
-  "category": "devops"
+  "category": "devops",
+  "tags": [
+    "integration"
+  ]
 }

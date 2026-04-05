@@ -7,7 +7,10 @@
   "description": "CLI usage dashboard for tracking Claude Code token consumption",
   "version": "1.0.0",
   "author": {
-    "name": "ryoppippi"
+    "username": "ryoppippi"
   },
-  "category": "productivity"
+  "category": "productivity",
+  "tags": [
+    "mcp-servers"
+  ]
 }

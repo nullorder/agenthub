@@ -40,6 +40,8 @@ agenthub/
 
 4. **Valid categories:** `development`, `testing`, `devops`, `security`, `documentation`, `productivity`, `data`, `design`, `other`
 
+5. **Valid tags (optional):** `skills`, `agents`, `commands`, `hooks`, `mcp-servers`, `lsp-servers`, `integration`
+
 ## Plugin JSON schema
 
 Every file in `plugins/` must follow this structure:
@@ -51,11 +53,14 @@ Every file in `plugins/` must follow this structure:
   "description": "Brief description",
   "version": "1.0.0",
   "author": {
-    "name": "Author Name"
+    "username": "author-username"
   },
-  "category": "development"
+  "category": "development",
+  "tags": ["skills", "agents"]
 }
 ```
+
+The `tags` field is optional. It indicates what components the plugin provides.
 
 ### Source types
 

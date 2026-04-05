@@ -24,11 +24,24 @@ With the following content:
   "description": "A brief description of what your plugin does",
   "version": "1.0.0",
   "author": {
-    "name": "Your Name"
+    "username": "your-username"
   },
-  "category": "development"
+  "category": "development",
+  "tags": ["skills", "agents"]
 }
 ```
+
+### Tags
+
+The `tags` field is optional but recommended. It tells users what components your plugin provides. Use one or more of:
+
+- `skills` — skill directories with `SKILL.md`
+- `agents` — subagent markdown files
+- `commands` — slash command markdown files
+- `hooks` — event hooks (`hooks.json`)
+- `mcp-servers` — MCP server configurations
+- `lsp-servers` — language server configurations
+- `integration` — external tool integrations (not a Claude Code plugin per se)
 
 <details>
 <summary>Alternative sources (Git URL, Git subdirectory, npm)</summary>
@@ -47,7 +60,7 @@ For plugins hosted on GitLab, Bitbucket, or other Git hosts:
   "description": "A brief description of what your plugin does",
   "version": "1.0.0",
   "author": {
-    "name": "Your Name"
+    "username": "your-username"
   },
   "category": "development"
 }
@@ -70,7 +83,7 @@ For plugins that live inside a subdirectory of a larger repo (e.g. monorepos):
   "description": "A brief description of what your plugin does",
   "version": "1.0.0",
   "author": {
-    "name": "Your Name"
+    "username": "your-username"
   },
   "category": "development"
 }
@@ -92,7 +105,7 @@ For plugins published to npm:
   "description": "A brief description of what your plugin does",
   "version": "1.0.0",
   "author": {
-    "name": "Your Name"
+    "username": "your-username"
   },
   "category": "development"
 }

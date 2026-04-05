@@ -35,7 +35,7 @@ jq -n \
   }' > "$OUTPUT"
 
 plugin_count=$(echo "$plugins_array" | jq 'length')
-contributor_count=$(echo "$plugins_array" | jq '[.[].author.name] | unique | length')
+contributor_count=$(echo "$plugins_array" | jq '[.[].author.username] | unique | length')
 
 echo "Built marketplace.json with $plugin_count plugin(s) from $contributor_count contributor(s)."
 

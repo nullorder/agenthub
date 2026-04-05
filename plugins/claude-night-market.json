@@ -7,7 +7,13 @@
   "description": "19 production-ready plugins covering code review, spec-driven development, architecture patterns, and Python specialist tools",
   "version": "1.0.0",
   "author": {
-    "name": "athola"
+    "username": "athola"
   },
-  "category": "other"
+  "category": "other",
+  "tags": [
+    "skills",
+    "agents",
+    "hooks",
+    "commands"
+  ]
 }

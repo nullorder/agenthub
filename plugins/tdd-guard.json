@@ -7,7 +7,11 @@
   "description": "Automated TDD enforcement that monitors agent actions and blocks violations in real-time",
   "version": "1.0.0",
   "author": {
-    "name": "nizos"
+    "username": "nizos"
   },
-  "category": "testing"
+  "category": "testing",
+  "tags": [
+    "skills",
+    "hooks"
+  ]
 }

@@ -7,7 +7,10 @@
   "description": "Vercel's official collection of agent skills for deployment workflows",
   "version": "1.0.0",
   "author": {
-    "name": "vercel-labs"
+    "username": "vercel-labs"
   },
-  "category": "development"
+  "category": "development",
+  "tags": [
+    "skills"
+  ]
 }

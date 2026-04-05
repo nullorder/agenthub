@@ -7,7 +7,12 @@
   "description": "Complete UI/UX system with 152 agents, 74 skills, and 76 commands for structured design communication using design tokens",
   "version": "1.0.0",
   "author": {
-    "name": "HermeticOrmus"
+    "username": "HermeticOrmus"
   },
-  "category": "design"
+  "category": "design",
+  "tags": [
+    "agents",
+    "commands",
+    "hooks"
+  ]
 }

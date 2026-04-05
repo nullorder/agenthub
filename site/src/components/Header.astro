@@ -1,4 +1,6 @@
 ---
+import AnimatedLogo from './AnimatedLogo.astro';
+
 interface Props {
   pluginCount: number;
   contributorCount: number;
@@ -8,7 +10,10 @@ const { pluginCount, contributorCount } = Astro.props;
 ---
 
 <header class="mb-10 text-center">
-  <h1 class="mb-2 text-4xl font-bold tracking-tight text-white">AgentHub</h1>
+  <div class="mx-auto mb-4">
+    <AnimatedLogo size="h-32 w-32 mx-auto" />
+  </div>
+  <h1 class="font-pixel mb-2 text-4xl font-bold tracking-tight text-white">AgentHub</h1>
   <p class="text-lg text-gray-400">
     Community-driven plugin marketplace for Claude Code
   </p>

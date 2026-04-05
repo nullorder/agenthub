@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+  --font-nunito: 'Nunito', sans-serif;
+  --font-pixel: 'Silkscreen', cursive;
+}
+
 a, button, label, [role="button"], input[type="submit"], input[type="button"], select, summary {
   cursor: pointer;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 15s linear infinite;
 }

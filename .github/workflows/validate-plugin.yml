@@ -35,6 +35,12 @@ jobs:
               fi
             done
 
+            username=$(jq -r '.author.username // empty' "$f")
+            if [ -z "$username" ]; then
+              echo "  ERROR: Missing required field 'author.username'"
+              errors=$((errors + 1))
+            fi
+
             source_type=$(jq -r '.source.source // empty' "$f")
             case "$source_type" in
               github)
@@ -75,6 +81,17 @@ jobs:
                 errors=$((errors + 1))
                 ;;
             esac
+
+            # Validate tags (optional field)
+            if jq -e '.tags' "$f" >/dev/null 2>&1; then
+              valid_tags="skills agents hooks commands mcp-servers lsp-servers integration"
+              for tag in $(jq -r '.tags[]' "$f" 2>/dev/null); do
+                if ! echo "$valid_tags" | grep -qw "$tag"; then
+                  echo "  ERROR: Invalid tag '$tag'. Must be one of: $valid_tags"
+                  errors=$((errors + 1))
+                fi
+              done
+            fi
 
             category=$(jq -r '.category // empty' "$f")
             valid_categories="development testing devops security documentation productivity data design other"

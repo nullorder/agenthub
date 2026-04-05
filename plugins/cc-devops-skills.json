@@ -7,7 +7,10 @@
   "description": "31 DevOps skills covering Terraform, Helm, kubectl, GitHub Actions with linting, security checks, and dry-run validation",
   "version": "1.0.0",
   "author": {
-    "name": "akin-ozer"
+    "username": "akin-ozer"
   },
-  "category": "devops"
+  "category": "devops",
+  "tags": [
+    "skills"
+  ]
 }
