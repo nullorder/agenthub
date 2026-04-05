@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+const mdPath = resolve(process.cwd(), '../CODE_OF_CONDUCT.md');
+const rawContent = readFileSync(mdPath, 'utf-8');
+
+// Remove the H1 title (we render it separately)
+const content = rawContent.replace(/^# .+\n/, '');
+---
+
+<Layout title="Code of Conduct — AgentHub">
+  <Navbar />
+
+  <div class="mx-auto max-w-3xl px-4 py-16 flex-1">
+    <h1 class="font-pixel mb-8 text-4xl font-bold text-white">Code of Conduct</h1>
+
+    <div class="prose-custom text-base leading-relaxed text-gray-300" set:html={await (async () => {
+      const { marked } = await import('marked');
+      return marked.parse(content);
+    })()} />
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .prose-custom :global(h2) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom :global(p) {
+    margin-bottom: 0.75rem;
+    color: #d1d5db;
+  }
+
+  .prose-custom :global(ul) {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom :global(li) {
+    margin-bottom: 0.25rem;
+    color: #9ca3af;
+  }
+
+  .prose-custom :global(strong) {
+    color: white;
+  }
+
+  .prose-custom :global(a) {
+    color: #60a5fa;
+  }
+
+  .prose-custom :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  :global(html.light) .prose-custom :global(h2) {
+    color: #111;
+  }
+
+  :global(html.light) .prose-custom :global(p) {
+    color: #444;
+  }
+
+  :global(html.light) .prose-custom :global(li) {
+    color: #555;
+  }
+
+  :global(html.light) .prose-custom :global(strong) {
+    color: #111;
+  }
+
+  :global(html.light) .prose-custom :global(a) {
+    color: #1d4ed8;
+  }
+</style>
