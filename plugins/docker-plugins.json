@@ -7,7 +7,8 @@
   "description": "Official Docker Desktop MCP integration for containerized MCP servers",
   "version": "1.0.0",
   "author": {
-    "username": "docker"
+    "username": "docker",
+    "name": "Docker"
   },
   "category": "devops",
   "tags": [

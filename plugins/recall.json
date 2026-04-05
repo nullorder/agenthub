@@ -7,7 +7,8 @@
   "description": "Full-text search your Claude Code sessions",
   "version": "1.0.0",
   "author": {
-    "username": "zippoxer"
+    "username": "zippoxer",
+    "name": "Zippo"
   },
   "category": "productivity",
   "tags": [

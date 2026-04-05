@@ -7,7 +7,8 @@
   "description": "MCP server exposing Claude Code as a tool for other MCP clients, enabling agent-in-agent patterns",
   "version": "1.0.0",
   "author": {
-    "username": "steipete"
+    "username": "steipete",
+    "name": "Peter Steinberger"
   },
   "category": "development",
   "tags": [

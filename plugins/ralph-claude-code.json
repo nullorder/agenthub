@@ -7,7 +7,8 @@
   "description": "Autonomous AI development loop with intelligent exit detection, rate limiting, and circuit breakers",
   "version": "1.0.0",
   "author": {
-    "username": "frankbria"
+    "username": "frankbria",
+    "name": "Frank Bria"
   },
   "category": "productivity",
   "tags": [

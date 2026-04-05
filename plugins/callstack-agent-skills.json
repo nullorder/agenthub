@@ -7,7 +7,8 @@
   "description": "React Native skills covering profiling, FPS, re-renders, brownfield migration, and GitHub Actions for RN builds",
   "version": "1.0.0",
   "author": {
-    "username": "callstackincubator"
+    "username": "callstackincubator",
+    "name": "Callstack Incubator"
   },
   "category": "development",
   "tags": [

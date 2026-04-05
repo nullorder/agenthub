@@ -7,7 +7,8 @@
   "description": "Agent harness with 28 agents, 119 skills, and 60 commands for full workflow optimization",
   "version": "1.0.0",
   "author": {
-    "username": "affaan-m"
+    "username": "affaan-m",
+    "name": "Affaan Mustafa"
   },
   "category": "productivity",
   "tags": [

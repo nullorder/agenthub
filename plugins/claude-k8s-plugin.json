@@ -7,7 +7,8 @@
   "description": "Build Kubernetes CRD operators with safety hooks restricting operations to local clusters",
   "version": "1.0.0",
   "author": {
-    "username": "Sagart-cactus"
+    "username": "Sagart-cactus",
+    "name": "Sagar Trivedi"
   },
   "category": "devops",
   "tags": [

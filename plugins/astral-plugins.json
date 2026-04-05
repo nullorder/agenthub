@@ -7,7 +7,8 @@
   "description": "Official Astral tools plugin with ruff, ty, and uv skills plus LSP for Python",
   "version": "1.0.0",
   "author": {
-    "username": "astral-sh"
+    "username": "astral-sh",
+    "name": "Astral"
   },
   "category": "development",
   "tags": [

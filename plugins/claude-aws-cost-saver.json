@@ -7,7 +7,8 @@
   "description": "Finds AWS cost savings with 163 checks across 30+ services",
   "version": "1.0.0",
   "author": {
-    "username": "prajapatimehul"
+    "username": "prajapatimehul",
+    "name": "Mehul Prajapati"
   },
   "category": "devops",
   "tags": [

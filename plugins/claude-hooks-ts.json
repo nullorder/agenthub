@@ -7,7 +7,8 @@
   "description": "Type-safe TypeScript hook system with auto-completion and strongly-typed payloads",
   "version": "1.0.0",
   "author": {
-    "username": "johnlindquist"
+    "username": "johnlindquist",
+    "name": "John Lindquist"
   },
   "category": "development",
   "tags": [

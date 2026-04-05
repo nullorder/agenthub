@@ -7,7 +7,8 @@
   "description": "Tracks token usage and saves 30-50% on API costs with smart caching, ContextShield, and auto-compact",
   "version": "1.0.0",
   "author": {
-    "username": "egorfedorov"
+    "username": "egorfedorov",
+    "name": "Egor Fedorov"
   },
   "category": "productivity",
   "tags": [

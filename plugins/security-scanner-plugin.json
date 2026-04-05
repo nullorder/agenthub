@@ -7,7 +7,8 @@
   "description": "Code vulnerability scanning using GitHub's official CVE data with /security-scan and /explain-cve commands",
   "version": "1.0.0",
   "author": {
-    "username": "harish-garg"
+    "username": "harish-garg",
+    "name": "Harish Garg"
   },
   "category": "security",
   "tags": [

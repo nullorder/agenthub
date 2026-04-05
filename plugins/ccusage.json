@@ -7,7 +7,8 @@
   "description": "CLI usage dashboard for tracking Claude Code token consumption",
   "version": "1.0.0",
   "author": {
-    "username": "ryoppippi"
+    "username": "ryoppippi",
+    "name": "ryoppippi"
   },
   "category": "productivity",
   "tags": [

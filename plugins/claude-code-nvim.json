@@ -7,7 +7,8 @@
   "description": "Seamless Neovim integration for Claude Code",
   "version": "1.0.0",
   "author": {
-    "username": "greggh"
+    "username": "greggh",
+    "name": "Gregg Housh"
   },
   "category": "other",
   "tags": [

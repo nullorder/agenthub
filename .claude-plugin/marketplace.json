@@ -18,7 +18,8 @@
       "description": "Official Astral tools plugin with ruff, ty, and uv skills plus LSP for Python",
       "version": "1.0.0",
       "author": {
-        "username": "astral-sh"
+        "username": "astral-sh",
+        "name": "Astral"
       },
       "category": "development",
       "tags": [
@@ -36,7 +37,8 @@
       "description": "7 plugins for AWS services including Amplify, Serverless, DB, Deploy, Migration, and SageMaker",
       "version": "1.0.0",
       "author": {
-        "username": "awslabs"
+        "username": "awslabs",
+        "name": "Amazon Web Services - Labs"
       },
       "category": "devops",
       "tags": [
@@ -55,7 +57,8 @@
       "description": "Agile AI-driven development with 10 specialized agent personas and 26 guided workflow skills",
       "version": "1.0.0",
       "author": {
-        "username": "PabloLION"
+        "username": "PabloLION",
+        "name": "Pablo LION"
       },
       "category": "development",
       "tags": [
@@ -74,7 +77,8 @@
       "description": "LSP servers for 23 languages providing go-to-definition, find-references, hover, and diagnostics",
       "version": "1.0.0",
       "author": {
-        "username": "boostvolt"
+        "username": "boostvolt",
+        "name": "Jan Kott"
       },
       "category": "development",
       "tags": [
@@ -92,7 +96,8 @@
       "description": "React Native skills covering profiling, FPS, re-renders, brownfield migration, and GitHub Actions for RN builds",
       "version": "1.0.0",
       "author": {
-        "username": "callstackincubator"
+        "username": "callstackincubator",
+        "name": "Callstack Incubator"
       },
       "category": "development",
       "tags": [
@@ -109,7 +114,8 @@
       "description": "31 DevOps skills covering Terraform, Helm, kubectl, GitHub Actions with linting, security checks, and dry-run validation",
       "version": "1.0.0",
       "author": {
-        "username": "akin-ozer"
+        "username": "akin-ozer",
+        "name": "Akin Ozer"
       },
       "category": "devops",
       "tags": [
@@ -126,7 +132,8 @@
       "description": "Audio feedback for Claude Code with TTS announcements, sound effects, and contextual AI messages",
       "version": "1.0.0",
       "author": {
-        "username": "husniadil"
+        "username": "husniadil",
+        "name": "Husni Adil Makmur"
       },
       "category": "productivity",
       "tags": [
@@ -144,7 +151,8 @@
       "description": "Project management for Claude Code using GitHub Issues",
       "version": "1.0.0",
       "author": {
-        "username": "automazeio"
+        "username": "automazeio",
+        "name": "Automaze"
       },
       "category": "devops",
       "tags": [
@@ -161,7 +169,8 @@
       "description": "CLI usage dashboard for tracking Claude Code token consumption",
       "version": "1.0.0",
       "author": {
-        "username": "ryoppippi"
+        "username": "ryoppippi",
+        "name": "ryoppippi"
       },
       "category": "productivity",
       "tags": [
@@ -178,7 +187,8 @@
       "description": "Finds AWS cost savings with 163 checks across 30+ services",
       "version": "1.0.0",
       "author": {
-        "username": "prajapatimehul"
+        "username": "prajapatimehul",
+        "name": "Mehul Prajapati"
       },
       "category": "devops",
       "tags": [
@@ -199,7 +209,8 @@
       "description": "Early warning system for plugin security with automated review of all plugin files before execution",
       "version": "1.0.0",
       "author": {
-        "username": "geoffrey-young"
+        "username": "geoffrey-young",
+        "name": "Geoffrey Young"
       },
       "category": "security",
       "tags": [
@@ -218,7 +229,8 @@
       "description": "Guided commands to generate skills, subagents, hooks, slash commands, and plugins with proper scaffolding",
       "version": "1.0.0",
       "author": {
-        "username": "alexanderop"
+        "username": "alexanderop",
+        "name": "Alexander Opalic"
       },
       "category": "development",
       "tags": [
@@ -235,7 +247,8 @@
       "description": "MCP server exposing Claude Code as a tool for other MCP clients, enabling agent-in-agent patterns",
       "version": "1.0.0",
       "author": {
-        "username": "steipete"
+        "username": "steipete",
+        "name": "Peter Steinberger"
       },
       "category": "development",
       "tags": [
@@ -252,7 +265,8 @@
       "description": "Seamless Neovim integration for Claude Code",
       "version": "1.0.0",
       "author": {
-        "username": "greggh"
+        "username": "greggh",
+        "name": "Gregg Housh"
       },
       "category": "other",
       "tags": [
@@ -269,7 +283,8 @@
       "description": "Hook that catches destructive git and filesystem commands before execution",
       "version": "1.0.0",
       "author": {
-        "username": "kenryu42"
+        "username": "kenryu42",
+        "name": "J Liew"
       },
       "category": "security",
       "tags": [
@@ -287,7 +302,8 @@
       "description": "Identity persistence plugin that preserves Claude Code instance identity across context compaction",
       "version": "1.0.0",
       "author": {
-        "username": "israelmirsky"
+        "username": "israelmirsky",
+        "name": "israelmirsky"
       },
       "category": "productivity",
       "tags": [
@@ -304,7 +320,8 @@
       "description": "Production-ready development workflows with specialized agents for requirements analysis, TDD, QA, and code review",
       "version": "1.0.0",
       "author": {
-        "username": "shinpr"
+        "username": "shinpr",
+        "name": "Claude Code Workflows"
       },
       "category": "productivity",
       "tags": [
@@ -322,7 +339,8 @@
       "description": "Tracks token usage and saves 30-50% on API costs with smart caching, ContextShield, and auto-compact",
       "version": "1.0.0",
       "author": {
-        "username": "egorfedorov"
+        "username": "egorfedorov",
+        "name": "Egor Fedorov"
       },
       "category": "productivity",
       "tags": [
@@ -341,7 +359,8 @@
       "description": "Type-safe TypeScript hook system with auto-completion and strongly-typed payloads",
       "version": "1.0.0",
       "author": {
-        "username": "johnlindquist"
+        "username": "johnlindquist",
+        "name": "John Lindquist"
       },
       "category": "development",
       "tags": [
@@ -358,7 +377,8 @@
       "description": "Webhook service connecting Claude Code to GitHub for automated workflows",
       "version": "1.0.0",
       "author": {
-        "username": "claude-did-this"
+        "username": "claude-did-this",
+        "name": "Claude Did This"
       },
       "category": "devops",
       "tags": [
@@ -375,7 +395,8 @@
       "description": "Real-time statusline showing context window usage, active tools, running agents, git info, and todo progress",
       "version": "1.0.0",
       "author": {
-        "username": "jarrodwatts"
+        "username": "jarrodwatts",
+        "name": "Jarrod Watts"
       },
       "category": "productivity",
       "tags": [
@@ -392,7 +413,8 @@
       "description": "Build Kubernetes CRD operators with safety hooks restricting operations to local clusters",
       "version": "1.0.0",
       "author": {
-        "username": "Sagart-cactus"
+        "username": "Sagart-cactus",
+        "name": "Sagar Trivedi"
       },
       "category": "devops",
       "tags": [
@@ -411,7 +433,8 @@
       "description": "19 production-ready plugins covering code review, spec-driven development, architecture patterns, and Python specialist tools",
       "version": "1.0.0",
       "author": {
-        "username": "athola"
+        "username": "athola",
+        "name": "Alex Thola"
       },
       "category": "other",
       "tags": [
@@ -431,7 +454,8 @@
       "description": "Ready-to-use skills for research, science, and engineering documentation",
       "version": "1.0.0",
       "author": {
-        "username": "K-Dense-AI"
+        "username": "K-Dense-AI",
+        "name": "K-Dense"
       },
       "category": "documentation",
       "tags": [
@@ -448,7 +472,8 @@
       "description": "Software development lifecycle automation with SDLC workflow commands and a four-layer skill testing framework",
       "version": "1.0.0",
       "author": {
-        "username": "danielscholl"
+        "username": "danielscholl",
+        "name": "danielscholl"
       },
       "category": "testing",
       "tags": [
@@ -467,7 +492,8 @@
       "description": "Advanced framework with 40+ skills and TOON format for 30-60% token savings",
       "version": "1.0.0",
       "author": {
-        "username": "raintree-technology"
+        "username": "raintree-technology",
+        "name": "Raintree Technology"
       },
       "category": "development",
       "tags": [
@@ -486,7 +512,8 @@
       "description": "Linter for Claude Code projects validating CLAUDE.md, skills, settings, hooks, MCP servers, and plugins",
       "version": "1.0.0",
       "author": {
-        "username": "pdugan20"
+        "username": "pdugan20",
+        "name": "Patrick Dugan"
       },
       "category": "development",
       "tags": [
@@ -505,7 +532,8 @@
       "description": "AI-powered penetration testing automation with OWASP Top 10 coverage, CVSS 3.1 scoring, and MITRE ATT&CK mappings",
       "version": "1.0.0",
       "author": {
-        "username": "transilienceai"
+        "username": "transilienceai",
+        "name": "transilienceai"
       },
       "category": "security",
       "tags": [
@@ -523,7 +551,8 @@
       "description": "Structured workflow emphasizing 80% planning/review and 20% execution with ideate, brainstorm, plan, work, and review phases",
       "version": "1.0.0",
       "author": {
-        "username": "EveryInc"
+        "username": "EveryInc",
+        "name": "Every"
       },
       "category": "productivity",
       "tags": [
@@ -541,7 +570,8 @@
       "description": "Isolated development environments for coding agents using containers",
       "version": "1.0.0",
       "author": {
-        "username": "dagger"
+        "username": "dagger",
+        "name": "Dagger"
       },
       "category": "development",
       "tags": [
@@ -558,7 +588,8 @@
       "description": "Engineering leadership plugin with 54 skills, 6 agents, 9 hooks, and CI/CD automation scripts",
       "version": "1.0.0",
       "author": {
-        "username": "camilooscargbaptista"
+        "username": "camilooscargbaptista",
+        "name": "Camilo Oscar Girardelli Baptista"
       },
       "category": "development",
       "tags": [
@@ -578,7 +609,8 @@
       "description": "116 skills, 43 agents, and 44 commands across Java, TypeScript, Python, PHP, and AWS with LSP support",
       "version": "1.0.0",
       "author": {
-        "username": "giuseppe-trisciuoglio"
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
       },
       "category": "development",
       "tags": [
@@ -599,7 +631,8 @@
       "description": "Official Docker Desktop MCP integration for containerized MCP servers",
       "version": "1.0.0",
       "author": {
-        "username": "docker"
+        "username": "docker",
+        "name": "Docker"
       },
       "category": "devops",
       "tags": [
@@ -616,7 +649,8 @@
       "description": "Documentation generation, technical writing, README creation, and documentation management workflows",
       "version": "1.0.0",
       "author": {
-        "username": "danielrosehill"
+        "username": "danielrosehill",
+        "name": "Daniel Rosehill"
       },
       "category": "documentation",
       "tags": [
@@ -633,7 +667,8 @@
       "description": "Runtime behavioral monitoring plugin that detects divergence between stated intent and actual system behavior",
       "version": "1.0.0",
       "author": {
-        "username": "edamametechnologies"
+        "username": "edamametechnologies",
+        "name": "EDAMAME Technologies"
       },
       "category": "security",
       "tags": [
@@ -653,7 +688,8 @@
       "description": "Agent harness with 28 agents, 119 skills, and 60 commands for full workflow optimization",
       "version": "1.0.0",
       "author": {
-        "username": "affaan-m"
+        "username": "affaan-m",
+        "name": "Affaan Mustafa"
       },
       "category": "productivity",
       "tags": [
@@ -673,7 +709,8 @@
       "description": "Official Expo team AI agent skills for building, deploying, and debugging Expo apps",
       "version": "1.0.0",
       "author": {
-        "username": "expo"
+        "username": "expo",
+        "name": "Expo"
       },
       "category": "development",
       "tags": [
@@ -690,7 +727,8 @@
       "description": "23+ tools with multi-agent Conductor for parallel sessions, serving as CEO, Designer, Eng Manager, and QA",
       "version": "1.0.0",
       "author": {
-        "username": "garrytan"
+        "username": "garrytan",
+        "name": "Garry Tan"
       },
       "category": "development",
       "tags": [
@@ -709,7 +747,8 @@
       "description": "Complete UI/UX system with 152 agents, 74 skills, and 76 commands for structured design communication using design tokens",
       "version": "1.0.0",
       "author": {
-        "username": "HermeticOrmus"
+        "username": "HermeticOrmus",
+        "name": "Diego Bodart"
       },
       "category": "design",
       "tags": [
@@ -728,7 +767,8 @@
       "description": "PostgreSQL skills and MCP server with version-aware docs for schema design, indexing, and performance tuning",
       "version": "1.0.0",
       "author": {
-        "username": "timescale"
+        "username": "timescale",
+        "name": "Tiger Data"
       },
       "category": "data",
       "tags": [
@@ -746,7 +786,8 @@
       "description": "Autonomous AI development loop with intelligent exit detection, rate limiting, and circuit breakers",
       "version": "1.0.0",
       "author": {
-        "username": "frankbria"
+        "username": "frankbria",
+        "name": "Frank Bria"
       },
       "category": "productivity",
       "tags": [
@@ -764,7 +805,8 @@
       "description": "Full-text search your Claude Code sessions",
       "version": "1.0.0",
       "author": {
-        "username": "zippoxer"
+        "username": "zippoxer",
+        "name": "Zippo"
       },
       "category": "productivity",
       "tags": [
@@ -781,7 +823,8 @@
       "description": "Code vulnerability scanning using GitHub's official CVE data with /security-scan and /explain-cve commands",
       "version": "1.0.0",
       "author": {
-        "username": "harish-garg"
+        "username": "harish-garg",
+        "name": "Harish Garg"
       },
       "category": "security",
       "tags": [
@@ -799,7 +842,8 @@
       "description": "Security scanner for AI agents, MCP servers, and skills detecting 15+ security risks",
       "version": "1.0.0",
       "author": {
-        "username": "snyk"
+        "username": "snyk",
+        "name": "Snyk"
       },
       "category": "security",
       "tags": [
@@ -817,7 +861,8 @@
       "description": "13 commands and 17 skills for academic workflows including literature management, manuscript writing, and arXiv/Crossref/BibTeX integration",
       "version": "1.0.0",
       "author": {
-        "username": "Data-Wise"
+        "username": "Data-Wise",
+        "name": "Davood Tofighi"
       },
       "category": "data",
       "tags": [
@@ -835,7 +880,8 @@
       "description": "Direct Chrome browser control via DevTools Protocol with zero dependencies and MCP server mode",
       "version": "1.0.0",
       "author": {
-        "username": "obra"
+        "username": "obra",
+        "name": "Jesse Vincent"
       },
       "category": "development",
       "tags": [
@@ -853,7 +899,8 @@
       "description": "Agentic skills framework and software development methodology with structured TDD workflow",
       "version": "1.0.0",
       "author": {
-        "username": "obra"
+        "username": "obra",
+        "name": "Jesse Vincent"
       },
       "category": "development",
       "tags": [
@@ -873,7 +920,8 @@
       "description": "Automated TDD enforcement that monitors agent actions and blocks violations in real-time",
       "version": "1.0.0",
       "author": {
-        "username": "nizos"
+        "username": "nizos",
+        "name": "Nizar Selander"
       },
       "category": "testing",
       "tags": [
@@ -891,7 +939,8 @@
       "description": "Vercel's official collection of agent skills for deployment workflows",
       "version": "1.0.0",
       "author": {
-        "username": "vercel-labs"
+        "username": "vercel-labs",
+        "name": "Vercel Labs"
       },
       "category": "development",
       "tags": [
@@ -908,7 +957,8 @@
       "description": "182 specialized AI agents, 147 skills, and 95 commands organized into 75 single-purpose plugins",
       "version": "1.0.0",
       "author": {
-        "username": "wshobson"
+        "username": "wshobson",
+        "name": "Seth Hobson"
       },
       "category": "development",
       "tags": [

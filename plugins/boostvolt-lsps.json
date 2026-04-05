@@ -7,7 +7,8 @@
   "description": "LSP servers for 23 languages providing go-to-definition, find-references, hover, and diagnostics",
   "version": "1.0.0",
   "author": {
-    "username": "boostvolt"
+    "username": "boostvolt",
+    "name": "Jan Kott"
   },
   "category": "development",
   "tags": [

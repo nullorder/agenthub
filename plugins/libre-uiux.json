@@ -7,7 +7,8 @@
   "description": "Complete UI/UX system with 152 agents, 74 skills, and 76 commands for structured design communication using design tokens",
   "version": "1.0.0",
   "author": {
-    "username": "HermeticOrmus"
+    "username": "HermeticOrmus",
+    "name": "Diego Bodart"
   },
   "category": "design",
   "tags": [

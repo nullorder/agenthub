@@ -7,7 +7,8 @@
   "description": "PostgreSQL skills and MCP server with version-aware docs for schema design, indexing, and performance tuning",
   "version": "1.0.0",
   "author": {
-    "username": "timescale"
+    "username": "timescale",
+    "name": "Tiger Data"
   },
   "category": "data",
   "tags": [

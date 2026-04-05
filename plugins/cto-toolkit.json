@@ -7,7 +7,8 @@
   "description": "Engineering leadership plugin with 54 skills, 6 agents, 9 hooks, and CI/CD automation scripts",
   "version": "1.0.0",
   "author": {
-    "username": "camilooscargbaptista"
+    "username": "camilooscargbaptista",
+    "name": "Camilo Oscar Girardelli Baptista"
   },
   "category": "development",
   "tags": [

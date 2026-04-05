@@ -7,7 +7,8 @@
   "description": "Agentic skills framework and software development methodology with structured TDD workflow",
   "version": "1.0.0",
   "author": {
-    "username": "obra"
+    "username": "obra",
+    "name": "Jesse Vincent"
   },
   "category": "development",
   "tags": [

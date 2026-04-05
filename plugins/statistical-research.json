@@ -8,7 +8,8 @@
   "description": "13 commands and 17 skills for academic workflows including literature management, manuscript writing, and arXiv/Crossref/BibTeX integration",
   "version": "1.0.0",
   "author": {
-    "username": "Data-Wise"
+    "username": "Data-Wise",
+    "name": "Davood Tofighi"
   },
   "category": "data",
   "tags": [

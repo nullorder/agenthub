@@ -7,7 +7,8 @@
   "description": "Isolated development environments for coding agents using containers",
   "version": "1.0.0",
   "author": {
-    "username": "dagger"
+    "username": "dagger",
+    "name": "Dagger"
   },
   "category": "development",
   "tags": [

@@ -7,7 +7,8 @@
   "description": "116 skills, 43 agents, and 44 commands across Java, TypeScript, Python, PHP, and AWS with LSP support",
   "version": "1.0.0",
   "author": {
-    "username": "giuseppe-trisciuoglio"
+    "username": "giuseppe-trisciuoglio",
+    "name": "Giuseppe Trisciuoglio"
   },
   "category": "development",
   "tags": [

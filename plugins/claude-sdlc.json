@@ -7,7 +7,8 @@
   "description": "Software development lifecycle automation with SDLC workflow commands and a four-layer skill testing framework",
   "version": "1.0.0",
   "author": {
-    "username": "danielscholl"
+    "username": "danielscholl",
+    "name": "danielscholl"
   },
   "category": "testing",
   "tags": [

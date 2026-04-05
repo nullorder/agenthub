@@ -7,7 +7,8 @@
   "description": "Early warning system for plugin security with automated review of all plugin files before execution",
   "version": "1.0.0",
   "author": {
-    "username": "geoffrey-young"
+    "username": "geoffrey-young",
+    "name": "Geoffrey Young"
   },
   "category": "security",
   "tags": [

@@ -7,7 +7,8 @@
   "description": "Direct Chrome browser control via DevTools Protocol with zero dependencies and MCP server mode",
   "version": "1.0.0",
   "author": {
-    "username": "obra"
+    "username": "obra",
+    "name": "Jesse Vincent"
   },
   "category": "development",
   "tags": [

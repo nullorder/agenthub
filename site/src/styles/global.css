@@ -23,6 +23,26 @@ summary {
   padding-bottom: 0.42em;
 }
 
+.author-name {
+  color: #86efac;
+  text-shadow: 0 0 8px rgba(134, 239, 172, 0.3);
+}
+
+.author-name:hover {
+  color: #bbf7d0;
+  text-shadow: 0 0 12px rgba(134, 239, 172, 0.5);
+}
+
+html.light .author-name {
+  color: #166534;
+  text-shadow: 0 0 8px rgba(22, 101, 52, 0.15);
+}
+
+html.light .author-name:hover {
+  color: #14532d;
+  text-shadow: 0 0 12px rgba(22, 101, 52, 0.25);
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);

@@ -7,7 +7,8 @@
   "description": "Hook that catches destructive git and filesystem commands before execution",
   "version": "1.0.0",
   "author": {
-    "username": "kenryu42"
+    "username": "kenryu42",
+    "name": "J Liew"
   },
   "category": "security",
   "tags": [

@@ -103,13 +103,13 @@ const categoryColor = categoryColors[category] || categoryColors.other;
       <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
         {authorUrl ? (
           <span
-            class="text-blue-400 hover:text-blue-300 transition-colors"
+            class="author-name transition-colors"
             onclick={`event.preventDefault(); event.stopPropagation(); window.open('${authorUrl}', '_blank')`}
           >
             {authorDisplay}
           </span>
         ) : (
-          <span>{authorDisplay}</span>
+          <span class="author-name">{authorDisplay}</span>
         )}
         <div class="flex items-center gap-2">
           <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs">
@@ -153,12 +153,12 @@ const categoryColor = categoryColors[category] || categoryColors.other;
             href={authorUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-blue-400 hover:text-blue-300 transition-colors"
+            class="author-name transition-colors"
           >
             {authorDisplay}
           </a>
         ) : (
-          <span>{authorDisplay}</span>
+          <span class="author-name">{authorDisplay}</span>
         )}
         <div class="flex items-center gap-2">
           {license && (
