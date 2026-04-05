@@ -11,7 +11,7 @@ import Footer from "../components/Footer.astro";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const marketplacePath = resolve(process.cwd(), "../marketplace.json");
+const marketplacePath = resolve(process.cwd(), "../.claude-plugin/marketplace.json");
 const marketplace = JSON.parse(readFileSync(marketplacePath, "utf-8"));
 const plugins = marketplace.plugins || [];
 

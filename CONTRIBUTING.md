@@ -121,7 +121,7 @@ You can optionally specify `"version"` (e.g. `"^2.0.0"`) and `"registry"` for pr
 
 3. **Open a pull request** with your new file.
 
-> **Note:** Do not edit `marketplace.json` directly — it is auto-generated from the files in `plugins/` after your PR is merged.
+> **Note:** Do not edit `.claude-plugin/marketplace.json` directly — it is auto-generated from the files in `plugins/` after your PR is merged.
 
 ## Plugin naming
 

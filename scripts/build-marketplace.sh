@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PLUGINS_DIR="$REPO_ROOT/plugins"
-OUTPUT="$REPO_ROOT/marketplace.json"
+OUTPUT="$REPO_ROOT/.claude-plugin/marketplace.json"
 
 # Collect all plugin JSON files, sorted by name for deterministic output
 plugin_files=()
