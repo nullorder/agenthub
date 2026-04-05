@@ -5,12 +5,73 @@ const base = import.meta.env.BASE_URL;
 <nav
   class="sticky top-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-xl"
 >
-  <div class="mx-auto flex max-w-7xl items-center justify-center px-4 py-3">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
     <div class="flex items-center gap-2">
       <img src={`${base}logo.svg`} alt="AgentHub" class="h-7 w-7" />
       <span class="font-pixel text-2xl font-bold tracking-tight text-white"
         >AGENTHUB</span
       >
     </div>
+
+    <button
+      id="theme-toggle"
+      class="rounded-lg border border-white/10 bg-white/5 p-2 text-gray-400 transition-colors hover:border-white/20 hover:text-white"
+      aria-label="Toggle theme"
+    >
+      <!-- Sun (light mode) -->
+      <svg id="icon-sun" class="h-5 w-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <!-- Moon (dark mode) -->
+      <svg id="icon-moon" class="h-5 w-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <!-- Monitor (system mode) -->
+      <svg id="icon-system" class="h-5 w-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/>
+      </svg>
+    </button>
   </div>
 </nav>
+
+<script>
+  const modes = ['dark', 'light', 'system'];
+  const toggle = document.getElementById('theme-toggle');
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+  const iconSystem = document.getElementById('icon-system');
+
+  function getStored() {
+    return localStorage.getItem('theme') || 'dark';
+  }
+
+  function getEffective(mode) {
+    if (mode === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return mode;
+  }
+
+  function applyTheme(mode) {
+    const effective = getEffective(mode);
+    document.documentElement.classList.toggle('light', effective === 'light');
+    document.documentElement.classList.toggle('dark', effective === 'dark');
+
+    iconSun.classList.toggle('hidden', mode !== 'light');
+    iconMoon.classList.toggle('hidden', mode !== 'dark');
+    iconSystem.classList.toggle('hidden', mode !== 'system');
+  }
+
+  applyTheme(getStored());
+
+  toggle.addEventListener('click', () => {
+    const current = getStored();
+    const next = modes[(modes.indexOf(current) + 1) % modes.length];
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (getStored() === 'system') applyTheme('system');
+  });
+</script>
