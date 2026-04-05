@@ -27,6 +27,7 @@ With the following content:
     "username": "your-username"
   },
   "category": "development",
+  "license": "MIT",
   "tags": ["skills", "agents"]
 }
 ```
@@ -62,7 +63,8 @@ For plugins hosted on GitLab, Bitbucket, or other Git hosts:
   "author": {
     "username": "your-username"
   },
-  "category": "development"
+  "category": "development",
+  "license": "MIT"
 }
 ```
 
@@ -85,7 +87,8 @@ For plugins that live inside a subdirectory of a larger repo (e.g. monorepos):
   "author": {
     "username": "your-username"
   },
-  "category": "development"
+  "category": "development",
+  "license": "MIT"
 }
 ```
 
@@ -107,7 +110,8 @@ For plugins published to npm:
   "author": {
     "username": "your-username"
   },
-  "category": "development"
+  "category": "development",
+  "license": "MIT"
 }
 ```
 
@@ -163,4 +167,4 @@ Open a PR removing your file from `plugins/`, or open an issue requesting remova
 
 ## Need help?
 
-If you have questions or need help with your submission, join our [Discord](https://discord.gg/5YrbwNRGaE) and ask in the community channels. You can also reach us on [X (@orderofnull)](https://x.com/orderofnull).
+If you have questions or need help with your submission, join our [Discord](https://discord.gg/AJMEeFXxXy) and ask in the community channels. You can also reach us on [X (@orderofnull)](https://x.com/orderofnull).

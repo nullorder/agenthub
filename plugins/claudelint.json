@@ -1,9 +1,19 @@
 {
   "name": "claudelint",
-  "source": { "source": "github", "repo": "pdugan20/claudelint" },
+  "source": {
+    "source": "github",
+    "repo": "pdugan20/claudelint"
+  },
   "description": "Linter for Claude Code projects validating CLAUDE.md, skills, settings, hooks, MCP servers, and plugins",
   "version": "1.0.0",
-  "author": { "username": "pdugan20" },
+  "author": {
+    "username": "pdugan20"
+  },
   "category": "development",
-  "tags": ["skills", "commands", "hooks"]
+  "tags": [
+    "skills",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
 }

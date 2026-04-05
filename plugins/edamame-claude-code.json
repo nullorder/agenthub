@@ -15,5 +15,6 @@
     "agents",
     "commands",
     "mcp-servers"
-  ]
+  ],
+  "license": "Apache-2.0"
 }

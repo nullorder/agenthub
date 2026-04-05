@@ -14,5 +14,6 @@
     "agents",
     "commands",
     "hooks"
-  ]
+  ],
+  "license": "MIT"
 }

@@ -1,9 +1,19 @@
 {
   "name": "wshobson-agents",
-  "source": { "source": "github", "repo": "wshobson/agents" },
+  "source": {
+    "source": "github",
+    "repo": "wshobson/agents"
+  },
   "description": "182 specialized AI agents, 147 skills, and 95 commands organized into 75 single-purpose plugins",
   "version": "1.0.0",
-  "author": { "username": "wshobson" },
+  "author": {
+    "username": "wshobson"
+  },
   "category": "development",
-  "tags": ["skills", "agents", "commands"]
+  "tags": [
+    "skills",
+    "agents",
+    "commands"
+  ],
+  "license": "MIT"
 }

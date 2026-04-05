@@ -1,9 +1,18 @@
 {
   "name": "pg-aiguide",
-  "source": { "source": "github", "repo": "timescale/pg-aiguide" },
+  "source": {
+    "source": "github",
+    "repo": "timescale/pg-aiguide"
+  },
   "description": "PostgreSQL skills and MCP server with version-aware docs for schema design, indexing, and performance tuning",
   "version": "1.0.0",
-  "author": { "username": "timescale" },
+  "author": {
+    "username": "timescale"
+  },
   "category": "data",
-  "tags": ["skills", "mcp-servers"]
+  "tags": [
+    "skills",
+    "mcp-servers"
+  ],
+  "license": "Apache-2.0"
 }

@@ -1,9 +1,18 @@
 {
   "name": "ralph-claude-code",
-  "source": { "source": "github", "repo": "frankbria/ralph-claude-code" },
+  "source": {
+    "source": "github",
+    "repo": "frankbria/ralph-claude-code"
+  },
   "description": "Autonomous AI development loop with intelligent exit detection, rate limiting, and circuit breakers",
   "version": "1.0.0",
-  "author": { "username": "frankbria" },
+  "author": {
+    "username": "frankbria"
+  },
   "category": "productivity",
-  "tags": ["hooks", "commands"]
+  "tags": [
+    "hooks",
+    "commands"
+  ],
+  "license": "MIT"
 }

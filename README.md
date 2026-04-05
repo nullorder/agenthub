@@ -8,7 +8,7 @@
 
 <p align="center">A community-driven plugin marketplace for Claude Code. Open to everyone.</p>
 
-[![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://discord.gg/5YrbwNRGaE)
+[![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://discord.gg/AJMEeFXxXy)
 [![X (Twitter)](https://img.shields.io/badge/@orderofnull-000000?logo=x&logoColor=white)](https://x.com/orderofnull)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 

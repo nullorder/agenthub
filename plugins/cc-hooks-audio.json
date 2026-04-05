@@ -1,9 +1,18 @@
 {
   "name": "cc-hooks-audio",
-  "source": { "source": "github", "repo": "husniadil/cc-hooks" },
+  "source": {
+    "source": "github",
+    "repo": "husniadil/cc-hooks"
+  },
   "description": "Audio feedback for Claude Code with TTS announcements, sound effects, and contextual AI messages",
   "version": "1.0.0",
-  "author": { "username": "husniadil" },
+  "author": {
+    "username": "husniadil"
+  },
   "category": "productivity",
-  "tags": ["hooks", "commands"]
+  "tags": [
+    "hooks",
+    "commands"
+  ],
+  "license": "MIT"
 }

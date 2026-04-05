@@ -12,5 +12,6 @@
   "category": "development",
   "tags": [
     "commands"
-  ]
+  ],
+  "license": "MIT"
 }

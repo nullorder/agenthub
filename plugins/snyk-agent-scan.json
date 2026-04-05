@@ -1,9 +1,17 @@
 {
   "name": "snyk-agent-scan",
-  "source": { "source": "github", "repo": "snyk/agent-scan" },
+  "source": {
+    "source": "github",
+    "repo": "snyk/agent-scan"
+  },
   "description": "Security scanner for AI agents, MCP servers, and skills detecting 15+ security risks",
   "version": "1.0.0",
-  "author": { "username": "snyk" },
+  "author": {
+    "username": "snyk"
+  },
   "category": "security",
-  "tags": ["commands"]
+  "tags": [
+    "commands"
+  ],
+  "license": "Apache-2.0"
 }

@@ -16,5 +16,6 @@
     "hooks",
     "commands",
     "mcp-servers"
-  ]
+  ],
+  "license": "MIT"
 }

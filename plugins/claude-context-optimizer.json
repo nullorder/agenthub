@@ -1,9 +1,19 @@
 {
   "name": "claude-context-optimizer",
-  "source": { "source": "github", "repo": "egorfedorov/claude-context-optimizer" },
+  "source": {
+    "source": "github",
+    "repo": "egorfedorov/claude-context-optimizer"
+  },
   "description": "Tracks token usage and saves 30-50% on API costs with smart caching, ContextShield, and auto-compact",
   "version": "1.0.0",
-  "author": { "username": "egorfedorov" },
+  "author": {
+    "username": "egorfedorov"
+  },
   "category": "productivity",
-  "tags": ["hooks", "commands", "agents"]
+  "tags": [
+    "hooks",
+    "commands",
+    "agents"
+  ],
+  "license": "MIT"
 }

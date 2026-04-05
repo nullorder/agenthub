@@ -1,9 +1,19 @@
 {
   "name": "claude-k8s-plugin",
-  "source": { "source": "github", "repo": "Sagart-cactus/claude-k8s-plugin" },
+  "source": {
+    "source": "github",
+    "repo": "Sagart-cactus/claude-k8s-plugin"
+  },
   "description": "Build Kubernetes CRD operators with safety hooks restricting operations to local clusters",
   "version": "1.0.0",
-  "author": { "username": "Sagart-cactus" },
+  "author": {
+    "username": "Sagart-cactus"
+  },
   "category": "devops",
-  "tags": ["skills", "commands", "hooks"]
+  "tags": [
+    "skills",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
 }

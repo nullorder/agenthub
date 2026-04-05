@@ -1,9 +1,18 @@
 {
   "name": "boostvolt-lsps",
-  "source": { "source": "github", "repo": "boostvolt/claude-code-lsps" },
+  "source": {
+    "source": "github",
+    "repo": "boostvolt/claude-code-lsps"
+  },
   "description": "LSP servers for 23 languages providing go-to-definition, find-references, hover, and diagnostics",
   "version": "1.0.0",
-  "author": { "username": "boostvolt" },
+  "author": {
+    "username": "boostvolt"
+  },
   "category": "development",
-  "tags": ["lsp-servers", "hooks"]
+  "tags": [
+    "lsp-servers",
+    "hooks"
+  ],
+  "license": "MIT"
 }

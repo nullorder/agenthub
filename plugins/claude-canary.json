@@ -1,9 +1,19 @@
 {
   "name": "claude-canary",
-  "source": { "source": "github", "repo": "geoffrey-young/anthropic-hackathon-2026" },
+  "source": {
+    "source": "github",
+    "repo": "geoffrey-young/anthropic-hackathon-2026"
+  },
   "description": "Early warning system for plugin security with automated review of all plugin files before execution",
   "version": "1.0.0",
-  "author": { "username": "geoffrey-young" },
+  "author": {
+    "username": "geoffrey-young"
+  },
   "category": "security",
-  "tags": ["hooks", "agents", "skills"]
+  "tags": [
+    "hooks",
+    "agents",
+    "skills"
+  ],
+  "license": "MIT"
 }

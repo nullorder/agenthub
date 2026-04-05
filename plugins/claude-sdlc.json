@@ -14,5 +14,6 @@
     "skills",
     "agents",
     "commands"
-  ]
+  ],
+  "license": "MIT"
 }

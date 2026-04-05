@@ -2,6 +2,7 @@
 
 **Plugin name:**
 **Source:** <!-- e.g. GitHub repo, Git URL, npm package -->
+**License:** <!-- e.g. MIT, Apache-2.0 -->
 **Category:**
 
 ### Checklist

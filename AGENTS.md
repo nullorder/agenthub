@@ -56,9 +56,12 @@ Every file in `plugins/` must follow this structure:
     "username": "author-username"
   },
   "category": "development",
+  "license": "MIT",
   "tags": ["skills", "agents"]
 }
 ```
+
+The `license` field is required. Use SPDX identifiers (e.g. `MIT`, `Apache-2.0`, `MIT OR Apache-2.0`).
 
 The `tags` field is optional. It indicates what components the plugin provides.
 

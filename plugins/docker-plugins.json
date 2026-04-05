@@ -1,9 +1,17 @@
 {
   "name": "docker-plugins",
-  "source": { "source": "github", "repo": "docker/claude-plugins" },
+  "source": {
+    "source": "github",
+    "repo": "docker/claude-plugins"
+  },
   "description": "Official Docker Desktop MCP integration for containerized MCP servers",
   "version": "1.0.0",
-  "author": { "username": "docker" },
+  "author": {
+    "username": "docker"
+  },
   "category": "devops",
-  "tags": ["mcp-servers"]
+  "tags": [
+    "mcp-servers"
+  ],
+  "license": "MIT"
 }

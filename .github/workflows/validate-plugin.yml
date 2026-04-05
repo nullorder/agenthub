@@ -27,7 +27,7 @@ jobs:
               continue
             fi
 
-            for field in name description version; do
+            for field in name description version license; do
               val=$(jq -r ".$field // empty" "$f")
               if [ -z "$val" ]; then
                 echo "  ERROR: Missing required field '$field'"

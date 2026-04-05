@@ -12,5 +12,6 @@
   "category": "productivity",
   "tags": [
     "mcp-servers"
-  ]
+  ],
+  "license": "MIT"
 }

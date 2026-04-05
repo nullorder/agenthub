@@ -12,5 +12,6 @@
   "category": "documentation",
   "tags": [
     "commands"
-  ]
+  ],
+  "license": "MIT"
 }

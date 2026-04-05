@@ -13,5 +13,6 @@
   "tags": [
     "hooks",
     "commands"
-  ]
+  ],
+  "license": "MIT"
 }

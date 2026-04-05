@@ -14,5 +14,6 @@
     "skills",
     "hooks",
     "mcp-servers"
-  ]
+  ],
+  "license": "Apache-2.0"
 }

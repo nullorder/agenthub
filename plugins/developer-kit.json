@@ -1,9 +1,21 @@
 {
   "name": "developer-kit",
-  "source": { "source": "github", "repo": "giuseppe-trisciuoglio/developer-kit" },
+  "source": {
+    "source": "github",
+    "repo": "giuseppe-trisciuoglio/developer-kit"
+  },
   "description": "116 skills, 43 agents, and 44 commands across Java, TypeScript, Python, PHP, and AWS with LSP support",
   "version": "1.0.0",
-  "author": { "username": "giuseppe-trisciuoglio" },
+  "author": {
+    "username": "giuseppe-trisciuoglio"
+  },
   "category": "development",
-  "tags": ["skills", "agents", "commands", "hooks", "lsp-servers"]
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "hooks",
+    "lsp-servers"
+  ],
+  "license": "MIT"
 }

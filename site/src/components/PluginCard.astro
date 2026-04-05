@@ -5,10 +5,11 @@ interface Props {
   category: string;
   author: { username: string; name?: string; url?: string };
   source: any;
+  license?: string;
   tags?: string[];
 }
 
-const { name, description, category, author, source, tags = [] } = Astro.props;
+const { name, description, category, author, source, license, tags = [] } = Astro.props;
 
 function getSourceUrl(source: any): string {
   if (typeof source === 'string') return '';
@@ -91,9 +92,16 @@ const categoryColor = categoryColors[category] || categoryColors.other;
       ) : (
         <span>{authorDisplay}</span>
       )}
-      <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15">
-        {sourceLabel}
-      </span>
+      <div class="flex items-center gap-2">
+        {license && (
+          <span class="rounded bg-white/10 px-2 py-0.5 text-xs text-gray-400">
+            {license}
+          </span>
+        )}
+        <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15">
+          {sourceLabel}
+        </span>
+      </div>
     </div>
   </a>
 ) : (
@@ -131,9 +139,16 @@ const categoryColor = categoryColors[category] || categoryColors.other;
       ) : (
         <span>{authorDisplay}</span>
       )}
-      <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400">
-        {sourceLabel}
-      </span>
+      <div class="flex items-center gap-2">
+        {license && (
+          <span class="rounded bg-white/10 px-2 py-0.5 text-xs text-gray-400">
+            {license}
+          </span>
+        )}
+        <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400">
+          {sourceLabel}
+        </span>
+      </div>
     </div>
   </div>
 )}
