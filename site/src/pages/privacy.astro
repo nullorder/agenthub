@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy — AgentHub">
+  <Navbar />
+
+  <div class="mx-auto max-w-3xl px-4 py-16 flex-1">
+    <h1 class="font-pixel mb-8 text-4xl font-bold text-white">Privacy Policy</h1>
+    <p class="mb-6 text-base text-gray-400">Last updated: April 2026</p>
+
+    <div class="space-y-8 text-base leading-relaxed text-gray-300">
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Overview</h2>
+        <p>AgentHub is an open-source, community-driven plugin marketplace for Claude Code, maintained by <a href="https://github.com/nullorder" target="_blank" rel="noopener noreferrer" class="author-name">NullOrder</a>. We are committed to transparency and minimal data collection. This policy explains what data we collect and how we use it.</p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">What we collect</h2>
+
+        <h3 class="mb-2 mt-4 text-lg font-medium text-white">Website analytics</h3>
+        <p>We use Google Analytics to understand how visitors use the AgentHub website. This collects:</p>
+        <ul class="mt-2 list-disc space-y-1 pl-6 text-gray-400">
+          <li>Pages visited and time spent</li>
+          <li>Referral source (how you found us)</li>
+          <li>General geographic region (country/city level)</li>
+          <li>Device type, browser, and operating system</li>
+        </ul>
+        <p class="mt-2 text-gray-400">This data is aggregated and anonymous. We do not track individual users or build personal profiles.</p>
+
+        <h3 class="mb-2 mt-4 text-lg font-medium text-white">Plugin marketplace</h3>
+        <p>The AgentHub marketplace catalog is a static JSON file. When you install plugins via Claude Code, the installation is handled entirely by Claude Code's built-in plugin system. AgentHub does not collect, store, or process any data from plugin installations.</p>
+
+        <h3 class="mb-2 mt-4 text-lg font-medium text-white">GitHub contributions</h3>
+        <p>When you submit a plugin via pull request, your GitHub username and the plugin metadata you provide (name, description, source URL, license) become part of the public marketplace catalog. This is inherent to contributing to an open-source project.</p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">What we don't collect</h2>
+        <ul class="list-disc space-y-1 pl-6 text-gray-400">
+          <li>Personal information (name, email, address) beyond what's publicly available on your GitHub profile</li>
+          <li>Authentication credentials or API keys</li>
+          <li>Plugin usage data or telemetry</li>
+          <li>Cookies for tracking or advertising purposes</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Third-party services</h2>
+        <ul class="list-disc space-y-1 pl-6 text-gray-400">
+          <li><strong class="text-white">GitHub</strong> — hosts the repository, handles pull requests and issues. Subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">GitHub's privacy policy</a>.</li>
+          <li><strong class="text-white">GitHub Pages</strong> — hosts the website. No additional tracking beyond Google Analytics.</li>
+          <li><strong class="text-white">Google Analytics</strong> — website analytics. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Google's privacy policy</a>.</li>
+          <li><strong class="text-white">Google Fonts</strong> — loads the Space Grotesk font. Subject to <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Google Fonts privacy FAQ</a>.</li>
+          <li><strong class="text-white">Discord</strong> — community chat. Subject to <a href="https://discord.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Discord's privacy policy</a>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Open source</h2>
+        <p>AgentHub is fully open source under the <a href="https://github.com/nullorder/agenthub/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">MIT License</a>. The entire codebase, including this website and the marketplace catalog, is publicly auditable on <a href="https://github.com/nullorder/agenthub" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">GitHub</a>. Individual plugins listed in the marketplace have their own licenses — check each plugin's repository for details.</p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Community standards</h2>
+        <p>All participation in AgentHub is governed by our <a href="https://github.com/nullorder/agenthub/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Code of Conduct</a> and <a href="https://github.com/nullorder/agenthub/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Contributing Guidelines</a>. We do not tolerate malicious plugins, data harvesting, or any form of harassment.</p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Contact</h2>
+        <p>Questions about this policy? Reach out via:</p>
+        <ul class="mt-2 list-disc space-y-1 pl-6 text-gray-400">
+          <li><a href="https://github.com/nullorder/agenthub/issues" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">GitHub Issues</a></li>
+          <li><a href="https://discord.gg/AJMEeFXxXy" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Discord</a></li>
+          <li><a href="https://x.com/orderofnull" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">X (@orderofnull)</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

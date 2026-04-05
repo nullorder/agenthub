@@ -8,7 +8,11 @@ const base = import.meta.env.BASE_URL;
   <div
     class="mx-auto max-w-7xl px-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-between"
   >
-    <a href="https://github.com/nullorder/agenthub/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-base text-gray-500 hover:text-white transition-colors">MIT License</a>
+    <div class="flex items-center gap-4 text-base text-gray-500">
+      <a href="https://github.com/nullorder/agenthub/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">MIT License</a>
+      <span class="text-gray-700">|</span>
+      <a href={`${base}privacy`} class="hover:text-white transition-colors">Privacy</a>
+    </div>
 
     <a
       href="https://github.com/nullorder"
