@@ -1,0 +1,19 @@
+{
+  "name": "sentry-for-ai",
+  "source": {
+    "source": "github",
+    "repo": "getsentry/sentry-for-ai"
+  },
+  "description": "Skills and commands for Sentry error monitoring, alerts, and debugging with /seer command",
+  "version": "1.0.0",
+  "author": {
+    "username": "getsentry",
+    "name": "Sentry"
+  },
+  "category": "devops",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

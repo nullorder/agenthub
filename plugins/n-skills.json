@@ -1,0 +1,18 @@
+{
+  "name": "n-skills",
+  "source": {
+    "source": "github",
+    "repo": "numman-ali/n-skills"
+  },
+  "description": "Curated plugin marketplace with skills for automation, tools, and workflow",
+  "version": "1.0.0",
+  "author": {
+    "username": "numman-ali",
+    "name": "Numman Ali"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

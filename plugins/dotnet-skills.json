@@ -1,0 +1,18 @@
+{
+  "name": "dotnet-skills",
+  "source": {
+    "source": "github",
+    "repo": "Aaronontheweb/dotnet-skills"
+  },
+  "description": "Skills and sub-agents for .NET developers covering C#, F#, and ASP.NET workflows",
+  "version": "1.0.0",
+  "author": {
+    "username": "Aaronontheweb",
+    "name": "Aaron Stannard"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "humanizer",
+  "source": {
+    "source": "github",
+    "repo": "blader/humanizer"
+  },
+  "description": "Skill that removes signs of AI-generated writing from text",
+  "version": "1.0.0",
+  "author": {
+    "username": "blader",
+    "name": "blader"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

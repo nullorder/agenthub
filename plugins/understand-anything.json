@@ -1,0 +1,18 @@
+{
+  "name": "understand-anything",
+  "source": {
+    "source": "github",
+    "repo": "Lum1104/Understand-Anything"
+  },
+  "description": "Skills that turn any codebase into an interactive knowledge graph",
+  "version": "1.0.0",
+  "author": {
+    "username": "Lum1104",
+    "name": "Lum1104"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

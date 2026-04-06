@@ -1,0 +1,18 @@
+{
+  "name": "playwright-skill",
+  "source": {
+    "source": "github",
+    "repo": "lackeyjb/playwright-skill"
+  },
+  "description": "Browser automation skill using Playwright for testing and web interaction",
+  "version": "1.0.0",
+  "author": {
+    "username": "lackeyjb",
+    "name": "John Lackey"
+  },
+  "category": "testing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

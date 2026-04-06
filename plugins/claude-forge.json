@@ -1,0 +1,19 @@
+{
+  "name": "claude-forge",
+  "source": {
+    "source": "github",
+    "repo": "sangrokjung/claude-forge"
+  },
+  "description": "Plugin framework inspired by oh-my-zsh with 11 agents, 36 commands, and 15 skills",
+  "version": "1.0.0",
+  "author": {
+    "username": "sangrokjung",
+    "name": "Sangrok Jung"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}
