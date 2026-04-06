@@ -1,0 +1,19 @@
+{
+  "name": "claude-elixir-phoenix",
+  "source": {
+    "source": "github",
+    "repo": "oliver-kriska/claude-elixir-phoenix"
+  },
+  "description": "Elixir/Phoenix/LiveView plugin with 20 specialist agents for BEAM development",
+  "version": "1.0.0",
+  "author": {
+    "username": "oliver-kriska",
+    "name": "Oliver Kriska"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

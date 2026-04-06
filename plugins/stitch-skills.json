@@ -1,0 +1,18 @@
+{
+  "name": "stitch-skills",
+  "source": {
+    "source": "github",
+    "repo": "google-labs-code/stitch-skills"
+  },
+  "description": "Google Stitch skills for design-to-code, React components, shadcn-ui, and Remotion video",
+  "version": "1.0.0",
+  "author": {
+    "username": "google-labs-code",
+    "name": "Google Labs Code"
+  },
+  "category": "design",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

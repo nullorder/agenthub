@@ -1,0 +1,18 @@
+{
+  "name": "supabase-agent-skills",
+  "source": {
+    "source": "github",
+    "repo": "supabase/agent-skills"
+  },
+  "description": "Agent skills for Supabase covering database, auth, storage, realtime, and edge functions",
+  "version": "1.0.0",
+  "author": {
+    "username": "supabase",
+    "name": "Supabase"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

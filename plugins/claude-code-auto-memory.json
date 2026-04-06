@@ -1,0 +1,19 @@
+{
+  "name": "claude-code-auto-memory",
+  "source": {
+    "source": "github",
+    "repo": "severity1/claude-code-auto-memory"
+  },
+  "description": "Plugin that automatically maintains and syncs CLAUDE.md memory files",
+  "version": "1.0.0",
+  "author": {
+    "username": "severity1",
+    "name": "severity1"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

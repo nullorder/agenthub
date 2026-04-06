@@ -1,0 +1,18 @@
+{
+  "name": "huggingface-skills",
+  "source": {
+    "source": "github",
+    "repo": "huggingface/skills"
+  },
+  "description": "AI/ML skills for dataset creation, model training, evaluation, and the Hugging Face ecosystem",
+  "version": "1.0.0",
+  "author": {
+    "username": "huggingface",
+    "name": "Hugging Face"
+  },
+  "category": "data",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

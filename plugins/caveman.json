@@ -1,0 +1,18 @@
+{
+  "name": "caveman",
+  "source": {
+    "source": "github",
+    "repo": "JuliusBrussee/caveman"
+  },
+  "description": "Token-saving skill that cuts 75% of tokens by using caveman-style communication",
+  "version": "1.0.0",
+  "author": {
+    "username": "JuliusBrussee",
+    "name": "Julius Brussee"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

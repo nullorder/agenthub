@@ -1,0 +1,19 @@
+{
+  "name": "jeffallan-claude-skills",
+  "source": {
+    "source": "github",
+    "repo": "Jeffallan/claude-skills"
+  },
+  "description": "66 specialized skills for full-stack developers across multiple frameworks",
+  "version": "1.0.0",
+  "author": {
+    "username": "Jeffallan",
+    "name": "Jeff Allan"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

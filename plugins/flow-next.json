@@ -1,0 +1,19 @@
+{
+  "name": "flow-next",
+  "source": {
+    "source": "github",
+    "repo": "gmickel/flow-next"
+  },
+  "description": "Plan-first AI workflow plugin with task tracking and worker subagents",
+  "version": "1.0.0",
+  "author": {
+    "username": "gmickel",
+    "name": "Gerald Mickel"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

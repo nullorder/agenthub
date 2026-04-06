@@ -1,0 +1,18 @@
+{
+  "name": "axiom-apple-skills",
+  "source": {
+    "source": "github",
+    "repo": "CharlesWiltgen/Axiom"
+  },
+  "description": "Battle-tested skills for iOS, iPadOS, watchOS, and tvOS development",
+  "version": "1.0.0",
+  "author": {
+    "username": "CharlesWiltgen",
+    "name": "Charles Wiltgen"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

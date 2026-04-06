@@ -1,0 +1,19 @@
+{
+  "name": "stripe-ai",
+  "source": {
+    "source": "github",
+    "repo": "stripe/ai"
+  },
+  "description": "Skills and commands for building AI-powered products with Stripe payments and webhooks",
+  "version": "1.0.0",
+  "author": {
+    "username": "stripe",
+    "name": "Stripe"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

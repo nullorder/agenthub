@@ -1,0 +1,19 @@
+{
+  "name": "cloudflare-skills",
+  "source": {
+    "source": "github",
+    "repo": "cloudflare/skills"
+  },
+  "description": "Skills and commands for Cloudflare Workers, Pages, D1, R2, AI, and networking",
+  "version": "1.0.0",
+  "author": {
+    "username": "cloudflare",
+    "name": "Cloudflare"
+  },
+  "category": "devops",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "Apache-2.0"
+}

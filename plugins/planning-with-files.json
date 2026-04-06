@@ -1,0 +1,19 @@
+{
+  "name": "planning-with-files",
+  "source": {
+    "source": "github",
+    "repo": "OthmanAdi/planning-with-files"
+  },
+  "description": "Manus-style persistent markdown planning skill for structured project planning",
+  "version": "1.0.0",
+  "author": {
+    "username": "OthmanAdi",
+    "name": "Othman Adi"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

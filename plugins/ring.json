@@ -1,0 +1,18 @@
+{
+  "name": "ring",
+  "source": {
+    "source": "github",
+    "repo": "LerianStudio/ring"
+  },
+  "description": "89 skills and 38 agents enforcing engineering best practices across teams",
+  "version": "1.0.0",
+  "author": {
+    "username": "LerianStudio",
+    "name": "Lerian Studio"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}
