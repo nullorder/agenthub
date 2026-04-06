@@ -1,0 +1,19 @@
+{
+  "name": "manim-video",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/NousResearch/hermes-agent.git",
+    "path": "skills/creative/manim-video"
+  },
+  "description": "Production pipeline for mathematical and technical animations using Manim Community Edition",
+  "version": "1.0.0",
+  "author": {
+    "username": "NousResearch",
+    "name": "Nous Research"
+  },
+  "category": "design",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}
