@@ -10,6 +10,25 @@
   },
   "plugins": [
     {
+      "name": "alirezarezvani-claude-skills",
+      "source": {
+        "source": "github",
+        "repo": "alirezarezvani/claude-skills"
+      },
+      "description": "220+ skills and agent plugins across engineering, marketing, product, and compliance",
+      "version": "1.0.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "astral-plugins",
       "source": {
         "source": "github",
@@ -47,6 +66,24 @@
         "mcp-servers"
       ],
       "license": "Apache-2.0"
+    },
+    {
+      "name": "axiom-apple-skills",
+      "source": {
+        "source": "github",
+        "repo": "CharlesWiltgen/Axiom"
+      },
+      "description": "Battle-tested skills for iOS, iPadOS, watchOS, and tvOS development",
+      "version": "1.0.0",
+      "author": {
+        "username": "CharlesWiltgen",
+        "name": "Charles Wiltgen"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "bmad-plugin",
@@ -100,6 +137,24 @@
         "name": "Callstack Incubator"
       },
       "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "caveman",
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      },
+      "description": "Token-saving skill that cuts 75% of tokens by using caveman-style communication",
+      "version": "1.0.0",
+      "author": {
+        "username": "JuliusBrussee",
+        "name": "Julius Brussee"
+      },
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -217,6 +272,25 @@
         "hooks",
         "agents",
         "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "claude-code-auto-memory",
+      "source": {
+        "source": "github",
+        "repo": "severity1/claude-code-auto-memory"
+      },
+      "description": "Plugin that automatically maintains and syncs CLAUDE.md memory files",
+      "version": "1.0.0",
+      "author": {
+        "username": "severity1",
+        "name": "severity1"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "commands"
       ],
       "license": "MIT"
     },
@@ -347,6 +421,44 @@
         "hooks",
         "commands",
         "agents"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "claude-elixir-phoenix",
+      "source": {
+        "source": "github",
+        "repo": "oliver-kriska/claude-elixir-phoenix"
+      },
+      "description": "Elixir/Phoenix/LiveView plugin with 20 specialist agents for BEAM development",
+      "version": "1.0.0",
+      "author": {
+        "username": "oliver-kriska",
+        "name": "Oliver Kriska"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "claude-forge",
+      "source": {
+        "source": "github",
+        "repo": "sangrokjung/claude-forge"
+      },
+      "description": "Plugin framework inspired by oh-my-zsh with 11 agents, 36 commands, and 15 skills",
+      "version": "1.0.0",
+      "author": {
+        "username": "sangrokjung",
+        "name": "Sangrok Jung"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands"
       ],
       "license": "MIT"
     },
@@ -524,6 +636,43 @@
       "license": "MIT"
     },
     {
+      "name": "cloudflare-skills",
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
+      },
+      "description": "Skills and commands for Cloudflare Workers, Pages, D1, R2, AI, and networking",
+      "version": "1.0.0",
+      "author": {
+        "username": "cloudflare",
+        "name": "Cloudflare"
+      },
+      "category": "devops",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "comfy-claude-prompt-library",
+      "source": {
+        "source": "github",
+        "repo": "Comfy-Org/comfy-claude-prompt-library"
+      },
+      "description": "Commands and memories for agentic coding with ComfyUI workflows",
+      "version": "1.0.0",
+      "author": {
+        "username": "Comfy-Org",
+        "name": "Comfy Org"
+      },
+      "category": "development",
+      "tags": [
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "communitytools",
       "source": {
         "source": "github",
@@ -659,6 +808,24 @@
       "license": "MIT"
     },
     {
+      "name": "dotnet-skills",
+      "source": {
+        "source": "github",
+        "repo": "Aaronontheweb/dotnet-skills"
+      },
+      "description": "Skills and sub-agents for .NET developers covering C#, F#, and ASP.NET workflows",
+      "version": "1.0.0",
+      "author": {
+        "username": "Aaronontheweb",
+        "name": "Aaron Stannard"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "edamame-claude-code",
       "source": {
         "source": "github",
@@ -676,6 +843,24 @@
         "agents",
         "commands",
         "mcp-servers"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "elastic-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "elastic/agent-skills"
+      },
+      "description": "33 skills for Elasticsearch, Kibana, Observability, and Security workflows",
+      "version": "1.0.0",
+      "author": {
+        "username": "elastic",
+        "name": "Elastic"
+      },
+      "category": "data",
+      "tags": [
+        "skills"
       ],
       "license": "Apache-2.0"
     },
@@ -719,6 +904,43 @@
       "license": "MIT"
     },
     {
+      "name": "firebase-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "firebase/agent-skills"
+      },
+      "description": "Agent skills for Firebase SDK setup, feature configuration, and deployment",
+      "version": "1.0.0",
+      "author": {
+        "username": "firebase",
+        "name": "Firebase"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "flow-next",
+      "source": {
+        "source": "github",
+        "repo": "gmickel/flow-next"
+      },
+      "description": "Plan-first AI workflow plugin with task tracking and worker subagents",
+      "version": "1.0.0",
+      "author": {
+        "username": "gmickel",
+        "name": "Gerald Mickel"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "gstack",
       "source": {
         "source": "github",
@@ -737,6 +959,97 @@
         "commands"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "hashicorp-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "hashicorp/agent-skills"
+      },
+      "description": "Agent skills and plugins for Terraform and Packer infrastructure workflows",
+      "version": "1.0.0",
+      "author": {
+        "username": "hashicorp",
+        "name": "HashiCorp"
+      },
+      "category": "devops",
+      "tags": [
+        "skills"
+      ],
+      "license": "MPL-2.0"
+    },
+    {
+      "name": "huggingface-skills",
+      "source": {
+        "source": "github",
+        "repo": "huggingface/skills"
+      },
+      "description": "AI/ML skills for dataset creation, model training, evaluation, and the Hugging Face ecosystem",
+      "version": "1.0.0",
+      "author": {
+        "username": "huggingface",
+        "name": "Hugging Face"
+      },
+      "category": "data",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "humanizer",
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer"
+      },
+      "description": "Skill that removes signs of AI-generated writing from text",
+      "version": "1.0.0",
+      "author": {
+        "username": "blader",
+        "name": "blader"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "jeffallan-claude-skills",
+      "source": {
+        "source": "github",
+        "repo": "Jeffallan/claude-skills"
+      },
+      "description": "66 specialized skills for full-stack developers across multiple frameworks",
+      "version": "1.0.0",
+      "author": {
+        "username": "Jeffallan",
+        "name": "Jeff Allan"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "learning-opportunities",
+      "source": {
+        "source": "github",
+        "repo": "DrCatHicks/learning-opportunities"
+      },
+      "description": "Skill for deliberate skill development and learning during AI-assisted coding",
+      "version": "1.0.0",
+      "author": {
+        "username": "DrCatHicks",
+        "name": "Dr. Cat Hicks"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills"
+      ],
+      "license": "CC-BY-4.0"
     },
     {
       "name": "libre-uiux",
@@ -778,6 +1091,60 @@
       "license": "MIT"
     },
     {
+      "name": "n-skills",
+      "source": {
+        "source": "github",
+        "repo": "numman-ali/n-skills"
+      },
+      "description": "Curated plugin marketplace with skills for automation, tools, and workflow",
+      "version": "1.0.0",
+      "author": {
+        "username": "numman-ali",
+        "name": "Numman Ali"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "napkin",
+      "source": {
+        "source": "github",
+        "repo": "blader/napkin"
+      },
+      "description": "Persistent per-repo learning scratchpad that remembers agent mistakes across sessions",
+      "version": "1.0.0",
+      "author": {
+        "username": "blader",
+        "name": "blader"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "nothing-design-skill",
+      "source": {
+        "source": "github",
+        "repo": "dominikmartn/nothing-design-skill"
+      },
+      "description": "UI generation skill in Nothing design language with dot matrix aesthetics",
+      "version": "1.0.0",
+      "author": {
+        "username": "dominikmartn",
+        "name": "Dominik Martin"
+      },
+      "category": "design",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "pg-aiguide",
       "source": {
         "source": "github",
@@ -795,6 +1162,43 @@
         "mcp-servers"
       ],
       "license": "Apache-2.0"
+    },
+    {
+      "name": "planning-with-files",
+      "source": {
+        "source": "github",
+        "repo": "OthmanAdi/planning-with-files"
+      },
+      "description": "Manus-style persistent markdown planning skill for structured project planning",
+      "version": "1.0.0",
+      "author": {
+        "username": "OthmanAdi",
+        "name": "Othman Adi"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "playwright-skill",
+      "source": {
+        "source": "github",
+        "repo": "lackeyjb/playwright-skill"
+      },
+      "description": "Browser automation skill using Playwright for testing and web interaction",
+      "version": "1.0.0",
+      "author": {
+        "username": "lackeyjb",
+        "name": "John Lackey"
+      },
+      "category": "testing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "ralph-claude-code",
@@ -834,6 +1238,42 @@
       "license": "MIT"
     },
     {
+      "name": "ring",
+      "source": {
+        "source": "github",
+        "repo": "LerianStudio/ring"
+      },
+      "description": "89 skills and 38 agents enforcing engineering best practices across teams",
+      "version": "1.0.0",
+      "author": {
+        "username": "LerianStudio",
+        "name": "Lerian Studio"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "ruby-skills",
+      "source": {
+        "source": "github",
+        "repo": "st0012/ruby-skills"
+      },
+      "description": "Ruby development plugins with debugging, testing, and Rails workflow skills",
+      "version": "1.0.0",
+      "author": {
+        "username": "st0012",
+        "name": "Stan Lo"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "security-scanner-plugin",
       "source": {
         "source": "github",
@@ -849,6 +1289,25 @@
       "tags": [
         "commands",
         "agents"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sentry-for-ai",
+      "source": {
+        "source": "github",
+        "repo": "getsentry/sentry-for-ai"
+      },
+      "description": "Skills and commands for Sentry error monitoring, alerts, and debugging with /seer command",
+      "version": "1.0.0",
+      "author": {
+        "username": "getsentry",
+        "name": "Sentry"
+      },
+      "category": "devops",
+      "tags": [
+        "skills",
+        "commands"
       ],
       "license": "MIT"
     },
@@ -887,6 +1346,61 @@
       "tags": [
         "skills",
         "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "stitch-skills",
+      "source": {
+        "source": "github",
+        "repo": "google-labs-code/stitch-skills"
+      },
+      "description": "Google Stitch skills for design-to-code, React components, shadcn-ui, and Remotion video",
+      "version": "1.0.0",
+      "author": {
+        "username": "google-labs-code",
+        "name": "Google Labs Code"
+      },
+      "category": "design",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "stripe-ai",
+      "source": {
+        "source": "github",
+        "repo": "stripe/ai"
+      },
+      "description": "Skills and commands for building AI-powered products with Stripe payments and webhooks",
+      "version": "1.0.0",
+      "author": {
+        "username": "stripe",
+        "name": "Stripe"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "supabase-agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "supabase/agent-skills"
+      },
+      "description": "Agent skills for Supabase covering database, auth, storage, realtime, and edge functions",
+      "version": "1.0.0",
+      "author": {
+        "username": "supabase",
+        "name": "Supabase"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
@@ -946,6 +1460,42 @@
       "tags": [
         "skills",
         "hooks"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "trailofbits-skills",
+      "source": {
+        "source": "github",
+        "repo": "trailofbits/skills"
+      },
+      "description": "Security research skills for smart contract auditing, vulnerability detection, and reverse engineering",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Trail of Bits"
+      },
+      "category": "security",
+      "tags": [
+        "skills"
+      ],
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "understand-anything",
+      "source": {
+        "source": "github",
+        "repo": "Lum1104/Understand-Anything"
+      },
+      "description": "Skills that turn any codebase into an interactive knowledge graph",
+      "version": "1.0.0",
+      "author": {
+        "username": "Lum1104",
+        "name": "Lum1104"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
