@@ -1,0 +1,24 @@
+{
+  "name": "databases-on-aws",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/awslabs/agent-plugins.git",
+    "path": "plugins/databases-on-aws"
+  },
+  "description": "Expert database guidance for the AWS database portfolio. Design schemas, execute queries, handle migrations, and choose the right database for your workload.",
+  "version": "1.0.0",
+  "author": {
+    "username": "awslabs",
+    "name": "Amazon Web Services"
+  },
+  "category": "database",
+  "tags": [
+    "aws",
+    "database",
+    "aurora",
+    "dsql",
+    "serverless",
+    "postgresql"
+  ],
+  "license": "MIT"
+}

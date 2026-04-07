@@ -1,0 +1,19 @@
+{
+  "name": "open-source-maintainer",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/numman-ali/n-skills.git",
+    "path": "skills/workflow/open-source-maintainer"
+  },
+  "description": "End-to-end GitHub repository maintenance for open-source projects. Use when asked to triage issues, review PRs, analyze contributor activity, generate maintenance reports, or maintain a repository.",
+  "version": "1.0.0",
+  "author": {
+    "username": "numman-ali",
+    "name": "Numman Ali"
+  },
+  "category": "workflow",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

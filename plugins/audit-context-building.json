@@ -1,0 +1,19 @@
+{
+  "name": "audit-context-building",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/audit-context-building"
+  },
+  "description": "Build deep architectural context through ultra-granular code analysis before vulnerability hunting",
+  "version": "1.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Omar Inuwa"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

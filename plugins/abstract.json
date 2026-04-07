@@ -1,0 +1,19 @@
+{
+  "name": "abstract",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/abstract"
+  },
+  "description": "Skill authoring, hook development, evaluation frameworks, and escalation governance for the Claude Code plugin ecosystem",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-api-scaffolding",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/api-scaffolding"
+  },
+  "description": "REST and GraphQL API scaffolding, framework selection, backend architecture, and API generation",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "api",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

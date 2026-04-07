@@ -1,8 +1,9 @@
 {
   "name": "dotnet-skills",
   "source": {
-    "source": "github",
-    "repo": "Aaronontheweb/dotnet-skills"
+    "source": "git-subdir",
+    "url": "https://github.com/Aaronontheweb/dotnet-skills.git",
+    "path": ""
   },
   "description": "Skills and sub-agents for .NET developers covering C#, F#, and ASP.NET workflows",
   "version": "1.0.0",

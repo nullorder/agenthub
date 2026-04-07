@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-quantitative-trading",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/quantitative-trading"
+  },
+  "description": "Quantitative analysis, algorithmic trading strategies, financial modeling, portfolio risk management, and backtesting",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "finance",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "minister",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/minister"
+  },
+  "description": "GitHub issue management, label taxonomy, and initiative tracking: turns repositories, issues, and projects into status dashboards",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

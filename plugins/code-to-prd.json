@@ -1,0 +1,19 @@
+{
+  "name": "code-to-prd",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "product-team/code-to-prd"
+  },
+  "description": "Reverse-engineer any codebase into a complete PRD. Frontend (React, Vue, Angular, Next.js), backend (NestJS, Django, Express, FastAPI), and fullstack. 2 Python scripts (codebase_analyzer, prd_scaffolder), 2 reference guides, /code-to-prd slash command.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "product",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

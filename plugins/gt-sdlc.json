@@ -1,0 +1,19 @@
+{
+  "name": "gt-sdlc",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danielscholl/claude-sdlc.git",
+    "path": "plugins/gt-sdlc"
+  },
+  "description": "Gas Town SDLC - brief to design to plan pipeline that turns ideas into Gas Town beads (bd create commands + dependency graph)",
+  "version": "1.0.0",
+  "author": {
+    "username": "danielscholl",
+    "name": "Daniel Scholl"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

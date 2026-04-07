@@ -1,0 +1,20 @@
+{
+  "name": "gopls",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "gopls"
+  },
+  "description": "Go language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "go",
+    "lsp"
+  ],
+  "license": "MIT"
+}

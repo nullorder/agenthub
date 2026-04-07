@@ -1,0 +1,20 @@
+{
+  "name": "rust-analyzer",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "rust-analyzer"
+  },
+  "description": "Rust language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "rust",
+    "lsp"
+  ],
+  "license": "MIT"
+}

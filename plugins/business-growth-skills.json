@@ -1,0 +1,19 @@
+{
+  "name": "business-growth-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "business-growth"
+  },
+  "description": "4 business & growth skills: customer success manager, sales engineer, revenue operations, contract & proposal writer.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "business-growth",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

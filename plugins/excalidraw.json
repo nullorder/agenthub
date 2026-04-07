@@ -1,0 +1,19 @@
+{
+  "name": "excalidraw",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danielscholl/claude-sdlc.git",
+    "path": "plugins/excalidraw"
+  },
+  "description": "Excalidraw diagram creator \u2014 generates .excalidraw JSON files with visual argument methodology and PNG render pipeline",
+  "version": "1.0.0",
+  "author": {
+    "username": "danielscholl",
+    "name": "Daniel Scholl"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

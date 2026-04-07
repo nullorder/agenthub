@@ -1,0 +1,19 @@
+{
+  "name": "plugin-eval",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/plugin-eval"
+  },
+  "description": "Three-layer quality evaluation framework for Claude Code plugins with Elo ranking",
+  "version": "0.1.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "quality",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

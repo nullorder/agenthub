@@ -1,0 +1,19 @@
+{
+  "name": "executive-mentor",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "c-level-advisor/executive-mentor"
+  },
+  "description": "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for board meetings, navigates hard calls, runs postmortems. 5 sub-skills with slash commands.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "leadership",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "testing-handbook-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/testing-handbook-skills"
+  },
+  "description": "Skills from the Trail of Bits Application Security Testing Handbook (appsec.guide)",
+  "version": "1.0.1",
+  "author": {
+    "username": "trailofbits",
+    "name": "Pawe\u0142 P\u0142atek"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

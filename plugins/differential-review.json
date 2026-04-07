@@ -1,0 +1,19 @@
+{
+  "name": "differential-review",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/differential-review"
+  },
+  "description": "Security-focused differential review of code changes with git history analysis and blast radius estimation",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Omar Inuwa"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

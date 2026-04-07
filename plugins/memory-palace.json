@@ -1,0 +1,19 @@
+{
+  "name": "memory-palace",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/memory-palace"
+  },
+  "description": "Spatial knowledge organization with memory palace techniques: build, navigate, and maintain virtual memory structures with PR review capture",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

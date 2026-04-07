@@ -1,0 +1,19 @@
+{
+  "name": "expo",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/expo/skills.git",
+    "path": "plugins/expo"
+  },
+  "description": "Official Expo skills for building, deploying, upgrading, and debugging Expo apps.",
+  "version": "1.0.0",
+  "author": {
+    "username": "expo",
+    "name": "Expo Team"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

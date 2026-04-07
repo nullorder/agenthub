@@ -1,8 +1,9 @@
 {
   "name": "stripe-ai",
   "source": {
-    "source": "github",
-    "repo": "stripe/ai"
+    "source": "git-subdir",
+    "url": "https://github.com/stripe/ai.git",
+    "path": "providers/claude/plugin/"
   },
   "description": "Skills and commands for building AI-powered products with Stripe payments and webhooks",
   "version": "1.0.0",

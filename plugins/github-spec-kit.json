@@ -1,0 +1,19 @@
+{
+  "name": "github-spec-kit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+    "path": "plugins/github-spec-kit"
+  },
+  "description": "GitHub specification integration and verification",
+  "version": "2.7.2",
+  "author": {
+    "username": "giuseppe-trisciuoglio",
+    "name": "Giuseppe Trisciuoglio"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

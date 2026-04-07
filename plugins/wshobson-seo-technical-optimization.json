@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-seo-technical-optimization",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/seo-technical-optimization"
+  },
+  "description": "Technical SEO optimization including meta tags, keywords, structure, and featured snippets",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "marketing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "yara-authoring",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/yara-authoring"
+  },
+  "description": "YARA-X detection rule authoring with linting and quality analysis",
+  "version": "2.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Trail of Bits"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

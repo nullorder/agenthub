@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-documentation-generation",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/documentation-generation"
+  },
+  "description": "OpenAPI specification generation, Mermaid diagram creation, tutorial writing, API reference documentation",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "documentation",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

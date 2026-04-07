@@ -1,0 +1,19 @@
+{
+  "name": "marketing-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "marketing-skill"
+  },
+  "description": "44 marketing skills across 7 pods: Content, SEO, CRO, Channels, Growth, Intelligence, Sales enablement, and X/Twitter growth. 51 Python tools, 73 reference docs.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "marketing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

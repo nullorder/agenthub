@@ -1,0 +1,22 @@
+{
+  "name": "deploy-on-aws",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/awslabs/agent-plugins.git",
+    "path": "plugins/deploy-on-aws"
+  },
+  "description": "Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.",
+  "version": "1.1.0",
+  "author": {
+    "username": "awslabs",
+    "name": "Amazon Web Services"
+  },
+  "category": "deployment",
+  "tags": [
+    "aws",
+    "deploy",
+    "infrastructure",
+    "cdk"
+  ],
+  "license": "MIT"
+}

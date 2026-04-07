@@ -1,0 +1,19 @@
+{
+  "name": "beta-mcp-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/docker/claude-plugins.git",
+    "path": "plugins/beta-mcp-skills"
+  },
+  "description": "Beta MCP skills from Docker",
+  "version": "1.0.0",
+  "author": {
+    "username": "docker",
+    "name": "Docker Inc."
+  },
+  "category": "integration",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

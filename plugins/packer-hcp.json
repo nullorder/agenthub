@@ -1,0 +1,19 @@
+{
+  "name": "packer-hcp",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hashicorp/agent-skills.git",
+    "path": "packer/hcp"
+  },
+  "description": "HCP Packer registry integration for tracking and managing image metadata.",
+  "version": "1.0.0",
+  "author": {
+    "username": "hashicorp",
+    "name": "HashiCorp"
+  },
+  "category": "integration",
+  "tags": [
+    "skills"
+  ],
+  "license": "MPL-2.0"
+}

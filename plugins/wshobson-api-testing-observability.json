@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-api-testing-observability",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/api-testing-observability"
+  },
+  "description": "API testing automation, request mocking, OpenAPI documentation generation, observability setup, and monitoring",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "api",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

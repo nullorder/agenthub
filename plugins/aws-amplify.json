@@ -1,0 +1,21 @@
+{
+  "name": "aws-amplify",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/awslabs/agent-plugins.git",
+    "path": "plugins/aws-amplify"
+  },
+  "description": "Build full-stack apps with AWS Amplify Gen 2 using guided workflows for authentication, data models, storage, GraphQL APIs, and Lambda functions.",
+  "version": "1.0.0",
+  "author": {
+    "username": "awslabs",
+    "name": "Amazon Web Services"
+  },
+  "category": "fullstack",
+  "tags": [
+    "aws",
+    "amplify",
+    "fullstack"
+  ],
+  "license": "MIT"
+}

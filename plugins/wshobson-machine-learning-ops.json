@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-machine-learning-ops",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/machine-learning-ops"
+  },
+  "description": "ML model training pipelines, hyperparameter tuning, model deployment automation, experiment tracking, and MLOps workflows",
+  "version": "1.2.1",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "ai-ml",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

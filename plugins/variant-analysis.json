@@ -1,0 +1,19 @@
+{
+  "name": "variant-analysis",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/variant-analysis"
+  },
+  "description": "Find similar vulnerabilities and bugs across codebases using pattern-based analysis",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Axel Mierczuk"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

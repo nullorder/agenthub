@@ -1,0 +1,19 @@
+{
+  "name": "self-improving-agent",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering-team/self-improving-agent"
+  },
+  "description": "Curate auto-memory, promote learnings to CLAUDE.md and rules, extract patterns into skills.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

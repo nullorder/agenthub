@@ -1,0 +1,19 @@
+{
+  "name": "terraform-code-generation",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hashicorp/agent-skills.git",
+    "path": "terraform/code-generation"
+  },
+  "description": "Terraform code generation skills including HCL generation, style guides, and testing.",
+  "version": "1.0.0",
+  "author": {
+    "username": "hashicorp",
+    "name": "HashiCorp"
+  },
+  "category": "integration",
+  "tags": [
+    "skills"
+  ],
+  "license": "MPL-2.0"
+}

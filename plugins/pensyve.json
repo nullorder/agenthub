@@ -1,0 +1,19 @@
+{
+  "name": "pensyve",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/major7apps/pensyve.git",
+    "path": "integrations/claude-code"
+  },
+  "description": "Universal memory runtime \u2014 cross-session cognitive memory for Claude Code with episodic, semantic, and procedural memory",
+  "version": "1.0.4",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "ai-ml",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

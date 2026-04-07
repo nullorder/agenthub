@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-unit-testing",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/unit-testing"
+  },
+  "description": "Unit and integration test automation for Python and JavaScript with debugging support",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "testing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

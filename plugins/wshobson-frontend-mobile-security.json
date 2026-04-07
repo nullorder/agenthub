@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-frontend-mobile-security",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/frontend-mobile-security"
+  },
+  "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "security",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

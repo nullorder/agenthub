@@ -1,0 +1,19 @@
+{
+  "name": "dev-workflows-frontend",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/shinpr/claude-code-workflows.git",
+    "path": "frontend"
+  },
+  "description": "Skills + Subagents for React/TypeScript - Use skills for coding guidance, or run recipe workflows for full orchestrated agentic coding with specialized agents",
+  "version": "1.0.0",
+  "author": {
+    "username": "shinpr",
+    "name": "Shinsuke Kagawa"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

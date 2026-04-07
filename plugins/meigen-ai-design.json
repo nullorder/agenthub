@@ -1,0 +1,19 @@
+{
+  "name": "meigen-ai-design",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/meigen-ai-design"
+  },
+  "description": "AI image generation with creative workflow orchestration, prompt engineering, and curated inspiration library via MCP server",
+  "version": "1.0.0",
+  "author": {
+    "username": "wshobson",
+    "name": "MeiGen"
+  },
+  "category": "creative",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

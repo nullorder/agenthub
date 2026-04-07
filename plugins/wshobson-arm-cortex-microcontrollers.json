@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-arm-cortex-microcontrollers",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/arm-cortex-microcontrollers"
+  },
+  "description": "ARM Cortex-M firmware development for Teensy, STM32, nRF52, and SAMD with peripheral drivers and memory safety patterns",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Ryan Snodgrass"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

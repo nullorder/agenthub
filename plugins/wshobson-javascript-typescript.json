@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-javascript-typescript",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/javascript-typescript"
+  },
+  "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

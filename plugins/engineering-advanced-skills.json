@@ -1,0 +1,19 @@
+{
+  "name": "engineering-advanced-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering"
+  },
+  "description": "42 advanced engineering skills: agent designer, agent workflow designer, AgentHub, RAG architect, database designer, focused-fix, browser-automation, spec-driven-workflow, secrets-vault-manager, sql-database-assistant, migration architect, observability designer, dependency auditor, release manager, API reviewer, CI/CD pipeline builder, MCP server builder, skill security auditor, performance profiler, Helm chart builder, Terraform patterns, self-eval, llm-cost-optimizer, prompt-governance, behuman, code-tour, demo-video, data-quality-auditor, and more.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

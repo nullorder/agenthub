@@ -1,0 +1,19 @@
+{
+  "name": "a11y-audit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering-team/a11y-audit"
+  },
+  "description": "WCAG 2.2 accessibility audit and fix for React, Next.js, Vue, Angular, Svelte, and HTML. Static scanner detecting 20+ violation types, contrast checker with suggest mode, framework-specific fix patterns, /a11y-audit slash command.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

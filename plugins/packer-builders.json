@@ -1,0 +1,19 @@
+{
+  "name": "packer-builders",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hashicorp/agent-skills.git",
+    "path": "packer/builders"
+  },
+  "description": "Packer builder skills for AWS, Azure, and Windows image creation.",
+  "version": "1.0.0",
+  "author": {
+    "username": "hashicorp",
+    "name": "HashiCorp"
+  },
+  "category": "integration",
+  "tags": [
+    "skills"
+  ],
+  "license": "MPL-2.0"
+}

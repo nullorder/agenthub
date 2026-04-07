@@ -1,0 +1,19 @@
+{
+  "name": "numman-ali-orchestration",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/numman-ali/n-skills.git",
+    "path": "skills/workflow/orchestration"
+  },
+  "description": "Multi-agent orchestration for complex tasks using cc-mirror tasks and TodoWrite. Use when tasks require parallel work, multiple agents, sophisticated coordination, or decomposition into parallel subtasks.",
+  "version": "1.0.0",
+  "author": {
+    "username": "numman-ali",
+    "name": "Numman Ali"
+  },
+  "category": "workflow",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

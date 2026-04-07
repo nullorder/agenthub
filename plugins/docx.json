@@ -1,0 +1,19 @@
+{
+  "name": "docx",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danielscholl/claude-sdlc.git",
+    "path": "plugins/docx"
+  },
+  "description": "DOCX document creation, editing, and redlining with tracked changes, comments, and OOXML validation",
+  "version": "1.0.0",
+  "author": {
+    "username": "danielscholl",
+    "name": "Daniel Scholl"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

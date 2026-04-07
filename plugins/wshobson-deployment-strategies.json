@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-deployment-strategies",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/deployment-strategies"
+  },
+  "description": "Deployment patterns, rollback automation, and infrastructure templates",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "infrastructure",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

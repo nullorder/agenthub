@@ -1,0 +1,19 @@
+{
+  "name": "autoresearch-agent",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering/autoresearch-agent"
+  },
+  "description": "Autonomous experiment loop \u2014 optimize any file by a measurable metric. 5 slash commands (/ar:setup, /ar:run, /ar:loop, /ar:status, /ar:resume), 8 built-in evaluators, configurable loop intervals (10min to monthly).",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

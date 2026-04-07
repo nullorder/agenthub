@@ -1,0 +1,19 @@
+{
+  "name": "expo-deployment",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/expo/skills.git",
+    "path": "plugins/expo"
+  },
+  "description": "[Deprecated] Use the \"expo\" plugin instead. Deploying Expo apps to App Store, Play Store, and web.",
+  "version": "1.0.0",
+  "author": {
+    "username": "expo",
+    "name": "Expo Team"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

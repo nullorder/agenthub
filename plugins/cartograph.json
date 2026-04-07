@@ -1,0 +1,19 @@
+{
+  "name": "cartograph",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/cartograph"
+  },
+  "description": "Codebase visualization: architecture, data flow, dependency, call chains, community detection, and class diagrams via Mermaid Chart MCP",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

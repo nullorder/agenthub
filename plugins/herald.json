@@ -1,0 +1,19 @@
+{
+  "name": "herald",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/herald"
+  },
+  "description": "Standalone notification system: GitHub issue alerts and webhook support for Slack, Discord, and generic endpoints.",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

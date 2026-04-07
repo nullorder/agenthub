@@ -1,0 +1,19 @@
+{
+  "name": "copilot",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danielscholl/claude-sdlc.git",
+    "path": "plugins/copilot"
+  },
+  "description": "Create and maintain GitHub Copilot CLI plugins - skills, agents, prompts, instructions, and MCP servers with authoritative spec references and templates",
+  "version": "1.0.0",
+  "author": {
+    "username": "danielscholl",
+    "name": "Daniel Scholl"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

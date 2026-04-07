@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-shell-scripting",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/shell-scripting"
+  },
+  "description": "Production-grade Bash scripting with defensive programming, POSIX compliance, and comprehensive testing",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Ryan Snodgrass"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

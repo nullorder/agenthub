@@ -1,0 +1,19 @@
+{
+  "name": "conductor",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/conductor"
+  },
+  "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context \u2192 Spec & Plan \u2192 Implement",
+  "version": "1.2.1",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "workflows",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

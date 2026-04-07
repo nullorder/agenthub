@@ -1,0 +1,22 @@
+{
+  "name": "elixir-ls",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "elixir-ls"
+  },
+  "description": "Elixir language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "elixir",
+    "erlang",
+    "beam",
+    "lsp"
+  ],
+  "license": "MIT"
+}

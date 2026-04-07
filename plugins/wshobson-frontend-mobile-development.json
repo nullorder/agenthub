@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-frontend-mobile-development",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/frontend-mobile-development"
+  },
+  "description": "Frontend UI development and mobile application implementation across platforms",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

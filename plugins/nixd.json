@@ -1,0 +1,21 @@
+{
+  "name": "nixd",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "nixd"
+  },
+  "description": "Nix language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "nix",
+    "nixos",
+    "lsp"
+  ],
+  "license": "MIT"
+}

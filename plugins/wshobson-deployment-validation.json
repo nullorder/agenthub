@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-deployment-validation",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/deployment-validation"
+  },
+  "description": "Pre-deployment checks, configuration validation, and deployment readiness assessment",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "infrastructure",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

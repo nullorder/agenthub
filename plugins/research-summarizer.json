@@ -1,0 +1,19 @@
+{
+  "name": "research-summarizer",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "product-team/research-summarizer"
+  },
+  "description": "Structured research summarization \u2014 summarize academic papers, market research, user interviews, and competitive analysis into actionable insights.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "product",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

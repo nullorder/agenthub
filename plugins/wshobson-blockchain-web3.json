@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-blockchain-web3",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/blockchain-web3"
+  },
+  "description": "Smart contract development with Solidity, DeFi protocol implementation, NFT platforms, and Web3 application architecture",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "blockchain",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

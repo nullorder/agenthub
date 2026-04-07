@@ -1,0 +1,19 @@
+{
+  "name": "orient",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/DrCatHicks/learning-opportunities.git",
+    "path": "orient"
+  },
+  "description": "Generates a repo-specific orientation.md for use with the learning-opportunities skill",
+  "version": "1.0.0",
+  "author": {
+    "username": "DrCatHicks",
+    "name": "Dr. Michael Mullarkey"
+  },
+  "category": "education",
+  "tags": [
+    "skills"
+  ],
+  "license": "CC-BY-4.0"
+}

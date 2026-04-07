@@ -1,8 +1,9 @@
 {
   "name": "tdd-guard",
   "source": {
-    "source": "github",
-    "repo": "nizos/tdd-guard"
+    "source": "git-subdir",
+    "url": "https://github.com/nizos/tdd-guard.git",
+    "path": "plugin"
   },
   "description": "Automated TDD enforcement that monitors agent actions and blocks violations in real-time",
   "version": "1.0.0",

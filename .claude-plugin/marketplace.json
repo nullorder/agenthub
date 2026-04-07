@@ -10,29 +10,166 @@
   },
   "plugins": [
     {
-      "name": "alirezarezvani-claude-skills",
+      "name": "a11y-audit",
       "source": {
-        "source": "github",
-        "repo": "alirezarezvani/claude-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering-team/a11y-audit"
       },
-      "description": "220+ skills and agent plugins across engineering, marketing, product, and compliance",
-      "version": "1.0.0",
+      "description": "WCAG 2.2 accessibility audit and fix for React, Next.js, Vue, Angular, Svelte, and HTML. Static scanner detecting 20+ violation types, contrast checker with suggest mode, framework-specific fix patterns, /a11y-audit slash command.",
+      "version": "2.2.0",
       "author": {
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "productivity",
+      "category": "development",
       "tags": [
-        "skills",
-        "commands"
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "abstract",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/abstract"
+      },
+      "description": "Skill authoring, hook development, evaluation frameworks, and escalation governance for the Claude Code plugin ecosystem",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "agent-teams",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/agent-teams"
+      },
+      "description": "Orchestrate multi-agent teams for parallel code review, hypothesis-driven debugging, and coordinated feature development using Claude Code's Agent Teams",
+      "version": "1.0.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "workflows",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "agenthub",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/agenthub"
+      },
+      "description": "Multi-agent collaboration — spawn N parallel subagents that compete on code optimization, content drafts, research approaches, or any task that benefits from diverse solutions. 7 slash commands (/hub:init, /hub:spawn, /hub:status, /hub:eval, /hub:merge, /hub:board, /hub:run), agent templates, DAG-based orchestration, LLM judge mode, message board coordination.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "agentic-actions-auditor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/agentic-actions-auditor"
+      },
+      "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference)",
+      "version": "1.2.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Emilio López & Will Vandevanter"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "amazon-location-service",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/amazon-location-service"
+      },
+      "description": "Guide developers through adding maps, places search, geocoding, routing, and other geospatial features with Amazon Location Service, including authentication setup, SDK integration, and best practices.",
+      "version": "1.0.0",
+      "author": {
+        "username": "awslabs",
+        "name": "Amazon Web Services"
+      },
+      "category": "location",
+      "tags": [
+        "aws",
+        "location",
+        "maps",
+        "geospatial"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "archetypes",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/archetypes"
+      },
+      "description": "Architecture paradigm selection and implementation planning: 14 paradigms from functional-core to hexagonal to microservices",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "ask-questions-if-underspecified",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/ask-questions-if-underspecified"
+      },
+      "description": "Clarify ambiguous requirements by asking questions before implementing. Only when invoked explicitly.",
+      "version": "1.0.1",
+      "author": {
+        "username": "trailofbits",
+        "name": "Kevin Valerio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
     {
       "name": "astral-plugins",
       "source": {
-        "source": "github",
-        "repo": "astral-sh/claude-code-plugins"
+        "source": "git-subdir",
+        "url": "https://github.com/astral-sh/claude-code-plugins.git",
+        "path": "plugins/astral"
       },
       "description": "Official Astral tools plugin with ruff, ty, and uv skills plus LSP for Python",
       "version": "1.0.0",
@@ -48,24 +185,109 @@
       "license": "MIT OR Apache-2.0"
     },
     {
-      "name": "aws-agent-plugins",
+      "name": "attune",
       "source": {
-        "source": "github",
-        "repo": "awslabs/agent-plugins"
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/attune"
       },
-      "description": "7 plugins for AWS services including Amplify, Serverless, DB, Deploy, Migration, and SageMaker",
+      "description": "Full-cycle project development: brainstorm, specify, plan, initialize, execute, and polish with war-room deliberation for strategic decisions",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "audit-context-building",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/audit-context-building"
+      },
+      "description": "Build deep architectural context through ultra-granular code analysis before vulnerability hunting",
+      "version": "1.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Omar Inuwa"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "autoresearch-agent",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/autoresearch-agent"
+      },
+      "description": "Autonomous experiment loop — optimize any file by a measurable metric. 5 slash commands (/ar:setup, /ar:run, /ar:loop, /ar:status, /ar:resume), 8 built-in evaluators, configurable loop intervals (10min to monthly).",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "aws-amplify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/aws-amplify"
+      },
+      "description": "Build full-stack apps with AWS Amplify Gen 2 using guided workflows for authentication, data models, storage, GraphQL APIs, and Lambda functions.",
       "version": "1.0.0",
       "author": {
         "username": "awslabs",
-        "name": "Amazon Web Services - Labs"
+        "name": "Amazon Web Services"
       },
-      "category": "devops",
+      "category": "fullstack",
       "tags": [
-        "skills",
-        "hooks",
-        "mcp-servers"
+        "aws",
+        "amplify",
+        "fullstack"
       ],
-      "license": "Apache-2.0"
+      "license": "MIT"
+    },
+    {
+      "name": "aws-serverless",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/aws-serverless"
+      },
+      "description": "Design, build, deploy, test, and debug serverless applications with AWS Serverless services.",
+      "version": "1.0.0",
+      "author": {
+        "username": "awslabs",
+        "name": "Amazon Web Services"
+      },
+      "category": "development",
+      "tags": [
+        "aws",
+        "serverless",
+        "lambda",
+        "durable functions",
+        "development",
+        "sam",
+        "api gateway",
+        "eventbridge",
+        "step functions"
+      ],
+      "license": "MIT"
     },
     {
       "name": "axiom-apple-skills",
@@ -86,10 +308,53 @@
       "license": "MIT"
     },
     {
+      "name": "bash-language-server",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "bash-language-server"
+      },
+      "description": "Bash language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "bash",
+        "shell",
+        "sh",
+        "zsh",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "beta-mcp-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/docker/claude-plugins.git",
+        "path": "plugins/beta-mcp-skills"
+      },
+      "description": "Beta MCP skills from Docker",
+      "version": "1.0.0",
+      "author": {
+        "username": "docker",
+        "name": "Docker Inc."
+      },
+      "category": "integration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "bmad-plugin",
       "source": {
-        "source": "github",
-        "repo": "PabloLION/bmad-plugin"
+        "source": "git-subdir",
+        "url": "https://github.com/PabloLION/bmad-plugin.git",
+        "path": "plugins/bmad"
       },
       "description": "Agile AI-driven development with 10 specialized agent personas and 26 guided workflow skills",
       "version": "1.0.0",
@@ -106,37 +371,133 @@
       "license": "MIT"
     },
     {
-      "name": "boostvolt-lsps",
+      "name": "building-secure-contracts",
       "source": {
-        "source": "github",
-        "repo": "boostvolt/claude-code-lsps"
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/building-secure-contracts"
       },
-      "description": "LSP servers for 23 languages providing go-to-definition, find-references, hover, and diagnostics",
-      "version": "1.0.0",
+      "description": "Comprehensive smart contract security toolkit based on Trail of Bits' Building Secure Contracts framework. Includes vulnerability scanners for 6 blockchains and 5 development guideline assistants.",
+      "version": "1.1.0",
       "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
+        "username": "trailofbits",
+        "name": "Omar Inuwa && Paweł Płatek"
       },
-      "category": "development",
+      "category": "other",
       "tags": [
-        "lsp-servers",
-        "hooks"
+        "skills"
       ],
       "license": "MIT"
     },
     {
-      "name": "callstack-agent-skills",
+      "name": "burpsuite-project-parser",
       "source": {
-        "source": "github",
-        "repo": "callstackincubator/agent-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/burpsuite-project-parser"
       },
-      "description": "React Native skills covering profiling, FPS, re-renders, brownfield migration, and GitHub Actions for RN builds",
+      "description": "Search and extract data from Burp Suite project files (.burp) for security analysis",
       "version": "1.0.0",
       "author": {
-        "username": "callstackincubator",
-        "name": "Callstack Incubator"
+        "username": "trailofbits",
+        "name": "Will Vandevanter"
       },
-      "category": "development",
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "business-growth-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "business-growth"
+      },
+      "description": "4 business & growth skills: customer success manager, sales engineer, revenue operations, contract & proposal writer.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "business-growth",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "c-level-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "c-level-advisor"
+      },
+      "description": "28 C-level advisory skills: virtual board of directors (CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO), executive mentor, founder coach, orchestration (Chief of Staff, board meetings, decision logger), strategic capabilities (board deck builder, scenario war room, competitive intel, M&A playbook), and culture frameworks.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "leadership",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "c4-architecture",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/c4-architecture"
+      },
+      "description": "Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagram generation",
+      "version": "1.0.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "documentation",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "cadre",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/cadre"
+      },
+      "description": "Multi-agent team bootstrapper and runtime orchestrator — generates tailored agent teams via AI debate and runs parallel team patterns (review, debate, plan, build, research)",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "cartograph",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/cartograph"
+      },
+      "description": "Codebase visualization: architecture, data flow, dependency, call chains, community detection, and class diagrams via Mermaid Chart MCP",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
       "tags": [
         "skills"
       ],
@@ -145,8 +506,9 @@
     {
       "name": "caveman",
       "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
+        "source": "git-subdir",
+        "url": "https://github.com/JuliusBrussee/caveman.git",
+        "path": ""
       },
       "description": "Token-saving skill that cuts 75% of tokens by using caveman-style communication",
       "version": "1.0.0",
@@ -163,8 +525,9 @@
     {
       "name": "cc-devops-skills",
       "source": {
-        "source": "github",
-        "repo": "akin-ozer/cc-devops-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/akin-ozer/cc-devops-skills.git",
+        "path": "devops-skills-plugin"
       },
       "description": "31 DevOps skills covering Terraform, Helm, kubectl, GitHub Actions with linting, security checks, and dry-run validation",
       "version": "1.0.0",
@@ -181,8 +544,9 @@
     {
       "name": "cc-hooks-audio",
       "source": {
-        "source": "github",
-        "repo": "husniadil/cc-hooks"
+        "source": "git-subdir",
+        "url": "https://github.com/husniadil/cc-hooks.git",
+        "path": ""
       },
       "description": "Audio feedback for Claude Code with TTS announcements, sound effects, and contextual AI messages",
       "version": "1.0.0",
@@ -234,6 +598,27 @@
       "license": "MIT"
     },
     {
+      "name": "clangd",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "clangd"
+      },
+      "description": "C/C++ language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "c",
+        "cpp",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "claude-aws-cost-saver",
       "source": {
         "source": "github",
@@ -258,8 +643,9 @@
     {
       "name": "claude-canary",
       "source": {
-        "source": "github",
-        "repo": "geoffrey-young/anthropic-hackathon-2026"
+        "source": "git-subdir",
+        "url": "https://github.com/geoffrey-young/anthropic-hackathon-2026.git",
+        "path": "plugins/plugin-canary"
       },
       "description": "Early warning system for plugin security with automated review of all plugin files before execution",
       "version": "1.0.0",
@@ -297,8 +683,9 @@
     {
       "name": "claude-code-builder",
       "source": {
-        "source": "github",
-        "repo": "alexanderop/claude-code-builder"
+        "source": "git-subdir",
+        "url": "https://github.com/alexanderop/claude-code-builder.git",
+        "path": ""
       },
       "description": "Guided commands to generate skills, subagents, hooks, slash commands, and plugins with proper scaffolding",
       "version": "1.0.0",
@@ -351,8 +738,9 @@
     {
       "name": "claude-code-safety-net",
       "source": {
-        "source": "github",
-        "repo": "kenryu42/claude-code-safety-net"
+        "source": "git-subdir",
+        "url": "https://github.com/kenryu42/claude-code-safety-net.git",
+        "path": ""
       },
       "description": "Hook that catches destructive git and filesystem commands before execution",
       "version": "1.0.0",
@@ -386,25 +774,6 @@
       "license": "MIT"
     },
     {
-      "name": "claude-code-workflows",
-      "source": {
-        "source": "github",
-        "repo": "shinpr/claude-code-workflows"
-      },
-      "description": "Production-ready development workflows with specialized agents for requirements analysis, TDD, QA, and code review",
-      "version": "1.0.0",
-      "author": {
-        "username": "shinpr",
-        "name": "Claude Code Workflows"
-      },
-      "category": "productivity",
-      "tags": [
-        "skills",
-        "agents"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "claude-context-optimizer",
       "source": {
         "source": "github",
@@ -427,8 +796,9 @@
     {
       "name": "claude-elixir-phoenix",
       "source": {
-        "source": "github",
-        "repo": "oliver-kriska/claude-elixir-phoenix"
+        "source": "git-subdir",
+        "url": "https://github.com/oliver-kriska/claude-elixir-phoenix.git",
+        "path": "plugins/elixir-phoenix"
       },
       "description": "Elixir/Phoenix/LiveView plugin with 20 specialist agents for BEAM development",
       "version": "1.0.0",
@@ -501,8 +871,9 @@
     {
       "name": "claude-hud",
       "source": {
-        "source": "github",
-        "repo": "jarrodwatts/claude-hud"
+        "source": "git-subdir",
+        "url": "https://github.com/jarrodwatts/claude-hud.git",
+        "path": ""
       },
       "description": "Real-time statusline showing context window usage, active tools, running agents, git info, and todo progress",
       "version": "1.0.0",
@@ -517,10 +888,30 @@
       "license": "MIT"
     },
     {
+      "name": "claude-in-chrome-troubleshooting",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/claude-in-chrome-troubleshooting"
+      },
+      "description": "Diagnose and fix Claude in Chrome MCP extension connectivity issues",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Dan Guido"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "claude-k8s-plugin",
       "source": {
-        "source": "github",
-        "repo": "Sagart-cactus/claude-k8s-plugin"
+        "source": "git-subdir",
+        "url": "https://github.com/Sagart-cactus/claude-k8s-plugin.git",
+        "path": ""
       },
       "description": "Build Kubernetes CRD operators with safety hooks restricting operations to local clusters",
       "version": "1.0.0",
@@ -533,27 +924,6 @@
         "skills",
         "commands",
         "hooks"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "claude-night-market",
-      "source": {
-        "source": "github",
-        "repo": "athola/claude-night-market"
-      },
-      "description": "19 production-ready plugins covering code review, spec-driven development, architecture patterns, and Python specialist tools",
-      "version": "1.0.0",
-      "author": {
-        "username": "athola",
-        "name": "Alex Thola"
-      },
-      "category": "other",
-      "tags": [
-        "skills",
-        "agents",
-        "hooks",
-        "commands"
       ],
       "license": "MIT"
     },
@@ -576,50 +946,11 @@
       "license": "MIT"
     },
     {
-      "name": "claude-sdlc",
-      "source": {
-        "source": "github",
-        "repo": "danielscholl/claude-sdlc"
-      },
-      "description": "Software development lifecycle automation with SDLC workflow commands and a four-layer skill testing framework",
-      "version": "1.0.0",
-      "author": {
-        "username": "danielscholl",
-        "name": "danielscholl"
-      },
-      "category": "testing",
-      "tags": [
-        "skills",
-        "agents",
-        "commands"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "claude-starter",
-      "source": {
-        "source": "github",
-        "repo": "raintree-technology/claude-starter"
-      },
-      "description": "Advanced framework with 40+ skills and TOON format for 30-60% token savings",
-      "version": "1.0.0",
-      "author": {
-        "username": "raintree-technology",
-        "name": "Raintree Technology"
-      },
-      "category": "development",
-      "tags": [
-        "skills",
-        "commands",
-        "hooks"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "claudelint",
       "source": {
-        "source": "github",
-        "repo": "pdugan20/claudelint"
+        "source": "git-subdir",
+        "url": "https://github.com/pdugan20/claudelint.git",
+        "path": ""
       },
       "description": "Linter for Claude Code projects validating CLAUDE.md, skills, settings, hooks, MCP servers, and plugins",
       "version": "1.0.0",
@@ -636,10 +967,32 @@
       "license": "MIT"
     },
     {
+      "name": "clojure-lsp",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "clojure-lsp"
+      },
+      "description": "Clojure language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "clojure",
+        "clojurescript",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "cloudflare-skills",
       "source": {
-        "source": "github",
-        "repo": "cloudflare/skills"
+        "source": "git-subdir",
+        "url": "https://github.com/cloudflare/skills.git",
+        "path": ""
       },
       "description": "Skills and commands for Cloudflare Workers, Pages, D1, R2, AI, and networking",
       "version": "1.0.0",
@@ -653,6 +1006,68 @@
         "commands"
       ],
       "license": "Apache-2.0"
+    },
+    {
+      "name": "code-to-prd",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "product-team/code-to-prd"
+      },
+      "description": "Reverse-engineer any codebase into a complete PRD. Frontend (React, Vue, Angular, Next.js), backend (NestJS, Django, Express, FastAPI), and fullstack. 2 Python scripts (codebase_analyzer, prd_scaffolder), 2 reference guides, /code-to-prd slash command.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "product",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "code-tour",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/code-tour"
+      },
+      "description": "Create CodeTour .tour files — persona-targeted, step-by-step walkthroughs that link to real files and line numbers. 10 developer personas, all CodeTour step types, SMIG description formula.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "coding-tutor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/EveryInc/compound-engineering-plugin.git",
+        "path": "plugins/coding-tutor"
+      },
+      "description": "Personalized coding tutorials that build on your existing knowledge and use your actual codebase for examples. Includes spaced repetition quizzes to reinforce learning. Includes 3 commands and 1 skill.",
+      "version": "1.0.0",
+      "author": {
+        "username": "EveryInc",
+        "name": "Nityesh Agarwal"
+      },
+      "category": "other",
+      "tags": [
+        "coding",
+        "programming",
+        "tutorial",
+        "learning",
+        "spaced-repetition",
+        "education"
+      ],
+      "license": "MIT"
     },
     {
       "name": "comfy-claude-prompt-library",
@@ -673,40 +1088,103 @@
       "license": "MIT"
     },
     {
-      "name": "communitytools",
+      "name": "compound-engineering",
       "source": {
-        "source": "github",
-        "repo": "transilienceai/communitytools"
+        "source": "git-subdir",
+        "url": "https://github.com/EveryInc/compound-engineering-plugin.git",
+        "path": "plugins/compound-engineering"
       },
-      "description": "AI-powered penetration testing automation with OWASP Top 10 coverage, CVSS 3.1 scoring, and MITRE ATT&CK mappings",
+      "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last.",
       "version": "1.0.0",
       "author": {
-        "username": "transilienceai",
-        "name": "transilienceai"
+        "username": "EveryInc",
+        "name": "Kieran Klaassen"
       },
-      "category": "security",
+      "category": "other",
       "tags": [
-        "skills",
-        "agents"
+        "ai-powered",
+        "compound-engineering",
+        "workflow-automation",
+        "code-review",
+        "quality",
+        "knowledge-management",
+        "image-generation"
       ],
       "license": "MIT"
     },
     {
-      "name": "compound-engineering",
+      "name": "conductor",
       "source": {
-        "source": "github",
-        "repo": "EveryInc/compound-engineering-plugin"
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/conductor"
       },
-      "description": "Structured workflow emphasizing 80% planning/review and 20% execution with ideate, brainstorm, plan, work, and review phases",
-      "version": "1.0.0",
+      "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context → Spec & Plan → Implement",
+      "version": "1.2.1",
       "author": {
-        "username": "EveryInc",
-        "name": "Every"
+        "username": "wshobson",
+        "name": "Seth Hobson"
       },
-      "category": "productivity",
+      "category": "workflows",
       "tags": [
-        "skills",
-        "agents"
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "conjure",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/conjure"
+      },
+      "description": "Delegate tasks to external LLMs (Gemini, Qwen) with cheapest-capable model selection while retaining strategic oversight",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "conserve",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/conserve"
+      },
+      "description": "Context optimization, bloat detection, CPU/GPU monitoring, and token conservation for efficient Claude Code sessions",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "constant-time-analysis",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/constant-time-analysis"
+      },
+      "description": "Detect compiler-induced timing side-channels in cryptographic code",
+      "version": "0.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Scott Arciszewski"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
@@ -727,6 +1205,25 @@
         "mcp-servers"
       ],
       "license": "Apache-2.0"
+    },
+    {
+      "name": "copilot",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/copilot"
+      },
+      "description": "Create and maintain GitHub Copilot CLI plugins - skills, agents, prompts, instructions, and MCP servers with authoritative spec references and templates",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "cto-toolkit",
@@ -750,42 +1247,505 @@
       "license": "MIT"
     },
     {
-      "name": "developer-kit",
+      "name": "culture-index",
       "source": {
-        "source": "github",
-        "repo": "giuseppe-trisciuoglio/developer-kit"
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/culture-index"
       },
-      "description": "116 skills, 43 agents, and 44 commands across Java, TypeScript, Python, PHP, and AWS with LSP support",
-      "version": "1.0.0",
+      "description": "Interprets Culture Index survey results for individuals and teams",
+      "version": "1.1.0",
       "author": {
-        "username": "giuseppe-trisciuoglio",
-        "name": "Giuseppe Trisciuoglio"
+        "username": "trailofbits",
+        "name": "Dan Guido"
       },
-      "category": "development",
+      "category": "other",
       "tags": [
-        "skills",
-        "agents",
-        "commands",
-        "hooks",
-        "lsp-servers"
+        "skills"
       ],
       "license": "MIT"
     },
     {
-      "name": "docker-plugins",
+      "name": "dart-analyzer",
       "source": {
-        "source": "github",
-        "repo": "docker/claude-plugins"
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "dart-analyzer"
       },
-      "description": "Official Docker Desktop MCP integration for containerized MCP servers",
+      "description": "Dart/Flutter language server",
       "version": "1.0.0",
       "author": {
-        "username": "docker",
-        "name": "Docker"
+        "username": "boostvolt",
+        "name": "Jan Kott"
       },
-      "category": "devops",
+      "category": "development",
       "tags": [
-        "mcp-servers"
+        "dart",
+        "flutter",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "data-quality-auditor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/data-quality-auditor"
+      },
+      "description": "Audit datasets for completeness, consistency, accuracy, and validity. 3 stdlib-only Python tools: data profiler with DQS scoring, missing value analyzer with MCAR/MAR/MNAR classification, and multi-method outlier detector.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "databases-on-aws",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/databases-on-aws"
+      },
+      "description": "Expert database guidance for the AWS database portfolio. Design schemas, execute queries, handle migrations, and choose the right database for your workload.",
+      "version": "1.0.0",
+      "author": {
+        "username": "awslabs",
+        "name": "Amazon Web Services"
+      },
+      "category": "database",
+      "tags": [
+        "aws",
+        "database",
+        "aurora",
+        "dsql",
+        "serverless",
+        "postgresql"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "debug-buttercup",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/debug-buttercup"
+      },
+      "description": "Debug Buttercup Kubernetes deployments",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Ronald Eytchison"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "demo-video",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/demo-video"
+      },
+      "description": "Create polished demo videos from screenshots and scene descriptions. Orchestrates playwright, ffmpeg, and edge-tts with story structure, scene design system, and narration guidance.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "deploy-on-aws",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/deploy-on-aws"
+      },
+      "description": "Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.",
+      "version": "1.1.0",
+      "author": {
+        "username": "awslabs",
+        "name": "Amazon Web Services"
+      },
+      "category": "deployment",
+      "tags": [
+        "aws",
+        "deploy",
+        "infrastructure",
+        "cdk"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "dev-browser",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/numman-ali/n-skills.git",
+        "path": "skills/automation/dev-browser"
+      },
+      "description": "Browser automation with persistent page state. Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows.",
+      "version": "1.0.0",
+      "author": {
+        "username": "numman-ali",
+        "name": "Sawyer Hood"
+      },
+      "category": "automation",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "dev-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/shinpr/claude-code-workflows.git",
+        "path": "skills-only"
+      },
+      "description": "Lightweight skills for users with existing workflows - coding best practices, testing principles, and design guidelines without recipe workflows or agents",
+      "version": "1.0.0",
+      "author": {
+        "username": "shinpr",
+        "name": "Shinsuke Kagawa"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "dev-workflows-frontend",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/shinpr/claude-code-workflows.git",
+        "path": "frontend"
+      },
+      "description": "Skills + Subagents for React/TypeScript - Use skills for coding guidance, or run recipe workflows for full orchestrated agentic coding with specialized agents",
+      "version": "1.0.0",
+      "author": {
+        "username": "shinpr",
+        "name": "Shinsuke Kagawa"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "dev-workflows",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/shinpr/claude-code-workflows.git",
+        "path": "backend"
+      },
+      "description": "Skills + Subagents for backend development - Use skills for coding guidance, or run recipe workflows for full orchestrated agentic coding with specialized agents",
+      "version": "1.0.0",
+      "author": {
+        "username": "shinpr",
+        "name": "Shinsuke Kagawa"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "devcontainer-setup",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/devcontainer-setup"
+      },
+      "description": "Create pre-configured devcontainers with Claude Code and language-specific tooling",
+      "version": "0.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Alexis Challande"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-ai",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-ai"
+      },
+      "description": "AI/ML skills including prompt engineering, RAG, and chunking strategies",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-aws",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-aws"
+      },
+      "description": "AWS infrastructure and CloudFormation expertise",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-devops",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-devops"
+      },
+      "description": "DevOps and containerization expertise",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-java",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-java"
+      },
+      "description": "Comprehensive Java development toolkit with Spring Boot, testing, and AWS integration",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-php",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-php"
+      },
+      "description": "PHP and WordPress development capabilities",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-project-management",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-project-management"
+      },
+      "description": "Project management and workflow commands",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-python",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-python"
+      },
+      "description": "Python development capabilities",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-tools",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-tools"
+      },
+      "description": "External tools integration skills for CLI utilities, APIs, and third-party services",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit-typescript",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-typescript"
+      },
+      "description": "TypeScript/JavaScript full-stack development with NestJS, React, and React Native",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "developer-kit",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/developer-kit-core"
+      },
+      "description": "Core agents and commands required by all plugins",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "differential-review",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/differential-review"
+      },
+      "description": "Security-focused differential review of code changes with git history analysis and blast radius estimation",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Omar Inuwa"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "dimensional-analysis",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/dimensional-analysis"
+      },
+      "description": "Annotates codebases with dimensional analysis comments documenting units, dimensions, and decimal scaling. Use when someone asks to annotate units in a codebase, perform a dimensional analysis, or find vulnerabilities in a DeFi protocol. Prevents dimensional mismatches and catches formula bugs early.",
+      "version": "3.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Coriolan Pinhas & Benjamin Samuels"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "discover",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/shinpr/claude-code-discover.git"
+      },
+      "description": "Turns feature ideas into evidence-backed PRDs through structured discovery, 4 Risks assessment, and validation workflows",
+      "version": "1.0.0",
+      "author": {
+        "username": "shinpr",
+        "name": "Shinsuke Kagawa"
+      },
+      "category": "product-quality",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "docker-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/docker-development"
+      },
+      "description": "Docker and container development — Dockerfile optimization, docker-compose orchestration, multi-stage builds, security hardening, and CI/CD container pipelines.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
@@ -808,10 +1768,49 @@
       "license": "MIT"
     },
     {
+      "name": "docx",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/docx"
+      },
+      "description": "DOCX document creation, editing, and redlining with tracked changes, comments, and OOXML validation",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "dotnet-contribution",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/dotnet-contribution"
+      },
+      "description": "Comprehensive .NET backend development with C#, ASP.NET Core, Entity Framework Core, and Dapper for production-grade applications",
+      "version": "1.0.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "dotnet-skills",
       "source": {
-        "source": "github",
-        "repo": "Aaronontheweb/dotnet-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/Aaronontheweb/dotnet-skills.git",
+        "path": ""
       },
       "description": "Skills and sub-agents for .NET developers covering C#, F#, and ASP.NET workflows",
       "version": "1.0.0",
@@ -826,10 +1825,30 @@
       "license": "MIT"
     },
     {
+      "name": "dwarf-expert",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/dwarf-expert"
+      },
+      "description": "Interact with and understand the DWARF debugging format",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Evan Hellman"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "edamame-claude-code",
       "source": {
-        "source": "github",
-        "repo": "edamametechnologies/edamame_claude_code"
+        "source": "git-subdir",
+        "url": "https://github.com/edamametechnologies/edamame_claude_code.git",
+        "path": ""
       },
       "description": "Runtime behavioral monitoring plugin that detects divergence between stated intent and actual system behavior",
       "version": "1.0.0",
@@ -847,28 +1866,204 @@
       "license": "Apache-2.0"
     },
     {
-      "name": "elastic-agent-skills",
+      "name": "egregore",
       "source": {
-        "source": "github",
-        "repo": "elastic/agent-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/egregore"
       },
-      "description": "33 skills for Elasticsearch, Kibana, Observability, and Security workflows",
-      "version": "1.0.0",
+      "description": "Autonomous agent orchestrator: parallel worktree execution, agent specialization, cross-item learning, and crash recovery",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "elastic-cloud",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/elastic/agent-skills.git",
+        "path": "skills/cloud"
+      },
+      "description": "Elastic Cloud skills — project setup, access management, network security, and Serverless project lifecycle",
+      "version": "0.2.1",
       "author": {
         "username": "elastic",
         "name": "Elastic"
       },
-      "category": "data",
+      "category": "other",
       "tags": [
         "skills"
       ],
-      "license": "Apache-2.0"
+      "license": "MIT"
+    },
+    {
+      "name": "elastic-elasticsearch",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/elastic/agent-skills.git",
+        "path": "skills/elasticsearch"
+      },
+      "description": "Elasticsearch skills — ES|QL queries, data ingestion, security (authn, authz, audit), and troubleshooting",
+      "version": "0.2.1",
+      "author": {
+        "username": "elastic",
+        "name": "Elastic"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "elastic-kibana",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/elastic/agent-skills.git",
+        "path": "skills/kibana"
+      },
+      "description": "Kibana skills — dashboards, alerting rules, connectors, Vega visualizations, Agent Builder, streams, and audit logging",
+      "version": "0.2.1",
+      "author": {
+        "username": "elastic",
+        "name": "Elastic"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "elastic-observability",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/elastic/agent-skills.git",
+        "path": "skills/observability"
+      },
+      "description": "Elastic Observability skills — OpenTelemetry instrumentation and migration (.NET, Java, Python), LLM observability, log search, SLOs, and service health",
+      "version": "0.2.1",
+      "author": {
+        "username": "elastic",
+        "name": "Elastic"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "elastic-security",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/elastic/agent-skills.git",
+        "path": "skills/security"
+      },
+      "description": "Elastic Security skills — alert triage, case management, detection rule management, and sample data generation",
+      "version": "0.2.1",
+      "author": {
+        "username": "elastic",
+        "name": "Elastic"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "elixir-ls",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "elixir-ls"
+      },
+      "description": "Elixir language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "elixir",
+        "erlang",
+        "beam",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "engineering-advanced-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering"
+      },
+      "description": "42 advanced engineering skills: agent designer, agent workflow designer, AgentHub, RAG architect, database designer, focused-fix, browser-automation, spec-driven-workflow, secrets-vault-manager, sql-database-assistant, migration architect, observability designer, dependency auditor, release manager, API reviewer, CI/CD pipeline builder, MCP server builder, skill security auditor, performance profiler, Helm chart builder, Terraform patterns, self-eval, llm-cost-optimizer, prompt-governance, behuman, code-tour, demo-video, data-quality-auditor, and more.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "engineering-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering-team"
+      },
+      "description": "36 engineering skills: architecture, frontend, backend, fullstack, QA, DevOps, security, AI/ML, data engineering, Playwright (9 sub-skills), self-improving agent, Stripe integration, TDD guide, tech stack evaluator, Google Workspace CLI, a11y audit (WCAG 2.2), Azure cloud architect, GCP cloud architect, security pen testing, Snowflake development, adversarial-reviewer, ai-security, cloud-security, incident-response, red-team, threat-detection.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "entry-point-analyzer",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/entry-point-analyzer"
+      },
+      "description": "Analyzes smart contract codebases to identify state-changing entry points for security auditing. Detects externally callable functions that modify state, categorizes them by access level, and generates structured audit reports.",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Nicolas Donboly"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "everything-claude-code",
       "source": {
-        "source": "github",
-        "repo": "affaan-m/everything-claude-code"
+        "source": "git-subdir",
+        "url": "https://github.com/affaan-m/everything-claude-code.git",
+        "path": ""
       },
       "description": "Agent harness with 28 agents, 119 skills, and 60 commands for full workflow optimization",
       "version": "1.0.0",
@@ -886,18 +2081,114 @@
       "license": "MIT"
     },
     {
-      "name": "expo-skills",
+      "name": "excalidraw",
       "source": {
-        "source": "github",
-        "repo": "expo/skills"
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/excalidraw"
       },
-      "description": "Official Expo team AI agent skills for building, deploying, and debugging Expo apps",
+      "description": "Excalidraw diagram creator — generates .excalidraw JSON files with visual argument methodology and PNG render pipeline",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "executive-mentor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "c-level-advisor/executive-mentor"
+      },
+      "description": "Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for board meetings, navigates hard calls, runs postmortems. 5 sub-skills with slash commands.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "leadership",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "expo-app-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/expo/skills.git",
+        "path": "plugins/expo"
+      },
+      "description": "[Deprecated] Use the \"expo\" plugin instead. Build robust, productivity apps with Expo.",
       "version": "1.0.0",
       "author": {
         "username": "expo",
-        "name": "Expo"
+        "name": "Expo Team"
       },
-      "category": "development",
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "expo-deployment",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/expo/skills.git",
+        "path": "plugins/expo"
+      },
+      "description": "[Deprecated] Use the \"expo\" plugin instead. Deploying Expo apps to App Store, Play Store, and web.",
+      "version": "1.0.0",
+      "author": {
+        "username": "expo",
+        "name": "Expo Team"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "expo",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/expo/skills.git",
+        "path": "plugins/expo"
+      },
+      "description": "Official Expo skills for building, deploying, upgrading, and debugging Expo apps.",
+      "version": "1.0.0",
+      "author": {
+        "username": "expo",
+        "name": "Expo Team"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "finance-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "finance"
+      },
+      "description": "3 finance skills: financial analyst (ratio analysis, DCF valuation, budgeting, forecasting), SaaS metrics coach (ARR, MRR, churn, CAC, LTV, NRR, Quick Ratio, projections), and business investment advisor. 7 Python automation tools.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "finance",
       "tags": [
         "skills"
       ],
@@ -906,8 +2197,9 @@
     {
       "name": "firebase-agent-skills",
       "source": {
-        "source": "github",
-        "repo": "firebase/agent-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/firebase/agent-skills.git",
+        "path": ""
       },
       "description": "Agent skills for Firebase SDK setup, feature configuration, and deployment",
       "version": "1.0.0",
@@ -922,21 +2214,241 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "firebase-apk-scanner",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/firebase-apk-scanner"
+      },
+      "description": "Scan Android APKs for Firebase security misconfigurations including open databases, storage buckets, authentication issues, and exposed cloud functions. For authorized security research only.",
+      "version": "2.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Nick Sellier"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "flow-next",
       "source": {
-        "source": "github",
-        "repo": "gmickel/flow-next"
+        "source": "git-subdir",
+        "url": "https://github.com/gmickel/flow-next.git",
+        "path": "plugins/flow-next"
       },
-      "description": "Plan-first AI workflow plugin with task tracking and worker subagents",
-      "version": "1.0.0",
+      "description": "Zero-dependency planning + execution with .flow/ task tracking and Ralph autonomous mode (multi-model review gates). Worker subagent per task for context isolation. Includes 20 subagents, 11 commands, 16 skills.",
+      "version": "0.29.0",
       "author": {
         "username": "gmickel",
-        "name": "Gerald Mickel"
+        "name": "Gordon Mickel"
       },
-      "category": "productivity",
+      "category": "other",
       "tags": [
-        "skills",
-        "commands"
+        "claude-code",
+        "plugin",
+        "workflow",
+        "planning",
+        "execution"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "flow",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/gmickel/flow-next.git",
+        "path": "plugins/flow"
+      },
+      "description": "Two-step planning + execution workflow with optional Beads integration. Includes 6 subagents, 5 commands, 7 skills.",
+      "version": "0.8.4",
+      "author": {
+        "username": "gmickel",
+        "name": "Gordon Mickel"
+      },
+      "category": "other",
+      "tags": [
+        "claude-code",
+        "plugin",
+        "workflow",
+        "planning",
+        "execution"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "fp-check",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/fp-check"
+      },
+      "description": "Systematic false positive verification for security bug analysis with mandatory gate reviews",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Maciej Domanski"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "gastown",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/numman-ali/n-skills.git",
+        "path": "skills/tools/gastown"
+      },
+      "description": "Multi-agent orchestrator for Claude Code. Use when user mentions gastown, gas town, gt commands, convoys, polecats, rigs, slinging work, multi-agent coordination.",
+      "version": "1.0.0",
+      "author": {
+        "username": "numman-ali",
+        "name": "Numman Ali"
+      },
+      "category": "tools",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "gauntlet",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/gauntlet"
+      },
+      "description": "Codebase learning through knowledge extraction, code knowledge graph, adaptive challenges, and spaced repetition for developer onboarding and fluency",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "gh-cli",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/gh-cli"
+      },
+      "description": "Intercepts GitHub URL fetches and curl/wget commands, redirecting to the authenticated gh CLI.",
+      "version": "1.4.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "William Tan"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "git-cleanup",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/git-cleanup"
+      },
+      "description": "Safely analyzes and cleans up local git branches and worktrees by categorizing them as merged, squash-merged, superseded, or active work.",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Henrik Brodin"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "github-spec-kit",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "path": "plugins/github-spec-kit"
+      },
+      "description": "GitHub specification integration and verification",
+      "version": "2.7.2",
+      "author": {
+        "username": "giuseppe-trisciuoglio",
+        "name": "Giuseppe Trisciuoglio"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "gleam",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "gleam"
+      },
+      "description": "Gleam language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "gleam",
+        "beam",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "google-workspace-cli",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering-team/google-workspace-cli"
+      },
+      "description": "Google Workspace administration via the gws CLI. Install, authenticate, and automate Gmail, Drive, Sheets, Calendar, Docs, Chat, and Tasks. 5 Python tools, 3 reference guides, 43 built-in recipes, 10 persona bundles.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "gopls",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "gopls"
+      },
+      "description": "Go language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "go",
+        "lsp"
       ],
       "license": "MIT"
     },
@@ -961,40 +2473,99 @@
       "license": "MIT"
     },
     {
-      "name": "hashicorp-agent-skills",
+      "name": "gt-sdlc",
       "source": {
-        "source": "github",
-        "repo": "hashicorp/agent-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/gt-sdlc"
       },
-      "description": "Agent skills and plugins for Terraform and Packer infrastructure workflows",
+      "description": "Gas Town SDLC - brief to design to plan pipeline that turns ideas into Gas Town beads (bd create commands + dependency graph)",
       "version": "1.0.0",
       "author": {
-        "username": "hashicorp",
-        "name": "HashiCorp"
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
       },
-      "category": "devops",
+      "category": "other",
       "tags": [
         "skills"
       ],
-      "license": "MPL-2.0"
+      "license": "MIT"
     },
     {
-      "name": "huggingface-skills",
+      "name": "helm-chart-builder",
       "source": {
-        "source": "github",
-        "repo": "huggingface/skills"
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/helm-chart-builder"
       },
-      "description": "AI/ML skills for dataset creation, model training, evaluation, and the Hugging Face ecosystem",
+      "description": "Helm chart development — chart scaffolding, values design, template patterns, dependency management, and Kubernetes deployment strategies.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "herald",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/herald"
+      },
+      "description": "Standalone notification system: GitHub issue alerts and webhook support for Slack, Discord, and generic endpoints.",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "hookify",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/hookify"
+      },
+      "description": "Behavioral rules engine: create safety hooks through markdown configuration with pattern matching and zero-code rule authoring",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "huggingface-trackio",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/huggingface/skills.git",
+        "path": "skills/huggingface-trackio"
+      },
+      "description": "Track and visualize ML training experiments with Trackio. Log metrics via Python API and retrieve them via CLI. Supports real-time dashboards synced to HF Spaces.",
       "version": "1.0.0",
       "author": {
         "username": "huggingface",
         "name": "Hugging Face"
       },
-      "category": "data",
+      "category": "other",
       "tags": [
         "skills"
       ],
-      "license": "Apache-2.0"
+      "license": "MIT"
     },
     {
       "name": "humanizer",
@@ -1011,6 +2582,84 @@
       "category": "productivity",
       "tags": [
         "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "imbue",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/imbue"
+      },
+      "description": "TDD enforcement, proof-of-work validation, scope guarding, rigorous reasoning, and research-enriched feature review with RICE/WSJF/Kano scoring",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "insecure-defaults",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/insecure-defaults"
+      },
+      "description": "Detects insecure default configurations including hardcoded credentials, fallback secrets, weak authentication defaults, and dangerous values in production",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Trail of Bits"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "intelephense",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "intelephense"
+      },
+      "description": "PHP language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "php",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "jdtls",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "jdtls"
+      },
+      "description": "Java language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "java",
+        "lsp"
       ],
       "license": "MIT"
     },
@@ -1034,79 +2683,311 @@
       "license": "MIT"
     },
     {
-      "name": "learning-opportunities",
+      "name": "kotlin-lsp",
       "source": {
-        "source": "github",
-        "repo": "DrCatHicks/learning-opportunities"
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "kotlin-lsp"
       },
-      "description": "Skill for deliberate skill development and learning during AI-assisted coding",
+      "description": "Kotlin language server",
       "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "kotlin",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "learning-opportunities-auto",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/DrCatHicks/learning-opportunities.git",
+        "path": "learning-opportunities-auto"
+      },
+      "description": "Automatically nudges Claude to offer learning exercises after git commits. Requires the learning-opportunities plugin.",
+      "version": "1.0.1",
       "author": {
         "username": "DrCatHicks",
         "name": "Dr. Cat Hicks"
       },
-      "category": "productivity",
+      "category": "education",
       "tags": [
         "skills"
       ],
       "license": "CC-BY-4.0"
     },
     {
-      "name": "libre-uiux",
-      "source": {
-        "source": "github",
-        "repo": "HermeticOrmus/LibreUIUX-Claude-Code"
-      },
-      "description": "Complete UI/UX system with 152 agents, 74 skills, and 76 commands for structured design communication using design tokens",
-      "version": "1.0.0",
-      "author": {
-        "username": "HermeticOrmus",
-        "name": "Diego Bodart"
-      },
-      "category": "design",
-      "tags": [
-        "agents",
-        "commands",
-        "hooks"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "manim-video",
+      "name": "learning-opportunities",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/NousResearch/hermes-agent.git",
-        "path": "skills/creative/manim-video"
+        "url": "https://github.com/DrCatHicks/learning-opportunities.git",
+        "path": "learning-opportunities"
       },
-      "description": "Production pipeline for mathematical and technical animations using Manim Community Edition",
+      "description": "Science-based learning exercises for deliberate skill development during AI-assisted coding",
       "version": "1.0.0",
       "author": {
-        "username": "NousResearch",
-        "name": "Nous Research"
+        "username": "DrCatHicks",
+        "name": "Dr. Cat Hicks"
       },
-      "category": "design",
+      "category": "education",
+      "tags": [
+        "skills"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "let-fate-decide",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/let-fate-decide"
+      },
+      "description": "Draws Tarot cards using cryptographic randomness to add entropy to vague or underspecified planning. Interprets the spread to guide next steps. Use when feeling lucky, invoking heart-of-the-cards energy, or when prompts are ambiguous.",
+      "version": "1.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Scott Arciszewski"
+      },
+      "category": "other",
       "tags": [
         "skills"
       ],
       "license": "MIT"
     },
     {
-      "name": "n-skills",
+      "name": "leyline",
       "source": {
-        "source": "github",
-        "repo": "numman-ali/n-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/leyline"
       },
-      "description": "Curated plugin marketplace with skills for automation, tools, and workflow",
-      "version": "1.0.0",
+      "description": "Foundation infrastructure: auth flows, quota management, error patterns, markdown formatting, trust verification, and injection detection",
+      "version": "1.8.1",
       "author": {
-        "username": "numman-ali",
-        "name": "Numman Ali"
+        "username": "athola",
+        "name": "athola"
       },
-      "category": "productivity",
+      "category": "other",
       "tags": [
         "skills"
       ],
-      "license": "Apache-2.0"
+      "license": "MIT"
+    },
+    {
+      "name": "linear-prism",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/shinpr/linear-prism.git"
+      },
+      "description": "Turns requirements into structured Linear tasks — validates before decomposing, so downstream design starts clean",
+      "version": "1.0.0",
+      "author": {
+        "username": "shinpr",
+        "name": "Shinsuke Kagawa"
+      },
+      "category": "workflow-orchestration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "lua-language-server",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "lua-language-server"
+      },
+      "description": "Lua language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "lua",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "marketing-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "marketing-skill"
+      },
+      "description": "44 marketing skills across 7 pods: Content, SEO, CRO, Channels, Growth, Intelligence, Sales enablement, and X/Twitter growth. 51 Python tools, 73 reference docs.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "marketing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "mcp-toolkit",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/docker/claude-plugins.git",
+        "path": "plugins/mcp-toolkit"
+      },
+      "description": "Integrates Docker Desktop's MCP Toolkit with Claude Code, enabling access to containerized MCP servers. Requires Docker Desktop 4.28+ with MCP Toolkit enabled.",
+      "version": "1.0.0",
+      "author": {
+        "username": "docker",
+        "name": "Docker Inc."
+      },
+      "category": "integration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "meigen-ai-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/meigen-ai-design"
+      },
+      "description": "AI image generation with creative workflow orchestration, prompt engineering, and curated inspiration library via MCP server",
+      "version": "1.0.0",
+      "author": {
+        "username": "wshobson",
+        "name": "MeiGen"
+      },
+      "category": "creative",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "memory-palace",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/memory-palace"
+      },
+      "description": "Spatial knowledge organization with memory palace techniques: build, navigate, and maintain virtual memory structures with PR review capture",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "metronome",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/shinpr/metronome.git"
+      },
+      "description": "Detects shortcut-taking behavior and guides Claude to follow procedures step by step",
+      "version": "1.0.0",
+      "author": {
+        "username": "shinpr",
+        "name": "Shinsuke Kagawa"
+      },
+      "category": "behavior-control",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "migration-to-aws",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/migration-to-aws"
+      },
+      "description": "This no-cost tool assesses your current cloud provider's usage, geography, and billing data to estimate and compare AWS services and pricing, and recommends migration or continued use of your current provider. AWS pricing is based on current published pricing and may vary over time. The tool may generate a .migration folder containing comparison and migration execution data, which you may delete upon completion or use to migrate to AWS.",
+      "version": "1.0.0",
+      "author": {
+        "username": "awslabs",
+        "name": "Amazon Web Services"
+      },
+      "category": "migration",
+      "tags": [
+        "aws",
+        "gcp",
+        "migration",
+        "infrastructure"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "minister",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/minister"
+      },
+      "description": "GitHub issue management, label taxonomy, and initiative tracking: turns repositories, issues, and projects into status dashboards",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "modern-python",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/modern-python"
+      },
+      "description": "Modern Python best practices. Use when creating new Python projects, and writing Python scripts, or migrating existing projects from legacy tools.",
+      "version": "1.5.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "William Tan"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "mutation-testing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/mutation-testing"
+      },
+      "description": "Configures mewt or muton mutation testing campaigns — scopes targets, tunes timeouts, and optimizes long-running runs. Use when the user mentions mewt, muton, mutation testing, or wants to configure or optimize a mutation testing campaign.",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Trail of Bits"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "napkin",
@@ -1123,6 +3004,27 @@
       "category": "productivity",
       "tags": [
         "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "nixd",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "nixd"
+      },
+      "description": "Nix language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "nix",
+        "nixos",
+        "lsp"
       ],
       "license": "MIT"
     },
@@ -1145,6 +3047,219 @@
       "license": "MIT"
     },
     {
+      "name": "numman-ali-orchestration",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/numman-ali/n-skills.git",
+        "path": "skills/workflow/orchestration"
+      },
+      "description": "Multi-agent orchestration for complex tasks using cc-mirror tasks and TodoWrite. Use when tasks require parallel work, multiple agents, sophisticated coordination, or decomposition into parallel subtasks.",
+      "version": "1.0.0",
+      "author": {
+        "username": "numman-ali",
+        "name": "Numman Ali"
+      },
+      "category": "workflow",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "ocaml-lsp",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "ocaml-lsp"
+      },
+      "description": "OCaml language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "ocaml",
+        "ml",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "omnisharp",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "omnisharp"
+      },
+      "description": "C# language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "open-source-maintainer",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/numman-ali/n-skills.git",
+        "path": "skills/workflow/open-source-maintainer"
+      },
+      "description": "End-to-end GitHub repository maintenance for open-source projects. Use when asked to triage issues, review PRs, analyze contributor activity, generate maintenance reports, or maintain a repository.",
+      "version": "1.0.0",
+      "author": {
+        "username": "numman-ali",
+        "name": "Numman Ali"
+      },
+      "category": "workflow",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "oracle",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/oracle"
+      },
+      "description": "ONNX Runtime inference daemon for ML-enhanced plugin capabilities with local model inference over HTTP and opt-in activation",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "orient",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/DrCatHicks/learning-opportunities.git",
+        "path": "orient"
+      },
+      "description": "Generates a repo-specific orientation.md for use with the learning-opportunities skill",
+      "version": "1.0.0",
+      "author": {
+        "username": "DrCatHicks",
+        "name": "Dr. Michael Mullarkey"
+      },
+      "category": "education",
+      "tags": [
+        "skills"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "packer-builders",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hashicorp/agent-skills.git",
+        "path": "packer/builders"
+      },
+      "description": "Packer builder skills for AWS, Azure, and Windows image creation.",
+      "version": "1.0.0",
+      "author": {
+        "username": "hashicorp",
+        "name": "HashiCorp"
+      },
+      "category": "integration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MPL-2.0"
+    },
+    {
+      "name": "packer-hcp",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hashicorp/agent-skills.git",
+        "path": "packer/hcp"
+      },
+      "description": "HCP Packer registry integration for tracking and managing image metadata.",
+      "version": "1.0.0",
+      "author": {
+        "username": "hashicorp",
+        "name": "HashiCorp"
+      },
+      "category": "integration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MPL-2.0"
+    },
+    {
+      "name": "parseltongue",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/parseltongue"
+      },
+      "description": "Python development suite: testing, performance optimization, async patterns, and packaging guidance",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "pensive",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/pensive"
+      },
+      "description": "Multi-discipline code review: architecture, bugs, APIs, blast radius analysis, security, tests, Makefiles, and NASA Power of 10 analysis",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "pensyve",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/major7apps/pensyve.git",
+        "path": "integrations/claude-code"
+      },
+      "description": "Universal memory runtime — cross-session cognitive memory for Claude Code with episodic, semantic, and procedural memory",
+      "version": "1.0.4",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "ai-ml",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
       "name": "pg-aiguide",
       "source": {
         "source": "github",
@@ -1164,10 +3279,30 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "phantom",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/phantom"
+      },
+      "description": "Computer use toolkit for driving desktop environments through Claude's vision and action API with screenshot capture, mouse/keyboard control, and an autonomous agent loop",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "planning-with-files",
       "source": {
-        "source": "github",
-        "repo": "OthmanAdi/planning-with-files"
+        "source": "git-subdir",
+        "url": "https://github.com/OthmanAdi/planning-with-files.git",
+        "path": ""
       },
       "description": "Manus-style persistent markdown planning skill for structured project planning",
       "version": "1.0.0",
@@ -1185,8 +3320,9 @@
     {
       "name": "playwright-skill",
       "source": {
-        "source": "github",
-        "repo": "lackeyjb/playwright-skill"
+        "source": "git-subdir",
+        "url": "https://github.com/lackeyjb/playwright-skill.git",
+        "path": ""
       },
       "description": "Browser automation skill using Playwright for testing and web interaction",
       "version": "1.0.0",
@@ -1195,6 +3331,159 @@
         "name": "John Lackey"
       },
       "category": "testing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "plugin-eval",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/plugin-eval"
+      },
+      "description": "Three-layer quality evaluation framework for Claude Code plugins with Elo ranking",
+      "version": "0.1.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "quality",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "pm-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "project-management"
+      },
+      "description": "6 project management skills with 12 Python tools: senior PM, scrum master, Jira expert, Confluence expert, Atlassian admin, template creator.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "project-management",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "presentations",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/presentations"
+      },
+      "description": "Branded presentation and carousel generation (PPTX, PDF) with brand voice system and 26+ reusable slide layouts",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "product-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "product-team"
+      },
+      "description": "14 product skills with 16 Python tools: product manager toolkit (RICE, PRDs), agile product owner, product strategist, UX researcher, UI design system, competitive teardown, landing page generator, SaaS scaffolder, product analytics, experiment designer, product discovery, roadmap communicator, code-to-prd, research summarizer.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "product",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "property-based-testing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/property-based-testing"
+      },
+      "description": "Property-based testing guidance for multiple languages and smart contracts",
+      "version": "1.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Henrik Brodin"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "pw",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering-team/playwright-pro"
+      },
+      "description": "Production-grade Playwright testing toolkit. 9 skills, 3 agents, 55 templates, TestRail + BrowserStack MCP integrations. Generate tests, fix flaky failures, migrate from Cypress/Selenium.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "pyright",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "pyright"
+      },
+      "description": "Python language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "python",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "ra-qm-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "ra-qm-team"
+      },
+      "description": "13 regulatory affairs & quality management skills for HealthTech/MedTech: ISO 13485 QMS, MDR 2017/745, FDA 510(k)/PMA, GDPR/DSGVO, ISO 27001 ISMS, CAPA management, risk management, clinical evaluation, SOC 2 compliance.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "compliance",
       "tags": [
         "skills"
       ],
@@ -1238,28 +3527,49 @@
       "license": "MIT"
     },
     {
-      "name": "ring",
+      "name": "research-summarizer",
       "source": {
-        "source": "github",
-        "repo": "LerianStudio/ring"
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "product-team/research-summarizer"
       },
-      "description": "89 skills and 38 agents enforcing engineering best practices across teams",
-      "version": "1.0.0",
+      "description": "Structured research summarization — summarize academic papers, market research, user interviews, and competitive analysis into actionable insights.",
+      "version": "2.2.0",
       "author": {
-        "username": "LerianStudio",
-        "name": "Lerian Studio"
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
       },
-      "category": "development",
+      "category": "product",
       "tags": [
         "skills"
       ],
-      "license": "Apache-2.0"
+      "license": "MIT"
+    },
+    {
+      "name": "reverse-engineering",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/reverse-engineering"
+      },
+      "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
+      "version": "1.0.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Dávid Balatoni"
+      },
+      "category": "security",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "ruby-skills",
       "source": {
-        "source": "github",
-        "repo": "st0012/ruby-skills"
+        "source": "git-subdir",
+        "url": "https://github.com/st0012/ruby-skills.git",
+        "path": "plugins/ruby-skills"
       },
       "description": "Ruby development plugins with debugging, testing, and Rails workflow skills",
       "version": "1.0.0",
@@ -1268,6 +3578,162 @@
         "name": "Stan Lo"
       },
       "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "rust-analyzer",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "rust-analyzer"
+      },
+      "description": "Rust language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "rust",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sagemaker-ai",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/awslabs/agent-plugins.git",
+        "path": "plugins/sagemaker-ai"
+      },
+      "description": "Build, train, and deploy AI models with deep AWS AI/ML expertise brought directly into your coding assistants, covering the surface area of Amazon SageMaker AI.",
+      "version": "1.0.0",
+      "author": {
+        "username": "awslabs",
+        "name": "Amazon Web Services"
+      },
+      "category": "ai",
+      "tags": [
+        "aws",
+        "sagemaker",
+        "machine-learning",
+        "generative-ai"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sanctum",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/sanctum"
+      },
+      "description": "Git workflows: commit messages, PR preparation, documentation updates, version management, sessions, and deferred-item capture",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "scribe",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/scribe"
+      },
+      "description": "Documentation review, cleanup, and generation with AI slop detection, style learning, and human-quality writing enforcement",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "scry",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/scry"
+      },
+      "description": "Media generation: terminal recordings (VHS), browser recordings (Playwright), GIF processing, and media composition",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sdlc",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/sdlc"
+      },
+      "description": "Software development lifecycle automation - slash commands, agents, and GitHub/GitLab webhook watchers",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "seatbelt-sandboxer",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/seatbelt-sandboxer"
+      },
+      "description": "Generate minimal macOS Seatbelt sandbox configurations for applications",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Spencer Michaels"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "second-opinion",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/second-opinion"
+      },
+      "description": "Runs code reviews using external LLM CLIs (OpenAI Codex, Google Gemini) on uncommitted changes, branch diffs, or specific commits. Bundles Codex's built-in MCP server for direct tool access.",
+      "version": "1.6.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Dan Guido"
+      },
+      "category": "other",
       "tags": [
         "skills"
       ],
@@ -1293,10 +3759,68 @@
       "license": "MIT"
     },
     {
+      "name": "self-improving-agent",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering-team/self-improving-agent"
+      },
+      "description": "Curate auto-memory, promote learnings to CLAUDE.md and rules, extract patterns into skills.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "semgrep-rule-creator",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/semgrep-rule-creator"
+      },
+      "description": "Create custom Semgrep rules for detecting bug patterns and security vulnerabilities",
+      "version": "1.2.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Maciej Domanski"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "semgrep-rule-variant-creator",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/semgrep-rule-variant-creator"
+      },
+      "description": "Creates language variants of existing Semgrep rules with proper applicability analysis and test-driven validation",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Maciej Domanski"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "sentry-for-ai",
       "source": {
-        "source": "github",
-        "repo": "getsentry/sentry-for-ai"
+        "source": "git-subdir",
+        "url": "https://github.com/getsentry/sentry-for-ai.git",
+        "path": ""
       },
       "description": "Skills and commands for Sentry error monitoring, alerts, and debugging with /seer command",
       "version": "1.0.0",
@@ -1308,6 +3832,63 @@
       "tags": [
         "skills",
         "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sharp-edges",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/sharp-edges"
+      },
+      "description": "Identify error-prone APIs, dangerous configurations, and footgun designs that enable security mistakes",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Scott Arciszewski"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "skill-improver",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/skill-improver"
+      },
+      "description": "Automatically reviews and fixes Claude Code skills through iterative refinement until they meet quality standards. Requires plugin-dev plugin.",
+      "version": "1.0.1",
+      "author": {
+        "username": "trailofbits",
+        "name": "Paweł Płatek"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "skilltest",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/danielscholl/claude-sdlc.git",
+        "path": "plugins/skilltest"
+      },
+      "description": "Four-layer test framework for Claude Code plugin skills - structure validation, trigger accuracy, session testing, and skill value comparison",
+      "version": "1.0.0",
+      "author": {
+        "username": "danielscholl",
+        "name": "Daniel Scholl"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
@@ -1330,22 +3911,120 @@
       "license": "Apache-2.0"
     },
     {
-      "name": "statistical-research",
+      "name": "solargraph",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/Data-Wise/claude-plugins.git",
-        "path": "plugins/statistical-research"
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "solargraph"
       },
-      "description": "13 commands and 17 skills for academic workflows including literature management, manuscript writing, and arXiv/Crossref/BibTeX integration",
+      "description": "Ruby language server",
       "version": "1.0.0",
       "author": {
-        "username": "Data-Wise",
-        "name": "Davood Tofighi"
+        "username": "boostvolt",
+        "name": "Jan Kott"
       },
-      "category": "data",
+      "category": "development",
       "tags": [
-        "skills",
-        "commands"
+        "ruby",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sourcekit-lsp",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "sourcekit-lsp"
+      },
+      "description": "Swift language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "swift",
+        "ios",
+        "macos",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "spec-kit",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/spec-kit"
+      },
+      "description": "Specification-driven development: structured specs, implementation planning, and task orchestration for systematic feature delivery",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "spec-to-code-compliance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/spec-to-code-compliance"
+      },
+      "description": "Specification-to-code compliance checker for blockchain audits with evidence-based alignment analysis",
+      "version": "1.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Omar Inuwa"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "startup-business-analyst",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/startup-business-analyst"
+      },
+      "description": "Comprehensive startup business analysis with market sizing (TAM/SAM/SOM), financial modeling, team planning, and strategic research for early-stage companies",
+      "version": "1.0.5",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "business",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "static-analysis",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/static-analysis"
+      },
+      "description": "Static analysis toolkit with CodeQL, Semgrep, and SARIF parsing for security vulnerability detection",
+      "version": "1.2.1",
+      "author": {
+        "username": "trailofbits",
+        "name": "Axel Mierczuk & Paweł Płatek"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
@@ -1370,8 +4049,9 @@
     {
       "name": "stripe-ai",
       "source": {
-        "source": "github",
-        "repo": "stripe/ai"
+        "source": "git-subdir",
+        "url": "https://github.com/stripe/ai.git",
+        "path": "providers/claude/plugin/"
       },
       "description": "Skills and commands for building AI-powered products with Stripe payments and webhooks",
       "version": "1.0.0",
@@ -1407,8 +4087,9 @@
     {
       "name": "superpowers-chrome",
       "source": {
-        "source": "github",
-        "repo": "obra/superpowers-chrome"
+        "source": "git-subdir",
+        "url": "https://github.com/obra/superpowers-chrome.git",
+        "path": ""
       },
       "description": "Direct Chrome browser control via DevTools Protocol with zero dependencies and MCP server mode",
       "version": "1.0.0",
@@ -1426,8 +4107,9 @@
     {
       "name": "superpowers",
       "source": {
-        "source": "github",
-        "repo": "obra/superpowers"
+        "source": "git-subdir",
+        "url": "https://github.com/obra/superpowers.git",
+        "path": ""
       },
       "description": "Agentic skills framework and software development methodology with structured TDD workflow",
       "version": "1.0.0",
@@ -1445,10 +4127,30 @@
       "license": "MIT"
     },
     {
+      "name": "supply-chain-risk-auditor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/supply-chain-risk-auditor"
+      },
+      "description": "Audit supply-chain threat landscape of project dependencies for exploitation or takeover risk",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Spencer Michaels"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "tdd-guard",
       "source": {
-        "source": "github",
-        "repo": "nizos/tdd-guard"
+        "source": "git-subdir",
+        "url": "https://github.com/nizos/tdd-guard.git",
+        "path": "plugin"
       },
       "description": "Automated TDD enforcement that monitors agent actions and blocks violations in real-time",
       "version": "1.0.0",
@@ -1464,22 +4166,178 @@
       "license": "MIT"
     },
     {
-      "name": "trailofbits-skills",
+      "name": "terraform-code-generation",
       "source": {
-        "source": "github",
-        "repo": "trailofbits/skills"
+        "source": "git-subdir",
+        "url": "https://github.com/hashicorp/agent-skills.git",
+        "path": "terraform/code-generation"
       },
-      "description": "Security research skills for smart contract auditing, vulnerability detection, and reverse engineering",
+      "description": "Terraform code generation skills including HCL generation, style guides, and testing.",
       "version": "1.0.0",
       "author": {
-        "username": "trailofbits",
-        "name": "Trail of Bits"
+        "username": "hashicorp",
+        "name": "HashiCorp"
       },
-      "category": "security",
+      "category": "integration",
       "tags": [
         "skills"
       ],
-      "license": "CC-BY-SA-4.0"
+      "license": "MPL-2.0"
+    },
+    {
+      "name": "terraform-ls",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "terraform-ls"
+      },
+      "description": "Terraform language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "terraform",
+        "hcl",
+        "devops",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "terraform-module-generation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hashicorp/agent-skills.git",
+        "path": "terraform/module-generation"
+      },
+      "description": "Terraform module generation and refactoring skills including module design and Terraform Stacks.",
+      "version": "1.0.0",
+      "author": {
+        "username": "hashicorp",
+        "name": "HashiCorp"
+      },
+      "category": "integration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MPL-2.0"
+    },
+    {
+      "name": "terraform-patterns",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alirezarezvani/claude-skills.git",
+        "path": "engineering/terraform-patterns"
+      },
+      "description": "Terraform infrastructure-as-code — module design patterns, state management, provider configuration, CI/CD integration, and multi-environment strategies.",
+      "version": "2.2.0",
+      "author": {
+        "username": "alirezarezvani",
+        "name": "Alireza Rezvani"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "terraform-provider-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/hashicorp/agent-skills.git",
+        "path": "terraform/provider-development"
+      },
+      "description": "Terraform provider development skills including resources, data sources, actions, and acceptance testing.",
+      "version": "1.0.0",
+      "author": {
+        "username": "hashicorp",
+        "name": "HashiCorp"
+      },
+      "category": "integration",
+      "tags": [
+        "skills"
+      ],
+      "license": "MPL-2.0"
+    },
+    {
+      "name": "testing-handbook-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/testing-handbook-skills"
+      },
+      "description": "Skills from the Trail of Bits Application Security Testing Handbook (appsec.guide)",
+      "version": "1.0.1",
+      "author": {
+        "username": "trailofbits",
+        "name": "Paweł Płatek"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "tome",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/athola/claude-night-market.git",
+        "path": "plugins/tome"
+      },
+      "description": "Multi-source research: code archaeology, community discourse (HN, Reddit), academic literature (arXiv, Semantic Scholar), and TRIZ cross-domain analysis",
+      "version": "1.8.1",
+      "author": {
+        "username": "athola",
+        "name": "athola"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "trailmark",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/trailmark"
+      },
+      "description": "Builds multi-language source code graphs for security analysis: call graphs, attack surface mapping, blast radius, taint propagation, complexity hotspots, and entry point enumeration. Generates Mermaid diagrams (call graphs, class hierarchies, dependency maps, heatmaps). Compares code graph snapshots for structural diff and evolution analysis. Runs graph-informed mutation testing triage (genotoxic). Generates mutation-driven test vectors (vector-forge). Extracts crypto protocol message flows and converts Mermaid diagrams to ProVerif models. Projects SARIF and weAudit findings onto code graphs. Use when analyzing call paths, mapping attack surface, visualizing code architecture, triaging survived mutants, generating cryptographic test vectors, diagramming crypto protocols, formally verifying protocols, or augmenting audits with static analysis findings.",
+      "version": "0.8.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Scott Arciszewski"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "ui-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/ui-design"
+      },
+      "description": "Comprehensive UI/UX design plugin for mobile (iOS, Android, React Native) and web applications with design systems, accessibility, and modern patterns",
+      "version": "1.0.4",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
     },
     {
       "name": "understand-anything",
@@ -1494,6 +4352,44 @@
         "name": "Lum1104"
       },
       "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "upgrading-expo",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/expo/skills.git",
+        "path": "plugins/expo"
+      },
+      "description": "[Deprecated] Use the \"expo\" plugin instead. Guidelines for upgrading Expo SDK versions.",
+      "version": "1.0.0",
+      "author": {
+        "username": "expo",
+        "name": "Expo Team"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "variant-analysis",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/variant-analysis"
+      },
+      "description": "Find similar vulnerabilities and bugs across codebases using pattern-based analysis",
+      "version": "1.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Axel Mierczuk"
+      },
+      "category": "other",
       "tags": [
         "skills"
       ],
@@ -1518,22 +4414,1375 @@
       "license": "MIT"
     },
     {
-      "name": "wshobson-agents",
+      "name": "vtsls",
       "source": {
-        "source": "github",
-        "repo": "wshobson/agents"
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "vtsls"
       },
-      "description": "182 specialized AI agents, 147 skills, and 95 commands organized into 75 single-purpose plugins",
+      "description": "TypeScript/JavaScript language server",
       "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "typescript",
+        "javascript",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "workflow-skill-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/workflow-skill-design"
+      },
+      "description": "Teaches design patterns for workflow-based Claude Code skills and provides a review agent for auditing existing skills",
+      "version": "1.0.1",
+      "author": {
+        "username": "trailofbits",
+        "name": "Benjamin Samuels"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-accessibility-compliance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/accessibility-compliance"
+      },
+      "description": "WCAG accessibility auditing, compliance validation, UI testing for screen readers, keyboard navigation, and inclusive design",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "accessibility",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-agent-orchestration",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/agent-orchestration"
+      },
+      "description": "Multi-agent system optimization, agent improvement workflows, and context management",
+      "version": "1.2.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "ai-ml",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-api-scaffolding",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/api-scaffolding"
+      },
+      "description": "REST and GraphQL API scaffolding, framework selection, backend architecture, and API generation",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "api",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-api-testing-observability",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/api-testing-observability"
+      },
+      "description": "API testing automation, request mocking, OpenAPI documentation generation, observability setup, and monitoring",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "api",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-application-performance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/application-performance"
+      },
+      "description": "Application profiling, performance optimization, and observability for frontend and backend systems",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "performance",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-arm-cortex-microcontrollers",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/arm-cortex-microcontrollers"
+      },
+      "description": "ARM Cortex-M firmware development for Teensy, STM32, nRF52, and SAMD with peripheral drivers and memory safety patterns",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Ryan Snodgrass"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-backend-api-security",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/backend-api-security"
+      },
+      "description": "API security hardening, authentication implementation, authorization patterns, rate limiting, and input validation",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "security",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-backend-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/backend-development"
+      },
+      "description": "Backend API design, GraphQL architecture, workflow orchestration with Temporal, and test-driven backend development",
+      "version": "1.3.1",
       "author": {
         "username": "wshobson",
         "name": "Seth Hobson"
       },
       "category": "development",
       "tags": [
-        "skills",
-        "agents",
-        "commands"
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-blockchain-web3",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/blockchain-web3"
+      },
+      "description": "Smart contract development with Solidity, DeFi protocol implementation, NFT platforms, and Web3 application architecture",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "blockchain",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-business-analytics",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/business-analytics"
+      },
+      "description": "Business metrics analysis, KPI tracking, financial reporting, and data-driven decision making",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "business",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-cicd-automation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/cicd-automation"
+      },
+      "description": "CI/CD pipeline configuration, GitHub Actions/GitLab CI workflow setup, and automated deployment pipeline orchestration",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "infrastructure",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-cloud-infrastructure",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/cloud-infrastructure"
+      },
+      "description": "Cloud architecture design for AWS/Azure/GCP/OCI, Kubernetes cluster configuration, Terraform infrastructure-as-code, hybrid cloud networking, and multi-cloud cost optimization",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "infrastructure",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-code-documentation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/code-documentation"
+      },
+      "description": "Documentation generation, code explanation, and technical writing with automated doc generation and tutorial creation",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "documentation",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-code-refactoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/code-refactoring"
+      },
+      "description": "Code cleanup, refactoring automation, and technical debt management with context restoration",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "utilities",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-codebase-cleanup",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/codebase-cleanup"
+      },
+      "description": "Technical debt reduction, dependency updates, and code refactoring automation",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "modernization",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-comprehensive-review",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/comprehensive-review"
+      },
+      "description": "Multi-perspective code analysis covering architecture, security, and best practices",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "quality",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-content-marketing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/content-marketing"
+      },
+      "description": "Content marketing strategy, web research, and information synthesis for marketing operations",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "marketing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-context-management",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/context-management"
+      },
+      "description": "Context persistence, restoration, and long-running conversation management",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "ai-ml",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-customer-sales-automation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/customer-sales-automation"
+      },
+      "description": "Customer support workflow automation, sales pipeline management, email campaigns, and CRM integration",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "business",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-data-engineering",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/data-engineering"
+      },
+      "description": "ETL pipeline construction, data warehouse design, batch processing workflows, and data-driven feature development",
+      "version": "1.3.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "data",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-data-validation-suite",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/data-validation-suite"
+      },
+      "description": "Schema validation, data quality monitoring, streaming validation pipelines, and input validation for backend APIs",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "data",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-database-cloud-optimization",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/database-cloud-optimization"
+      },
+      "description": "Database query optimization, cloud cost optimization, and scalability improvements",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "performance",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-database-design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/database-design"
+      },
+      "description": "Database architecture, schema design, and SQL optimization for production systems",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "database",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-database-migrations",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/database-migrations"
+      },
+      "description": "Database migration automation, observability, and cross-database migration strategies",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "database",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-debugging-toolkit",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/debugging-toolkit"
+      },
+      "description": "Interactive debugging, developer experience optimization, and smart debugging workflows",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-dependency-management",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/dependency-management"
+      },
+      "description": "Dependency auditing, version management, and security vulnerability scanning",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "utilities",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-deployment-strategies",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/deployment-strategies"
+      },
+      "description": "Deployment patterns, rollback automation, and infrastructure templates",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "infrastructure",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-deployment-validation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/deployment-validation"
+      },
+      "description": "Pre-deployment checks, configuration validation, and deployment readiness assessment",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "infrastructure",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-developer-essentials",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/developer-essentials"
+      },
+      "description": "Essential developer skills including Git workflows, SQL optimization, error handling, code review, E2E testing, authentication, debugging, and monorepo management",
+      "version": "1.0.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-distributed-debugging",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/distributed-debugging"
+      },
+      "description": "Distributed system tracing and debugging across microservices",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "operations",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-documentation-generation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/documentation-generation"
+      },
+      "description": "OpenAPI specification generation, Mermaid diagram creation, tutorial writing, API reference documentation",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "documentation",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-error-debugging",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/error-debugging"
+      },
+      "description": "Error analysis, trace debugging, and multi-agent problem diagnosis",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "utilities",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-error-diagnostics",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/error-diagnostics"
+      },
+      "description": "Error tracing, root cause analysis, and smart debugging for production systems",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "operations",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-framework-migration",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/framework-migration"
+      },
+      "description": "Framework updates, migration planning, and architectural transformation workflows",
+      "version": "1.3.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "modernization",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-frontend-mobile-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/frontend-mobile-development"
+      },
+      "description": "Frontend UI development and mobile application implementation across platforms",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-frontend-mobile-security",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/frontend-mobile-security"
+      },
+      "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "security",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-full-stack-orchestration",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/full-stack-orchestration"
+      },
+      "description": "End-to-end feature orchestration with testing, security, performance, and deployment",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "workflows",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-functional-programming",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/functional-programming"
+      },
+      "description": "Functional programming with Elixir, OTP patterns, Phoenix framework, and distributed systems",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-game-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/game-development"
+      },
+      "description": "Unity game development with C# scripting, Minecraft server plugin development with Bukkit/Spigot APIs",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "gaming",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-git-pr-workflows",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/git-pr-workflows"
+      },
+      "description": "Git workflow automation, pull request enhancement, and team onboarding processes",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "workflows",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-hr-legal-compliance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/hr-legal-compliance"
+      },
+      "description": "HR policy documentation, legal compliance templates (GDPR/SOC2/HIPAA), employment contracts, and regulatory documentation",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "business",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-incident-response",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/incident-response"
+      },
+      "description": "Production incident management, triage workflows, and automated incident resolution",
+      "version": "1.3.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "operations",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-javascript-typescript",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/javascript-typescript"
+      },
+      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-julia-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/julia-development"
+      },
+      "description": "Modern Julia development with Julia 1.10+, package management, scientific computing, high-performance numerical code, and production best practices",
+      "version": "1.0.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Community Contribution"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-jvm-languages",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/jvm-languages"
+      },
+      "description": "JVM language development including Java, Scala, and C# with enterprise patterns and frameworks",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-kubernetes-operations",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/kubernetes-operations"
+      },
+      "description": "Kubernetes manifest generation, networking configuration, security policies, observability setup, GitOps workflows, and auto-scaling",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "infrastructure",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-llm-application-dev",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/llm-application-dev"
+      },
+      "description": "LLM application development with LangGraph, RAG systems, vector search, and AI agent architectures for Claude 4.6 and GPT-5.2",
+      "version": "2.0.5",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "ai-ml",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-machine-learning-ops",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/machine-learning-ops"
+      },
+      "description": "ML model training pipelines, hyperparameter tuning, model deployment automation, experiment tracking, and MLOps workflows",
+      "version": "1.2.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "ai-ml",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-multi-platform-apps",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/multi-platform-apps"
+      },
+      "description": "Cross-platform application development coordinating web, iOS, Android, and desktop implementations",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-observability-monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/observability-monitoring"
+      },
+      "description": "Metrics collection, logging infrastructure, distributed tracing, SLO implementation, and monitoring dashboards",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "operations",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-payment-processing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/payment-processing"
+      },
+      "description": "Payment gateway integration with Stripe, PayPal, checkout flow implementation, subscription billing, and PCI compliance",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "payments",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-performance-testing-review",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/performance-testing-review"
+      },
+      "description": "Performance analysis, test coverage review, and AI-powered code quality assessment",
+      "version": "1.2.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "quality",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-python-development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/python-development"
+      },
+      "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-quantitative-trading",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/quantitative-trading"
+      },
+      "description": "Quantitative analysis, algorithmic trading strategies, financial modeling, portfolio risk management, and backtesting",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "finance",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-security-compliance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/security-compliance"
+      },
+      "description": "SOC2, HIPAA, and GDPR compliance validation, secrets scanning, compliance checklists, and regulatory documentation",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "security",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-security-scanning",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/security-scanning"
+      },
+      "description": "SAST analysis, dependency vulnerability scanning, OWASP Top 10 compliance, container security scanning, and automated security hardening",
+      "version": "1.3.1",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "security",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-seo-analysis-monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/seo-analysis-monitoring"
+      },
+      "description": "Content freshness analysis, cannibalization detection, and authority building for SEO",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "marketing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-seo-content-creation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/seo-content-creation"
+      },
+      "description": "SEO content writing, planning, and quality auditing with E-E-A-T optimization",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "marketing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-seo-technical-optimization",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/seo-technical-optimization"
+      },
+      "description": "Technical SEO optimization including meta tags, keywords, structure, and featured snippets",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "marketing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-shell-scripting",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/shell-scripting"
+      },
+      "description": "Production-grade Bash scripting with defensive programming, POSIX compliance, and comprehensive testing",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Ryan Snodgrass"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-systems-programming",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/systems-programming"
+      },
+      "description": "Systems programming with Rust, Go, C, and C++ for performance-critical and low-level development",
+      "version": "1.2.2",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-tdd-workflows",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/tdd-workflows"
+      },
+      "description": "Test-driven development methodology with red-green-refactor cycles and code review",
+      "version": "1.3.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "workflows",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-team-collaboration",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/team-collaboration"
+      },
+      "description": "Team workflows, issue management, standup automation, and developer experience optimization",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "utilities",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-unit-testing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/unit-testing"
+      },
+      "description": "Unit and integration test automation for Python and JavaScript with debugging support",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "testing",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "wshobson-web-scripting",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/web-scripting"
+      },
+      "description": "Web scripting with PHP and Ruby for web applications, CMS development, and backend services",
+      "version": "1.2.0",
+      "author": {
+        "username": "wshobson",
+        "name": "Seth Hobson"
+      },
+      "category": "languages",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "yaml-language-server",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "yaml-language-server"
+      },
+      "description": "YAML language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "yaml",
+        "yml",
+        "lsp"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "yara-authoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/yara-authoring"
+      },
+      "description": "YARA-X detection rule authoring with linting and quality analysis",
+      "version": "2.0.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Trail of Bits"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "zai-cli",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/numman-ali/n-skills.git",
+        "path": "skills/tools/zai-cli"
+      },
+      "description": "Z.AI vision, search, reader, and GitHub exploration via MCP",
+      "version": "1.0.0",
+      "author": {
+        "username": "numman-ali",
+        "name": "Numman Ali"
+      },
+      "category": "tools",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "zeroize-audit",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/zeroize-audit"
+      },
+      "description": "Detects missing or compiler-optimized zeroization of sensitive data with assembly and control-flow analysis",
+      "version": "0.1.0",
+      "author": {
+        "username": "trailofbits",
+        "name": "Trail of Bits"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "zls",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/boostvolt/claude-code-lsps.git",
+        "path": "zls"
+      },
+      "description": "Zig language server",
+      "version": "1.0.0",
+      "author": {
+        "username": "boostvolt",
+        "name": "Jan Kott"
+      },
+      "category": "development",
+      "tags": [
+        "zig",
+        "lsp"
       ],
       "license": "MIT"
     }

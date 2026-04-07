@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-dependency-management",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/dependency-management"
+  },
+  "description": "Dependency auditing, version management, and security vulnerability scanning",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "utilities",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

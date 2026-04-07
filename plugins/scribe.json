@@ -1,0 +1,19 @@
+{
+  "name": "scribe",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/scribe"
+  },
+  "description": "Documentation review, cleanup, and generation with AI slop detection, style learning, and human-quality writing enforcement",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

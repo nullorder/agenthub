@@ -1,0 +1,19 @@
+{
+  "name": "pm-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "project-management"
+  },
+  "description": "6 project management skills with 12 Python tools: senior PM, scrum master, Jira expert, Confluence expert, Atlassian admin, template creator.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "project-management",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

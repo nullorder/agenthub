@@ -1,0 +1,19 @@
+{
+  "name": "fp-check",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/fp-check"
+  },
+  "description": "Systematic false positive verification for security bug analysis with mandatory gate reviews",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Maciej Domanski"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

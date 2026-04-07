@@ -1,0 +1,19 @@
+{
+  "name": "imbue",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/imbue"
+  },
+  "description": "TDD enforcement, proof-of-work validation, scope guarding, rigorous reasoning, and research-enriched feature review with RICE/WSJF/Kano scoring",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

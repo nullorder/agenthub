@@ -1,0 +1,19 @@
+{
+  "name": "seatbelt-sandboxer",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/seatbelt-sandboxer"
+  },
+  "description": "Generate minimal macOS Seatbelt sandbox configurations for applications",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Spencer Michaels"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

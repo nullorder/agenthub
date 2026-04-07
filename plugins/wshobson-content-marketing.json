@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-content-marketing",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/content-marketing"
+  },
+  "description": "Content marketing strategy, web research, and information synthesis for marketing operations",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "marketing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

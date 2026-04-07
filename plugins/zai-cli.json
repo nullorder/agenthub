@@ -1,0 +1,19 @@
+{
+  "name": "zai-cli",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/numman-ali/n-skills.git",
+    "path": "skills/tools/zai-cli"
+  },
+  "description": "Z.AI vision, search, reader, and GitHub exploration via MCP",
+  "version": "1.0.0",
+  "author": {
+    "username": "numman-ali",
+    "name": "Numman Ali"
+  },
+  "category": "tools",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

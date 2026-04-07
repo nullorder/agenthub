@@ -1,0 +1,19 @@
+{
+  "name": "dwarf-expert",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/dwarf-expert"
+  },
+  "description": "Interact with and understand the DWARF debugging format",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Evan Hellman"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tome",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/tome"
+  },
+  "description": "Multi-source research: code archaeology, community discourse (HN, Reddit), academic literature (arXiv, Semantic Scholar), and TRIZ cross-domain analysis",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

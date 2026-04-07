@@ -1,0 +1,21 @@
+{
+  "name": "yaml-language-server",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "yaml-language-server"
+  },
+  "description": "YAML language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "yaml",
+    "yml",
+    "lsp"
+  ],
+  "license": "MIT"
+}

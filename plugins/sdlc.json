@@ -1,0 +1,19 @@
+{
+  "name": "sdlc",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danielscholl/claude-sdlc.git",
+    "path": "plugins/sdlc"
+  },
+  "description": "Software development lifecycle automation - slash commands, agents, and GitHub/GitLab webhook watchers",
+  "version": "1.0.0",
+  "author": {
+    "username": "danielscholl",
+    "name": "Daniel Scholl"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

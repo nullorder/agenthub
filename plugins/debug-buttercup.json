@@ -1,0 +1,19 @@
+{
+  "name": "debug-buttercup",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/debug-buttercup"
+  },
+  "description": "Debug Buttercup Kubernetes deployments",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Ronald Eytchison"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

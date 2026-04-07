@@ -1,0 +1,19 @@
+{
+  "name": "git-cleanup",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/git-cleanup"
+  },
+  "description": "Safely analyzes and cleans up local git branches and worktrees by categorizing them as merged, squash-merged, superseded, or active work.",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Henrik Brodin"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

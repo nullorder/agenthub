@@ -1,0 +1,19 @@
+{
+  "name": "gauntlet",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/gauntlet"
+  },
+  "description": "Codebase learning through knowledge extraction, code knowledge graph, adaptive challenges, and spaced repetition for developer onboarding and fluency",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

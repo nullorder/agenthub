@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-database-migrations",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/database-migrations"
+  },
+  "description": "Database migration automation, observability, and cross-database migration strategies",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "database",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

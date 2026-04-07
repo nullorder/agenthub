@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-cloud-infrastructure",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/cloud-infrastructure"
+  },
+  "description": "Cloud architecture design for AWS/Azure/GCP/OCI, Kubernetes cluster configuration, Terraform infrastructure-as-code, hybrid cloud networking, and multi-cloud cost optimization",
+  "version": "1.3.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "infrastructure",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

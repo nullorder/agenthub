@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-seo-content-creation",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/seo-content-creation"
+  },
+  "description": "SEO content writing, planning, and quality auditing with E-E-A-T optimization",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "marketing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "agentic-actions-auditor",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/agentic-actions-auditor"
+  },
+  "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference)",
+  "version": "1.2.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Emilio L\u00f3pez & Will Vandevanter"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "conjure",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/conjure"
+  },
+  "description": "Delegate tasks to external LLMs (Gemini, Qwen) with cheapest-capable model selection while retaining strategic oversight",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

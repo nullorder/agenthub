@@ -1,0 +1,20 @@
+{
+  "name": "solargraph",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "solargraph"
+  },
+  "description": "Ruby language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "ruby",
+    "lsp"
+  ],
+  "license": "MIT"
+}

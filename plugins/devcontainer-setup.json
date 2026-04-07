@@ -1,0 +1,19 @@
+{
+  "name": "devcontainer-setup",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/devcontainer-setup"
+  },
+  "description": "Create pre-configured devcontainers with Claude Code and language-specific tooling",
+  "version": "0.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Alexis Challande"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

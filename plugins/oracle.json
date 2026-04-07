@@ -1,0 +1,19 @@
+{
+  "name": "oracle",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/oracle"
+  },
+  "description": "ONNX Runtime inference daemon for ML-enhanced plugin capabilities with local model inference over HTTP and opt-in activation",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

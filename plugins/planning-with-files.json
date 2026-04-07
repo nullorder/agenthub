@@ -1,8 +1,9 @@
 {
   "name": "planning-with-files",
   "source": {
-    "source": "github",
-    "repo": "OthmanAdi/planning-with-files"
+    "source": "git-subdir",
+    "url": "https://github.com/OthmanAdi/planning-with-files.git",
+    "path": ""
   },
   "description": "Manus-style persistent markdown planning skill for structured project planning",
   "version": "1.0.0",

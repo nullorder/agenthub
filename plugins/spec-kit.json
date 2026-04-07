@@ -1,0 +1,19 @@
+{
+  "name": "spec-kit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/spec-kit"
+  },
+  "description": "Specification-driven development: structured specs, implementation planning, and task orchestration for systematic feature delivery",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

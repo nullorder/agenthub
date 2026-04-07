@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-debugging-toolkit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/debugging-toolkit"
+  },
+  "description": "Interactive debugging, developer experience optimization, and smart debugging workflows",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

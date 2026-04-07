@@ -1,0 +1,19 @@
+{
+  "name": "reverse-engineering",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/reverse-engineering"
+  },
+  "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
+  "version": "1.0.0",
+  "author": {
+    "username": "wshobson",
+    "name": "D\u00e1vid Balatoni"
+  },
+  "category": "security",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

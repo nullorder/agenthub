@@ -1,0 +1,27 @@
+{
+  "name": "aws-serverless",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/awslabs/agent-plugins.git",
+    "path": "plugins/aws-serverless"
+  },
+  "description": "Design, build, deploy, test, and debug serverless applications with AWS Serverless services.",
+  "version": "1.0.0",
+  "author": {
+    "username": "awslabs",
+    "name": "Amazon Web Services"
+  },
+  "category": "development",
+  "tags": [
+    "aws",
+    "serverless",
+    "lambda",
+    "durable functions",
+    "development",
+    "sam",
+    "api gateway",
+    "eventbridge",
+    "step functions"
+  ],
+  "license": "MIT"
+}

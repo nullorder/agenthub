@@ -1,0 +1,19 @@
+{
+  "name": "mcp-toolkit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/docker/claude-plugins.git",
+    "path": "plugins/mcp-toolkit"
+  },
+  "description": "Integrates Docker Desktop's MCP Toolkit with Claude Code, enabling access to containerized MCP servers. Requires Docker Desktop 4.28+ with MCP Toolkit enabled.",
+  "version": "1.0.0",
+  "author": {
+    "username": "docker",
+    "name": "Docker Inc."
+  },
+  "category": "integration",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

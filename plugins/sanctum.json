@@ -1,0 +1,19 @@
+{
+  "name": "sanctum",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/sanctum"
+  },
+  "description": "Git workflows: commit messages, PR preparation, documentation updates, version management, sessions, and deferred-item capture",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

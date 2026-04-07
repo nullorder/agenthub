@@ -1,0 +1,19 @@
+{
+  "name": "c4-architecture",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/c4-architecture"
+  },
+  "description": "Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagram generation",
+  "version": "1.0.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "documentation",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

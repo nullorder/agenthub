@@ -1,0 +1,19 @@
+{
+  "name": "constant-time-analysis",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/constant-time-analysis"
+  },
+  "description": "Detect compiler-induced timing side-channels in cryptographic code",
+  "version": "0.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Scott Arciszewski"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

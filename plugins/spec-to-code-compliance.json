@@ -1,0 +1,19 @@
+{
+  "name": "spec-to-code-compliance",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/spec-to-code-compliance"
+  },
+  "description": "Specification-to-code compliance checker for blockchain audits with evidence-based alignment analysis",
+  "version": "1.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Omar Inuwa"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

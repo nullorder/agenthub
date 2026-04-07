@@ -1,0 +1,19 @@
+{
+  "name": "insecure-defaults",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/insecure-defaults"
+  },
+  "description": "Detects insecure default configurations including hardcoded credentials, fallback secrets, weak authentication defaults, and dangerous values in production",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Trail of Bits"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

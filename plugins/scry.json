@@ -1,0 +1,19 @@
+{
+  "name": "scry",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/scry"
+  },
+  "description": "Media generation: terminal recordings (VHS), browser recordings (Playwright), GIF processing, and media composition",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

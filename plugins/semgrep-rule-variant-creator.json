@@ -1,0 +1,19 @@
+{
+  "name": "semgrep-rule-variant-creator",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/semgrep-rule-variant-creator"
+  },
+  "description": "Creates language variants of existing Semgrep rules with proper applicability analysis and test-driven validation",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Maciej Domanski"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

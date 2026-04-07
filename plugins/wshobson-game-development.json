@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-game-development",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/game-development"
+  },
+  "description": "Unity game development with C# scripting, Minecraft server plugin development with Bukkit/Spigot APIs",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "gaming",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "static-analysis",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/static-analysis"
+  },
+  "description": "Static analysis toolkit with CodeQL, Semgrep, and SARIF parsing for security vulnerability detection",
+  "version": "1.2.1",
+  "author": {
+    "username": "trailofbits",
+    "name": "Axel Mierczuk & Pawe\u0142 P\u0142atek"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

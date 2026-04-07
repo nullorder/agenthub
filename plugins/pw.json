@@ -1,0 +1,19 @@
+{
+  "name": "pw",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering-team/playwright-pro"
+  },
+  "description": "Production-grade Playwright testing toolkit. 9 skills, 3 agents, 55 templates, TestRail + BrowserStack MCP integrations. Generate tests, fix flaky failures, migrate from Cypress/Selenium.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

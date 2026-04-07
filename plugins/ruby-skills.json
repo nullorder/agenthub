@@ -1,8 +1,9 @@
 {
   "name": "ruby-skills",
   "source": {
-    "source": "github",
-    "repo": "st0012/ruby-skills"
+    "source": "git-subdir",
+    "url": "https://github.com/st0012/ruby-skills.git",
+    "path": "plugins/ruby-skills"
   },
   "description": "Ruby development plugins with debugging, testing, and Rails workflow skills",
   "version": "1.0.0",

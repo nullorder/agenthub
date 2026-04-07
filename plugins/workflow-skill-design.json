@@ -1,0 +1,19 @@
+{
+  "name": "workflow-skill-design",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/workflow-skill-design"
+  },
+  "description": "Teaches design patterns for workflow-based Claude Code skills and provides a review agent for auditing existing skills",
+  "version": "1.0.1",
+  "author": {
+    "username": "trailofbits",
+    "name": "Benjamin Samuels"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

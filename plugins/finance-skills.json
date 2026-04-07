@@ -1,0 +1,19 @@
+{
+  "name": "finance-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "finance"
+  },
+  "description": "3 finance skills: financial analyst (ratio analysis, DCF valuation, budgeting, forecasting), SaaS metrics coach (ARR, MRR, churn, CAC, LTV, NRR, Quick Ratio, projections), and business investment advisor. 7 Python automation tools.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "finance",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

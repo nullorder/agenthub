@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-julia-development",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/julia-development"
+  },
+  "description": "Modern Julia development with Julia 1.10+, package management, scientific computing, high-performance numerical code, and production best practices",
+  "version": "1.0.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Community Contribution"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

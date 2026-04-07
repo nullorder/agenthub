@@ -1,0 +1,19 @@
+{
+  "name": "dotnet-contribution",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/dotnet-contribution"
+  },
+  "description": "Comprehensive .NET backend development with C#, ASP.NET Core, Entity Framework Core, and Dapper for production-grade applications",
+  "version": "1.0.1",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "zeroize-audit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/zeroize-audit"
+  },
+  "description": "Detects missing or compiler-optimized zeroization of sensitive data with assembly and control-flow analysis",
+  "version": "0.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Trail of Bits"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

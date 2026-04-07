@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-functional-programming",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/functional-programming"
+  },
+  "description": "Functional programming with Elixir, OTP patterns, Phoenix framework, and distributed systems",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-llm-application-dev",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/llm-application-dev"
+  },
+  "description": "LLM application development with LangGraph, RAG systems, vector search, and AI agent architectures for Claude 4.6 and GPT-5.2",
+  "version": "2.0.5",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "ai-ml",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

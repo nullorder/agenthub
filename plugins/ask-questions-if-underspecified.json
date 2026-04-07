@@ -1,0 +1,19 @@
+{
+  "name": "ask-questions-if-underspecified",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/ask-questions-if-underspecified"
+  },
+  "description": "Clarify ambiguous requirements by asking questions before implementing. Only when invoked explicitly.",
+  "version": "1.0.1",
+  "author": {
+    "username": "trailofbits",
+    "name": "Kevin Valerio"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

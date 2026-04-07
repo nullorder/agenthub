@@ -1,0 +1,19 @@
+{
+  "name": "skill-improver",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/skill-improver"
+  },
+  "description": "Automatically reviews and fixes Claude Code skills through iterative refinement until they meet quality standards. Requires plugin-dev plugin.",
+  "version": "1.0.1",
+  "author": {
+    "username": "trailofbits",
+    "name": "Pawe\u0142 P\u0142atek"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

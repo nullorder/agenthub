@@ -1,0 +1,19 @@
+{
+  "name": "helm-chart-builder",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering/helm-chart-builder"
+  },
+  "description": "Helm chart development \u2014 chart scaffolding, values design, template patterns, dependency management, and Kubernetes deployment strategies.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

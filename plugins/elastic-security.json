@@ -1,0 +1,19 @@
+{
+  "name": "elastic-security",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/elastic/agent-skills.git",
+    "path": "skills/security"
+  },
+  "description": "Elastic Security skills \u2014 alert triage, case management, detection rule management, and sample data generation",
+  "version": "0.2.1",
+  "author": {
+    "username": "elastic",
+    "name": "Elastic"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

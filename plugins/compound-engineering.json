@@ -1,19 +1,25 @@
 {
   "name": "compound-engineering",
   "source": {
-    "source": "github",
-    "repo": "EveryInc/compound-engineering-plugin"
+    "source": "git-subdir",
+    "url": "https://github.com/EveryInc/compound-engineering-plugin.git",
+    "path": "plugins/compound-engineering"
   },
-  "description": "Structured workflow emphasizing 80% planning/review and 20% execution with ideate, brainstorm, plan, work, and review phases",
+  "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last.",
   "version": "1.0.0",
   "author": {
     "username": "EveryInc",
-    "name": "Every"
+    "name": "Kieran Klaassen"
   },
-  "category": "productivity",
+  "category": "other",
   "tags": [
-    "skills",
-    "agents"
+    "ai-powered",
+    "compound-engineering",
+    "workflow-automation",
+    "code-review",
+    "quality",
+    "knowledge-management",
+    "image-generation"
   ],
   "license": "MIT"
 }

@@ -1,0 +1,19 @@
+{
+  "name": "terraform-provider-development",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/hashicorp/agent-skills.git",
+    "path": "terraform/provider-development"
+  },
+  "description": "Terraform provider development skills including resources, data sources, actions, and acceptance testing.",
+  "version": "1.0.0",
+  "author": {
+    "username": "hashicorp",
+    "name": "HashiCorp"
+  },
+  "category": "integration",
+  "tags": [
+    "skills"
+  ],
+  "license": "MPL-2.0"
+}

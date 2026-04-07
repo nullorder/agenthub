@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-cicd-automation",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/cicd-automation"
+  },
+  "description": "CI/CD pipeline configuration, GitHub Actions/GitLab CI workflow setup, and automated deployment pipeline orchestration",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "infrastructure",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

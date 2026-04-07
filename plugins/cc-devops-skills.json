@@ -1,8 +1,9 @@
 {
   "name": "cc-devops-skills",
   "source": {
-    "source": "github",
-    "repo": "akin-ozer/cc-devops-skills"
+    "source": "git-subdir",
+    "url": "https://github.com/akin-ozer/cc-devops-skills.git",
+    "path": "devops-skills-plugin"
   },
   "description": "31 DevOps skills covering Terraform, Helm, kubectl, GitHub Actions with linting, security checks, and dry-run validation",
   "version": "1.0.0",

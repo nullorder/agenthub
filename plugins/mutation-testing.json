@@ -1,0 +1,19 @@
+{
+  "name": "mutation-testing",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/mutation-testing"
+  },
+  "description": "Configures mewt or muton mutation testing campaigns \u2014 scopes targets, tunes timeouts, and optimizes long-running runs. Use when the user mentions mewt, muton, mutation testing, or wants to configure or optimize a mutation testing campaign.",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Trail of Bits"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

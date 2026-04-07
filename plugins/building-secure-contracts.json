@@ -1,0 +1,19 @@
+{
+  "name": "building-secure-contracts",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/building-secure-contracts"
+  },
+  "description": "Comprehensive smart contract security toolkit based on Trail of Bits' Building Secure Contracts framework. Includes vulnerability scanners for 6 blockchains and 5 development guideline assistants.",
+  "version": "1.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Omar Inuwa && Pawe\u0142 P\u0142atek"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

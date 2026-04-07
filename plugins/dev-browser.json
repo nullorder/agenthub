@@ -1,0 +1,19 @@
+{
+  "name": "dev-browser",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/numman-ali/n-skills.git",
+    "path": "skills/automation/dev-browser"
+  },
+  "description": "Browser automation with persistent page state. Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows.",
+  "version": "1.0.0",
+  "author": {
+    "username": "numman-ali",
+    "name": "Sawyer Hood"
+  },
+  "category": "automation",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

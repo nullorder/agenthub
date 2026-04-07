@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-error-diagnostics",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/error-diagnostics"
+  },
+  "description": "Error tracing, root cause analysis, and smart debugging for production systems",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "operations",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

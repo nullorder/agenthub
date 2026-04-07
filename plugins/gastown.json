@@ -1,0 +1,19 @@
+{
+  "name": "gastown",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/numman-ali/n-skills.git",
+    "path": "skills/tools/gastown"
+  },
+  "description": "Multi-agent orchestrator for Claude Code. Use when user mentions gastown, gas town, gt commands, convoys, polecats, rigs, slinging work, multi-agent coordination.",
+  "version": "1.0.0",
+  "author": {
+    "username": "numman-ali",
+    "name": "Numman Ali"
+  },
+  "category": "tools",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "claude-in-chrome-troubleshooting",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/claude-in-chrome-troubleshooting"
+  },
+  "description": "Diagnose and fix Claude in Chrome MCP extension connectivity issues",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Dan Guido"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

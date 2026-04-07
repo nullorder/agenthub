@@ -1,8 +1,9 @@
 {
   "name": "claude-elixir-phoenix",
   "source": {
-    "source": "github",
-    "repo": "oliver-kriska/claude-elixir-phoenix"
+    "source": "git-subdir",
+    "url": "https://github.com/oliver-kriska/claude-elixir-phoenix.git",
+    "path": "plugins/elixir-phoenix"
   },
   "description": "Elixir/Phoenix/LiveView plugin with 20 specialist agents for BEAM development",
   "version": "1.0.0",

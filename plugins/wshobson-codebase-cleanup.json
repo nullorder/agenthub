@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-codebase-cleanup",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/codebase-cleanup"
+  },
+  "description": "Technical debt reduction, dependency updates, and code refactoring automation",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "modernization",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-customer-sales-automation",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/customer-sales-automation"
+  },
+  "description": "Customer support workflow automation, sales pipeline management, email campaigns, and CRM integration",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "business",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

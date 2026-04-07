@@ -1,0 +1,21 @@
+{
+  "name": "gleam",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "gleam"
+  },
+  "description": "Gleam language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "gleam",
+    "beam",
+    "lsp"
+  ],
+  "license": "MIT"
+}

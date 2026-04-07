@@ -1,0 +1,24 @@
+{
+  "name": "coding-tutor",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/EveryInc/compound-engineering-plugin.git",
+    "path": "plugins/coding-tutor"
+  },
+  "description": "Personalized coding tutorials that build on your existing knowledge and use your actual codebase for examples. Includes spaced repetition quizzes to reinforce learning. Includes 3 commands and 1 skill.",
+  "version": "1.0.0",
+  "author": {
+    "username": "EveryInc",
+    "name": "Nityesh Agarwal"
+  },
+  "category": "other",
+  "tags": [
+    "coding",
+    "programming",
+    "tutorial",
+    "learning",
+    "spaced-repetition",
+    "education"
+  ],
+  "license": "MIT"
+}

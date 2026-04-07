@@ -1,0 +1,19 @@
+{
+  "name": "huggingface-trackio",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/huggingface/skills.git",
+    "path": "skills/huggingface-trackio"
+  },
+  "description": "Track and visualize ML training experiments with Trackio. Log metrics via Python API and retrieve them via CLI. Supports real-time dashboards synced to HF Spaces.",
+  "version": "1.0.0",
+  "author": {
+    "username": "huggingface",
+    "name": "Hugging Face"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

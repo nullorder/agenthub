@@ -1,0 +1,19 @@
+{
+  "name": "c-level-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "c-level-advisor"
+  },
+  "description": "28 C-level advisory skills: virtual board of directors (CEO, CTO, COO, CPO, CMO, CFO, CRO, CISO, CHRO), executive mentor, founder coach, orchestration (Chief of Staff, board meetings, decision logger), strategic capabilities (board deck builder, scenario war room, competitive intel, M&A playbook), and culture frameworks.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "leadership",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

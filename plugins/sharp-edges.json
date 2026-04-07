@@ -1,0 +1,19 @@
+{
+  "name": "sharp-edges",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/sharp-edges"
+  },
+  "description": "Identify error-prone APIs, dangerous configurations, and footgun designs that enable security mistakes",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Scott Arciszewski"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

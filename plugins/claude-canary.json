@@ -1,8 +1,9 @@
 {
   "name": "claude-canary",
   "source": {
-    "source": "github",
-    "repo": "geoffrey-young/anthropic-hackathon-2026"
+    "source": "git-subdir",
+    "url": "https://github.com/geoffrey-young/anthropic-hackathon-2026.git",
+    "path": "plugins/plugin-canary"
   },
   "description": "Early warning system for plugin security with automated review of all plugin files before execution",
   "version": "1.0.0",

@@ -1,0 +1,19 @@
+{
+  "name": "second-opinion",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/second-opinion"
+  },
+  "description": "Runs code reviews using external LLM CLIs (OpenAI Codex, Google Gemini) on uncommitted changes, branch diffs, or specific commits. Bundles Codex's built-in MCP server for direct tool access.",
+  "version": "1.6.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Dan Guido"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-kubernetes-operations",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/kubernetes-operations"
+  },
+  "description": "Kubernetes manifest generation, networking configuration, security policies, observability setup, GitOps workflows, and auto-scaling",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "infrastructure",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "flow",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/gmickel/flow-next.git",
+    "path": "plugins/flow"
+  },
+  "description": "Two-step planning + execution workflow with optional Beads integration. Includes 6 subagents, 5 commands, 7 skills.",
+  "version": "0.8.4",
+  "author": {
+    "username": "gmickel",
+    "name": "Gordon Mickel"
+  },
+  "category": "other",
+  "tags": [
+    "claude-code",
+    "plugin",
+    "workflow",
+    "planning",
+    "execution"
+  ],
+  "license": "MIT"
+}

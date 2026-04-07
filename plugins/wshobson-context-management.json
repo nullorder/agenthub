@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-context-management",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/context-management"
+  },
+  "description": "Context persistence, restoration, and long-running conversation management",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "ai-ml",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

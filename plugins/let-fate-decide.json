@@ -1,0 +1,19 @@
+{
+  "name": "let-fate-decide",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/let-fate-decide"
+  },
+  "description": "Draws Tarot cards using cryptographic randomness to add entropy to vague or underspecified planning. Interprets the spread to guide next steps. Use when feeling lucky, invoking heart-of-the-cards energy, or when prompts are ambiguous.",
+  "version": "1.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Scott Arciszewski"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

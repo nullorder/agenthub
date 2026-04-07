@@ -1,0 +1,19 @@
+{
+  "name": "cadre",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/danielscholl/claude-sdlc.git",
+    "path": "plugins/cadre"
+  },
+  "description": "Multi-agent team bootstrapper and runtime orchestrator \u2014 generates tailored agent teams via AI debate and runs parallel team patterns (review, debate, plan, build, research)",
+  "version": "1.0.0",
+  "author": {
+    "username": "danielscholl",
+    "name": "Daniel Scholl"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

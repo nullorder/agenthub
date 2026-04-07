@@ -1,0 +1,19 @@
+{
+  "name": "leyline",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/leyline"
+  },
+  "description": "Foundation infrastructure: auth flows, quota management, error patterns, markdown formatting, trust verification, and injection detection",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

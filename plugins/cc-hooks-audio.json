@@ -1,8 +1,9 @@
 {
   "name": "cc-hooks-audio",
   "source": {
-    "source": "github",
-    "repo": "husniadil/cc-hooks"
+    "source": "git-subdir",
+    "url": "https://github.com/husniadil/cc-hooks.git",
+    "path": ""
   },
   "description": "Audio feedback for Claude Code with TTS announcements, sound effects, and contextual AI messages",
   "version": "1.0.0",

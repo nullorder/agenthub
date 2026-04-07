@@ -1,0 +1,21 @@
+{
+  "name": "clojure-lsp",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "clojure-lsp"
+  },
+  "description": "Clojure language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "clojure",
+    "clojurescript",
+    "lsp"
+  ],
+  "license": "MIT"
+}

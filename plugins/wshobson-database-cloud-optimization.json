@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-database-cloud-optimization",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/database-cloud-optimization"
+  },
+  "description": "Database query optimization, cloud cost optimization, and scalability improvements",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "performance",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

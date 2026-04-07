@@ -1,0 +1,19 @@
+{
+  "name": "phantom",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/phantom"
+  },
+  "description": "Computer use toolkit for driving desktop environments through Claude's vision and action API with screenshot capture, mouse/keyboard control, and an autonomous agent loop",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

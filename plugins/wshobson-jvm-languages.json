@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-jvm-languages",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/jvm-languages"
+  },
+  "description": "JVM language development including Java, Scala, and C# with enterprise patterns and frameworks",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "languages",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

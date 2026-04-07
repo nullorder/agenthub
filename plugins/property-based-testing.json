@@ -1,0 +1,19 @@
+{
+  "name": "property-based-testing",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/property-based-testing"
+  },
+  "description": "Property-based testing guidance for multiple languages and smart contracts",
+  "version": "1.1.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Henrik Brodin"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

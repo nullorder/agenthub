@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-accessibility-compliance",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/accessibility-compliance"
+  },
+  "description": "WCAG accessibility auditing, compliance validation, UI testing for screen readers, keyboard navigation, and inclusive design",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "accessibility",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

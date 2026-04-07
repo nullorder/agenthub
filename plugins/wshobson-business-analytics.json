@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-business-analytics",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/business-analytics"
+  },
+  "description": "Business metrics analysis, KPI tracking, financial reporting, and data-driven decision making",
+  "version": "1.2.2",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "business",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

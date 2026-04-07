@@ -1,8 +1,9 @@
 {
   "name": "astral-plugins",
   "source": {
-    "source": "github",
-    "repo": "astral-sh/claude-code-plugins"
+    "source": "git-subdir",
+    "url": "https://github.com/astral-sh/claude-code-plugins.git",
+    "path": "plugins/astral"
   },
   "description": "Official Astral tools plugin with ruff, ty, and uv skills plus LSP for Python",
   "version": "1.0.0",

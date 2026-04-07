@@ -1,0 +1,19 @@
+{
+  "name": "burpsuite-project-parser",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/burpsuite-project-parser"
+  },
+  "description": "Search and extract data from Burp Suite project files (.burp) for security analysis",
+  "version": "1.0.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "Will Vandevanter"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

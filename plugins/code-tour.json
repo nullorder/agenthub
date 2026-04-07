@@ -1,0 +1,19 @@
+{
+  "name": "code-tour",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/alirezarezvani/claude-skills.git",
+    "path": "engineering/code-tour"
+  },
+  "description": "Create CodeTour .tour files \u2014 persona-targeted, step-by-step walkthroughs that link to real files and line numbers. 10 developer personas, all CodeTour step types, SMIG description formula.",
+  "version": "2.2.0",
+  "author": {
+    "username": "alirezarezvani",
+    "name": "Alireza Rezvani"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

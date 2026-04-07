@@ -1,0 +1,21 @@
+{
+  "name": "ocaml-lsp",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "ocaml-lsp"
+  },
+  "description": "OCaml language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "ocaml",
+    "ml",
+    "lsp"
+  ],
+  "license": "MIT"
+}

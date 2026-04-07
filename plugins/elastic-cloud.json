@@ -1,0 +1,19 @@
+{
+  "name": "elastic-cloud",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/elastic/agent-skills.git",
+    "path": "skills/cloud"
+  },
+  "description": "Elastic Cloud skills \u2014 project setup, access management, network security, and Serverless project lifecycle",
+  "version": "0.2.1",
+  "author": {
+    "username": "elastic",
+    "name": "Elastic"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-seo-analysis-monitoring",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/seo-analysis-monitoring"
+  },
+  "description": "Content freshness analysis, cannibalization detection, and authority building for SEO",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "marketing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

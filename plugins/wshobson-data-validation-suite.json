@@ -1,0 +1,19 @@
+{
+  "name": "wshobson-data-validation-suite",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/wshobson/agents.git",
+    "path": "plugins/data-validation-suite"
+  },
+  "description": "Schema validation, data quality monitoring, streaming validation pipelines, and input validation for backend APIs",
+  "version": "1.2.0",
+  "author": {
+    "username": "wshobson",
+    "name": "Seth Hobson"
+  },
+  "category": "data",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

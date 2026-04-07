@@ -1,0 +1,22 @@
+{
+  "name": "terraform-ls",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/boostvolt/claude-code-lsps.git",
+    "path": "terraform-ls"
+  },
+  "description": "Terraform language server",
+  "version": "1.0.0",
+  "author": {
+    "username": "boostvolt",
+    "name": "Jan Kott"
+  },
+  "category": "development",
+  "tags": [
+    "terraform",
+    "hcl",
+    "devops",
+    "lsp"
+  ],
+  "license": "MIT"
+}

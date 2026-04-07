@@ -1,0 +1,19 @@
+{
+  "name": "pensive",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/pensive"
+  },
+  "description": "Multi-discipline code review: architecture, bugs, APIs, blast radius analysis, security, tests, Makefiles, and NASA Power of 10 analysis",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

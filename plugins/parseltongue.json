@@ -1,0 +1,19 @@
+{
+  "name": "parseltongue",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/parseltongue"
+  },
+  "description": "Python development suite: testing, performance optimization, async patterns, and packaging guidance",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

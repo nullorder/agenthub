@@ -1,0 +1,19 @@
+{
+  "name": "conserve",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/athola/claude-night-market.git",
+    "path": "plugins/conserve"
+  },
+  "description": "Context optimization, bloat detection, CPU/GPU monitoring, and token conservation for efficient Claude Code sessions",
+  "version": "1.8.1",
+  "author": {
+    "username": "athola",
+    "name": "athola"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

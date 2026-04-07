@@ -1,0 +1,19 @@
+{
+  "name": "gh-cli",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/gh-cli"
+  },
+  "description": "Intercepts GitHub URL fetches and curl/wget commands, redirecting to the authenticated gh CLI.",
+  "version": "1.4.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "William Tan"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

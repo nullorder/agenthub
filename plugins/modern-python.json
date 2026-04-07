@@ -1,0 +1,19 @@
+{
+  "name": "modern-python",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/trailofbits/skills.git",
+    "path": "plugins/modern-python"
+  },
+  "description": "Modern Python best practices. Use when creating new Python projects, and writing Python scripts, or migrating existing projects from legacy tools.",
+  "version": "1.5.0",
+  "author": {
+    "username": "trailofbits",
+    "name": "William Tan"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

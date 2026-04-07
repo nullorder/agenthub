@@ -1,16 +1,17 @@
 {
   "name": "learning-opportunities",
   "source": {
-    "source": "github",
-    "repo": "DrCatHicks/learning-opportunities"
+    "source": "git-subdir",
+    "url": "https://github.com/DrCatHicks/learning-opportunities.git",
+    "path": "learning-opportunities"
   },
-  "description": "Skill for deliberate skill development and learning during AI-assisted coding",
+  "description": "Science-based learning exercises for deliberate skill development during AI-assisted coding",
   "version": "1.0.0",
   "author": {
     "username": "DrCatHicks",
     "name": "Dr. Cat Hicks"
   },
-  "category": "productivity",
+  "category": "education",
   "tags": [
     "skills"
   ],
