@@ -11,16 +11,19 @@ for f in "$PLUGINS_DIR"/*.json; do
   [ -f "$f" ] && plugin_files+=("$f")
 done
 
-# Build the plugins array
+# Build the plugins array into a temp file (avoids ARG_MAX limits with many plugins)
+plugins_tmp="$(mktemp)"
+trap 'rm -f "$plugins_tmp"' EXIT
+
 if [ ${#plugin_files[@]} -eq 0 ]; then
-  plugins_array="[]"
+  echo "[]" > "$plugins_tmp"
 else
-  plugins_array=$(cat "${plugin_files[@]}" | jq -s '.')
+  cat "${plugin_files[@]}" | jq -s '.' > "$plugins_tmp"
 fi
 
 # Assemble the final marketplace.json
 jq -n \
-  --argjson plugins "$plugins_array" \
+  --slurpfile plugins "$plugins_tmp" \
   '{
     "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
     "name": "agenthub",
@@ -31,11 +34,11 @@ jq -n \
     "owner": {
       "name": "nullorder"
     },
-    "plugins": $plugins
+    "plugins": $plugins[0]
   }' > "$OUTPUT"
 
-plugin_count=$(echo "$plugins_array" | jq 'length')
-author_count=$(echo "$plugins_array" | jq '[.[].author.username] | unique | length')
+plugin_count=$(jq 'length' "$plugins_tmp")
+author_count=$(jq '[.[].author.username] | unique | length' "$plugins_tmp")
 
 echo "Built marketplace.json with $plugin_count plugin(s) from $author_count author(s)."
 
