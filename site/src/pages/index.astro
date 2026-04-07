@@ -24,7 +24,8 @@ const allTags = [
 const authorCount = [...new Set(plugins.map((p: any) => p.author.username))]
   .length;
 
-const PLUGINS_PER_PAGE = 24;
+const PLUGINS_PER_PAGE = 48;
+const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 ---
 
 <Layout title="AgentHub — Claude Code Plugin Marketplace">
@@ -52,13 +53,53 @@ const PLUGINS_PER_PAGE = 24;
       <TagFilter tags={allTags} />
     </div>
 
-    <!-- Plugin grid -->
+    <!-- Plugin grid: only first page rendered server-side; remaining are
+         hydrated client-side from the JSON below for faster initial load. -->
     <div
       class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
       id="plugin-grid"
     >
-      {plugins.map((plugin: any) => <PluginCard {...plugin} />)}
+      {initialPlugins.map((plugin: any) => <PluginCard {...plugin} />)}
     </div>
+    <script
+      type="application/json"
+      id="plugins-data"
+      set:html={JSON.stringify(plugins)}
+    />
+    <template id="plugin-card-template">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        class="plugin-card group flex flex-col cursor-pointer rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-5 transition-all hover:border-white/20 hover:bg-white/10 shadow-lg shadow-black/20 no-underline"
+      >
+        <div class="mb-3 flex items-start justify-between gap-2">
+          <h3
+            class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors"
+            data-field="name"
+          >
+          </h3>
+          <span
+            class="shrink-0 rounded-full px-2.5 py-0.5 text-sm font-medium"
+            data-field="category"
+          >
+          </span>
+        </div>
+        <p
+          class="mb-3 text-base leading-relaxed text-gray-400"
+          data-field="description"
+        >
+        </p>
+        <div class="mb-3 flex flex-wrap gap-1.5" data-field="tags"></div>
+        <div
+          class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500"
+        >
+          <span class="author-name" data-field="author"></span>
+          <span
+            class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs"
+            data-field="source-label"></span>
+        </div>
+      </a>
+    </template>
 
     <!-- No results -->
     <div id="no-results" class="hidden py-16 text-center text-gray-500">
@@ -76,48 +117,147 @@ const PLUGINS_PER_PAGE = 24;
 
   <script define:vars={{ PLUGINS_PER_PAGE }}>
     const grid = document.getElementById("plugin-grid");
-    const cards = Array.from(grid.querySelectorAll(".plugin-card"));
     const searchInput = document.getElementById("search-input");
     const categoryBtns = document.querySelectorAll(".category-btn");
     const tagBtns = document.querySelectorAll(".tag-btn");
     const pagination = document.getElementById("pagination");
     const noResults = document.getElementById("no-results");
+    const template = document.getElementById("plugin-card-template");
+    const allPlugins = JSON.parse(
+      document.getElementById("plugins-data").textContent,
+    );
+
+    const categoryColors = {
+      development: "bg-blue-500/20 text-blue-300",
+      testing: "bg-green-500/20 text-green-300",
+      devops: "bg-orange-500/20 text-orange-300",
+      security: "bg-red-500/20 text-red-300",
+      documentation: "bg-purple-500/20 text-purple-300",
+      productivity: "bg-yellow-500/20 text-yellow-300",
+      data: "bg-cyan-500/20 text-cyan-300",
+      design: "bg-pink-500/20 text-pink-300",
+      other: "bg-gray-500/20 text-gray-300",
+    };
+
+    function getSourceUrl(source) {
+      if (typeof source === "string" || !source) return "";
+      switch (source.source) {
+        case "github":
+          return `https://github.com/${source.repo}`;
+        case "url":
+        case "git-subdir":
+          return (source.url || "").replace(/\.git$/, "");
+        case "npm":
+          return `https://www.npmjs.com/package/${source.package}`;
+        default:
+          return "";
+      }
+    }
+
+    function getSourceLabel(source) {
+      if (typeof source === "string" || !source) return "local";
+      return source.source === "git-subdir" ? "git" : source.source || "unknown";
+    }
+
+    function buildCard(plugin) {
+      const node = template.content.firstElementChild.cloneNode(true);
+      const sourceUrl = getSourceUrl(plugin.source);
+      if (sourceUrl) {
+        node.href = sourceUrl;
+      } else {
+        node.removeAttribute("href");
+        node.classList.remove("cursor-pointer", "no-underline");
+      }
+      node.dataset.name = plugin.name;
+      node.dataset.description = plugin.description;
+      node.dataset.category = plugin.category;
+      node.dataset.tags = (plugin.tags || []).join(",");
+
+      node.querySelector('[data-field="name"]').textContent = plugin.name;
+      node.querySelector('[data-field="description"]').textContent =
+        plugin.description;
+
+      const catEl = node.querySelector('[data-field="category"]');
+      catEl.textContent = plugin.category;
+      const catColor =
+        categoryColors[plugin.category] || categoryColors.other;
+      catColor.split(" ").forEach((c) => catEl.classList.add(c));
+
+      const tagsEl = node.querySelector('[data-field="tags"]');
+      (plugin.tags || []).forEach((tag) => {
+        const span = document.createElement("span");
+        span.className =
+          "rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-xs font-medium text-gray-400";
+        span.textContent = tag;
+        tagsEl.appendChild(span);
+      });
+      if (plugin.license) {
+        const span = document.createElement("span");
+        span.className = "rounded bg-white/10 px-2 py-0.5 text-xs text-gray-400";
+        span.textContent = plugin.license;
+        tagsEl.appendChild(span);
+      }
+      if (!(plugin.tags || []).length && !plugin.license) {
+        tagsEl.remove();
+      }
+
+      const author = plugin.author || {};
+      const authorDisplay = author.name || `@${author.username}`;
+      const authorEl = node.querySelector('[data-field="author"]');
+      authorEl.textContent = authorDisplay;
+      if (author.url) {
+        authorEl.style.cursor = "pointer";
+        authorEl.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          window.open(author.url, "_blank");
+        });
+      }
+
+      node.querySelector('[data-field="source-label"]').textContent =
+        getSourceLabel(plugin.source);
+
+      return node;
+    }
 
     let currentCategory = "all";
     let currentTag = "all";
     let currentSearch = "";
     let currentPage = 1;
 
-    function getVisibleCards() {
-      return cards.filter((card) => {
-        const name = card.dataset.name.toLowerCase();
-        const desc = card.dataset.description.toLowerCase();
-        const cat = card.dataset.category;
-        const cardTags = (card.dataset.tags || "").split(",");
+    function getVisiblePlugins() {
+      return allPlugins.filter((p) => {
         const matchesSearch =
           !currentSearch ||
-          name.includes(currentSearch) ||
-          desc.includes(currentSearch);
+          p.name.toLowerCase().includes(currentSearch) ||
+          (p.description || "").toLowerCase().includes(currentSearch);
         const matchesCategory =
-          currentCategory === "all" || cat === currentCategory;
+          currentCategory === "all" || p.category === currentCategory;
         const matchesTag =
-          currentTag === "all" || cardTags.includes(currentTag);
+          currentTag === "all" || (p.tags || []).includes(currentTag);
         return matchesSearch && matchesCategory && matchesTag;
       });
     }
 
+    let isInitialRender = true;
+
     function render() {
-      const visible = getVisibleCards();
+      const visible = getVisiblePlugins();
       const pages = Math.max(1, Math.ceil(visible.length / PLUGINS_PER_PAGE));
       if (currentPage > pages) currentPage = pages;
 
       const start = (currentPage - 1) * PLUGINS_PER_PAGE;
       const end = start + PLUGINS_PER_PAGE;
-      const pageItems = new Set(visible.slice(start, end));
+      const pageItems = visible.slice(start, end);
 
-      cards.forEach((card) => {
-        card.style.display = pageItems.has(card) ? "" : "none";
-      });
+      // First render: SSR'd cards already match the default state, so skip
+      // re-rendering the grid (avoids the flash and saves work).
+      if (!isInitialRender) {
+        const frag = document.createDocumentFragment();
+        pageItems.forEach((p) => frag.appendChild(buildCard(p)));
+        grid.replaceChildren(frag);
+      }
+      isInitialRender = false;
 
       noResults.classList.toggle("hidden", visible.length > 0);
 
