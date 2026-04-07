@@ -225,16 +225,6 @@ const totalPluginCount = plugins.length;
     let currentSearch = "";
     let currentPage = 1;
 
-    const CANONICAL_TYPE_TAGS = new Set([
-      "skills",
-      "agents",
-      "commands",
-      "hooks",
-      "mcp-servers",
-      "lsp-servers",
-      "integration",
-    ]);
-
     function getVisiblePlugins() {
       return allPlugins.filter((p) => {
         const matchesSearch =
@@ -243,15 +233,8 @@ const totalPluginCount = plugins.length;
           (p.description || "").toLowerCase().includes(currentSearch);
         const matchesCategory =
           currentCategory === "all" || p.category === currentCategory;
-        let matchesTag;
-        if (currentTag === "all") {
-          matchesTag = true;
-        } else if (currentTag === "__other__") {
-          // "other" = no canonical type tag
-          matchesTag = !(p.tags || []).some((t) => CANONICAL_TYPE_TAGS.has(t));
-        } else {
-          matchesTag = (p.tags || []).includes(currentTag);
-        }
+        const matchesTag =
+          currentTag === "all" || (p.tags || []).includes(currentTag);
         return matchesSearch && matchesCategory && matchesTag;
       });
     }

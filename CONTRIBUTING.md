@@ -34,7 +34,7 @@ With the following content:
 
 ### Tags
 
-The `tags` field is optional but recommended. It tells users what components your plugin provides. Use one or more of:
+The `tags` field is **required** and must include **at least one** of the component types below. It tells users what your plugin provides:
 
 - `skills` — skill directories with `SKILL.md`
 - `agents` — subagent markdown files
@@ -43,6 +43,9 @@ The `tags` field is optional but recommended. It tells users what components you
 - `mcp-servers` — MCP server configurations
 - `lsp-servers` — language server configurations
 - `integration` — external tool integrations (not a Claude Code plugin per se)
+- `other` — anything that doesn't fit the categories above
+
+You may also add free-form descriptive tags alongside the type tag (e.g. `["skills", "python", "aws"]`).
 
 <details>
 <summary>Alternative sources (Git URL, Git subdirectory, npm)</summary>

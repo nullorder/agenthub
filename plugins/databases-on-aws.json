@@ -18,7 +18,8 @@
     "aurora",
     "dsql",
     "serverless",
-    "postgresql"
+    "postgresql",
+    "other"
   ],
   "license": "MIT"
 }

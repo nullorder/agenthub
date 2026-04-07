@@ -16,7 +16,8 @@
     "aws",
     "sagemaker",
     "machine-learning",
-    "generative-ai"
+    "generative-ai",
+    "other"
   ],
   "license": "MIT"
 }

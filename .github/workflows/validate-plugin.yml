@@ -82,22 +82,41 @@ jobs:
                 ;;
             esac
 
-            # Validate tags (optional field)
-            if jq -e '.tags' "$f" >/dev/null 2>&1; then
-              valid_tags="skills agents hooks commands mcp-servers lsp-servers integration"
-              for tag in $(jq -r '.tags[]' "$f" 2>/dev/null); do
-                if ! echo "$valid_tags" | grep -qw "$tag"; then
-                  echo "  ERROR: Invalid tag '$tag'. Must be one of: $valid_tags"
-                  errors=$((errors + 1))
-                fi
-              done
-            fi
-
-            category=$(jq -r '.category // empty' "$f")
+            # Category: required, must be from the allowed list
             valid_categories="development testing devops security documentation productivity data design other"
-            if [ -n "$category" ] && ! echo "$valid_categories" | grep -qw "$category"; then
+            category=$(jq -r '.category // empty' "$f")
+            if [ -z "$category" ]; then
+              echo "  ERROR: Missing required field 'category'. Must be one of: $valid_categories"
+              errors=$((errors + 1))
+            elif ! echo "$valid_categories" | grep -qw "$category"; then
               echo "  ERROR: Invalid category '$category'. Must be one of: $valid_categories"
               errors=$((errors + 1))
+            fi
+
+            # Tags: required, must contain at least one component-type tag.
+            # Free-form descriptive tags are allowed alongside the type tag.
+            valid_types="skills agents hooks commands mcp-servers lsp-servers integration other"
+            if ! jq -e '.tags' "$f" >/dev/null 2>&1; then
+              echo "  ERROR: Missing required field 'tags'. Must include at least one component type: $valid_types"
+              errors=$((errors + 1))
+            else
+              tag_count=$(jq -r '.tags | length' "$f")
+              if [ "$tag_count" -eq 0 ]; then
+                echo "  ERROR: 'tags' is empty. Must include at least one component type: $valid_types"
+                errors=$((errors + 1))
+              else
+                has_type=0
+                for tag in $(jq -r '.tags[]' "$f" 2>/dev/null); do
+                  if echo "$valid_types" | grep -qw "$tag"; then
+                    has_type=1
+                    break
+                  fi
+                done
+                if [ "$has_type" -eq 0 ]; then
+                  echo "  ERROR: 'tags' must include at least one component type: $valid_types"
+                  errors=$((errors + 1))
+                fi
+              fi
             fi
           done
 

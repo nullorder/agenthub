@@ -19,7 +19,8 @@
     "code-review",
     "quality",
     "knowledge-management",
-    "image-generation"
+    "image-generation",
+    "other"
   ],
   "license": "MIT"
 }

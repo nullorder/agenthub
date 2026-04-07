@@ -16,7 +16,8 @@
     "aws",
     "location",
     "maps",
-    "geospatial"
+    "geospatial",
+    "other"
   ],
   "license": "MIT"
 }

@@ -16,7 +16,8 @@
     "aws",
     "gcp",
     "migration",
-    "infrastructure"
+    "infrastructure",
+    "other"
   ],
   "license": "MIT"
 }

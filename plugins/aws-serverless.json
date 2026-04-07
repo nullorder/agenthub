@@ -21,7 +21,8 @@
     "sam",
     "api gateway",
     "eventbridge",
-    "step functions"
+    "step functions",
+    "other"
   ],
   "license": "MIT"
 }

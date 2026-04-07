@@ -17,7 +17,8 @@
     "plugin",
     "workflow",
     "planning",
-    "execution"
+    "execution",
+    "other"
   ],
   "license": "MIT"
 }

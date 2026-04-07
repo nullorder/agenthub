@@ -16,7 +16,8 @@
     "aws",
     "deploy",
     "infrastructure",
-    "cdk"
+    "cdk",
+    "other"
   ],
   "license": "MIT"
 }

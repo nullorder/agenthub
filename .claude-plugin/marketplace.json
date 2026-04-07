@@ -103,7 +103,8 @@
         "aws",
         "location",
         "maps",
-        "geospatial"
+        "geospatial",
+        "other"
       ],
       "license": "MIT"
     },
@@ -239,7 +240,8 @@
       "tags": [
         "aws",
         "amplify",
-        "fullstack"
+        "fullstack",
+        "other"
       ],
       "license": "MIT"
     },
@@ -266,7 +268,8 @@
         "sam",
         "api gateway",
         "eventbridge",
-        "step functions"
+        "step functions",
+        "other"
       ],
       "license": "MIT"
     },
@@ -1046,7 +1049,8 @@
         "tutorial",
         "learning",
         "spaced-repetition",
-        "education"
+        "education",
+        "other"
       ],
       "license": "MIT"
     },
@@ -1089,7 +1093,8 @@
         "code-review",
         "quality",
         "knowledge-management",
-        "image-generation"
+        "image-generation",
+        "other"
       ],
       "license": "MIT"
     },
@@ -1306,7 +1311,8 @@
         "aurora",
         "dsql",
         "serverless",
-        "postgresql"
+        "postgresql",
+        "other"
       ],
       "license": "MIT"
     },
@@ -1366,7 +1372,8 @@
         "aws",
         "deploy",
         "infrastructure",
-        "cdk"
+        "cdk",
+        "other"
       ],
       "license": "MIT"
     },
@@ -2232,7 +2239,8 @@
         "plugin",
         "workflow",
         "planning",
-        "execution"
+        "execution",
+        "other"
       ],
       "license": "MIT"
     },
@@ -2255,7 +2263,8 @@
         "plugin",
         "workflow",
         "planning",
-        "execution"
+        "execution",
+        "other"
       ],
       "license": "MIT"
     },
@@ -2909,7 +2918,8 @@
         "aws",
         "gcp",
         "migration",
-        "infrastructure"
+        "infrastructure",
+        "other"
       ],
       "license": "MIT"
     },
@@ -3602,7 +3612,8 @@
         "aws",
         "sagemaker",
         "machine-learning",
-        "generative-ai"
+        "generative-ai",
+        "other"
       ],
       "license": "MIT"
     },
