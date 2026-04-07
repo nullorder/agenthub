@@ -14,7 +14,7 @@
   "category": "development",
   "tags": [
     "php",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

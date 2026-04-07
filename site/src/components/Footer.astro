@@ -6,9 +6,9 @@ const base = import.meta.env.BASE_URL;
   class="mt-auto border-t border-white/10 bg-white/5 backdrop-blur-xl py-8"
 >
   <div
-    class="mx-auto w-full px-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-between lg:px-8"
+    class="mx-auto w-full px-4 flex flex-col items-center gap-4 sm:grid sm:grid-cols-3 sm:items-center lg:px-8"
   >
-    <div class="flex items-center gap-4 text-base text-gray-500">
+    <div class="flex items-center gap-4 text-base text-gray-500 sm:justify-self-start">
       <a href={`${base}license`} class="hover:text-white transition-colors">MIT License</a>
       <span class="text-gray-700">|</span>
       <a href={`${base}privacy`} class="hover:text-white transition-colors">Privacy</a>
@@ -20,12 +20,12 @@ const base = import.meta.env.BASE_URL;
       href="https://github.com/nullorder"
       target="_blank"
       rel="noopener noreferrer"
-      class="hover:opacity-80 transition-opacity"
+      class="hover:opacity-80 transition-opacity sm:justify-self-center"
     >
       <img src={`${base}nullorder.png`} alt="nullorder" class="h-8 w-8 rounded-full" />
     </a>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 sm:justify-self-end">
       <a
         href="https://github.com/nullorder/agenthub"
         target="_blank"

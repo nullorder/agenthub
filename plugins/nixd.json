@@ -15,7 +15,7 @@
   "tags": [
     "nix",
     "nixos",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

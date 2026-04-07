@@ -11,7 +11,7 @@
     "username": "awslabs",
     "name": "Amazon Web Services"
   },
-  "category": "deployment",
+  "category": "devops",
   "tags": [
     "aws",
     "deploy",

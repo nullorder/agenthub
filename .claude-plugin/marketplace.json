@@ -41,7 +41,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -60,7 +60,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "workflows",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -98,7 +98,7 @@
         "username": "trailofbits",
         "name": "Emilio López & Will Vandevanter"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -117,7 +117,7 @@
         "username": "awslabs",
         "name": "Amazon Web Services"
       },
-      "category": "location",
+      "category": "other",
       "tags": [
         "aws",
         "location",
@@ -139,7 +139,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -158,7 +158,7 @@
         "username": "trailofbits",
         "name": "Kevin Valerio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -197,7 +197,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -216,7 +216,7 @@
         "username": "trailofbits",
         "name": "Omar Inuwa"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -254,7 +254,7 @@
         "username": "awslabs",
         "name": "Amazon Web Services"
       },
-      "category": "fullstack",
+      "category": "development",
       "tags": [
         "aws",
         "amplify",
@@ -326,7 +326,7 @@
         "shell",
         "sh",
         "zsh",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -343,7 +343,7 @@
         "username": "docker",
         "name": "Docker Inc."
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -383,7 +383,7 @@
         "username": "trailofbits",
         "name": "Omar Inuwa && Paweł Płatek"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -402,7 +402,7 @@
         "username": "trailofbits",
         "name": "Will Vandevanter"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -421,7 +421,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "business-growth",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -440,7 +440,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "leadership",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -478,7 +478,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -497,7 +497,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -614,7 +614,7 @@
       "tags": [
         "c",
         "cpp",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -729,7 +729,7 @@
         "username": "greggh",
         "name": "Gregg Housh"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "integration"
       ],
@@ -900,7 +900,7 @@
         "username": "trailofbits",
         "name": "Dan Guido"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -983,7 +983,7 @@
       "tags": [
         "clojure",
         "clojurescript",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -1020,7 +1020,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "product",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -1058,7 +1058,7 @@
         "username": "EveryInc",
         "name": "Nityesh Agarwal"
       },
-      "category": "other",
+      "category": "documentation",
       "tags": [
         "coding",
         "programming",
@@ -1100,7 +1100,7 @@
         "username": "EveryInc",
         "name": "Kieran Klaassen"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "ai-powered",
         "compound-engineering",
@@ -1125,7 +1125,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "workflows",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -1144,7 +1144,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -1163,7 +1163,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -1182,7 +1182,7 @@
         "username": "trailofbits",
         "name": "Scott Arciszewski"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1219,7 +1219,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1259,7 +1259,7 @@
         "username": "trailofbits",
         "name": "Dan Guido"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1282,7 +1282,7 @@
       "tags": [
         "dart",
         "flutter",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -1318,7 +1318,7 @@
         "username": "awslabs",
         "name": "Amazon Web Services"
       },
-      "category": "database",
+      "category": "data",
       "tags": [
         "aws",
         "database",
@@ -1342,7 +1342,7 @@
         "username": "trailofbits",
         "name": "Ronald Eytchison"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -1380,7 +1380,7 @@
         "username": "awslabs",
         "name": "Amazon Web Services"
       },
-      "category": "deployment",
+      "category": "devops",
       "tags": [
         "aws",
         "deploy",
@@ -1402,7 +1402,7 @@
         "username": "numman-ali",
         "name": "Sawyer Hood"
       },
-      "category": "automation",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -1421,7 +1421,7 @@
         "username": "shinpr",
         "name": "Shinsuke Kagawa"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -1440,7 +1440,7 @@
         "username": "shinpr",
         "name": "Shinsuke Kagawa"
       },
-      "category": "other",
+      "category": "design",
       "tags": [
         "skills"
       ],
@@ -1459,7 +1459,7 @@
         "username": "shinpr",
         "name": "Shinsuke Kagawa"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -1478,7 +1478,7 @@
         "username": "trailofbits",
         "name": "Alexis Challande"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -1497,7 +1497,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -1516,7 +1516,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -1535,7 +1535,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -1554,7 +1554,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -1573,7 +1573,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1592,7 +1592,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -1611,7 +1611,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1630,7 +1630,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1649,7 +1649,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1668,7 +1668,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1687,7 +1687,7 @@
         "username": "trailofbits",
         "name": "Omar Inuwa"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1706,7 +1706,7 @@
         "username": "trailofbits",
         "name": "Coriolan Pinhas & Benjamin Samuels"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1724,7 +1724,7 @@
         "username": "shinpr",
         "name": "Shinsuke Kagawa"
       },
-      "category": "product-quality",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -1780,7 +1780,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -1799,7 +1799,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1837,7 +1837,7 @@
         "username": "trailofbits",
         "name": "Evan Hellman"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1878,7 +1878,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -1897,7 +1897,7 @@
         "username": "elastic",
         "name": "Elastic"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1916,7 +1916,7 @@
         "username": "elastic",
         "name": "Elastic"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1935,7 +1935,7 @@
         "username": "elastic",
         "name": "Elastic"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1954,7 +1954,7 @@
         "username": "elastic",
         "name": "Elastic"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -1973,7 +1973,7 @@
         "username": "elastic",
         "name": "Elastic"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -1997,7 +1997,7 @@
         "elixir",
         "erlang",
         "beam",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2052,7 +2052,7 @@
         "username": "trailofbits",
         "name": "Nicolas Donboly"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2093,7 +2093,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2112,7 +2112,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "leadership",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2131,7 +2131,7 @@
         "username": "expo",
         "name": "Expo Team"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2150,7 +2150,7 @@
         "username": "expo",
         "name": "Expo Team"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -2169,7 +2169,7 @@
         "username": "expo",
         "name": "Expo Team"
       },
-      "category": "other",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -2188,7 +2188,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "finance",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2226,7 +2226,7 @@
         "username": "trailofbits",
         "name": "Nick Sellier"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2245,7 +2245,7 @@
         "username": "gmickel",
         "name": "Gordon Mickel"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "claude-code",
         "plugin",
@@ -2268,7 +2268,7 @@
         "username": "gmickel",
         "name": "Gordon Mickel"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "claude-code",
         "plugin",
@@ -2291,7 +2291,7 @@
         "username": "trailofbits",
         "name": "Maciej Domanski"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2310,7 +2310,7 @@
         "username": "numman-ali",
         "name": "Numman Ali"
       },
-      "category": "tools",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2329,7 +2329,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2348,7 +2348,7 @@
         "username": "trailofbits",
         "name": "William Tan"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2367,7 +2367,7 @@
         "username": "trailofbits",
         "name": "Henrik Brodin"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2386,7 +2386,7 @@
         "username": "giuseppe-trisciuoglio",
         "name": "Giuseppe Trisciuoglio"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2409,7 +2409,7 @@
       "tags": [
         "gleam",
         "beam",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2448,7 +2448,7 @@
       "category": "development",
       "tags": [
         "go",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2485,7 +2485,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2523,7 +2523,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2542,7 +2542,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2561,7 +2561,7 @@
         "username": "huggingface",
         "name": "Hugging Face"
       },
-      "category": "other",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -2598,7 +2598,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -2617,7 +2617,7 @@
         "username": "trailofbits",
         "name": "Trail of Bits"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2639,7 +2639,7 @@
       "category": "development",
       "tags": [
         "php",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2659,7 +2659,7 @@
       "category": "development",
       "tags": [
         "java",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2698,7 +2698,7 @@
       "category": "development",
       "tags": [
         "kotlin",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2715,7 +2715,7 @@
         "username": "DrCatHicks",
         "name": "Dr. Cat Hicks"
       },
-      "category": "education",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2734,7 +2734,7 @@
         "username": "DrCatHicks",
         "name": "Dr. Cat Hicks"
       },
-      "category": "education",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2753,7 +2753,7 @@
         "username": "trailofbits",
         "name": "Scott Arciszewski"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2772,7 +2772,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -2790,7 +2790,7 @@
         "username": "shinpr",
         "name": "Shinsuke Kagawa"
       },
-      "category": "workflow-orchestration",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2812,7 +2812,7 @@
       "category": "development",
       "tags": [
         "lua",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -2829,7 +2829,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "marketing",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2848,7 +2848,7 @@
         "username": "docker",
         "name": "Docker Inc."
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2867,7 +2867,7 @@
         "username": "wshobson",
         "name": "MeiGen"
       },
-      "category": "creative",
+      "category": "design",
       "tags": [
         "skills"
       ],
@@ -2886,7 +2886,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2904,7 +2904,7 @@
         "username": "shinpr",
         "name": "Shinsuke Kagawa"
       },
-      "category": "behavior-control",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -2923,7 +2923,7 @@
         "username": "awslabs",
         "name": "Amazon Web Services"
       },
-      "category": "migration",
+      "category": "development",
       "tags": [
         "aws",
         "gcp",
@@ -2945,7 +2945,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2964,7 +2964,7 @@
         "username": "trailofbits",
         "name": "William Tan"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -2983,7 +2983,7 @@
         "username": "trailofbits",
         "name": "Trail of Bits"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3024,7 +3024,7 @@
       "tags": [
         "nix",
         "nixos",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3059,7 +3059,7 @@
         "username": "numman-ali",
         "name": "Numman Ali"
       },
-      "category": "workflow",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3082,7 +3082,7 @@
       "tags": [
         "ocaml",
         "ml",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3103,7 +3103,7 @@
       "tags": [
         "csharp",
         "dotnet",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3120,7 +3120,7 @@
         "username": "numman-ali",
         "name": "Numman Ali"
       },
-      "category": "workflow",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3139,7 +3139,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3158,7 +3158,7 @@
         "username": "DrCatHicks",
         "name": "Dr. Michael Mullarkey"
       },
-      "category": "education",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3177,7 +3177,7 @@
         "username": "hashicorp",
         "name": "HashiCorp"
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3196,7 +3196,7 @@
         "username": "hashicorp",
         "name": "HashiCorp"
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3215,7 +3215,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3234,7 +3234,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -3253,7 +3253,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "ai-ml",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -3291,7 +3291,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3349,7 +3349,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "quality",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3368,7 +3368,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "project-management",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3387,7 +3387,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3406,7 +3406,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "product",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3425,7 +3425,7 @@
         "username": "trailofbits",
         "name": "Henrik Brodin"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3466,7 +3466,7 @@
       "category": "development",
       "tags": [
         "python",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3483,7 +3483,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "compliance",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -3539,7 +3539,7 @@
         "username": "alirezarezvani",
         "name": "Alireza Rezvani"
       },
-      "category": "product",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3599,7 +3599,7 @@
       "category": "development",
       "tags": [
         "rust",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3616,7 +3616,7 @@
         "username": "awslabs",
         "name": "Amazon Web Services"
       },
-      "category": "ai",
+      "category": "data",
       "tags": [
         "aws",
         "sagemaker",
@@ -3638,7 +3638,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "documentation",
       "tags": [
         "skills"
       ],
@@ -3657,7 +3657,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "documentation",
       "tags": [
         "skills"
       ],
@@ -3676,7 +3676,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3695,7 +3695,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3714,7 +3714,7 @@
         "username": "trailofbits",
         "name": "Spencer Michaels"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3733,7 +3733,7 @@
         "username": "trailofbits",
         "name": "Dan Guido"
       },
-      "category": "other",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -3790,7 +3790,7 @@
         "username": "trailofbits",
         "name": "Maciej Domanski"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -3809,7 +3809,7 @@
         "username": "trailofbits",
         "name": "Maciej Domanski"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3848,7 +3848,7 @@
         "username": "trailofbits",
         "name": "Scott Arciszewski"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -3867,7 +3867,7 @@
         "username": "trailofbits",
         "name": "Paweł Płatek"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -3886,7 +3886,7 @@
         "username": "danielscholl",
         "name": "Daniel Scholl"
       },
-      "category": "other",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3926,7 +3926,7 @@
       "category": "development",
       "tags": [
         "ruby",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3948,7 +3948,7 @@
         "swift",
         "ios",
         "macos",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3965,7 +3965,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -3984,7 +3984,7 @@
         "username": "trailofbits",
         "name": "Omar Inuwa"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4003,7 +4003,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "business",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -4022,7 +4022,7 @@
         "username": "trailofbits",
         "name": "Axel Mierczuk & Paweł Płatek"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4139,7 +4139,7 @@
         "username": "trailofbits",
         "name": "Spencer Michaels"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4178,7 +4178,7 @@
         "username": "hashicorp",
         "name": "HashiCorp"
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4202,7 +4202,7 @@
         "terraform",
         "hcl",
         "devops",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -4219,7 +4219,7 @@
         "username": "hashicorp",
         "name": "HashiCorp"
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4257,7 +4257,7 @@
         "username": "hashicorp",
         "name": "HashiCorp"
       },
-      "category": "integration",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4276,7 +4276,7 @@
         "username": "trailofbits",
         "name": "Paweł Płatek"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4295,7 +4295,7 @@
         "username": "athola",
         "name": "athola"
       },
-      "category": "other",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -4314,7 +4314,7 @@
         "username": "trailofbits",
         "name": "Scott Arciszewski"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4370,7 +4370,7 @@
         "username": "expo",
         "name": "Expo Team"
       },
-      "category": "other",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4389,7 +4389,7 @@
         "username": "trailofbits",
         "name": "Axel Mierczuk"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4430,7 +4430,7 @@
       "tags": [
         "typescript",
         "javascript",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -4447,7 +4447,7 @@
         "username": "trailofbits",
         "name": "Benjamin Samuels"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -4466,7 +4466,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "accessibility",
+      "category": "design",
       "tags": [
         "skills"
       ],
@@ -4485,7 +4485,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "ai-ml",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -4504,7 +4504,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "api",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4523,7 +4523,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "api",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4542,7 +4542,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "performance",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4561,7 +4561,7 @@
         "username": "wshobson",
         "name": "Ryan Snodgrass"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4618,7 +4618,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "blockchain",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4637,7 +4637,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "business",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -4656,7 +4656,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "infrastructure",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -4675,7 +4675,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "infrastructure",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -4713,7 +4713,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "utilities",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4732,7 +4732,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "modernization",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4751,7 +4751,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "quality",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -4770,7 +4770,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "marketing",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -4789,7 +4789,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "ai-ml",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -4808,7 +4808,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "business",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -4865,7 +4865,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "performance",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4884,7 +4884,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "database",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -4903,7 +4903,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "database",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -4941,7 +4941,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "utilities",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -4960,7 +4960,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "infrastructure",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -4979,7 +4979,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "infrastructure",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -5017,7 +5017,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "operations",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5055,7 +5055,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "utilities",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5074,7 +5074,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "operations",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5093,7 +5093,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "modernization",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5150,7 +5150,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "workflows",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5169,7 +5169,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5188,7 +5188,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "gaming",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5207,7 +5207,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "workflows",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5226,7 +5226,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "business",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5245,7 +5245,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "operations",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5264,7 +5264,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5283,7 +5283,7 @@
         "username": "wshobson",
         "name": "Community Contribution"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5302,7 +5302,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5321,7 +5321,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "infrastructure",
+      "category": "devops",
       "tags": [
         "skills"
       ],
@@ -5340,7 +5340,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "ai-ml",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -5359,7 +5359,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "ai-ml",
+      "category": "data",
       "tags": [
         "skills"
       ],
@@ -5397,7 +5397,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "operations",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5416,7 +5416,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "payments",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5435,7 +5435,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "quality",
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -5454,7 +5454,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5473,7 +5473,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "finance",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5530,7 +5530,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "marketing",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5549,7 +5549,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "marketing",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5568,7 +5568,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "marketing",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5587,7 +5587,7 @@
         "username": "wshobson",
         "name": "Ryan Snodgrass"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5606,7 +5606,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5625,7 +5625,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "workflows",
+      "category": "productivity",
       "tags": [
         "skills"
       ],
@@ -5644,7 +5644,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "utilities",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5682,7 +5682,7 @@
         "username": "wshobson",
         "name": "Seth Hobson"
       },
-      "category": "languages",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5705,7 +5705,7 @@
       "tags": [
         "yaml",
         "yml",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -5722,7 +5722,7 @@
         "username": "trailofbits",
         "name": "Trail of Bits"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -5741,7 +5741,7 @@
         "username": "numman-ali",
         "name": "Numman Ali"
       },
-      "category": "tools",
+      "category": "development",
       "tags": [
         "skills"
       ],
@@ -5760,7 +5760,7 @@
         "username": "trailofbits",
         "name": "Trail of Bits"
       },
-      "category": "other",
+      "category": "security",
       "tags": [
         "skills"
       ],
@@ -5782,7 +5782,7 @@
       "category": "development",
       "tags": [
         "zig",
-        "lsp"
+        "lsp-servers"
       ],
       "license": "MIT"
     }

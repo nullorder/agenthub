@@ -7,18 +7,18 @@ const { categories } = Astro.props;
 ---
 
 <div
-  class="filter-row flex gap-1.5 overflow-x-auto whitespace-nowrap pb-2 lg:flex-row lg:flex-wrap lg:items-start lg:overflow-visible lg:whitespace-normal lg:pb-0"
+  class="filter-row flex gap-2 overflow-x-auto whitespace-nowrap pb-2 lg:flex-row lg:flex-wrap lg:items-start lg:overflow-visible lg:whitespace-normal lg:pb-0"
   id="category-filters"
 >
   <button
-    class="category-btn active shrink-0 rounded-full border border-white/20 bg-white/15 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-white transition-colors"
+    class="category-btn active shrink-0 rounded-full border border-white/20 bg-white/15 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white transition-colors"
     data-category="all"
   >
     All
   </button>
   {categories.map((cat) => (
     <button
-      class="category-btn shrink-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
+      class="category-btn shrink-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1 text-sm font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
       data-category={cat}
     >
       {cat}

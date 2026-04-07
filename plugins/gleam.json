@@ -15,7 +15,7 @@
   "tags": [
     "gleam",
     "beam",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

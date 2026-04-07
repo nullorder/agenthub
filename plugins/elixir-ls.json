@@ -16,7 +16,7 @@
     "elixir",
     "erlang",
     "beam",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

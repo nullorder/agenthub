@@ -4,24 +4,46 @@ interface Props {
 }
 
 const { tags } = Astro.props;
+
+// Only show the canonical plugin component types in the Type filter.
+// Other tags (languages, frameworks, services) stay in plugin data for
+// search but don't pollute the filter UI.
+const CANONICAL_TYPES = [
+  "skills",
+  "agents",
+  "commands",
+  "hooks",
+  "mcp-servers",
+  "lsp-servers",
+  "integration",
+];
+const visibleTags = CANONICAL_TYPES.filter((t) => tags.includes(t));
+// "other" represents plugins with no canonical type tag — handled specially
+// in the filter JS via data-tag="__other__".
 ---
 
 <div
-  class="filter-row mb-4 flex gap-1.5 overflow-x-auto whitespace-nowrap pb-2 lg:mb-0 lg:flex-row lg:flex-wrap lg:items-start lg:overflow-visible lg:whitespace-normal lg:pb-0"
+  class="filter-row mb-4 flex gap-2 overflow-x-auto whitespace-nowrap pb-2 lg:mb-0 lg:flex-row lg:flex-wrap lg:items-start lg:overflow-visible lg:whitespace-normal lg:pb-0"
   id="tag-filters"
 >
   <button
-    class="tag-btn active shrink-0 rounded-full border border-white/20 bg-white/15 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-white transition-colors"
+    class="tag-btn active shrink-0 rounded-full border border-white/20 bg-white/15 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white transition-colors"
     data-tag="all"
   >
     All
   </button>
-  {tags.map((tag) => (
+  {visibleTags.map((tag) => (
     <button
-      class="tag-btn shrink-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
+      class="tag-btn shrink-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1 text-sm font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
       data-tag={tag}
     >
       {tag}
     </button>
   ))}
+  <button
+    class="tag-btn shrink-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1 text-sm font-medium text-gray-400 transition-colors hover:border-white/20 hover:text-gray-200"
+    data-tag="__other__"
+  >
+    other
+  </button>
 </div>

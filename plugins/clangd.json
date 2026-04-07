@@ -15,7 +15,7 @@
   "tags": [
     "c",
     "cpp",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

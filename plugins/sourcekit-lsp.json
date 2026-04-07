@@ -16,7 +16,7 @@
     "swift",
     "ios",
     "macos",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

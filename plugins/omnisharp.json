@@ -15,7 +15,7 @@
   "tags": [
     "csharp",
     "dotnet",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

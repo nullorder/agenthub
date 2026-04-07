@@ -16,7 +16,7 @@
     "terraform",
     "hcl",
     "devops",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

@@ -14,7 +14,7 @@
   "category": "development",
   "tags": [
     "rust",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

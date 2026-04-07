@@ -38,13 +38,13 @@ const totalPluginCount = plugins.length;
     <Header pluginCount={plugins.length} authorCount={authorCount} />
     <SearchBar />
 
-    <div class="lg:grid lg:grid-cols-[320px_1fr] lg:gap-8">
+    <div class="lg:grid lg:grid-cols-[250px_1fr] lg:gap-8">
       <Sidebar categories={categories} tags={allTags} />
 
       <main>
         <!-- Plugin grid: only first page rendered server-side; remaining are
          hydrated client-side from the JSON below for faster initial load. -->
-        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" id="plugin-grid">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4" id="plugin-grid">
           {initialPlugins.map((plugin: any) => <PluginCard {...plugin} />)}
         </div>
         <script
@@ -220,6 +220,16 @@ const totalPluginCount = plugins.length;
     let currentSearch = "";
     let currentPage = 1;
 
+    const CANONICAL_TYPE_TAGS = new Set([
+      "skills",
+      "agents",
+      "commands",
+      "hooks",
+      "mcp-servers",
+      "lsp-servers",
+      "integration",
+    ]);
+
     function getVisiblePlugins() {
       return allPlugins.filter((p) => {
         const matchesSearch =
@@ -228,8 +238,15 @@ const totalPluginCount = plugins.length;
           (p.description || "").toLowerCase().includes(currentSearch);
         const matchesCategory =
           currentCategory === "all" || p.category === currentCategory;
-        const matchesTag =
-          currentTag === "all" || (p.tags || []).includes(currentTag);
+        let matchesTag;
+        if (currentTag === "all") {
+          matchesTag = true;
+        } else if (currentTag === "__other__") {
+          // "other" = no canonical type tag
+          matchesTag = !(p.tags || []).some((t) => CANONICAL_TYPE_TAGS.has(t));
+        } else {
+          matchesTag = (p.tags || []).includes(currentTag);
+        }
         return matchesSearch && matchesCategory && matchesTag;
       });
     }

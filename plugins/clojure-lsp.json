@@ -15,7 +15,7 @@
   "tags": [
     "clojure",
     "clojurescript",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

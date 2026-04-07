@@ -11,7 +11,7 @@
     "username": "awslabs",
     "name": "Amazon Web Services"
   },
-  "category": "ai",
+  "category": "data",
   "tags": [
     "aws",
     "sagemaker",

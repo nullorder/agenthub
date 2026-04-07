@@ -15,7 +15,7 @@
   "tags": [
     "ocaml",
     "ml",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

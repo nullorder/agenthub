@@ -15,7 +15,7 @@
   "tags": [
     "typescript",
     "javascript",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }

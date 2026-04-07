@@ -17,7 +17,7 @@
     "shell",
     "sh",
     "zsh",
-    "lsp"
+    "lsp-servers"
   ],
   "license": "MIT"
 }
