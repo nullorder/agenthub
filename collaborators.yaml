@@ -1,0 +1,17 @@
+# Collaborators — companies and organizations who support AgentHub.
+#
+# Each entry needs:
+#   name:    Display name
+#   url:     Link target (homepage, GitHub org, etc.)
+#   logo:    Path under site/public/ (e.g. /collaborators/acme.svg)
+#   tagline: Optional one-line description
+#
+# Add an entry below to feature a collaborator on the homepage.
+
+collaborators: []
+# Example:
+# collaborators:
+#   - name: Acme Inc
+#     url: https://acme.com
+#     logo: /collaborators/acme.png
+#     tagline: AI-powered widgets
