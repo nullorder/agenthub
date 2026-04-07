@@ -3,15 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Header from "../components/Header.astro";
 import SearchBar from "../components/SearchBar.astro";
-import CategoryFilter from "../components/CategoryFilter.astro";
-import TagFilter from "../components/TagFilter.astro";
+import Sidebar from "../components/Sidebar.astro";
 import PluginCard from "../components/PluginCard.astro";
 import Cta from "../components/Cta.astro";
 import Footer from "../components/Footer.astro";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const marketplacePath = resolve(process.cwd(), "../.claude-plugin/marketplace.json");
+const marketplacePath = resolve(
+  process.cwd(),
+  "../.claude-plugin/marketplace.json",
+);
 const marketplace = JSON.parse(readFileSync(marketplacePath, "utf-8"));
 const plugins = marketplace.plugins || [];
 
@@ -24,90 +26,79 @@ const allTags = [
 const authorCount = [...new Set(plugins.map((p: any) => p.author.username))]
   .length;
 
-const PLUGINS_PER_PAGE = 48;
+const PLUGINS_PER_PAGE = 32;
 const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
+const totalPluginCount = plugins.length;
 ---
 
 <Layout title="AgentHub — Claude Code Plugin Marketplace">
   <Navbar />
 
-  <div class="mx-auto max-w-7xl px-4 py-10 flex-1">
+  <div class="mx-auto w-full px-4 py-10 flex-1 lg:px-8">
     <Header pluginCount={plugins.length} authorCount={authorCount} />
     <SearchBar />
 
-    <div class="mb-4">
-      <p
-        class="mb-2 text-base font-medium uppercase tracking-wider text-gray-500"
-      >
-        Category
-      </p>
-      <CategoryFilter categories={categories} />
-    </div>
+    <div class="lg:grid lg:grid-cols-[320px_1fr] lg:gap-8">
+      <Sidebar categories={categories} tags={allTags} />
 
-    <div class="mb-4">
-      <p
-        class="mb-2 text-base font-medium uppercase tracking-wider text-gray-500"
-      >
-        Type
-      </p>
-      <TagFilter tags={allTags} />
-    </div>
-
-    <!-- Plugin grid: only first page rendered server-side; remaining are
+      <main>
+        <!-- Plugin grid: only first page rendered server-side; remaining are
          hydrated client-side from the JSON below for faster initial load. -->
-    <div
-      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-      id="plugin-grid"
-    >
-      {initialPlugins.map((plugin: any) => <PluginCard {...plugin} />)}
-    </div>
-    <script
-      type="application/json"
-      id="plugins-data"
-      set:html={JSON.stringify(plugins)}
-    />
-    <template id="plugin-card-template">
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        class="plugin-card group flex flex-col cursor-pointer rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-5 transition-all hover:border-white/20 hover:bg-white/10 shadow-lg shadow-black/20 no-underline"
-      >
-        <div class="mb-3 flex items-start justify-between gap-2">
-          <h3
-            class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors"
-            data-field="name"
-          >
-          </h3>
-          <span
-            class="shrink-0 rounded-full px-2.5 py-0.5 text-sm font-medium"
-            data-field="category"
-          >
-          </span>
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" id="plugin-grid">
+          {initialPlugins.map((plugin: any) => <PluginCard {...plugin} />)}
         </div>
-        <p
-          class="mb-3 text-base leading-relaxed text-gray-400"
-          data-field="description"
-        >
-        </p>
-        <div class="mb-3 flex flex-wrap gap-1.5" data-field="tags"></div>
+        <script
+          type="application/json"
+          id="plugins-data"
+          set:html={JSON.stringify(initialPlugins)}
+        />
+        <template id="plugin-card-template">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            class="plugin-card group flex flex-col cursor-pointer rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-5 transition-all hover:border-white/20 hover:bg-white/10 shadow-lg shadow-black/20 no-underline"
+          >
+            <div class="mb-3 flex items-start justify-between gap-2">
+              <h3
+                class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors"
+                data-field="name"
+              >
+              </h3>
+              <span
+                class="shrink-0 rounded-full px-2.5 py-0.5 text-sm font-medium"
+                data-field="category"
+              >
+              </span>
+            </div>
+            <p
+              class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3"
+              data-field="description"
+            >
+            </p>
+            <div class="mb-3 flex flex-wrap gap-1.5" data-field="tags"></div>
+            <div
+              class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500"
+            >
+              <span class="author-name" data-field="author"></span>
+              <span
+                class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs"
+                data-field="source-label"></span>
+            </div>
+          </a>
+        </template>
+
+        <!-- No results -->
+        <div id="no-results" class="hidden py-16 text-center text-gray-500">
+          No plugins found matching your search.
+        </div>
+
+        <!-- Pagination -->
         <div
-          class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500"
+          id="pagination"
+          class="mt-8 flex items-center justify-center gap-2"
         >
-          <span class="author-name" data-field="author"></span>
-          <span
-            class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs"
-            data-field="source-label"></span>
         </div>
-      </a>
-    </template>
-
-    <!-- No results -->
-    <div id="no-results" class="hidden py-16 text-center text-gray-500">
-      No plugins found matching your search.
-    </div>
-
-    <!-- Pagination -->
-    <div id="pagination" class="mt-8 flex items-center justify-center gap-2">
+      </main>
     </div>
 
     <Cta />
@@ -115,7 +106,7 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 
   <Footer />
 
-  <script define:vars={{ PLUGINS_PER_PAGE }}>
+  <script define:vars={{ PLUGINS_PER_PAGE, totalPluginCount }}>
     const grid = document.getElementById("plugin-grid");
     const searchInput = document.getElementById("search-input");
     const categoryBtns = document.querySelectorAll(".category-btn");
@@ -123,9 +114,11 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
     const pagination = document.getElementById("pagination");
     const noResults = document.getElementById("no-results");
     const template = document.getElementById("plugin-card-template");
-    const allPlugins = JSON.parse(
+    // Start with the first page worth of plugins, then lazy-fetch the rest.
+    let allPlugins = JSON.parse(
       document.getElementById("plugins-data").textContent,
     );
+    let fullyLoaded = allPlugins.length >= totalPluginCount;
 
     const categoryColors = {
       development: "bg-blue-500/20 text-blue-300",
@@ -156,7 +149,9 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 
     function getSourceLabel(source) {
       if (typeof source === "string" || !source) return "local";
-      return source.source === "git-subdir" ? "git" : source.source || "unknown";
+      return source.source === "git-subdir"
+        ? "git"
+        : source.source || "unknown";
     }
 
     function buildCard(plugin) {
@@ -179,8 +174,7 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 
       const catEl = node.querySelector('[data-field="category"]');
       catEl.textContent = plugin.category;
-      const catColor =
-        categoryColors[plugin.category] || categoryColors.other;
+      const catColor = categoryColors[plugin.category] || categoryColors.other;
       catColor.split(" ").forEach((c) => catEl.classList.add(c));
 
       const tagsEl = node.querySelector('[data-field="tags"]');
@@ -193,7 +187,8 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
       });
       if (plugin.license) {
         const span = document.createElement("span");
-        span.className = "rounded bg-white/10 px-2 py-0.5 text-xs text-gray-400";
+        span.className =
+          "rounded bg-white/10 px-2 py-0.5 text-xs text-gray-400";
         span.textContent = plugin.license;
         tagsEl.appendChild(span);
       }
@@ -261,22 +256,95 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 
       noResults.classList.toggle("hidden", visible.length > 0);
 
+      renderPagination(pages);
+    }
+
+    const PAGE_BTN_BASE =
+      "rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-base text-gray-400 hover:border-white/20 hover:text-white transition-colors";
+    const PAGE_BTN_ACTIVE =
+      "rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-base font-medium text-white";
+    const PAGE_BTN_DISABLED =
+      "rounded-lg border border-white/5 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-base text-gray-600 cursor-not-allowed";
+
+    function makePageBtn(
+      label,
+      page,
+      { active = false, disabled = false } = {},
+    ) {
+      const btn = document.createElement("button");
+      btn.innerHTML = label;
+      btn.className = active
+        ? PAGE_BTN_ACTIVE
+        : disabled
+          ? PAGE_BTN_DISABLED
+          : PAGE_BTN_BASE;
+      if (disabled) {
+        btn.disabled = true;
+      } else {
+        btn.addEventListener("click", () => {
+          currentPage = page;
+          render();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+      return btn;
+    }
+
+    function makeEllipsis() {
+      const span = document.createElement("span");
+      span.textContent = "…";
+      span.className = "px-2 text-gray-500 select-none";
+      return span;
+    }
+
+    const PREV_ICON =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>';
+    const NEXT_ICON =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
+
+    function renderPagination(pages) {
       pagination.innerHTML = "";
-      if (pages > 1) {
-        for (let i = 1; i <= pages; i++) {
-          const btn = document.createElement("button");
-          btn.textContent = i;
-          btn.className =
-            i === currentPage
-              ? "rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-base font-medium text-white"
-              : "rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5 text-base text-gray-400 hover:border-white/20 hover:text-white transition-colors";
-          btn.addEventListener("click", () => {
-            currentPage = i;
-            render();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-          pagination.appendChild(btn);
+      if (pages <= 1) return;
+
+      // Compact form when there are many pages: 1 < … current … > last
+      if (pages > 10) {
+        const atStart = currentPage === 1;
+        const atEnd = currentPage === pages;
+
+        // First page
+        pagination.appendChild(
+          makePageBtn("1", 1, { active: currentPage === 1 }),
+        );
+        // Prev arrow
+        pagination.appendChild(
+          makePageBtn(PREV_ICON, currentPage - 1, { disabled: atStart }),
+        );
+        // Leading ellipsis (only if current is not adjacent to first)
+        if (currentPage > 2) pagination.appendChild(makeEllipsis());
+        // Current page (if it's not 1 or last)
+        if (currentPage !== 1 && currentPage !== pages) {
+          pagination.appendChild(
+            makePageBtn(String(currentPage), currentPage, { active: true }),
+          );
         }
+        // Trailing ellipsis (only if current is not adjacent to last)
+        if (currentPage < pages - 1) pagination.appendChild(makeEllipsis());
+        // Next arrow
+        pagination.appendChild(
+          makePageBtn(NEXT_ICON, currentPage + 1, { disabled: atEnd }),
+        );
+        // Last page
+        pagination.appendChild(
+          makePageBtn(String(pages), pages, { active: currentPage === pages }),
+        );
+        return;
+      }
+
+      // Simple form for few pages
+      for (let i = 1; i <= pages; i++) {
+        pagination.appendChild(
+          makePageBtn(String(i), i, { active: i === currentPage }),
+        );
       }
     }
 
@@ -318,5 +386,34 @@ const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
     });
 
     render();
+
+    // Background-fetch the full plugin list. Until it arrives, search/filter
+    // only sees the first page; that's intentional — first paint stays cheap.
+    if (!fullyLoaded) {
+      const start = () =>
+        fetch("/plugins.json")
+          .then((r) => r.json())
+          .then((data) => {
+            allPlugins = data;
+            fullyLoaded = true;
+            // Only re-render pagination if the user hasn't navigated yet,
+            // otherwise just update the count quietly.
+            if (
+              currentPage === 1 &&
+              currentCategory === "all" &&
+              currentTag === "all" &&
+              !currentSearch
+            ) {
+              isInitialRender = true; // skip grid replace, keep SSR cards
+            }
+            render();
+          })
+          .catch(() => {});
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(start, { timeout: 2000 });
+      } else {
+        setTimeout(start, 100);
+      }
+    }
   </script>
 </Layout>

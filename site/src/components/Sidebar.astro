@@ -1,0 +1,33 @@
+---
+import CategoryFilter from "./CategoryFilter.astro";
+import TagFilter from "./TagFilter.astro";
+
+interface Props {
+  categories: string[];
+  tags: string[];
+}
+
+const { categories, tags } = Astro.props;
+---
+
+<aside
+  class="lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:self-start lg:overflow-y-auto lg:pr-2"
+>
+  <div class="mb-4 lg:mb-6">
+    <p
+      class="mb-2 text-base font-medium uppercase tracking-wider text-gray-500"
+    >
+      Category
+    </p>
+    <CategoryFilter categories={categories} />
+  </div>
+
+  <div class="mb-4 lg:mb-0">
+    <p
+      class="mb-2 text-base font-medium uppercase tracking-wider text-gray-500"
+    >
+      Type
+    </p>
+    <TagFilter tags={tags} />
+  </div>
+</aside>
