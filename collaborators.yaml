@@ -3,7 +3,7 @@
 # Each entry needs:
 #   name:    Display name
 #   url:     Link target (homepage, GitHub org, etc.)
-#   logo:    Path under site/public/ (e.g. /collaborators/acme.svg)
+#   logo:    Remote URL to the logo image (e.g. https://example.com/logo.svg)
 #   tagline: Optional one-line description
 #
 # Add an entry below to feature a collaborator on the homepage.
@@ -13,5 +13,5 @@ collaborators: []
 # collaborators:
 #   - name: Acme Inc
 #     url: https://acme.com
-#     logo: /collaborators/acme.png
+#     logo: https://acme.com/logo.png
 #     tagline: AI-powered widgets
