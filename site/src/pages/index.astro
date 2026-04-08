@@ -27,7 +27,7 @@ const allTags = [
 const authorCount = [...new Set(plugins.map((p: any) => p.author.username))]
   .length;
 
-const PLUGINS_PER_PAGE = 32;
+const PLUGINS_PER_PAGE = 28;
 const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 const totalPluginCount = plugins.length;
 ---
@@ -230,7 +230,12 @@ const totalPluginCount = plugins.length;
         const matchesSearch =
           !currentSearch ||
           p.name.toLowerCase().includes(currentSearch) ||
-          (p.description || "").toLowerCase().includes(currentSearch);
+          (p.description || "").toLowerCase().includes(currentSearch) ||
+          (p.tags || []).some((t) =>
+            t.toLowerCase().includes(currentSearch),
+          ) ||
+          (p.author?.name || "").toLowerCase().includes(currentSearch) ||
+          (p.author?.username || "").toLowerCase().includes(currentSearch);
         const matchesCategory =
           currentCategory === "all" || p.category === currentCategory;
         const matchesTag =
@@ -312,7 +317,7 @@ const totalPluginCount = plugins.length;
       if (pages <= 1) return;
 
       // Compact form when there are many pages: 1 < … current … > last
-      if (pages > 10) {
+      if (pages > 8) {
         const atStart = currentPage === 1;
         const atEnd = currentPage === pages;
 

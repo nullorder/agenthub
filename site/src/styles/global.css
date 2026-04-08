@@ -78,6 +78,17 @@ html.light .modal-content { background-color: rgba(255, 255, 255, 0.95); }
 
 .text-always-white { color: #fff !important; }
 
+/* License badge — distinct blue styling in both themes */
+.license-badge {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+}
+
+html.light .license-badge {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+}
+
 /* Background image toggle */
 .bg-dark { display: block; }
 .bg-light { display: none; }
