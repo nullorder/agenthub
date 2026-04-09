@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://nullorder.github.io/agenthub">
-    <img src="site/public/logo.svg" alt="AgentHub" width="120" />
+  <a href="https://agenthub.nullorder.org">
+    <img src="./site/public/agenthub.gif" alt="AgentHub" width="100%" />
   </a>
 </p>
 
-<h1 align="center"><a href="https://nullorder.github.io/agenthub">AgentHub</a></h1>
+<h1 align="center"><a href="https://agenthub.nullorder.org">AgentHub</a></h1>
 
 <p align="center">A community-driven plugin marketplace for Claude Code. Open to everyone.</p>
 
