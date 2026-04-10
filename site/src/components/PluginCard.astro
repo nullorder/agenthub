@@ -83,7 +83,9 @@ const categoryColor = categoryColors[category] || categoryColors.other;
         </span>
       </div>
 
-      <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">{description}</p>
+      <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">
+        {description}
+      </p>
 
       {tags.length > 0 && (
         <div class="mb-3 flex flex-wrap gap-1.5">
@@ -102,14 +104,16 @@ const categoryColor = categoryColors[category] || categoryColors.other;
 
       <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
         {authorUrl ? (
-          <span
-            class="author-name transition-colors"
-            onclick={`event.preventDefault(); event.stopPropagation(); window.open('${authorUrl}', '_blank')`}
-          >
-            {authorDisplay}
+          <span>by{" "}
+            <span
+              class="author-name transition-colors"
+              onclick={`event.preventDefault(); event.stopPropagation(); window.open('${authorUrl}', '_blank')`}
+            >
+              {authorDisplay}
+            </span>
           </span>
         ) : (
-          <span class="author-name">{authorDisplay}</span>
+          <span>by <span class="author-name">{authorDisplay}</span></span>
         )}
         <div class="flex items-center gap-2">
           <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs">
@@ -135,7 +139,9 @@ const categoryColor = categoryColors[category] || categoryColors.other;
         </span>
       </div>
 
-      <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">{description}</p>
+      <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">
+        {description}
+      </p>
 
       {tags.length > 0 && (
         <div class="mb-3 flex flex-wrap gap-1.5">
@@ -149,16 +155,18 @@ const categoryColor = categoryColors[category] || categoryColors.other;
 
       <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
         {authorUrl ? (
-          <a
-            href={authorUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="author-name transition-colors"
-          >
-            {authorDisplay}
-          </a>
+          <span>by{" "}
+            <a
+              href={authorUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="author-name transition-colors"
+            >
+              {authorDisplay}
+            </a>
+          </span>
         ) : (
-          <span class="author-name">{authorDisplay}</span>
+          <span>by <span class="author-name">{authorDisplay}</span></span>
         )}
         <div class="flex items-center gap-2">
           {license && (
