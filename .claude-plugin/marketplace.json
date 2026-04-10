@@ -4134,7 +4134,9 @@
       },
       "category": "development",
       "tags": [
-        "skills"
+        "commands",
+        "skills",
+        "cli"
       ],
       "license": "MIT"
     },
