@@ -1,9 +1,8 @@
 {
   "name": "sentry-for-ai",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/getsentry/sentry-for-ai.git",
-    "path": ""
+    "source": "github",
+    "repo": "getsentry/sentry-for-ai"
   },
   "description": "Skills and commands for Sentry error monitoring, alerts, and debugging with /seer command",
   "version": "1.0.0",

@@ -1,9 +1,8 @@
 {
   "name": "everything-claude-code",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/affaan-m/everything-claude-code.git",
-    "path": ""
+    "source": "github",
+    "repo": "affaan-m/everything-claude-code"
   },
   "description": "Agent harness with 28 agents, 119 skills, and 60 commands for full workflow optimization",
   "version": "1.0.0",

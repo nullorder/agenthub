@@ -1,9 +1,8 @@
 {
   "name": "cloudflare-skills",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/cloudflare/skills.git",
-    "path": ""
+    "source": "github",
+    "repo": "cloudflare/skills"
   },
   "description": "Skills and commands for Cloudflare Workers, Pages, D1, R2, AI, and networking",
   "version": "1.0.0",

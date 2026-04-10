@@ -1,9 +1,8 @@
 {
   "name": "claudelint",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/pdugan20/claudelint.git",
-    "path": ""
+    "source": "github",
+    "repo": "pdugan20/claudelint"
   },
   "description": "Linter for Claude Code projects validating CLAUDE.md, skills, settings, hooks, MCP servers, and plugins",
   "version": "1.0.0",

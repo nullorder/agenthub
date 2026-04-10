@@ -1,9 +1,8 @@
 {
   "name": "caveman",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/JuliusBrussee/caveman.git",
-    "path": ""
+    "source": "github",
+    "repo": "JuliusBrussee/caveman"
   },
   "description": "Token-saving skill that cuts 75% of tokens by using caveman-style communication",
   "version": "1.0.0",

@@ -1,9 +1,8 @@
 {
   "name": "playwright-skill",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/lackeyjb/playwright-skill.git",
-    "path": ""
+    "source": "github",
+    "repo": "lackeyjb/playwright-skill"
   },
   "description": "Browser automation skill using Playwright for testing and web interaction",
   "version": "1.0.0",

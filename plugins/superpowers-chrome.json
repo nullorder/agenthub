@@ -1,9 +1,8 @@
 {
   "name": "superpowers-chrome",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/obra/superpowers-chrome.git",
-    "path": ""
+    "source": "github",
+    "repo": "obra/superpowers-chrome"
   },
   "description": "Direct Chrome browser control via DevTools Protocol with zero dependencies and MCP server mode",
   "version": "1.0.0",

@@ -1,9 +1,8 @@
 {
   "name": "superpowers",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/obra/superpowers.git",
-    "path": ""
+    "source": "github",
+    "repo": "obra/superpowers"
   },
   "description": "Agentic skills framework and software development methodology with structured TDD workflow",
   "version": "1.0.0",

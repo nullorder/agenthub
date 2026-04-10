@@ -1,9 +1,8 @@
 {
   "name": "claude-code-safety-net",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/kenryu42/claude-code-safety-net.git",
-    "path": ""
+    "source": "github",
+    "repo": "kenryu42/claude-code-safety-net"
   },
   "description": "Hook that catches destructive git and filesystem commands before execution",
   "version": "1.0.0",

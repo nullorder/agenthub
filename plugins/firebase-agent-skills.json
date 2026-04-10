@@ -1,9 +1,8 @@
 {
   "name": "firebase-agent-skills",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/firebase/agent-skills.git",
-    "path": ""
+    "source": "github",
+    "repo": "firebase/agent-skills"
   },
   "description": "Agent skills for Firebase SDK setup, feature configuration, and deployment",
   "version": "1.0.0",
