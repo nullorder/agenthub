@@ -490,9 +490,8 @@
     {
       "name": "caveman",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/JuliusBrussee/caveman.git",
-        "path": ""
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
       },
       "description": "Token-saving skill that cuts 75% of tokens by using caveman-style communication",
       "version": "1.0.0",
@@ -528,9 +527,8 @@
     {
       "name": "cc-hooks-audio",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/husniadil/cc-hooks.git",
-        "path": ""
+        "source": "github",
+        "repo": "husniadil/cc-hooks"
       },
       "description": "Audio feedback for Claude Code with TTS announcements, sound effects, and contextual AI messages",
       "version": "1.0.0",
@@ -667,9 +665,8 @@
     {
       "name": "claude-code-builder",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/alexanderop/claude-code-builder.git",
-        "path": ""
+        "source": "github",
+        "repo": "alexanderop/claude-code-builder"
       },
       "description": "Guided commands to generate skills, subagents, hooks, slash commands, and plugins with proper scaffolding",
       "version": "1.0.0",
@@ -722,9 +719,8 @@
     {
       "name": "claude-code-safety-net",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/kenryu42/claude-code-safety-net.git",
-        "path": ""
+        "source": "github",
+        "repo": "kenryu42/claude-code-safety-net"
       },
       "description": "Hook that catches destructive git and filesystem commands before execution",
       "version": "1.0.0",
@@ -855,9 +851,8 @@
     {
       "name": "claude-hud",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/jarrodwatts/claude-hud.git",
-        "path": ""
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
       },
       "description": "Real-time statusline showing context window usage, active tools, running agents, git info, and todo progress",
       "version": "1.0.0",
@@ -893,9 +888,8 @@
     {
       "name": "claude-k8s-plugin",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/Sagart-cactus/claude-k8s-plugin.git",
-        "path": ""
+        "source": "github",
+        "repo": "Sagart-cactus/claude-k8s-plugin"
       },
       "description": "Build Kubernetes CRD operators with safety hooks restricting operations to local clusters",
       "version": "1.0.0",
@@ -932,9 +926,8 @@
     {
       "name": "claudelint",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/pdugan20/claudelint.git",
-        "path": ""
+        "source": "github",
+        "repo": "pdugan20/claudelint"
       },
       "description": "Linter for Claude Code projects validating CLAUDE.md, skills, settings, hooks, MCP servers, and plugins",
       "version": "1.0.0",
@@ -974,9 +967,8 @@
     {
       "name": "cloudflare-skills",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/cloudflare/skills.git",
-        "path": ""
+        "source": "github",
+        "repo": "cloudflare/skills"
       },
       "description": "Skills and commands for Cloudflare Workers, Pages, D1, R2, AI, and networking",
       "version": "1.0.0",
@@ -1796,9 +1788,8 @@
     {
       "name": "dotnet-skills",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/Aaronontheweb/dotnet-skills.git",
-        "path": ""
+        "source": "github",
+        "repo": "Aaronontheweb/dotnet-skills"
       },
       "description": "Skills and sub-agents for .NET developers covering C#, F#, and ASP.NET workflows",
       "version": "1.0.0",
@@ -1834,9 +1825,8 @@
     {
       "name": "edamame-claude-code",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/edamametechnologies/edamame_claude_code.git",
-        "path": ""
+        "source": "github",
+        "repo": "edamametechnologies/edamame_claude_code"
       },
       "description": "Runtime behavioral monitoring plugin that detects divergence between stated intent and actual system behavior",
       "version": "1.0.0",
@@ -2049,9 +2039,8 @@
     {
       "name": "everything-claude-code",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/affaan-m/everything-claude-code.git",
-        "path": ""
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
       },
       "description": "Agent harness with 28 agents, 119 skills, and 60 commands for full workflow optimization",
       "version": "1.0.0",
@@ -2185,9 +2174,8 @@
     {
       "name": "firebase-agent-skills",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/firebase/agent-skills.git",
-        "path": ""
+        "source": "github",
+        "repo": "firebase/agent-skills"
       },
       "description": "Agent skills for Firebase SDK setup, feature configuration, and deployment",
       "version": "1.0.0",
@@ -3291,9 +3279,8 @@
     {
       "name": "planning-with-files",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/OthmanAdi/planning-with-files.git",
-        "path": ""
+        "source": "github",
+        "repo": "OthmanAdi/planning-with-files"
       },
       "description": "Manus-style persistent markdown planning skill for structured project planning",
       "version": "1.0.0",
@@ -3311,9 +3298,8 @@
     {
       "name": "playwright-skill",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/lackeyjb/playwright-skill.git",
-        "path": ""
+        "source": "github",
+        "repo": "lackeyjb/playwright-skill"
       },
       "description": "Browser automation skill using Playwright for testing and web interaction",
       "version": "1.0.0",
@@ -3810,9 +3796,8 @@
     {
       "name": "sentry-for-ai",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/getsentry/sentry-for-ai.git",
-        "path": ""
+        "source": "github",
+        "repo": "getsentry/sentry-for-ai"
       },
       "description": "Skills and commands for Sentry error monitoring, alerts, and debugging with /seer command",
       "version": "1.0.0",
@@ -4079,9 +4064,8 @@
     {
       "name": "superpowers-chrome",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/obra/superpowers-chrome.git",
-        "path": ""
+        "source": "github",
+        "repo": "obra/superpowers-chrome"
       },
       "description": "Direct Chrome browser control via DevTools Protocol with zero dependencies and MCP server mode",
       "version": "1.0.0",
@@ -4099,9 +4083,8 @@
     {
       "name": "superpowers",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/obra/superpowers.git",
-        "path": ""
+        "source": "github",
+        "repo": "obra/superpowers"
       },
       "description": "Agentic skills framework and software development methodology with structured TDD workflow",
       "version": "1.0.0",
