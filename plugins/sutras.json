@@ -11,8 +11,6 @@
     "name": "Kumar Anirudha"
   },
   "category": "development",
-  "tags": [
-    "skills"
-  ],
+  "tags": ["commands", "skills", "cli"],
   "license": "MIT"
 }
