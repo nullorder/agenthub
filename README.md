@@ -40,6 +40,24 @@ We welcome plugins of all kinds — skills, commands, agents, hooks, MCP servers
 
 Your plugin code stays in **your own repo**. You submit a PR that adds a reference to it in our `plugins/` directory. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
+## Badge
+
+Add a badge to your plugin's README:
+
+**Markdown:**
+
+```md
+[![AgentHub](https://agenthub.nullorder.org/badge.svg)](https://agenthub.nullorder.org)
+```
+
+**HTML:**
+
+```html
+<a href="https://agenthub.nullorder.org">
+  <img src="https://agenthub.nullorder.org/badge.svg" alt="AgentHub" />
+</a>
+```
+
 ## License
 
 This marketplace catalog is licensed under [MIT](LICENSE). Individual plugins have their own licenses — see each plugin's repository for details.
