@@ -5,24 +5,100 @@ on:
     paths:
       - 'plugins/**'
 
+permissions:
+  pull-requests: write
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install jq
         run: sudo apt-get install -y jq
 
-      - name: Validate plugin JSON files
+      - name: Check for duplicate plugins
+        id: duplicates
         run: |
           errors=0
+          output=""
+
+          # Get list of plugin files changed in this PR
+          changed=$(git diff --name-only --diff-filter=A origin/${{ github.base_ref }} -- 'plugins/*.json')
+          if [ -z "$changed" ]; then
+            echo "result=No new plugin files added, skipping duplicate check." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          for new_file in $changed; do
+            [ -f "$new_file" ] || continue
+
+            new_name=$(jq -r '.name // empty' "$new_file")
+            new_source_type=$(jq -r '.source.source // empty' "$new_file")
+            new_repo=$(jq -r '.source.repo // empty' "$new_file")
+            new_url=$(jq -r '.source.url // empty' "$new_file")
+            new_package=$(jq -r '.source.package // empty' "$new_file")
+
+            for existing in plugins/*.json; do
+              [ -f "$existing" ] || continue
+              [ "$existing" = "$new_file" ] && continue
+
+              # Check duplicate name
+              existing_name=$(jq -r '.name // empty' "$existing")
+              if [ -n "$new_name" ] && [ "$new_name" = "$existing_name" ]; then
+                output="${output}- Duplicate plugin name \`$new_name\` in \`$new_file\` (already exists in \`$existing\`)\n"
+                errors=$((errors + 1))
+              fi
+
+              # Check duplicate source
+              existing_source_type=$(jq -r '.source.source // empty' "$existing")
+              if [ "$new_source_type" = "$existing_source_type" ]; then
+                case "$new_source_type" in
+                  github)
+                    existing_repo=$(jq -r '.source.repo // empty' "$existing")
+                    if [ -n "$new_repo" ] && [ "$new_repo" = "$existing_repo" ]; then
+                      output="${output}- Duplicate source repo \`$new_repo\` in \`$new_file\` (already exists in \`$existing\`)\n"
+                      errors=$((errors + 1))
+                    fi
+                    ;;
+                  url|git-subdir)
+                    existing_url=$(jq -r '.source.url // empty' "$existing")
+                    if [ -n "$new_url" ] && [ "$new_url" = "$existing_url" ]; then
+                      output="${output}- Duplicate source URL \`$new_url\` in \`$new_file\` (already exists in \`$existing\`)\n"
+                      errors=$((errors + 1))
+                    fi
+                    ;;
+                  npm)
+                    existing_package=$(jq -r '.source.package // empty' "$existing")
+                    if [ -n "$new_package" ] && [ "$new_package" = "$existing_package" ]; then
+                      output="${output}- Duplicate npm package \`$new_package\` in \`$new_file\` (already exists in \`$existing\`)\n"
+                      errors=$((errors + 1))
+                    fi
+                    ;;
+                esac
+              fi
+            done
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo "result=${output}" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+          echo "result=No duplicates found." >> "$GITHUB_OUTPUT"
+
+      - name: Validate plugin JSON files
+        id: validation
+        run: |
+          errors=0
+          output=""
           for f in plugins/*.json; do
             [ -f "$f" ] || continue
-            echo "Validating $f..."
 
             if ! jq empty "$f" 2>/dev/null; then
-              echo "  ERROR: Invalid JSON"
+              output="${output}- \`$f\`: Invalid JSON\n"
               errors=$((errors + 1))
               continue
             fi
@@ -30,14 +106,14 @@ jobs:
             for field in name description version license; do
               val=$(jq -r ".$field // empty" "$f")
               if [ -z "$val" ]; then
-                echo "  ERROR: Missing required field '$field'"
+                output="${output}- \`$f\`: Missing required field \`$field\`\n"
                 errors=$((errors + 1))
               fi
             done
 
             username=$(jq -r '.author.username // empty' "$f")
             if [ -z "$username" ]; then
-              echo "  ERROR: Missing required field 'author.username'"
+              output="${output}- \`$f\`: Missing required field \`author.username\`\n"
               errors=$((errors + 1))
             fi
 
@@ -46,14 +122,14 @@ jobs:
               github)
                 repo=$(jq -r '.source.repo // empty' "$f")
                 if [ -z "$repo" ]; then
-                  echo "  ERROR: source type 'github' requires 'source.repo'"
+                  output="${output}- \`$f\`: source type 'github' requires \`source.repo\`\n"
                   errors=$((errors + 1))
                 fi
                 ;;
               url)
                 url=$(jq -r '.source.url // empty' "$f")
                 if [ -z "$url" ]; then
-                  echo "  ERROR: source type 'url' requires 'source.url'"
+                  output="${output}- \`$f\`: source type 'url' requires \`source.url\`\n"
                   errors=$((errors + 1))
                 fi
                 ;;
@@ -61,23 +137,23 @@ jobs:
                 url=$(jq -r '.source.url // empty' "$f")
                 path=$(jq -r '.source.path // empty' "$f")
                 if [ -z "$url" ]; then
-                  echo "  ERROR: source type 'git-subdir' requires 'source.url'"
+                  output="${output}- \`$f\`: source type 'git-subdir' requires \`source.url\`\n"
                   errors=$((errors + 1))
                 fi
                 if [ -z "$path" ]; then
-                  echo "  ERROR: source type 'git-subdir' requires 'source.path'"
+                  output="${output}- \`$f\`: source type 'git-subdir' requires \`source.path\`\n"
                   errors=$((errors + 1))
                 fi
                 ;;
               npm)
                 package=$(jq -r '.source.package // empty' "$f")
                 if [ -z "$package" ]; then
-                  echo "  ERROR: source type 'npm' requires 'source.package'"
+                  output="${output}- \`$f\`: source type 'npm' requires \`source.package\`\n"
                   errors=$((errors + 1))
                 fi
                 ;;
               *)
-                echo "  ERROR: Invalid or missing source type '$source_type'. Must be one of: github, url, git-subdir, npm"
+                output="${output}- \`$f\`: Invalid or missing source type \`$source_type\`. Must be one of: github, url, git-subdir, npm\n"
                 errors=$((errors + 1))
                 ;;
             esac
@@ -86,10 +162,10 @@ jobs:
             valid_categories="development testing devops security documentation productivity data design other"
             category=$(jq -r '.category // empty' "$f")
             if [ -z "$category" ]; then
-              echo "  ERROR: Missing required field 'category'. Must be one of: $valid_categories"
+              output="${output}- \`$f\`: Missing required field \`category\`. Must be one of: $valid_categories\n"
               errors=$((errors + 1))
             elif ! echo "$valid_categories" | grep -qw "$category"; then
-              echo "  ERROR: Invalid category '$category'. Must be one of: $valid_categories"
+              output="${output}- \`$f\`: Invalid category \`$category\`. Must be one of: $valid_categories\n"
               errors=$((errors + 1))
             fi
 
@@ -97,12 +173,12 @@ jobs:
             # Free-form descriptive tags are allowed alongside the type tag.
             valid_types="skills agents hooks commands mcp-servers lsp-servers integration other"
             if ! jq -e '.tags' "$f" >/dev/null 2>&1; then
-              echo "  ERROR: Missing required field 'tags'. Must include at least one component type: $valid_types"
+              output="${output}- \`$f\`: Missing required field \`tags\`. Must include at least one component type: $valid_types\n"
               errors=$((errors + 1))
             else
               tag_count=$(jq -r '.tags | length' "$f")
               if [ "$tag_count" -eq 0 ]; then
-                echo "  ERROR: 'tags' is empty. Must include at least one component type: $valid_types"
+                output="${output}- \`$f\`: \`tags\` is empty. Must include at least one component type: $valid_types\n"
                 errors=$((errors + 1))
               else
                 has_type=0
@@ -113,7 +189,7 @@ jobs:
                   fi
                 done
                 if [ "$has_type" -eq 0 ]; then
-                  echo "  ERROR: 'tags' must include at least one component type: $valid_types"
+                  output="${output}- \`$f\`: \`tags\` must include at least one component type: $valid_types\n"
                   errors=$((errors + 1))
                 fi
               fi
@@ -121,11 +197,78 @@ jobs:
           done
 
           if [ "$errors" -gt 0 ]; then
-            echo "Validation failed with $errors error(s)."
+            echo "result=${output}" >> "$GITHUB_OUTPUT"
             exit 1
           fi
 
-          echo "All plugin files are valid."
+          echo "result=All plugin files are valid." >> "$GITHUB_OUTPUT"
 
       - name: Test marketplace build
-        run: ./scripts/build-marketplace.sh
+        id: build
+        run: |
+          if ./scripts/build-marketplace.sh; then
+            echo "result=Marketplace build succeeded." >> "$GITHUB_OUTPUT"
+          else
+            echo "result=Marketplace build failed." >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+      - name: Comment on PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const dup = `${{ steps.duplicates.outcome }}`;
+            const val = `${{ steps.validation.outcome }}`;
+            const build = `${{ steps.build.outcome }}`;
+
+            const dupResult = `${{ steps.duplicates.outputs.result }}`;
+            const valResult = `${{ steps.validation.outputs.result }}`;
+            const buildResult = `${{ steps.build.outputs.result }}`;
+
+            const allPassed = dup === 'success' && val === 'success' && build === 'success';
+            const icon = (s) => s === 'success' ? ':white_check_mark:' : s === 'skipped' ? ':next_track_button:' : ':x:';
+
+            let body = `## Plugin Validation ${allPassed ? ':white_check_mark:' : ':x:'}\n\n`;
+            body += `| Check | Status |\n|---|---|\n`;
+            body += `| Duplicate check | ${icon(dup)} ${dup} |\n`;
+            body += `| Schema validation | ${icon(val)} ${val} |\n`;
+            body += `| Marketplace build | ${icon(build)} ${build} |\n\n`;
+
+            if (!allPassed) {
+              body += `### Errors\n\n`;
+              if (dup === 'failure') body += dupResult + '\n';
+              if (val === 'failure') body += valResult + '\n';
+              if (build === 'failure') body += buildResult + '\n';
+            } else {
+              body += `Great plugin! Add this badge to your plugin's README for better discovery:\n\n`;
+              body += `[![AgentHub](https://agenthub.nullorder.org/badge.svg)](https://agenthub.nullorder.org)\n\n`;
+              body += `**Markdown:**\n\`\`\`md\n[![AgentHub](https://agenthub.nullorder.org/badge.svg)](https://agenthub.nullorder.org)\n\`\`\`\n\n`;
+              body += `**HTML:**\n\`\`\`html\n<a href="https://agenthub.nullorder.org">\n  <img src="https://agenthub.nullorder.org/badge.svg" alt="AgentHub" />\n</a>\n\`\`\`\n`;
+            }
+
+            // Find and update existing bot comment, or create new one
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const marker = '## Plugin Validation';
+            const existing = comments.find(c => c.body.startsWith(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

@@ -42,7 +42,9 @@ Your plugin code stays in **your own repo**. You submit a PR that adds a referen
 
 ## Badge
 
-Add a badge to your plugin's README:
+If you wanna add your plugin to Agenthub, you can also add this badge to your plugin's README:
+
+[![AgentHub](https://agenthub.nullorder.org/badge.svg)](https://agenthub.nullorder.org)
 
 **Markdown:**
 
