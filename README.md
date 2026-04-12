@@ -60,6 +60,18 @@ If you wanna add your plugin to Agenthub, you can also add this badge to your pl
 </a>
 ```
 
+## Increase the skill budget
+
+Claude Code limits how many plugin skills are injected into the system prompt (~15,000 characters by default). With a large marketplace like AgentHub, some plugins may be silently truncated.
+
+To fix this, increase the budget:
+
+```sh
+export SLASH_COMMAND_TOOL_CHAR_BUDGET=30000
+```
+
+Add it to your shell profile (`~/.zshrc`, `~/.bashrc`, `~/.envrc` etc.) to make it permanent. See [anthropics/claude-code#14549](https://github.com/anthropics/claude-code/issues/14549) for details.
+
 ## License
 
 This marketplace catalog is licensed under [MIT](LICENSE). Individual plugins have their own licenses — see each plugin's repository for details.
