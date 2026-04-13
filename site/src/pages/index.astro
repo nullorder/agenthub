@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar.astro";
 import Sidebar from "../components/Sidebar.astro";
 import PluginCard from "../components/PluginCard.astro";
 import Cta from "../components/Cta.astro";
-// import Collaborators from "../components/Collaborators.astro";
+import Collaborators from "../components/Collaborators.astro";
 import Footer from "../components/Footer.astro";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -106,7 +106,7 @@ const totalPluginCount = plugins.length;
     </div>
 
     <Cta />
-    <!-- <Collaborators /> -->
+    <Collaborators />
   </div>
 
   <Footer />
@@ -231,9 +231,7 @@ const totalPluginCount = plugins.length;
           !currentSearch ||
           p.name.toLowerCase().includes(currentSearch) ||
           (p.description || "").toLowerCase().includes(currentSearch) ||
-          (p.tags || []).some((t) =>
-            t.toLowerCase().includes(currentSearch),
-          ) ||
+          (p.tags || []).some((t) => t.toLowerCase().includes(currentSearch)) ||
           (p.author?.name || "").toLowerCase().includes(currentSearch) ||
           (p.author?.username || "").toLowerCase().includes(currentSearch);
         const matchesCategory =
