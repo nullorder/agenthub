@@ -34,6 +34,25 @@ Go to the **Discover** tab to see available plugins, then install what you need:
 /plugin install <plugin-name>@agenthub
 ```
 
+## Update plugins
+
+Plugins are cached locally when you install them — pushes to an author's repo
+don't reach your machine automatically. To pull the latest version of a
+plugin you already have installed:
+
+```sh
+/plugin marketplace update agenthub       # refresh the catalog and plugin sources
+/plugin update <plugin-name>@agenthub     # apply changes for one plugin
+/reload-plugins                            # re-scan so new skills/agents appear
+```
+
+**For plugin authors:** once your plugin is listed in agenthub, pushing to
+your source (GitHub repo, Git URL, Git subdir, or npm) is enough — the next
+`/plugin marketplace update` picks up your changes. You only need to open
+another PR to agenthub if you're changing the marketplace entry itself
+(description, category, tags, etc.). See [CONTRIBUTING.md](CONTRIBUTING.md#updating-your-plugin)
+for details.
+
 ## Contributing
 
 We welcome plugins of all kinds — skills, commands, agents, hooks, MCP servers, and LSP servers.
