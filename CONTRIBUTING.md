@@ -156,13 +156,16 @@ Use one of the following for the `category` field:
 
 ## Updating your plugin
 
-Since we reference your source directly, updates to your plugin are picked up automatically when users run `/plugin marketplace update`:
+Publishing a new version of your plugin to AgentHub users is a two-step flow:
 
-- **For GitHub repos and Git URLs:** push changes to your repository.
-- **For Git subdirectories:** push changes to the plugin subdirectory in your repository.
-- **For npm packages:** publish a new version to the registry.
+1. **Push the new version to your source** (GitHub repo, Git URL, Git subdirectory, or a new npm release) and bump the `version` field in your plugin's own manifest (e.g. `.claude-plugin/plugin.json`).
+2. **Open a PR here** updating the `version` field in `plugins/<your-plugin>.json` to match.
 
-If you need to change the marketplace entry itself (description, category, version bump), edit your file in `plugins/` and open a new PR.
+Both versions must match. Claude Code's `/plugin update <name>@agenthub` compares the user's installed version against the version declared in this marketplace — **not** your source's git HEAD. If the registry entry here still points at the old version, `/plugin update` reports `"already at the latest version"` and your changes never reach users who have already installed the plugin, even if your source has moved on.
+
+For **metadata-only changes** (description, category, tags, author info — anything that doesn't ship a new version of the plugin itself), just edit your file in `plugins/` and open a PR. A `version` bump is not required.
+
+> **Note:** Do not edit `.claude-plugin/marketplace.json` — it is auto-generated from `plugins/` after your PR is merged.
 
 ## Removing a plugin
 
