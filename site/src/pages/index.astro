@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar.astro";
 import Sidebar from "../components/Sidebar.astro";
 import PluginCard from "../components/PluginCard.astro";
 import Cta from "../components/Cta.astro";
-// import Collaborators from "../components/Collaborators.astro";
+import Collaborators from "../components/Collaborators.astro";
 import Footer from "../components/Footer.astro";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -83,7 +83,9 @@ const totalPluginCount = plugins.length;
             <div
               class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500"
             >
-              <span>by <span class="author-name" data-field="author"></span></span>
+              <span
+                >by <span class="author-name" data-field="author"></span></span
+              >
               <span
                 class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs"
                 data-field="source-label"></span>
@@ -106,7 +108,7 @@ const totalPluginCount = plugins.length;
     </div>
 
     <Cta />
-    <!-- <Collaborators /> -->
+    <Collaborators />
   </div>
 
   <Footer />
@@ -231,9 +233,7 @@ const totalPluginCount = plugins.length;
           !currentSearch ||
           p.name.toLowerCase().includes(currentSearch) ||
           (p.description || "").toLowerCase().includes(currentSearch) ||
-          (p.tags || []).some((t) =>
-            t.toLowerCase().includes(currentSearch),
-          ) ||
+          (p.tags || []).some((t) => t.toLowerCase().includes(currentSearch)) ||
           (p.author?.name || "").toLowerCase().includes(currentSearch) ||
           (p.author?.username || "").toLowerCase().includes(currentSearch);
         const matchesCategory =
