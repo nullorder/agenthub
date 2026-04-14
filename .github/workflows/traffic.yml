@@ -12,12 +12,15 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
+    # Traffic API requires Administration:read, which GITHUB_TOKEN cannot
+    # be granted via workflow permissions. TRAFFIC_TOKEN is a fine-grained
+    # PAT scoped to this repo with Administration:read + Metadata:read.
+    env:
+      GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Fetch daily views and clones
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           mkdir -p stats/views stats/clones
@@ -40,8 +43,6 @@ jobs:
           done
 
       - name: Fetch referrers and paths snapshots
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           today=$(date -u +%Y-%m-%d)

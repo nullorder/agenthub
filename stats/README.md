@@ -30,3 +30,12 @@ permanently.
 
 Only the agenthub catalog repo is tracked. No per-plugin analytics. Plugin
 repos remain on GitHub and are not proxied.
+
+## Required secret: `TRAFFIC_TOKEN`
+
+GitHub's built-in `GITHUB_TOKEN` cannot access the Traffic API — those
+endpoints require `Administration: read`, a scope that isn't exposed via
+workflow `permissions:`. The workflow uses a repo secret named
+`TRAFFIC_TOKEN`: a fine-grained PAT scoped to this repo with
+`Administration: Read-only` and `Metadata: Read-only`. Rotate before
+expiry or the daily run will start failing.
