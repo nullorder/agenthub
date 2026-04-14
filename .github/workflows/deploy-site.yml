@@ -1,15 +1,16 @@
 name: Build and deploy site
 
 on:
-  # Chain after marketplace build completes
+  # Chain after marketplace build or traffic collection completes
   workflow_run:
-    workflows: ["Build marketplace.json"]
+    workflows: ["Build marketplace.json", "Collect traffic stats"]
     types: [completed]
-  # Also trigger on site-only changes
+  # Also trigger on site or stats changes
   push:
     branches: [main]
     paths:
       - 'site/**'
+      - 'stats/**'
   workflow_dispatch:
 
 permissions:

@@ -1,0 +1,67 @@
+name: Collect traffic stats
+
+on:
+  schedule:
+    # Daily at 01:00 UTC — yesterday's bucket is finalized by then.
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch daily views and clones
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p stats/views stats/clones
+
+          gh api "repos/${{ github.repository }}/traffic/views"  > /tmp/views.json
+          gh api "repos/${{ github.repository }}/traffic/clones" > /tmp/clones.json
+
+          jq -c '.views[]' /tmp/views.json | while read -r entry; do
+            date=$(echo "$entry" | jq -r '.timestamp | split("T")[0]')
+            echo "$entry" \
+              | jq --arg d "$date" '{date: $d, count: .count, uniques: .uniques}' \
+              > "stats/views/$date.json"
+          done
+
+          jq -c '.clones[]' /tmp/clones.json | while read -r entry; do
+            date=$(echo "$entry" | jq -r '.timestamp | split("T")[0]')
+            echo "$entry" \
+              | jq --arg d "$date" '{date: $d, count: .count, uniques: .uniques}' \
+              > "stats/clones/$date.json"
+          done
+
+      - name: Fetch referrers and paths snapshots
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          today=$(date -u +%Y-%m-%d)
+
+          gh api "repos/${{ github.repository }}/traffic/popular/referrers" \
+            | jq --arg d "$today" '{snapshot_date: $d, top: .}' \
+            > stats/referrers.json
+
+          gh api "repos/${{ github.repository }}/traffic/popular/paths" \
+            | jq --arg d "$today" '{snapshot_date: $d, top: .}' \
+            > stats/paths.json
+
+      - name: Commit and push stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats/
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update traffic stats"
+            git push
+          fi

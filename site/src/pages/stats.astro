@@ -1,0 +1,289 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+type Daily = { date: string; count: number; uniques: number };
+type Referrer = { referrer: string; count: number; uniques: number };
+type PopularPath = { path: string; title?: string; count: number; uniques: number };
+type Snapshot<T> = { snapshot_date: string; top: T[] };
+
+const viewsGlob = import.meta.glob<Daily>(
+  "../../../stats/views/*.json",
+  { eager: true, import: "default" },
+);
+const clonesGlob = import.meta.glob<Daily>(
+  "../../../stats/clones/*.json",
+  { eager: true, import: "default" },
+);
+const referrersGlob = import.meta.glob<Snapshot<Referrer>>(
+  "../../../stats/referrers.json",
+  { eager: true, import: "default" },
+);
+const pathsGlob = import.meta.glob<Snapshot<PopularPath>>(
+  "../../../stats/paths.json",
+  { eager: true, import: "default" },
+);
+
+const views = Object.values(viewsGlob).sort((a, b) => a.date.localeCompare(b.date));
+const clones = Object.values(clonesGlob).sort((a, b) => a.date.localeCompare(b.date));
+const referrers = Object.values(referrersGlob)[0] ?? null;
+const paths = Object.values(pathsGlob)[0] ?? null;
+
+const sum = (arr: Daily[], key: "count" | "uniques") =>
+  arr.reduce((s, d) => s + (d[key] || 0), 0);
+
+const totals = {
+  views: sum(views, "count"),
+  visitors: sum(views, "uniques"),
+  clones: sum(clones, "count"),
+  cloners: sum(clones, "uniques"),
+};
+
+// Last-updated marker: most recent date we have data for.
+const lastDate = [
+  ...views.map((d) => d.date),
+  ...clones.map((d) => d.date),
+  referrers?.snapshot_date,
+  paths?.snapshot_date,
+].filter(Boolean).sort().pop() ?? null;
+
+// SVG chart geometry (viewBox-based, so it scales to container width).
+const W = 800;
+const H = 220;
+const PAD = { t: 12, r: 12, b: 28, l: 40 };
+const innerW = W - PAD.l - PAD.r;
+const innerH = H - PAD.t - PAD.b;
+
+function buildChart(data: Daily[]) {
+  if (data.length === 0) return null;
+  const maxCount = Math.max(1, ...data.map((d) => d.count));
+  const maxUniq  = Math.max(1, ...data.map((d) => d.uniques));
+  const yMax = Math.max(maxCount, maxUniq);
+  const step = data.length > 1 ? innerW / (data.length - 1) : 0;
+
+  const project = (i: number, v: number) => ({
+    x: PAD.l + i * step,
+    y: PAD.t + innerH - (v / yMax) * innerH,
+  });
+
+  const mkPath = (key: "count" | "uniques") =>
+    data
+      .map((d, i) => {
+        const p = project(i, d[key]);
+        return `${i === 0 ? "M" : "L"}${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+      })
+      .join(" ");
+
+  const mkArea = (key: "count" | "uniques") => {
+    const line = mkPath(key);
+    const last = project(data.length - 1, 0);
+    const first = project(0, 0);
+    return `${line} L${last.x.toFixed(1)},${(PAD.t + innerH).toFixed(1)} L${first.x.toFixed(1)},${(PAD.t + innerH).toFixed(1)} Z`;
+  };
+
+  // Y-axis ticks (4 steps)
+  const ticks = [0, 0.25, 0.5, 0.75, 1].map((f) => ({
+    y: PAD.t + innerH - f * innerH,
+    label: Math.round(yMax * f).toString(),
+  }));
+
+  // X-axis labels: first, middle, last
+  const xLabels = data.length >= 2
+    ? [0, Math.floor((data.length - 1) / 2), data.length - 1].map((i) => ({
+        x: project(i, 0).x,
+        label: data[i].date.slice(5), // MM-DD
+      }))
+    : [{ x: project(0, 0).x, label: data[0].date.slice(5) }];
+
+  const points = data.map((d, i) => ({
+    d,
+    count: project(i, d.count),
+    uniques: project(i, d.uniques),
+  }));
+
+  return { countPath: mkPath("count"), uniqPath: mkPath("uniques"), countArea: mkArea("count"), ticks, xLabels, points };
+}
+
+const viewsChart = buildChart(views);
+const clonesChart = buildChart(clones);
+
+const fmt = (n: number) => n.toLocaleString("en-US");
+---
+
+<Layout title="Stats — AgentHub">
+  <Navbar />
+
+  <div class="mx-auto w-full max-w-5xl px-4 py-10 flex-1 lg:px-8">
+    <div class="mb-6 flex items-baseline justify-between flex-wrap gap-2">
+      <h1 class="font-pixel text-3xl font-bold text-white">Traffic</h1>
+      {lastDate && (
+        <span class="text-sm text-gray-500">Last updated: {lastDate}</span>
+      )}
+    </div>
+
+    <p class="mb-8 text-base text-gray-400">
+      Public GitHub traffic data for
+      <a href="https://github.com/nullorder/agenthub" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">nullorder/agenthub</a>,
+      collected daily. GitHub retains only the last 14 days per bucket, so the charts below grow as we accumulate history.
+    </p>
+
+    <div class="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
+        <div class="text-xs uppercase tracking-wide text-gray-500">Views</div>
+        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.views)}</div>
+      </div>
+      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
+        <div class="text-xs uppercase tracking-wide text-gray-500">Unique visitors</div>
+        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.visitors)}</div>
+      </div>
+      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
+        <div class="text-xs uppercase tracking-wide text-gray-500">Clones</div>
+        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.clones)}</div>
+      </div>
+      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
+        <div class="text-xs uppercase tracking-wide text-gray-500">Unique cloners</div>
+        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.cloners)}</div>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-white">Views</h2>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-blue-400"></span>Views</span>
+          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-blue-400/40"></span>Unique visitors</span>
+        </div>
+      </div>
+      {viewsChart ? (
+        <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
+          <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Views over time">
+            {viewsChart.ticks.map((t) => (
+              <>
+                <line x1={PAD.l} x2={W - PAD.r} y1={t.y} y2={t.y} stroke="currentColor" class="text-white/5" stroke-width="1" />
+                <text x={PAD.l - 6} y={t.y + 4} text-anchor="end" class="fill-gray-500 text-[10px]">{t.label}</text>
+              </>
+            ))}
+            {viewsChart.xLabels.map((x) => (
+              <text x={x.x} y={H - 8} text-anchor="middle" class="fill-gray-500 text-[10px]">{x.label}</text>
+            ))}
+            <path d={viewsChart.countArea} fill="rgb(96 165 250 / 0.12)" />
+            <path d={viewsChart.uniqPath} fill="none" stroke="rgb(96 165 250 / 0.55)" stroke-width="1.5" />
+            <path d={viewsChart.countPath} fill="none" stroke="rgb(96 165 250)" stroke-width="2" />
+            {viewsChart.points.map((p) => (
+              <circle cx={p.count.x} cy={p.count.y} r="2.5" fill="rgb(96 165 250)" />
+            ))}
+          </svg>
+        </div>
+      ) : (
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8 text-center text-gray-500">
+          No data yet — check back after the first daily collection run.
+        </div>
+      )}
+    </section>
+
+    <section class="mb-10">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-white">Clones</h2>
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-emerald-400"></span>Clones</span>
+          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-emerald-400/40"></span>Unique cloners</span>
+        </div>
+      </div>
+      {clonesChart ? (
+        <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
+          <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Clones over time">
+            {clonesChart.ticks.map((t) => (
+              <>
+                <line x1={PAD.l} x2={W - PAD.r} y1={t.y} y2={t.y} stroke="currentColor" class="text-white/5" stroke-width="1" />
+                <text x={PAD.l - 6} y={t.y + 4} text-anchor="end" class="fill-gray-500 text-[10px]">{t.label}</text>
+              </>
+            ))}
+            {clonesChart.xLabels.map((x) => (
+              <text x={x.x} y={H - 8} text-anchor="middle" class="fill-gray-500 text-[10px]">{x.label}</text>
+            ))}
+            <path d={clonesChart.countArea} fill="rgb(52 211 153 / 0.12)" />
+            <path d={clonesChart.uniqPath} fill="none" stroke="rgb(52 211 153 / 0.55)" stroke-width="1.5" />
+            <path d={clonesChart.countPath} fill="none" stroke="rgb(52 211 153)" stroke-width="2" />
+            {clonesChart.points.map((p) => (
+              <circle cx={p.count.x} cy={p.count.y} r="2.5" fill="rgb(52 211 153)" />
+            ))}
+          </svg>
+        </div>
+      ) : (
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8 text-center text-gray-500">
+          No data yet.
+        </div>
+      )}
+    </section>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Top referrers <span class="text-xs font-normal text-gray-500">(14d)</span></h2>
+        {referrers && referrers.top.length > 0 ? (
+          <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg overflow-hidden">
+            <table class="w-full text-sm">
+              <thead class="text-xs uppercase tracking-wide text-gray-500">
+                <tr>
+                  <th class="px-4 py-2 text-left font-medium">Source</th>
+                  <th class="px-4 py-2 text-right font-medium">Views</th>
+                  <th class="px-4 py-2 text-right font-medium">Unique</th>
+                </tr>
+              </thead>
+              <tbody>
+                {referrers.top.map((r) => (
+                  <tr class="border-t border-white/5">
+                    <td class="px-4 py-2 text-gray-300 truncate max-w-[16rem]">{r.referrer}</td>
+                    <td class="px-4 py-2 text-right text-white font-mono">{fmt(r.count)}</td>
+                    <td class="px-4 py-2 text-right text-gray-400 font-mono">{fmt(r.uniques)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center text-gray-500 text-sm">
+            No referrer data yet.
+          </div>
+        )}
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-semibold text-white">Popular paths <span class="text-xs font-normal text-gray-500">(14d)</span></h2>
+        {paths && paths.top.length > 0 ? (
+          <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg overflow-hidden">
+            <table class="w-full text-sm">
+              <thead class="text-xs uppercase tracking-wide text-gray-500">
+                <tr>
+                  <th class="px-4 py-2 text-left font-medium">Path</th>
+                  <th class="px-4 py-2 text-right font-medium">Views</th>
+                  <th class="px-4 py-2 text-right font-medium">Unique</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paths.top.map((p) => (
+                  <tr class="border-t border-white/5">
+                    <td class="px-4 py-2 text-gray-300 truncate max-w-[16rem] font-mono text-xs">{p.path}</td>
+                    <td class="px-4 py-2 text-right text-white font-mono">{fmt(p.count)}</td>
+                    <td class="px-4 py-2 text-right text-gray-400 font-mono">{fmt(p.uniques)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center text-gray-500 text-sm">
+            No path data yet.
+          </div>
+        )}
+      </section>
+    </div>
+
+    <p class="mt-10 text-xs text-gray-500">
+      Raw data lives in <a href="https://github.com/nullorder/agenthub/tree/main/stats" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">stats/</a>.
+      Only the agenthub catalog repo is tracked — no per-plugin analytics.
+    </p>
+  </div>
+
+  <Footer />
+</Layout>
