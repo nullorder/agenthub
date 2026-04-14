@@ -4,9 +4,6 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 type Daily = { date: string; count: number; uniques: number };
-type Referrer = { referrer: string; count: number; uniques: number };
-type PopularPath = { path: string; title?: string; count: number; uniques: number };
-type Snapshot<T> = { snapshot_date: string; top: T[] };
 
 const viewsGlob = import.meta.glob<Daily>(
   "../../../stats/views/*.json",
@@ -16,19 +13,9 @@ const clonesGlob = import.meta.glob<Daily>(
   "../../../stats/clones/*.json",
   { eager: true, import: "default" },
 );
-const referrersGlob = import.meta.glob<Snapshot<Referrer>>(
-  "../../../stats/referrers.json",
-  { eager: true, import: "default" },
-);
-const pathsGlob = import.meta.glob<Snapshot<PopularPath>>(
-  "../../../stats/paths.json",
-  { eager: true, import: "default" },
-);
 
 const views = Object.values(viewsGlob).sort((a, b) => a.date.localeCompare(b.date));
 const clones = Object.values(clonesGlob).sort((a, b) => a.date.localeCompare(b.date));
-const referrers = Object.values(referrersGlob)[0] ?? null;
-const paths = Object.values(pathsGlob)[0] ?? null;
 
 const sum = (arr: Daily[], key: "count" | "uniques") =>
   arr.reduce((s, d) => s + (d[key] || 0), 0);
@@ -44,9 +31,7 @@ const totals = {
 const lastDate = [
   ...views.map((d) => d.date),
   ...clones.map((d) => d.date),
-  referrers?.snapshot_date,
-  paths?.snapshot_date,
-].filter(Boolean).sort().pop() ?? null;
+].sort().pop() ?? null;
 
 // SVG chart geometry (viewBox-based, so it scales to container width).
 const W = 800;
@@ -216,68 +201,6 @@ const fmt = (n: number) => n.toLocaleString("en-US");
         </div>
       )}
     </section>
-
-    <div class="grid gap-6 lg:grid-cols-2">
-      <section>
-        <h2 class="mb-3 text-xl font-semibold text-white">Top referrers <span class="text-xs font-normal text-gray-500">(14d)</span></h2>
-        {referrers && referrers.top.length > 0 ? (
-          <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg overflow-hidden">
-            <table class="w-full text-sm">
-              <thead class="text-xs uppercase tracking-wide text-gray-500">
-                <tr>
-                  <th class="px-4 py-2 text-left font-medium">Source</th>
-                  <th class="px-4 py-2 text-right font-medium">Views</th>
-                  <th class="px-4 py-2 text-right font-medium">Unique</th>
-                </tr>
-              </thead>
-              <tbody>
-                {referrers.top.map((r) => (
-                  <tr class="border-t border-white/5">
-                    <td class="px-4 py-2 text-gray-300 truncate max-w-[16rem]">{r.referrer}</td>
-                    <td class="px-4 py-2 text-right text-white font-mono">{fmt(r.count)}</td>
-                    <td class="px-4 py-2 text-right text-gray-400 font-mono">{fmt(r.uniques)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center text-gray-500 text-sm">
-            No referrer data yet.
-          </div>
-        )}
-      </section>
-
-      <section>
-        <h2 class="mb-3 text-xl font-semibold text-white">Popular paths <span class="text-xs font-normal text-gray-500">(14d)</span></h2>
-        {paths && paths.top.length > 0 ? (
-          <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg overflow-hidden">
-            <table class="w-full text-sm">
-              <thead class="text-xs uppercase tracking-wide text-gray-500">
-                <tr>
-                  <th class="px-4 py-2 text-left font-medium">Path</th>
-                  <th class="px-4 py-2 text-right font-medium">Views</th>
-                  <th class="px-4 py-2 text-right font-medium">Unique</th>
-                </tr>
-              </thead>
-              <tbody>
-                {paths.top.map((p) => (
-                  <tr class="border-t border-white/5">
-                    <td class="px-4 py-2 text-gray-300 truncate max-w-[16rem] font-mono text-xs">{p.path}</td>
-                    <td class="px-4 py-2 text-right text-white font-mono">{fmt(p.count)}</td>
-                    <td class="px-4 py-2 text-right text-gray-400 font-mono">{fmt(p.uniques)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <div class="rounded-xl border border-white/10 bg-white/5 p-6 text-center text-gray-500 text-sm">
-            No path data yet.
-          </div>
-        )}
-      </section>
-    </div>
 
     <p class="mt-10 text-xs text-gray-500">
       Raw data lives in <a href="https://github.com/nullorder/agenthub/tree/main/stats" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">stats/</a>.

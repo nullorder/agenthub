@@ -8,10 +8,6 @@ on [`/stats`](https://agenthub.nullorder.org/stats).
 
 - `views/YYYY-MM-DD.json` — page views on that UTC date (`count`, `uniques`)
 - `clones/YYYY-MM-DD.json` — git clones on that UTC date (`count`, `uniques`)
-- `referrers.json` — top referring sites over the last 14 days (snapshot,
-  overwritten each run)
-- `paths.json` — top viewed paths over the last 14 days (snapshot, overwritten
-  each run)
 
 Each daily file:
 

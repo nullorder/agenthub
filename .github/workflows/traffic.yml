@@ -42,19 +42,6 @@ jobs:
               > "stats/clones/$date.json"
           done
 
-      - name: Fetch referrers and paths snapshots
-        run: |
-          set -euo pipefail
-          today=$(date -u +%Y-%m-%d)
-
-          gh api "repos/${{ github.repository }}/traffic/popular/referrers" \
-            | jq --arg d "$today" '{snapshot_date: $d, top: .}' \
-            > stats/referrers.json
-
-          gh api "repos/${{ github.repository }}/traffic/popular/paths" \
-            | jq --arg d "$today" '{snapshot_date: $d, top: .}' \
-            > stats/paths.json
-
       - name: Commit and push stats
         run: |
           git config user.name "github-actions[bot]"
