@@ -5,17 +5,21 @@ import Footer from "../components/Footer.astro";
 
 type Daily = { date: string; count: number; uniques: number };
 
-const viewsGlob = import.meta.glob<Daily>(
-  "../../../stats/views/*.json",
-  { eager: true, import: "default" },
-);
-const clonesGlob = import.meta.glob<Daily>(
-  "../../../stats/clones/*.json",
-  { eager: true, import: "default" },
-);
+const viewsGlob = import.meta.glob<Daily>("../../../stats/views/*.json", {
+  eager: true,
+  import: "default",
+});
+const clonesGlob = import.meta.glob<Daily>("../../../stats/clones/*.json", {
+  eager: true,
+  import: "default",
+});
 
-const views = Object.values(viewsGlob).sort((a, b) => a.date.localeCompare(b.date));
-const clones = Object.values(clonesGlob).sort((a, b) => a.date.localeCompare(b.date));
+const views = Object.values(viewsGlob).sort((a, b) =>
+  a.date.localeCompare(b.date),
+);
+const clones = Object.values(clonesGlob).sort((a, b) =>
+  a.date.localeCompare(b.date),
+);
 
 const sum = (arr: Daily[], key: "count" | "uniques") =>
   arr.reduce((s, d) => s + (d[key] || 0), 0);
@@ -28,10 +32,9 @@ const totals = {
 };
 
 // Last-updated marker: most recent date we have data for.
-const lastDate = [
-  ...views.map((d) => d.date),
-  ...clones.map((d) => d.date),
-].sort().pop() ?? null;
+const lastDate =
+  [...views.map((d) => d.date), ...clones.map((d) => d.date)].sort().pop() ??
+  null;
 
 // SVG chart geometry (viewBox-based, so it scales to container width).
 const W = 800;
@@ -43,7 +46,7 @@ const innerH = H - PAD.t - PAD.b;
 function buildChart(data: Daily[]) {
   if (data.length === 0) return null;
   const maxCount = Math.max(1, ...data.map((d) => d.count));
-  const maxUniq  = Math.max(1, ...data.map((d) => d.uniques));
+  const maxUniq = Math.max(1, ...data.map((d) => d.uniques));
   const yMax = Math.max(maxCount, maxUniq);
   const step = data.length > 1 ? innerW / (data.length - 1) : 0;
 
@@ -74,12 +77,13 @@ function buildChart(data: Daily[]) {
   }));
 
   // X-axis labels: first, middle, last
-  const xLabels = data.length >= 2
-    ? [0, Math.floor((data.length - 1) / 2), data.length - 1].map((i) => ({
-        x: project(i, 0).x,
-        label: data[i].date.slice(5), // MM-DD
-      }))
-    : [{ x: project(0, 0).x, label: data[0].date.slice(5) }];
+  const xLabels =
+    data.length >= 2
+      ? [0, Math.floor((data.length - 1) / 2), data.length - 1].map((i) => ({
+          x: project(i, 0).x,
+          label: data[i].date.slice(5), // MM-DD
+        }))
+      : [{ x: project(0, 0).x, label: data[0].date.slice(5) }];
 
   const points = data.map((d, i) => ({
     d,
@@ -87,7 +91,24 @@ function buildChart(data: Daily[]) {
     uniques: project(i, d.uniques),
   }));
 
-  return { countPath: mkPath("count"), uniqPath: mkPath("uniques"), countArea: mkArea("count"), ticks, xLabels, points };
+  const hoverPoints = points.map((p) => ({
+    x: +p.count.x.toFixed(1),
+    yC: +p.count.y.toFixed(1),
+    yU: +p.uniques.y.toFixed(1),
+    date: p.d.date,
+    count: p.d.count,
+    uniques: p.d.uniques,
+  }));
+
+  return {
+    countPath: mkPath("count"),
+    uniqPath: mkPath("uniques"),
+    countArea: mkArea("count"),
+    ticks,
+    xLabels,
+    points,
+    hoverPoints,
+  };
 }
 
 const viewsChart = buildChart(views);
@@ -99,114 +120,439 @@ const fmt = (n: number) => n.toLocaleString("en-US");
 <Layout title="Stats — AgentHub">
   <Navbar />
 
-  <div class="mx-auto w-full max-w-5xl px-4 py-10 flex-1 lg:px-8">
+  <div class="mx-auto w-full max-w-7xl px-4 py-10 flex-1 lg:px-8">
     <div class="mb-6 flex items-baseline justify-between flex-wrap gap-2">
       <h1 class="font-pixel text-3xl font-bold text-white">Traffic</h1>
-      {lastDate && (
-        <span class="text-sm text-gray-500">Last updated: {lastDate}</span>
-      )}
+      {
+        lastDate && (
+          <span class="text-sm text-gray-500">Last updated: {lastDate}</span>
+        )
+      }
     </div>
 
     <p class="mb-8 text-base text-gray-400">
       Public GitHub traffic data for
-      <a href="https://github.com/nullorder/agenthub" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">nullorder/agenthub</a>,
-      collected daily. GitHub retains only the last 14 days per bucket, so the charts below grow as we accumulate history.
+      <a
+        href="https://github.com/nullorder/agenthub"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-400 hover:underline">nullorder/agenthub</a
+      >.
     </p>
 
-    <div class="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
-        <div class="text-xs uppercase tracking-wide text-gray-500">Views</div>
-        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.views)}</div>
-      </div>
-      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
-        <div class="text-xs uppercase tracking-wide text-gray-500">Unique visitors</div>
-        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.visitors)}</div>
-      </div>
-      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
-        <div class="text-xs uppercase tracking-wide text-gray-500">Clones</div>
-        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.clones)}</div>
-      </div>
-      <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
-        <div class="text-xs uppercase tracking-wide text-gray-500">Unique cloners</div>
-        <div class="mt-1 text-2xl font-semibold text-white">{fmt(totals.cloners)}</div>
-      </div>
+    <div class="grid gap-5 md:grid-cols-2">
+      <article
+        class="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-5 shadow-[0_1px_0_0_rgba(255,255,255,0.05)_inset] transition-colors duration-300 hover:border-white/20"
+      >
+        <div
+          class="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        >
+        </div>
+
+        <header class="mb-5 flex items-start justify-between gap-3">
+          <div>
+            <div
+              class="flex items-center gap-2 text-xs uppercase tracking-wide text-gray-400"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-blue-400"
+                ><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"
+                ></path><circle cx="12" cy="12" r="3"></circle></svg
+              >
+              Views
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="text-3xl font-semibold text-white sm:text-4xl"
+                >{fmt(totals.views)}</span
+              >
+              <span class="text-sm text-gray-500"
+                >/ {fmt(totals.visitors)} unique</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-1 text-[11px] text-gray-400">
+            <span class="flex items-center gap-1.5"
+              ><span class="inline-block h-1.5 w-3 rounded-sm bg-blue-400"
+              ></span>Views</span
+            >
+            <span class="flex items-center gap-1.5"
+              ><span class="inline-block h-1.5 w-3 rounded-sm bg-blue-400/40"
+              ></span>Unique</span
+            >
+          </div>
+        </header>
+
+        {
+          viewsChart ? (
+            <div class="chart-wrap relative mt-auto">
+              <svg
+                data-chart
+                data-points={JSON.stringify(viewsChart.hoverPoints)}
+                data-label="Views"
+                viewBox={`0 0 ${W} ${H}`}
+                class="w-full h-auto touch-none"
+                role="img"
+                aria-label="Views over time"
+              >
+                {viewsChart.ticks.map((t) => (
+                  <>
+                    <line
+                      x1={PAD.l}
+                      x2={W - PAD.r}
+                      y1={t.y}
+                      y2={t.y}
+                      stroke="currentColor"
+                      class="text-white/5"
+                      stroke-width="1"
+                    />
+                    <text
+                      x={PAD.l - 6}
+                      y={t.y + 4}
+                      text-anchor="end"
+                      class="fill-gray-500 text-[10px]"
+                    >
+                      {t.label}
+                    </text>
+                  </>
+                ))}
+                {viewsChart.xLabels.map((x) => (
+                  <text
+                    x={x.x}
+                    y={H - 8}
+                    text-anchor="middle"
+                    class="fill-gray-500 text-[10px]"
+                  >
+                    {x.label}
+                  </text>
+                ))}
+                <path d={viewsChart.countArea} fill="rgb(96 165 250 / 0.12)" />
+                <path
+                  d={viewsChart.uniqPath}
+                  fill="none"
+                  stroke="rgb(96 165 250 / 0.55)"
+                  stroke-width="1.5"
+                />
+                <path
+                  d={viewsChart.countPath}
+                  fill="none"
+                  stroke="rgb(96 165 250)"
+                  stroke-width="2"
+                />
+                {viewsChart.points.map((p) => (
+                  <circle
+                    cx={p.count.x}
+                    cy={p.count.y}
+                    r="2.5"
+                    fill="rgb(96 165 250)"
+                  />
+                ))}
+                <g
+                  class="hover-group"
+                  style="display:none; pointer-events:none"
+                >
+                  <line
+                    class="hover-line"
+                    stroke="rgb(255 255 255 / 0.25)"
+                    stroke-width="1"
+                    stroke-dasharray="3 3"
+                    y1={PAD.t}
+                    y2={PAD.t + innerH}
+                  />
+                  <circle
+                    class="hover-uniq"
+                    r="4"
+                    fill="rgb(96 165 250 / 0.55)"
+                    stroke="white"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    class="hover-count"
+                    r="5"
+                    fill="rgb(96 165 250)"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                </g>
+              </svg>
+              <div class="chart-tooltip pointer-events-none absolute z-10 hidden rounded-md border border-white/10 bg-gray-950/90 px-3 py-2 text-xs shadow-lg backdrop-blur" />
+            </div>
+          ) : (
+            <div class="mt-auto rounded-xl border border-white/5 bg-white/[0.02] p-8 text-center text-sm text-gray-500">
+              No data yet — check back after the first daily collection run.
+            </div>
+          )
+        }
+      </article>
+
+      <article
+        class="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-5 shadow-[0_1px_0_0_rgba(255,255,255,0.05)_inset] transition-colors duration-300 hover:border-white/20"
+      >
+        <div
+          class="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-emerald-500/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        >
+        </div>
+
+        <header class="mb-5 flex items-start justify-between gap-3">
+          <div>
+            <div
+              class="flex items-center gap-2 text-xs uppercase tracking-wide text-gray-400"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-emerald-400"
+                ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                ></path><polyline points="7 10 12 15 17 10"></polyline><line
+                  x1="12"
+                  y1="15"
+                  x2="12"
+                  y2="3"></line></svg
+              >
+              Clones
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="text-3xl font-semibold text-white sm:text-4xl"
+                >{fmt(totals.clones)}</span
+              >
+              <span class="text-sm text-gray-500"
+                >/ {fmt(totals.cloners)} unique</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-1 text-[11px] text-gray-400">
+            <span class="flex items-center gap-1.5"
+              ><span class="inline-block h-1.5 w-3 rounded-sm bg-emerald-400"
+              ></span>Clones</span
+            >
+            <span class="flex items-center gap-1.5"
+              ><span class="inline-block h-1.5 w-3 rounded-sm bg-emerald-400/40"
+              ></span>Unique</span
+            >
+          </div>
+        </header>
+
+        {
+          clonesChart ? (
+            <div class="chart-wrap relative mt-auto">
+              <svg
+                data-chart
+                data-points={JSON.stringify(clonesChart.hoverPoints)}
+                data-label="Clones"
+                viewBox={`0 0 ${W} ${H}`}
+                class="w-full h-auto touch-none"
+                role="img"
+                aria-label="Clones over time"
+              >
+                {clonesChart.ticks.map((t) => (
+                  <>
+                    <line
+                      x1={PAD.l}
+                      x2={W - PAD.r}
+                      y1={t.y}
+                      y2={t.y}
+                      stroke="currentColor"
+                      class="text-white/5"
+                      stroke-width="1"
+                    />
+                    <text
+                      x={PAD.l - 6}
+                      y={t.y + 4}
+                      text-anchor="end"
+                      class="fill-gray-500 text-[10px]"
+                    >
+                      {t.label}
+                    </text>
+                  </>
+                ))}
+                {clonesChart.xLabels.map((x) => (
+                  <text
+                    x={x.x}
+                    y={H - 8}
+                    text-anchor="middle"
+                    class="fill-gray-500 text-[10px]"
+                  >
+                    {x.label}
+                  </text>
+                ))}
+                <path d={clonesChart.countArea} fill="rgb(52 211 153 / 0.12)" />
+                <path
+                  d={clonesChart.uniqPath}
+                  fill="none"
+                  stroke="rgb(52 211 153 / 0.55)"
+                  stroke-width="1.5"
+                />
+                <path
+                  d={clonesChart.countPath}
+                  fill="none"
+                  stroke="rgb(52 211 153)"
+                  stroke-width="2"
+                />
+                {clonesChart.points.map((p) => (
+                  <circle
+                    cx={p.count.x}
+                    cy={p.count.y}
+                    r="2.5"
+                    fill="rgb(52 211 153)"
+                  />
+                ))}
+                <g
+                  class="hover-group"
+                  style="display:none; pointer-events:none"
+                >
+                  <line
+                    class="hover-line"
+                    stroke="rgb(255 255 255 / 0.25)"
+                    stroke-width="1"
+                    stroke-dasharray="3 3"
+                    y1={PAD.t}
+                    y2={PAD.t + innerH}
+                  />
+                  <circle
+                    class="hover-uniq"
+                    r="4"
+                    fill="rgb(52 211 153 / 0.55)"
+                    stroke="white"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    class="hover-count"
+                    r="5"
+                    fill="rgb(52 211 153)"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                </g>
+              </svg>
+              <div class="chart-tooltip pointer-events-none absolute z-10 hidden rounded-md border border-white/10 bg-gray-950/90 px-3 py-2 text-xs shadow-lg backdrop-blur" />
+            </div>
+          ) : (
+            <div class="mt-auto rounded-xl border border-white/5 bg-white/[0.02] p-8 text-center text-sm text-gray-500">
+              No data yet.
+            </div>
+          )
+        }
+      </article>
     </div>
 
-    <section class="mb-10">
-      <div class="mb-3 flex items-center justify-between">
-        <h2 class="text-xl font-semibold text-white">Views</h2>
-        <div class="flex items-center gap-4 text-sm text-gray-400">
-          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-blue-400"></span>Views</span>
-          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-blue-400/40"></span>Unique visitors</span>
-        </div>
-      </div>
-      {viewsChart ? (
-        <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
-          <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Views over time">
-            {viewsChart.ticks.map((t) => (
-              <>
-                <line x1={PAD.l} x2={W - PAD.r} y1={t.y} y2={t.y} stroke="currentColor" class="text-white/5" stroke-width="1" />
-                <text x={PAD.l - 6} y={t.y + 4} text-anchor="end" class="fill-gray-500 text-[10px]">{t.label}</text>
-              </>
-            ))}
-            {viewsChart.xLabels.map((x) => (
-              <text x={x.x} y={H - 8} text-anchor="middle" class="fill-gray-500 text-[10px]">{x.label}</text>
-            ))}
-            <path d={viewsChart.countArea} fill="rgb(96 165 250 / 0.12)" />
-            <path d={viewsChart.uniqPath} fill="none" stroke="rgb(96 165 250 / 0.55)" stroke-width="1.5" />
-            <path d={viewsChart.countPath} fill="none" stroke="rgb(96 165 250)" stroke-width="2" />
-            {viewsChart.points.map((p) => (
-              <circle cx={p.count.x} cy={p.count.y} r="2.5" fill="rgb(96 165 250)" />
-            ))}
-          </svg>
-        </div>
-      ) : (
-        <div class="rounded-xl border border-white/10 bg-white/5 p-8 text-center text-gray-500">
-          No data yet — check back after the first daily collection run.
-        </div>
-      )}
-    </section>
-
-    <section class="mb-10">
-      <div class="mb-3 flex items-center justify-between">
-        <h2 class="text-xl font-semibold text-white">Clones</h2>
-        <div class="flex items-center gap-4 text-sm text-gray-400">
-          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-emerald-400"></span>Clones</span>
-          <span class="flex items-center gap-2"><span class="inline-block h-2 w-4 bg-emerald-400/40"></span>Unique cloners</span>
-        </div>
-      </div>
-      {clonesChart ? (
-        <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-4">
-          <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Clones over time">
-            {clonesChart.ticks.map((t) => (
-              <>
-                <line x1={PAD.l} x2={W - PAD.r} y1={t.y} y2={t.y} stroke="currentColor" class="text-white/5" stroke-width="1" />
-                <text x={PAD.l - 6} y={t.y + 4} text-anchor="end" class="fill-gray-500 text-[10px]">{t.label}</text>
-              </>
-            ))}
-            {clonesChart.xLabels.map((x) => (
-              <text x={x.x} y={H - 8} text-anchor="middle" class="fill-gray-500 text-[10px]">{x.label}</text>
-            ))}
-            <path d={clonesChart.countArea} fill="rgb(52 211 153 / 0.12)" />
-            <path d={clonesChart.uniqPath} fill="none" stroke="rgb(52 211 153 / 0.55)" stroke-width="1.5" />
-            <path d={clonesChart.countPath} fill="none" stroke="rgb(52 211 153)" stroke-width="2" />
-            {clonesChart.points.map((p) => (
-              <circle cx={p.count.x} cy={p.count.y} r="2.5" fill="rgb(52 211 153)" />
-            ))}
-          </svg>
-        </div>
-      ) : (
-        <div class="rounded-xl border border-white/10 bg-white/5 p-8 text-center text-gray-500">
-          No data yet.
-        </div>
-      )}
-    </section>
-
     <p class="mt-10 text-xs text-gray-500">
-      Raw data lives in <a href="https://github.com/nullorder/agenthub/tree/main/stats" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">stats/</a>.
-      Only the agenthub catalog repo is tracked — no per-plugin analytics.
+      Raw data lives in <a
+        href="https://github.com/nullorder/agenthub/tree/main/stats"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-400 hover:underline">stats/</a
+      >. Only the agenthub catalog repo is tracked — no per-plugin analytics.
     </p>
   </div>
 
   <Footer />
 </Layout>
+
+<script>
+  type HoverPoint = {
+    x: number;
+    yC: number;
+    yU: number;
+    date: string;
+    count: number;
+    uniques: number;
+  };
+
+  const W = 800;
+  const H = 220;
+  const PAD_T = 12;
+  const INNER_H = 180; // H - PAD.t(12) - PAD.b(28)
+
+  function fmt(n: number) {
+    return n.toLocaleString("en-US");
+  }
+
+  document.querySelectorAll<SVGSVGElement>("svg[data-chart]").forEach((svg) => {
+    const raw = svg.dataset.points;
+    if (!raw) return;
+    const points: HoverPoint[] = JSON.parse(raw);
+    if (points.length === 0) return;
+
+    const label = svg.dataset.label ?? "";
+    const wrap = svg.parentElement as HTMLElement;
+    const tip = wrap.querySelector<HTMLElement>(".chart-tooltip")!;
+    const hoverGroup = svg.querySelector<SVGGElement>(".hover-group")!;
+    const hoverCount = svg.querySelector<SVGCircleElement>(".hover-count")!;
+    const hoverUniq = svg.querySelector<SVGCircleElement>(".hover-uniq")!;
+    const hoverLine = svg.querySelector<SVGLineElement>(".hover-line")!;
+
+    let activeIndex = -1;
+
+    function update(clientX: number) {
+      const rect = svg.getBoundingClientRect();
+      if (rect.width === 0) return;
+      const svgX = ((clientX - rect.left) / rect.width) * W;
+
+      let nearest = 0;
+      let best = Infinity;
+      for (let i = 0; i < points.length; i++) {
+        const d = Math.abs(points[i].x - svgX);
+        if (d < best) {
+          best = d;
+          nearest = i;
+        }
+      }
+      if (nearest === activeIndex) return;
+      activeIndex = nearest;
+      const p = points[nearest];
+
+      hoverGroup.style.display = "";
+      hoverCount.setAttribute("cx", String(p.x));
+      hoverCount.setAttribute("cy", String(p.yC));
+      hoverUniq.setAttribute("cx", String(p.x));
+      hoverUniq.setAttribute("cy", String(p.yU));
+      hoverLine.setAttribute("x1", String(p.x));
+      hoverLine.setAttribute("x2", String(p.x));
+
+      tip.innerHTML = `
+        <div class="font-medium text-white">${p.date}</div>
+        <div class="mt-1 text-gray-400">${label}: <span class="text-white">${fmt(p.count)}</span></div>
+        <div class="text-gray-400">Unique: <span class="text-white">${fmt(p.uniques)}</span></div>
+      `;
+      tip.classList.remove("hidden");
+
+      const wrapRect = wrap.getBoundingClientRect();
+      const pxX = rect.left - wrapRect.left + (p.x / W) * rect.width;
+      const pxY =
+        rect.top - wrapRect.top + (Math.min(p.yC, p.yU) / H) * rect.height;
+
+      const tipW = tip.offsetWidth;
+      const tipH = tip.offsetHeight;
+      const left = Math.max(
+        8,
+        Math.min(wrapRect.width - tipW - 8, pxX - tipW / 2),
+      );
+      const top = Math.max(8, pxY - tipH - 12);
+      tip.style.left = `${left}px`;
+      tip.style.top = `${top}px`;
+    }
+
+    function hide() {
+      activeIndex = -1;
+      hoverGroup.style.display = "none";
+      tip.classList.add("hidden");
+    }
+
+    svg.addEventListener("pointermove", (e) => update(e.clientX));
+    svg.addEventListener("pointerdown", (e) => update(e.clientX));
+    svg.addEventListener("pointerleave", hide);
+  });
+</script>
