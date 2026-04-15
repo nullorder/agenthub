@@ -2,8 +2,9 @@ name: Collect traffic stats
 
 on:
   schedule:
-    # Daily at 01:00 UTC — yesterday's bucket is finalized by then.
-    - cron: '0 1 * * *'
+    # Daily at 12:00 UTC. GitHub's Traffic API has a ~24h lag before the
+    # previous day's bucket is finalized; earlier runs miss it.
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 permissions:
