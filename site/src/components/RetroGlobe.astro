@@ -1,0 +1,432 @@
+---
+interface Props {
+  size?: string;
+  showHud?: boolean;
+  showOrbitText?: boolean;
+}
+
+const { size = 'h-64 w-64 mx-auto', showHud = false, showOrbitText = true } = Astro.props;
+
+// Unique suffix per instance so SVG-def IDs don't collide when the loader
+// and the header globe are mounted at the same time during page load.
+const uid = 'rg' + Math.random().toString(36).slice(2, 10);
+
+const defId = (name: string) => `${name}-${uid}`;
+
+// Reversed so the word reads AGENTHUB east-to-west around the ring.
+const word = 'BUHTNEGA';
+const sep = '      \u2726      ';
+const chars = Array.from(word + sep);
+---
+
+<div class={`retro-globe ${size}`} data-uid={uid} data-orbit-text={showOrbitText ? '1' : '0'}>
+  <div class="rg-scene">
+    <!-- Behind-globe text letters -->
+    {showOrbitText && <div class="rg-layer rg-text-layer rg-back-text" data-role="back-text"></div>}
+
+    <!-- GLOBE -->
+    <svg class="rg-layer rg-globe-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id={defId('earthNight')} cx="38%" cy="34%" r="72%">
+          <stop offset="0%"  stop-color="#164b8a" />
+          <stop offset="35%" stop-color="#0a2e66" />
+          <stop offset="70%" stop-color="#051638" />
+          <stop offset="90%" stop-color="#020a1e" />
+          <stop offset="100%" stop-color="#01050f" />
+        </radialGradient>
+
+        <radialGradient id={defId('terminator')} cx="32%" cy="32%" r="72%">
+          <stop offset="0%"  stop-color="rgba(0,0,0,0)" />
+          <stop offset="55%" stop-color="rgba(0,0,0,0.1)" />
+          <stop offset="90%" stop-color="rgba(0,0,0,0.65)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,0.9)" />
+        </radialGradient>
+
+        <radialGradient id={defId('limbDark')} cx="50%" cy="50%" r="50%">
+          <stop offset="82%" stop-color="rgba(0,0,0,0)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,0.55)" />
+        </radialGradient>
+
+        <clipPath id={defId('sphereClip')}>
+          <circle cx="256" cy="256" r="140" />
+        </clipPath>
+
+        <filter id={defId('cityBlur')} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="0.6" />
+        </filter>
+
+        <filter id={defId('atmoGlow')} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" />
+        </filter>
+      </defs>
+
+      {showHud && (
+        <>
+          <g class="rg-ring" data-role="ring-1" style="transform-origin: 256px 256px;">
+            <circle cx="256" cy="256" r="232" fill="none" stroke="rgba(92,246,255,0.35)" stroke-width="1" stroke-dasharray="2 6" />
+            <g data-role="ring-1-ticks"></g>
+          </g>
+          <g class="rg-ring" data-role="ring-2" style="transform-origin: 256px 256px;">
+            <circle cx="256" cy="256" r="210" fill="none" stroke="rgba(92,246,255,0.28)" stroke-width="1" />
+            <g data-role="ring-2-ticks"></g>
+          </g>
+          <g class="rg-ring" data-role="ring-3" style="transform-origin: 256px 256px;">
+            <circle cx="256" cy="256" r="196" fill="none" stroke="rgba(255,79,216,0.22)" stroke-width="0.8" stroke-dasharray="1 4" />
+            <g data-role="ring-3-ticks"></g>
+          </g>
+          <g stroke="rgba(92,246,255,0.35)" stroke-width="1" fill="none">
+            <line x1="256" y1="12"  x2="256" y2="40" />
+            <line x1="256" y1="472" x2="256" y2="500" />
+            <line x1="12"  y1="256" x2="40"  y2="256" />
+            <line x1="472" y1="256" x2="500" y2="256" />
+          </g>
+        </>
+      )}
+
+      <g clip-path={`url(#${defId('sphereClip')})`}>
+        <circle cx="256" cy="256" r="140" fill={`url(#${defId('earthNight')})`} />
+
+        <g data-role="lights-scroll" filter={`url(#${defId('cityBlur')})`}>
+          <g transform="translate(-304 116)">
+            <g data-role="city-lights"></g>
+            <g data-role="city-lights-2" transform="translate(560 0)"></g>
+          </g>
+        </g>
+
+        <circle cx="256" cy="256" r="140" fill={`url(#${defId('terminator')})`} opacity="0.85" />
+        <circle cx="256" cy="256" r="140" fill={`url(#${defId('limbDark')})`} />
+      </g>
+
+      <circle cx="256" cy="256" r="156" fill="none"
+              stroke="rgba(110,180,255,0.22)" stroke-width="10"
+              filter={`url(#${defId('atmoGlow')})`} />
+      <circle cx="256" cy="256" r="148" fill="none"
+              stroke="rgba(150,210,255,0.18)" stroke-width="5"
+              filter={`url(#${defId('atmoGlow')})`} />
+    </svg>
+
+    {showOrbitText && (
+      <>
+        <!-- In-front-of-globe text letters -->
+        <div class="rg-layer rg-text-layer rg-front-text" data-role="front-text">
+          {chars.map((ch, i) => (
+            <span class="rg-glyph" data-index={i} data-char={ch}>{ch}</span>
+          ))}
+        </div>
+        <div class="rg-layer rg-text-layer rg-back-text-seed" data-role="back-text-seed" hidden>
+          {chars.map((ch, i) => (
+            <span class="rg-glyph" data-index={i} data-char={ch}>{ch}</span>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</div>
+
+<style>
+  .retro-globe {
+    /* Theme-aware orbit text colors. */
+    --rg-cyan: #5cf6ff;
+    --rg-cyan-glow-strong: rgba(92, 246, 255, 0.95);
+    --rg-cyan-glow-soft:   rgba(92, 246, 255, 0.5);
+    --rg-magenta: #ff4fd8;
+    --rg-magenta-glow-strong: rgba(255, 79, 216, 0.95);
+    --rg-magenta-glow-soft:   rgba(255, 79, 216, 0.5);
+
+    position: relative;
+    display: inline-block;
+    color: #e9f7ff;
+    container-type: size;
+    container-name: rg;
+  }
+  :global(html.light) .retro-globe {
+    /* Deeper cyan / magenta reads better against light page backgrounds
+       without losing the neon feel. */
+    --rg-cyan: #0891b2;
+    --rg-cyan-glow-strong: rgba(8, 145, 178, 0.9);
+    --rg-cyan-glow-soft:   rgba(8, 145, 178, 0.45);
+    --rg-magenta: #be185d;
+    --rg-magenta-glow-strong: rgba(190, 24, 93, 0.9);
+    --rg-magenta-glow-soft:   rgba(190, 24, 93, 0.45);
+  }
+  .rg-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+  }
+  .rg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .rg-text-layer { pointer-events: none; }
+
+  .rg-glyph {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-family: "Press Start 2P", "Pixeled", ui-monospace, monospace;
+    /* Scale the orbit text with the rendered globe size so the component
+       reads well at any scale (navbar 40px through hero ~760px). */
+    font-size: clamp(3px, 7cqmin, 22px);
+    color: var(--rg-cyan);
+    text-shadow:
+      0 0 6px var(--rg-cyan-glow-strong),
+      0 0 14px var(--rg-cyan-glow-soft);
+    transform-origin: center;
+    will-change: transform, opacity;
+    white-space: pre;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+  .rg-glyph.rg-accent {
+    color: var(--rg-magenta);
+    text-shadow:
+      0 0 6px var(--rg-magenta-glow-strong),
+      0 0 14px var(--rg-magenta-glow-soft);
+  }
+
+  /* Stacking: back text < globe < front text */
+  .rg-back-text  { z-index: 1; }
+  .rg-globe-svg  { z-index: 2; }
+  .rg-front-text { z-index: 3; }
+  .rg-back-text-seed { display: none !important; }
+</style>
+
+<script>
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const SEP = '\u2726';
+
+  const clusters = [
+    { cx: 130, cy: 62,  rx: 14, ry: 10, n: 30 },
+    { cx: 108, cy: 58,  rx: 12, ry: 8,  n: 18 },
+    { cx: 42,  cy: 80,  rx: 10, ry: 20, n: 22 },
+    { cx: 80,  cy: 104, rx: 14, ry: 8,  n: 10 },
+    { cx: 120, cy: 170, rx: 10, ry: 18, n: 20 },
+    { cx: 110, cy: 210, rx: 8,  ry: 6,  n: 10 },
+    { cx: 224, cy: 62,  rx: 10, ry: 8,  n: 18 },
+    { cx: 250, cy: 66,  rx: 24, ry: 10, n: 48 },
+    { cx: 254, cy: 42,  rx: 18, ry: 8,  n: 16 },
+    { cx: 270, cy: 96,  rx: 22, ry: 10, n: 26 },
+    { cx: 242, cy: 130, rx: 10, ry: 10, n: 14 },
+    { cx: 266, cy: 190, rx: 10, ry: 6,  n: 10 },
+    { cx: 356, cy: 126, rx: 18, ry: 18, n: 42 },
+    { cx: 420, cy: 78,  rx: 30, ry: 14, n: 58 },
+    { cx: 484, cy: 82,  rx: 8,  ry: 14, n: 24 },
+    { cx: 452, cy: 80,  rx: 6,  ry: 8,  n: 14 },
+    { cx: 412, cy: 132, rx: 14, ry: 12, n: 20 },
+    { cx: 440, cy: 156, rx: 32, ry: 6,  n: 22 },
+    { cx: 464, cy: 144, rx: 6,  ry: 6,  n: 10 },
+    { cx: 486, cy: 214, rx: 10, ry: 10, n: 14 },
+    { cx: 448, cy: 214, rx: 6,  ry: 4,  n: 6 },
+  ];
+  const rand = (a: number, b: number) => a + Math.random() * (b - a);
+
+  function seedCityLights(target: SVGElement) {
+    clusters.forEach(c => {
+      for (let i = 0; i < c.n; i++) {
+        const t = Math.random() * Math.PI * 2;
+        const r = Math.pow(Math.random(), 0.6);
+        const x = c.cx + Math.cos(t) * r * c.rx + rand(-2, 2);
+        const y = c.cy + Math.sin(t) * r * c.ry + rand(-2, 2);
+        const size = rand(0.6, 1.6);
+        const roll = Math.random();
+        const color = roll < 0.7 ? '#ffd08a' : roll < 0.9 ? '#ffb347' : '#fff2b8';
+
+        const dot = document.createElementNS(SVG_NS, 'circle');
+        dot.setAttribute('cx', String(x));
+        dot.setAttribute('cy', String(y));
+        dot.setAttribute('r', String(size));
+        dot.setAttribute('fill', color);
+        dot.setAttribute('opacity', rand(0.5, 1).toFixed(2));
+
+        if (Math.random() < 0.6) {
+          const anim = document.createElementNS(SVG_NS, 'animate');
+          anim.setAttribute('attributeName', 'opacity');
+          const base = rand(0.3, 0.85);
+          const peak = Math.min(1, base + rand(0.2, 0.5));
+          anim.setAttribute('values', `${base.toFixed(2)};${peak.toFixed(2)};${base.toFixed(2)}`);
+          anim.setAttribute('dur', rand(1.2, 3.8).toFixed(2) + 's');
+          anim.setAttribute('repeatCount', 'indefinite');
+          anim.setAttribute('begin', rand(0, 3).toFixed(2) + 's');
+          dot.appendChild(anim);
+        }
+        target.appendChild(dot);
+
+        if (Math.random() < 0.12) {
+          const halo = document.createElementNS(SVG_NS, 'circle');
+          halo.setAttribute('cx', String(x));
+          halo.setAttribute('cy', String(y));
+          halo.setAttribute('r', String(size * 2.8));
+          halo.setAttribute('fill', color);
+          halo.setAttribute('opacity', '0.2');
+          target.appendChild(halo);
+        }
+      }
+    });
+  }
+
+  function seedRingTicks(
+    target: SVGElement,
+    count: number,
+    inner: number,
+    outer: number,
+    majorEvery: number,
+    color: string,
+    majorColor: string,
+  ) {
+    const cx = 256, cy = 256;
+    for (let i = 0; i < count; i++) {
+      const a = (i / count) * Math.PI * 2 - Math.PI / 2;
+      const isMajor = i % majorEvery === 0;
+      const rr2 = isMajor ? outer + 3 : outer;
+      const line = document.createElementNS(SVG_NS, 'line');
+      line.setAttribute('x1', String(cx + Math.cos(a) * inner));
+      line.setAttribute('y1', String(cy + Math.sin(a) * inner));
+      line.setAttribute('x2', String(cx + Math.cos(a) * rr2));
+      line.setAttribute('y2', String(cy + Math.sin(a) * rr2));
+      line.setAttribute('stroke', isMajor ? majorColor : color);
+      line.setAttribute('stroke-width', isMajor ? '1.4' : '0.8');
+      target.appendChild(line);
+    }
+  }
+
+  function initRetroGlobe(root: HTMLElement) {
+    if (root.dataset.rgInit === '1') return;
+    root.dataset.rgInit = '1';
+
+    const scene = root.querySelector<HTMLElement>('.rg-scene')!;
+    const hasOrbitText = root.dataset.orbitText !== '0';
+    const backLayer = root.querySelector<HTMLElement>('[data-role="back-text"]');
+    const frontLayer = root.querySelector<HTMLElement>('[data-role="front-text"]');
+    const seedLayer = root.querySelector<HTMLElement>('[data-role="back-text-seed"]');
+    const lightsScroll = root.querySelector<SVGGElement>('[data-role="lights-scroll"]');
+    const cityLights = root.querySelector<SVGGElement>('[data-role="city-lights"]');
+    const cityLights2 = root.querySelector<SVGGElement>('[data-role="city-lights-2"]');
+
+    if (cityLights) seedCityLights(cityLights);
+    if (cityLights2) seedCityLights(cityLights2);
+
+    // Optional: rings (only present when showHud)
+    const r1 = root.querySelector<SVGGElement>('[data-role="ring-1"]');
+    const r2 = root.querySelector<SVGGElement>('[data-role="ring-2"]');
+    const r3 = root.querySelector<SVGGElement>('[data-role="ring-3"]');
+    const r1Ticks = root.querySelector<SVGGElement>('[data-role="ring-1-ticks"]');
+    const r2Ticks = root.querySelector<SVGGElement>('[data-role="ring-2-ticks"]');
+    const r3Ticks = root.querySelector<SVGGElement>('[data-role="ring-3-ticks"]');
+    if (r1Ticks) seedRingTicks(r1Ticks, 72, 232, 244, 6, 'rgba(92,246,255,0.35)', 'rgba(92,246,255,0.85)');
+    if (r2Ticks) seedRingTicks(r2Ticks, 36, 206, 216, 4, 'rgba(92,246,255,0.25)', 'rgba(255,79,216,0.8)');
+    if (r3Ticks) seedRingTicks(r3Ticks, 24, 190, 200, 3, 'rgba(255,79,216,0.25)', 'rgba(255,79,216,0.7)');
+
+    const rings = [r1, r2, r3].filter(Boolean) as SVGGElement[];
+    const ringSpecs = [
+      { speed: 28 + Math.random() * 14, dir:  1 },
+      { speed: 18 + Math.random() * 12, dir: -1 },
+      { speed: 40 + Math.random() * 20, dir:  1 },
+    ];
+
+    // Clone front-text glyphs into the back layer (so every letter has both
+    // a front and a back DOM node, and we show whichever matches depth).
+    const frontGlyphs = Array.from(frontLayer.querySelectorAll<HTMLElement>('.rg-glyph'));
+    const backGlyphs: HTMLElement[] = [];
+    frontGlyphs.forEach(fg => {
+      const bg = fg.cloneNode(true) as HTMLElement;
+      backLayer.appendChild(bg);
+      backGlyphs.push(bg);
+    });
+    if (seedLayer) seedLayer.remove();
+
+    const entries = frontGlyphs.map((f, i) => {
+      const b = backGlyphs[i];
+      const ch = f.dataset.char || f.textContent || '';
+      const isSep = ch === SEP;
+      if (isSep) { f.classList.add('rg-accent'); b.classList.add('rg-accent'); }
+      const N = frontGlyphs.length;
+      return { baseAngle: (i / N) * Math.PI * 2, f, b };
+    });
+
+    const tilt = (-20 * Math.PI) / 180;
+    const start = performance.now();
+
+    function frame(now: number) {
+      const spinRate = (now / 16000) * Math.PI * 2;
+      const rect = scene.getBoundingClientRect();
+      if (rect.width > 0) {
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const R = rect.width * 0.43;
+        const sinT = Math.sin(tilt), cosT = Math.cos(tilt);
+
+        for (const e of entries) {
+          const a = e.baseAngle + spinRate;
+          const px = Math.cos(a) * R;
+          const pz0 = Math.sin(a) * R;
+          const sx = px * cosT;
+          const sy = px * sinT;
+          const sz = pz0;
+
+          const tx0 = -Math.sin(a);
+          const tsx = tx0 * cosT;
+          const tsy = tx0 * sinT;
+
+          const camDist = R * 3.5;
+          const scale = camDist / (camDist - sz);
+          const screenX = cx + sx * scale;
+          const screenY = cy + sy * scale;
+
+          let angleDeg = Math.atan2(tsy, tsx) * 180 / Math.PI;
+          if (angleDeg > 90) angleDeg -= 180;
+          if (angleDeg < -90) angleDeg += 180;
+          const skew = Math.max(-16, Math.min(16, tsx * 18));
+
+          const visibleScale = Math.max(0.55, Math.min(1.25, scale));
+          const opacity = 0.4 + 0.6 * ((sz + R) / (2 * R));
+
+          const transform = `translate(-50%,-50%) translate(${screenX - cx}px, ${screenY - cy}px) rotate(${angleDeg.toFixed(2)}deg) skewX(${skew.toFixed(2)}deg) scale(${visibleScale.toFixed(3)})`;
+
+          if (sz >= 0) {
+            e.f.style.display = 'block';
+            e.b.style.display = 'none';
+            e.f.style.transform = transform;
+            e.f.style.opacity = opacity.toFixed(2);
+          } else {
+            e.b.style.display = 'block';
+            e.f.style.display = 'none';
+            e.b.style.transform = transform;
+            e.b.style.opacity = (opacity * 0.85).toFixed(2);
+          }
+        }
+      }
+
+      // Earth scroll
+      if (lightsScroll) {
+        const t = now - start;
+        const landOffset = -((t / 28000) % 1) * 560;
+        lightsScroll.setAttribute('transform', `translate(${landOffset} 0)`);
+      }
+
+      // Outer rings
+      const tSec = (now - start) / 1000;
+      rings.forEach((el, idx) => {
+        const spec = ringSpecs[idx];
+        const deg = (tSec / spec.speed) * 360 * spec.dir;
+        el.style.transform = `rotate(${deg}deg)`;
+      });
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function initAll() {
+    document.querySelectorAll<HTMLElement>('.retro-globe').forEach(initRetroGlobe);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+</script>

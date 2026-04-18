@@ -1,0 +1,189 @@
+---
+import RetroGlobe from './RetroGlobe.astro';
+---
+
+<div id="loader" class="retro-loader fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-700">
+  <div class="retro-loader-bg"></div>
+  <div class="retro-loader-grain" aria-hidden="true"></div>
+
+  <div class="retro-loader-label retro-loader-label-top retro-loader-flicker">
+    // NULL ORDER · [<span data-role="sig-bars">███░░</span>] <span data-role="sig-db">-62dB</span>
+  </div>
+  <div class="retro-loader-label retro-loader-label-bottom" data-role="geo-label">
+    LAT 12.97N · LON 77.59E · ALT 920M
+  </div>
+
+  <div class="retro-loader-stage">
+    <RetroGlobe size="retro-loader-globe" showHud={true} />
+  </div>
+</div>
+
+<style>
+  .retro-loader {
+    --rl-bg:
+      radial-gradient(ellipse 70% 60% at 20% 20%, rgba(80,150,255,0.35), transparent 60%),
+      radial-gradient(ellipse 60% 55% at 80% 25%, rgba(120,200,255,0.28), transparent 60%),
+      radial-gradient(ellipse 75% 60% at 50% 85%, rgba(60,120,220,0.30), transparent 65%),
+      radial-gradient(ellipse 50% 40% at 90% 70%, rgba(180,220,255,0.18), transparent 60%),
+      linear-gradient(180deg, #0a1836 0%, #0a1530 60%, #060d22 100%);
+    --rl-grain-color: rgba(255, 255, 255, 0.08);
+    --rl-grain-blend: screen;
+    --rl-label: #5cf6ff;
+    --rl-label-glow: rgba(92, 246, 255, 0.6);
+    --rl-label-opacity: 0.75;
+
+    overflow: hidden;
+    font-family: "Share Tech Mono", ui-monospace, monospace;
+    color: #e9f7ff;
+  }
+  :global(html.light) .retro-loader {
+    /* Pale sky / frosted-daylight palette for light mode. */
+    --rl-bg:
+      radial-gradient(ellipse 70% 60% at 20% 20%, rgba(165, 210, 255, 0.55), transparent 60%),
+      radial-gradient(ellipse 60% 55% at 80% 25%, rgba(210, 235, 255, 0.55), transparent 60%),
+      radial-gradient(ellipse 75% 60% at 50% 85%, rgba(200, 220, 245, 0.45), transparent 65%),
+      radial-gradient(ellipse 50% 40% at 90% 70%, rgba(255, 220, 240, 0.35), transparent 60%),
+      linear-gradient(180deg, #eaf3ff 0%, #dce8f7 60%, #e6edf6 100%);
+    --rl-grain-color: rgba(40, 60, 100, 0.15);
+    --rl-grain-blend: multiply;
+    --rl-label: #0e7490;
+    --rl-label-glow: rgba(14, 116, 144, 0.35);
+    --rl-label-opacity: 0.9;
+
+    color: #1e293b;
+  }
+
+  .retro-loader-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--rl-bg);
+    z-index: 0;
+  }
+  .retro-loader-grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 13% 27%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at 67% 44%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at 31% 81%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at 88% 12%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at 48% 58%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at 72% 78%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at  8% 64%, var(--rl-grain-color), transparent 50%),
+      radial-gradient(1px 1px at 92% 92%, var(--rl-grain-color), transparent 50%);
+    mix-blend-mode: var(--rl-grain-blend);
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .retro-loader-stage {
+    position: relative;
+    z-index: 2;
+    width: min(82vmin, 760px);
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+  }
+  .retro-loader-stage :global(.retro-loader-globe) {
+    width: 100%;
+    height: 100%;
+  }
+
+  .retro-loader-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 12px;
+    color: var(--rl-label);
+    opacity: var(--rl-label-opacity);
+    text-shadow: 0 0 8px var(--rl-label-glow);
+    white-space: nowrap;
+    z-index: 3;
+    font-family: "Share Tech Mono", ui-monospace, monospace;
+  }
+  .retro-loader-label-top    { top: 4%; }
+  .retro-loader-label-bottom { bottom: 4%; }
+
+  @keyframes retro-loader-flicker {
+    0%, 100% { opacity: var(--rl-label-opacity); }
+    50%      { opacity: calc(var(--rl-label-opacity) - 0.2); }
+    52%      { opacity: calc(var(--rl-label-opacity) + 0.05); }
+  }
+  .retro-loader-flicker { animation: retro-loader-flicker 4.2s infinite; }
+
+  .retro-loader [data-role="sig-bars"] { letter-spacing: 0; color: var(--rl-label); }
+  .retro-loader [data-role="sig-db"]   { opacity: 0.85; }
+</style>
+
+<script>
+  (function () {
+    const loader = document.getElementById('loader');
+    if (!loader) return;
+
+    const bars = loader.querySelector<HTMLElement>('[data-role="sig-bars"]');
+    const db = loader.querySelector<HTMLElement>('[data-role="sig-db"]');
+    const geo = loader.querySelector<HTMLElement>('[data-role="geo-label"]');
+
+    // Signal strength simulator
+    if (bars && db) {
+      const full = '\u2588';
+      const empty = '\u2591';
+      let level = 3;
+      let targetLevel = 3;
+      const render = () => {
+        bars.textContent = full.repeat(level) + empty.repeat(5 - level);
+        const dbVal = -30 - (5 - level) * 8 - Math.floor(Math.random() * 4);
+        db.textContent = dbVal + 'dB';
+        if (Math.random() < 0.1) db.textContent = 'ADJUSTING';
+      };
+      const retarget = () => {
+        targetLevel = Math.random() < 0.8
+          ? 3 + Math.floor(Math.random() * 3)
+          : 1 + Math.floor(Math.random() * 2);
+      };
+      const i1 = setInterval(() => {
+        if (level < targetLevel) level++;
+        else if (level > targetLevel) level--;
+        render();
+      }, 280);
+      const i2 = setInterval(retarget, 1800);
+      render();
+      loader.addEventListener('transitionend', () => {
+        clearInterval(i1);
+        clearInterval(i2);
+      });
+    }
+
+    // Geo label: default to Bangalore, try ipapi.co for a best-effort update.
+    if (geo) {
+      const BANGALORE = { lat: 12.97, lon: 77.59, alt: 920 };
+      const render = (lat: number, lon: number, alt: number) => {
+        const latStr = Math.abs(lat).toFixed(2) + (lat >= 0 ? 'N' : 'S');
+        const lonStr = Math.abs(lon).toFixed(2) + (lon >= 0 ? 'E' : 'W');
+        const altStr = alt >= 1000
+          ? (alt / 1000).toFixed(2) + 'KM'
+          : Math.round(alt) + 'M';
+        geo.textContent = `LAT ${latStr} · LON ${lonStr} · ALT ${altStr}`;
+      };
+      render(BANGALORE.lat, BANGALORE.lon, BANGALORE.alt);
+      fetch('https://ipapi.co/json/', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : Promise.reject(r.status))
+        .then(data => {
+          const lat = Number(data.latitude);
+          const lon = Number(data.longitude);
+          if (!isFinite(lat) || !isFinite(lon)) throw new Error('bad coords');
+          render(lat, lon, 0);
+          return fetch(`https://api.open-elevation.com/api/v1/lookup?locations=${lat},${lon}`)
+            .then(r => r.ok ? r.json() : null)
+            .then(j => {
+              const alt = j && j.results && j.results[0] && Number(j.results[0].elevation);
+              if (isFinite(alt)) render(lat, lon, alt);
+            })
+            .catch(() => { /* keep lat/lon with 0 alt */ });
+        })
+        .catch(() => { /* keep default */ });
+    }
+  })();
+</script>

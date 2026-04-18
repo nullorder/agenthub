@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import AnimatedLogo from '../components/AnimatedLogo.astro';
+import Loader from '../components/Loader.astro';
 
 interface Props {
   title: string;
@@ -51,7 +51,7 @@ const imageUrl = new URL(image, Astro.site).toString();
     <meta name="twitter:image" content={imageUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
     <style define:vars={{ fontUrl: `url(${base}fonts/Pixeled.ttf)` }}>
       @font-face {
         font-family: 'Pixeled';
@@ -64,7 +64,7 @@ const imageUrl = new URL(image, Astro.site).toString();
     <title>{title}</title>
     <script is:inline>
       (function() {
-        var t = localStorage.getItem('theme') || 'dark';
+        var t = localStorage.getItem('theme') || 'system';
         var e = t === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : t;
         document.documentElement.classList.add(e);
       })();
@@ -77,9 +77,7 @@ const imageUrl = new URL(image, Astro.site).toString();
       <div class="bg-overlay absolute inset-0"></div>
     </div>
     <!-- Loader overlay -->
-    <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950 transition-opacity duration-700">
-      <AnimatedLogo size="h-36 w-36" />
-    </div>
+    <Loader />
 
     <slot />
 
