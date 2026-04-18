@@ -329,23 +329,24 @@ const chars = Array.from(word + sep);
 
     // Clone front-text glyphs into the back layer (so every letter has both
     // a front and a back DOM node, and we show whichever matches depth).
-    const frontGlyphs = Array.from(frontLayer.querySelectorAll<HTMLElement>('.rg-glyph'));
-    const backGlyphs: HTMLElement[] = [];
-    frontGlyphs.forEach(fg => {
-      const bg = fg.cloneNode(true) as HTMLElement;
-      backLayer.appendChild(bg);
-      backGlyphs.push(bg);
-    });
-    if (seedLayer) seedLayer.remove();
-
-    const entries = frontGlyphs.map((f, i) => {
-      const b = backGlyphs[i];
-      const ch = f.dataset.char || f.textContent || '';
-      const isSep = ch === SEP;
-      if (isSep) { f.classList.add('rg-accent'); b.classList.add('rg-accent'); }
-      const N = frontGlyphs.length;
-      return { baseAngle: (i / N) * Math.PI * 2, f, b };
-    });
+    const entries = (hasOrbitText && frontLayer && backLayer) ? (() => {
+      const frontGlyphs = Array.from(frontLayer.querySelectorAll<HTMLElement>('.rg-glyph'));
+      const backGlyphs: HTMLElement[] = [];
+      frontGlyphs.forEach(fg => {
+        const bg = fg.cloneNode(true) as HTMLElement;
+        backLayer.appendChild(bg);
+        backGlyphs.push(bg);
+      });
+      if (seedLayer) seedLayer.remove();
+      return frontGlyphs.map((f, i) => {
+        const b = backGlyphs[i];
+        const ch = f.dataset.char || f.textContent || '';
+        const isSep = ch === SEP;
+        if (isSep) { f.classList.add('rg-accent'); b.classList.add('rg-accent'); }
+        const N = frontGlyphs.length;
+        return { baseAngle: (i / N) * Math.PI * 2, f, b };
+      });
+    })() : [];
 
     const tilt = (-20 * Math.PI) / 180;
     const start = performance.now();
