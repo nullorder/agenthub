@@ -19,31 +19,15 @@ const {
   tags = [],
 } = Astro.props;
 
-function getSourceUrl(source: any): string {
-  if (typeof source === "string") return "";
-  switch (source.source) {
-    case "github":
-      return `https://github.com/${source.repo}`;
-    case "url":
-      return source.url.replace(/\.git$/, "");
-    case "git-subdir":
-      return source.url.replace(/\.git$/, "");
-    case "npm":
-      return `https://www.npmjs.com/package/${source.package}`;
-    default:
-      return "";
-  }
-}
-
 function getSourceLabel(source: any): string {
   if (typeof source === "string") return "local";
   return source.source === "git-subdir" ? "git" : source.source || "unknown";
 }
 
-const sourceUrl = getSourceUrl(source);
 const sourceLabel = getSourceLabel(source);
 const authorDisplay = author.name || `@${author.username}`;
 const authorUrl = author.url;
+const detailUrl = `/plugins/${name}`;
 
 const categoryColors: Record<string, string> = {
   development: "bg-blue-500/20 text-blue-300",
@@ -60,125 +44,61 @@ const categoryColors: Record<string, string> = {
 const categoryColor = categoryColors[category] || categoryColors.other;
 ---
 
-{
-  sourceUrl ? (
-    <a
-      href={sourceUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="plugin-card group flex flex-col cursor-pointer rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-5 transition-all hover:border-white/20 hover:bg-white/10 shadow-lg shadow-black/20 no-underline"
-      data-name={name}
-      data-description={description}
-      data-category={category}
-      data-tags={tags.join(",")}
+<a
+  href={detailUrl}
+  class="plugin-card group flex flex-col cursor-pointer rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-5 transition-all hover:border-white/20 hover:bg-white/10 shadow-lg shadow-black/20 no-underline"
+  data-name={name}
+  data-description={description}
+  data-category={category}
+  data-tags={tags.join(",")}
+>
+  <div class="mb-3 flex items-start justify-between gap-2">
+    <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+      {name}
+    </h3>
+    <span
+      class={`shrink-0 rounded-full px-2.5 py-0.5 text-sm font-medium ${categoryColor}`}
     >
-      <div class="mb-3 flex items-start justify-between gap-2">
-        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
-          {name}
-        </h3>
-        <span
-          class={`shrink-0 rounded-full px-2.5 py-0.5 text-sm font-medium ${categoryColor}`}
-        >
-          {category}
+      {category}
+    </span>
+  </div>
+
+  <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">
+    {description}
+  </p>
+
+  {tags.length > 0 && (
+    <div class="mb-3 flex flex-wrap gap-1.5">
+      {tags.map((tag) => (
+        <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-xs font-medium text-gray-400">
+          {tag}
         </span>
-      </div>
-
-      <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">
-        {description}
-      </p>
-
-      {tags.length > 0 && (
-        <div class="mb-3 flex flex-wrap gap-1.5">
-          {tags.map((tag) => (
-            <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-xs font-medium text-gray-400">
-              {tag}
-            </span>
-          ))}
-          {license && (
-            <span class="license-badge rounded px-2 py-0.5 text-xs">
-              {license}
-            </span>
-          )}
-        </div>
-      )}
-
-      <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
-        {authorUrl ? (
-          <span>by{" "}
-            <span
-              class="author-name transition-colors"
-              onclick={`event.preventDefault(); event.stopPropagation(); window.open('${authorUrl}', '_blank')`}
-            >
-              {authorDisplay}
-            </span>
-          </span>
-        ) : (
-          <span>by <span class="author-name">{authorDisplay}</span></span>
-        )}
-        <div class="flex items-center gap-2">
-          <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs">
-            {sourceLabel}
-          </span>
-        </div>
-      </div>
-    </a>
-  ) : (
-    <div
-      class="plugin-card group flex flex-col rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-5 transition-all shadow-lg shadow-black/20"
-      data-name={name}
-      data-description={description}
-      data-category={category}
-      data-tags={tags.join(",")}
-    >
-      <div class="mb-3 flex items-start justify-between gap-2">
-        <h3 class="text-xl font-semibold text-white">{name}</h3>
-        <span
-          class={`shrink-0 rounded-full px-2.5 py-0.5 text-base font-medium ${categoryColor}`}
-        >
-          {category}
+      ))}
+      {license && (
+        <span class="license-badge rounded px-2 py-0.5 text-xs">
+          {license}
         </span>
-      </div>
-
-      <p class="mb-3 text-base leading-relaxed text-gray-400 line-clamp-3">
-        {description}
-      </p>
-
-      {tags.length > 0 && (
-        <div class="mb-3 flex flex-wrap gap-1.5">
-          {tags.map((tag) => (
-            <span class="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-xs font-medium text-gray-400">
-              {tag}
-            </span>
-          ))}
-        </div>
       )}
-
-      <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
-        {authorUrl ? (
-          <span>by{" "}
-            <a
-              href={authorUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="author-name transition-colors"
-            >
-              {authorDisplay}
-            </a>
-          </span>
-        ) : (
-          <span>by <span class="author-name">{authorDisplay}</span></span>
-        )}
-        <div class="flex items-center gap-2">
-          {license && (
-            <span class="license-badge rounded px-2 py-0.5 text-xs">
-              {license}
-            </span>
-          )}
-          <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400">
-            {sourceLabel}
-          </span>
-        </div>
-      </div>
     </div>
-  )
-}
+  )}
+
+  <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-3 text-base text-gray-500">
+    {authorUrl ? (
+      <span>by{" "}
+        <span
+          class="author-name transition-colors"
+          onclick={`event.preventDefault(); event.stopPropagation(); window.open('${authorUrl}', '_blank')`}
+        >
+          {authorDisplay}
+        </span>
+      </span>
+    ) : (
+      <span>by <span class="author-name">{authorDisplay}</span></span>
+    )}
+    <div class="flex items-center gap-2">
+      <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-gray-400 group-hover:bg-white/15 text-xs">
+        {sourceLabel}
+      </span>
+    </div>
+  </div>
+</a>
