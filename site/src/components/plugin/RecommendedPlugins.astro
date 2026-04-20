@@ -1,0 +1,47 @@
+---
+import PluginCard from "../PluginCard.astro";
+
+interface Plugin {
+  name: string;
+  description: string;
+  category: string;
+  version?: string;
+  license?: string;
+  tags?: string[];
+  author: { username: string; name?: string; url?: string };
+  source: any;
+}
+
+interface Props {
+  plugins: Plugin[];
+  authorDisplay: string;
+  category: string;
+}
+
+const { plugins, authorDisplay, category } = Astro.props;
+---
+
+{plugins.length > 0 && (
+  <section class="mt-12">
+    <h2 class="font-pixel text-xl font-bold text-white mb-1">
+      Recommended plugins
+    </h2>
+    <p class="mb-5 text-sm text-gray-400">
+      You might like more plugins by {authorDisplay} or in {category}
+    </p>
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {plugins.map((p, i) => (
+        <div
+          class:list={[
+            i === 0 && "contents",
+            i === 1 && "hidden sm:contents",
+            i === 2 && "hidden lg:contents",
+            i === 3 && "hidden xl:contents",
+          ]}
+        >
+          <PluginCard {...p} />
+        </div>
+      ))}
+    </div>
+  </section>
+)}

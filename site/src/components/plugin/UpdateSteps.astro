@@ -1,0 +1,32 @@
+---
+import CopyableCommand from "./CopyableCommand.astro";
+
+interface Props {
+  pluginName: string;
+}
+
+const { pluginName } = Astro.props;
+const updateMarketplace = "/plugin marketplace update agenthub";
+const updatePlugin = `/plugin update ${pluginName}@agenthub`;
+---
+
+<section class="mt-10">
+  <h2 class="font-pixel text-xl font-bold text-white mb-4">Update</h2>
+  <p class="mb-4 text-sm text-gray-400">
+    Plugins are cached locally. To pull the latest changes for {pluginName},
+    refresh the catalog first, then update.
+  </p>
+
+  <ol class="space-y-4">
+    <CopyableCommand
+      step={1}
+      label="Refresh the AgentHub catalog"
+      command={updateMarketplace}
+    />
+    <CopyableCommand
+      step={2}
+      label="Apply the update for this plugin"
+      command={updatePlugin}
+    />
+  </ol>
+</section>

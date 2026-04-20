@@ -1,0 +1,28 @@
+---
+import CopyableCommand from "./CopyableCommand.astro";
+
+interface Props {
+  pluginName: string;
+}
+
+const { pluginName } = Astro.props;
+const installMarketplace = "/plugin marketplace add nullorder/agenthub";
+const installPlugin = `/plugin install ${pluginName}@agenthub`;
+---
+
+<section class="mt-10">
+  <h2 class="font-pixel text-xl font-bold text-white mb-4">Install</h2>
+  <p class="mb-4 text-sm text-gray-400">
+    Run these commands inside Claude Code. Skip the first step if you've already
+    added the AgentHub marketplace.
+  </p>
+
+  <ol class="space-y-4">
+    <CopyableCommand
+      step={1}
+      label="Add the AgentHub marketplace (one-time setup)"
+      command={installMarketplace}
+    />
+    <CopyableCommand step={2} label="Install the plugin" command={installPlugin} />
+  </ol>
+</section>
