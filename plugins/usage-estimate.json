@@ -1,0 +1,16 @@
+{
+  "name": "usage-estimate",
+  "source": {
+    "source": "npm",
+    "package": "usage-estimate"
+  },
+  "description": "Shows estimated token count before each prompt is submitted. Optionally blocks prompts above a configurable threshold with a two-press-Enter confirmation.",
+  "version": "0.2.0",
+  "author": {
+    "username": "anistark",
+    "name": "Kumar Anirudha"
+  },
+  "category": "productivity",
+  "tags": ["hooks", "skills", "tokens"],
+  "license": "MIT"
+}
