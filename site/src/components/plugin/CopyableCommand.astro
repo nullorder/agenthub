@@ -1,0 +1,53 @@
+---
+interface Props {
+  step?: number | string;
+  label?: string;
+  command: string;
+}
+
+const { step, label, command } = Astro.props;
+const hasStep = step !== undefined && label !== undefined;
+---
+
+<li>
+  {hasStep && (
+    <div class="mb-2 flex items-center gap-2 text-sm text-gray-400">
+      <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-white">
+        {step}
+      </span>
+      <span>{label}</span>
+    </div>
+  )}
+  <div class="install-cmd group relative">
+    <pre class="overflow-x-auto rounded-lg border border-white/10 bg-black/40 px-4 py-3 font-mono text-sm text-gray-200"><code>{command}</code></pre>
+    <button
+      type="button"
+      class="copy-btn absolute right-2 top-2 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-gray-400 opacity-0 transition-all hover:border-white/20 hover:text-white group-hover:opacity-100"
+      data-copy={command}
+    >
+      Copy
+    </button>
+  </div>
+</li>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {
+    if (btn.dataset.copyBound) return;
+    btn.dataset.copyBound = "1";
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.copy || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = "Copied";
+        btn.classList.add("text-green-400");
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove("text-green-400");
+        }, 1500);
+      } catch {
+        // clipboard permission denied or unavailable
+      }
+    });
+  });
+</script>

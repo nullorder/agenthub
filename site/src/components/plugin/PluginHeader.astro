@@ -1,0 +1,66 @@
+---
+interface Props {
+  name: string;
+  authorDisplay: string;
+  authorUrl: string;
+  version?: string;
+  license?: string;
+  category: string;
+  categoryColor: string;
+}
+
+const {
+  name,
+  authorDisplay,
+  authorUrl,
+  version,
+  license,
+  category,
+  categoryColor,
+} = Astro.props;
+---
+
+<header class="mb-6 flex flex-wrap items-start justify-between gap-4">
+  <div class="min-w-0">
+    <h1 class="font-pixel text-3xl font-bold text-white break-words sm:text-4xl">
+      {name}
+    </h1>
+    <div class="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-400">
+      <span>
+        by {authorUrl ? (
+          <a
+            href={authorUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-400 hover:underline"
+          >
+            {authorDisplay}
+          </a>
+        ) : (
+          <span class="text-white">{authorDisplay}</span>
+        )}
+      </span>
+      {version && (
+        <>
+          <span class="text-gray-600">•</span>
+          <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-xs text-gray-300">
+            v{version}
+          </span>
+        </>
+      )}
+      {license && (
+        <>
+          <span class="text-gray-600">•</span>
+          <span class="license-badge rounded px-2 py-0.5 text-xs font-medium">
+            {license}
+          </span>
+        </>
+      )}
+    </div>
+  </div>
+  <span
+    class={`shrink-0 rounded-full px-3 py-1 text-sm font-medium ${categoryColor}`}
+  >
+    {category}
+  </span>
+</header>
