@@ -1,2 +1,7 @@
+# AgentHub — community marketplace for Claude Code plugins
+# Open to all crawlers, including AI agents.
+
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://agenthub.nullorder.org/sitemap.xml

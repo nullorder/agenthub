@@ -30,9 +30,37 @@ const authorCount = [...new Set(plugins.map((p: any) => p.author.username))]
 const PLUGINS_PER_PAGE = 28;
 const initialPlugins = plugins.slice(0, PLUGINS_PER_PAGE);
 const totalPluginCount = plugins.length;
+
+const siteUrl = new URL("/", Astro.site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "AgentHub",
+      url: siteUrl,
+      description:
+        "A community-driven marketplace for Claude Code plugins.",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${siteUrl.replace(/\/$/, "")}/?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "CollectionPage",
+      name: "Claude Code Plugins",
+      url: siteUrl,
+      description: `Browse ${plugins.length} community-built Claude Code plugins from ${authorCount} authors.`,
+    },
+  ],
+};
 ---
 
-<Layout title="AgentHub — Claude Code Plugin Marketplace">
+<Layout
+  title="AgentHub — Claude Code Plugin Marketplace"
+  jsonLd={jsonLd}
+>
   <Navbar />
 
   <div class="mx-auto w-full px-4 py-10 flex-1 lg:px-8">

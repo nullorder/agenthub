@@ -98,11 +98,75 @@ if (recommended.length === 0) {
 }
 recommended = recommended.slice(0, 4);
 
-const pageTitle = `${plugin.name} — AgentHub`;
-const pageDescription = plugin.description;
+const pageTitle = `${plugin.name} — ${plugin.category} plugin for Claude Code | AgentHub`;
+const descTags = plugin.tags && plugin.tags.length > 0
+  ? ` Tags: ${plugin.tags.join(", ")}.`
+  : "";
+const pageDescription =
+  `${plugin.description} A ${plugin.category} plugin for Claude Code by ${authorDisplay}.${descTags}`.slice(0, 300);
+
+const canonicalPluginUrl = new URL(
+  `/plugins/${plugin.name}/`,
+  Astro.site,
+).toString();
+
+const softwareJsonLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: plugin.name,
+  description: plugin.description,
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Cross-platform",
+  url: canonicalPluginUrl,
+  author: {
+    "@type": "Person",
+    name: authorDisplay,
+    ...(authorUrl ? { url: authorUrl } : {}),
+  },
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+if (plugin.version) softwareJsonLd.softwareVersion = plugin.version;
+if (plugin.license) softwareJsonLd.license = plugin.license;
+if (plugin.tags && plugin.tags.length > 0) softwareJsonLd.keywords = plugin.tags.join(", ");
+if (sourceUrl) softwareJsonLd.codeRepository = sourceUrl;
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "AgentHub",
+      item: new URL("/", Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: plugin.name,
+      item: canonicalPluginUrl,
+    },
+  ],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [softwareJsonLd, breadcrumbJsonLd],
+};
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  ogType="article"
+  author={authorDisplay}
+  jsonLd={jsonLd}
+>
   <Navbar />
 
   <div class="mx-auto w-full max-w-5xl px-4 py-10 flex-1 lg:px-8">
