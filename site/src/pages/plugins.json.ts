@@ -1,15 +1,9 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { loadPlugins } from "../lib/plugins";
 
 export const prerender = true;
 
 export async function GET() {
-  const marketplacePath = resolve(
-    process.cwd(),
-    "../.claude-plugin/marketplace.json",
-  );
-  const marketplace = JSON.parse(readFileSync(marketplacePath, "utf-8"));
-  return new Response(JSON.stringify(marketplace.plugins || []), {
+  return new Response(JSON.stringify(loadPlugins()), {
     headers: {
       "Content-Type": "application/json",
       "Cache-Control": "public, max-age=300",
