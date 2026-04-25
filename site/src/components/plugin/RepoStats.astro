@@ -1,33 +1,127 @@
 ---
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 interface Props {
   repo: string;
 }
 
 const { repo } = Astro.props;
 
-const skeleton = `<span class="inline-block h-4 w-10 animate-pulse rounded bg-white/10"></span>`;
-const tiles: Array<{ label: string; field: string; size: "lg" | "sm" }> = [
-  { label: "Stars", field: "stars", size: "lg" },
-  { label: "Forks", field: "forks", size: "lg" },
-  { label: "Watchers", field: "watchers", size: "lg" },
-  { label: "Open issues", field: "issues", size: "lg" },
-  { label: "Last commit", field: "pushed", size: "sm" },
-];
+type RepoStat = {
+  stars: number;
+  forks: number;
+  watchers: number;
+  issues: number;
+  pushed_at: string;
+  language: string | null;
+  archived: boolean;
+  release: { tag: string; url: string; published_at: string } | null;
+};
+
+let stats: RepoStat | null = null;
+let generatedAt: string | null = null;
+
+try {
+  const raw = readFileSync(
+    resolve(process.cwd(), "../stats/repos.json"),
+    "utf-8",
+  );
+  const parsed = JSON.parse(raw) as {
+    generated_at?: string;
+    repos?: Record<string, RepoStat>;
+  };
+  stats = parsed.repos?.[repo] ?? null;
+  generatedAt = parsed.generated_at ?? null;
+} catch {
+  stats = null;
+}
+
+const nf = new Intl.NumberFormat("en", {
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
+const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+
+function formatRelative(iso: string | null | undefined, nowMs: number): string {
+  if (!iso) return "—";
+  const then = new Date(iso).getTime();
+  if (!Number.isFinite(then)) return "—";
+  const diffSec = Math.round((then - nowMs) / 1000);
+  const abs = Math.abs(diffSec);
+  const units: [Intl.RelativeTimeFormatUnit, number][] = [
+    ["year", 365 * 24 * 3600],
+    ["month", 30 * 24 * 3600],
+    ["week", 7 * 24 * 3600],
+    ["day", 24 * 3600],
+    ["hour", 3600],
+    ["minute", 60],
+  ];
+  for (const [unit, secs] of units) {
+    if (abs >= secs) return rtf.format(Math.round(diffSec / secs), unit);
+  }
+  return rtf.format(diffSec, "second");
+}
+
+const now = Date.now();
+
+const tiles: Array<{ label: string; value: string; title: string; size: "lg" | "sm" }> = stats
+  ? [
+      {
+        label: "Stars",
+        value: nf.format(stats.stars),
+        title: `${stats.stars.toLocaleString()} stars`,
+        size: "lg",
+      },
+      {
+        label: "Forks",
+        value: nf.format(stats.forks),
+        title: `${stats.forks.toLocaleString()} forks`,
+        size: "lg",
+      },
+      {
+        label: "Watchers",
+        value: nf.format(stats.watchers),
+        title: `${stats.watchers.toLocaleString()} watching`,
+        size: "lg",
+      },
+      {
+        label: "Open issues",
+        value: nf.format(stats.issues),
+        title: `${stats.issues.toLocaleString()} open issues + PRs`,
+        size: "lg",
+      },
+      {
+        label: "Last commit",
+        value: formatRelative(stats.pushed_at, now),
+        title: stats.pushed_at ? new Date(stats.pushed_at).toLocaleString() : "",
+        size: "sm",
+      },
+    ]
+  : [
+      { label: "Stars", value: "—", title: "", size: "lg" },
+      { label: "Forks", value: "—", title: "", size: "lg" },
+      { label: "Watchers", value: "—", title: "", size: "lg" },
+      { label: "Open issues", value: "—", title: "", size: "lg" },
+      { label: "Last commit", value: "—", title: "", size: "sm" },
+    ];
+
+const metaText = stats
+  ? `Updated ${formatRelative(generatedAt, now)}`
+  : "Stats unavailable";
 ---
 
-<div class="gh-stats mb-6 border-t border-white/5 pt-5" data-repo={repo}>
+<div class="gh-stats mb-6 border-t border-white/5 pt-5">
   <div class="mb-3 flex items-center justify-between">
     <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500">
       Repository stats
     </h3>
-    <span class="gh-stats-meta text-xs text-gray-600" data-state="loading">
-      Loading from GitHub…
-    </span>
+    <span class="text-xs text-gray-600">{metaText}</span>
   </div>
 
   <div class="grid grid-cols-2 gap-2 sm:grid-cols-5">
     {
-      tiles.map(({ label, field, size }) => (
+      tiles.map(({ label, value, title, size }) => (
         <div class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5">
           <div class="text-[10px] font-medium uppercase tracking-wider text-gray-500">
             {label}
@@ -37,251 +131,46 @@ const tiles: Array<{ label: string; field: string; size: "lg" | "sm" }> = [
               "mt-1 font-mono font-semibold text-white",
               size === "lg" ? "text-lg" : "text-sm",
             ]}
-            data-field={field}
-            set:html={skeleton}
-          />
+            title={title}
+          >
+            {value}
+          </div>
         </div>
       ))
     }
   </div>
 
-  <div
-    class="gh-extra mt-3 hidden flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-400"
-  >
-    <span class="gh-release hidden">
-      <span class="text-gray-500">Latest release:</span>
-      <a
-        class="gh-release-link ml-1 font-mono text-blue-400 hover:underline"
-        target="_blank"
-        rel="noopener noreferrer"></a>
-      <span class="gh-release-age ml-1 text-gray-500"></span>
-    </span>
-    <span class="gh-language hidden">
-      <span class="text-gray-500">Primary language:</span>
-      <span class="gh-language-name ml-1 text-gray-300"></span>
-    </span>
-    <span
-      class="gh-archived hidden rounded bg-yellow-400/10 px-2 py-0.5 text-yellow-300"
-    >
-      Archived
-    </span>
-  </div>
+  {
+    stats && (stats.release || stats.language || stats.archived) && (
+      <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-400">
+        {stats.release && (
+          <span>
+            <span class="text-gray-500">Latest release:</span>
+            <a
+              class="ml-1 font-mono text-blue-400 hover:underline"
+              href={stats.release.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {stats.release.tag}
+            </a>
+            <span class="ml-1 text-gray-500">
+              · {formatRelative(stats.release.published_at, now)}
+            </span>
+          </span>
+        )}
+        {stats.language && (
+          <span>
+            <span class="text-gray-500">Primary language:</span>
+            <span class="ml-1 text-gray-300">{stats.language}</span>
+          </span>
+        )}
+        {stats.archived && (
+          <span class="rounded bg-yellow-400/10 px-2 py-0.5 text-yellow-300">
+            Archived
+          </span>
+        )}
+      </div>
+    )
+  }
 </div>
-
-<script>
-  // Unauthenticated GitHub REST: 60 req/hr per IP. Cache per-repo in
-  // localStorage for 1 hour so navigation between plugin pages that share a
-  // repo costs zero network calls.
-  type RepoStats = {
-    stars: number;
-    forks: number;
-    watchers: number;
-    issues: number;
-    pushedAt: string;
-    language: string | null;
-    archived: boolean;
-    release?: { tag: string; url: string; publishedAt: string } | null;
-    fetchedAt: number;
-  };
-
-  const CACHE_TTL_MS = 60 * 60 * 1000;
-  const CACHE_PREFIX = "gh-stats:v1:";
-
-  const nf = new Intl.NumberFormat("en", {
-    notation: "compact",
-    maximumFractionDigits: 1,
-  });
-  const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-
-  function formatRelative(iso: string): string {
-    const then = new Date(iso).getTime();
-    if (!Number.isFinite(then)) return "—";
-    const diffSec = Math.round((then - Date.now()) / 1000);
-    const abs = Math.abs(diffSec);
-    const units: [Intl.RelativeTimeFormatUnit, number][] = [
-      ["year", 365 * 24 * 3600],
-      ["month", 30 * 24 * 3600],
-      ["week", 7 * 24 * 3600],
-      ["day", 24 * 3600],
-      ["hour", 3600],
-      ["minute", 60],
-    ];
-    for (const [unit, secs] of units) {
-      if (abs >= secs) return rtf.format(Math.round(diffSec / secs), unit);
-    }
-    return rtf.format(diffSec, "second");
-  }
-
-  function readCache(repo: string): RepoStats | null {
-    try {
-      const raw = localStorage.getItem(CACHE_PREFIX + repo);
-      if (!raw) return null;
-      const parsed = JSON.parse(raw) as RepoStats;
-      if (Date.now() - parsed.fetchedAt > CACHE_TTL_MS) return null;
-      return parsed;
-    } catch {
-      return null;
-    }
-  }
-
-  function writeCache(repo: string, stats: RepoStats): void {
-    try {
-      localStorage.setItem(CACHE_PREFIX + repo, JSON.stringify(stats));
-    } catch {
-      // quota or disabled storage — ignore
-    }
-  }
-
-  async function fetchRepoStats(repo: string): Promise<RepoStats | null> {
-    const [repoRes, releaseRes] = await Promise.all([
-      fetch(`https://api.github.com/repos/${repo}`, {
-        headers: { Accept: "application/vnd.github+json" },
-      }),
-      fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
-        headers: { Accept: "application/vnd.github+json" },
-      }).catch(() => null),
-    ]);
-
-    if (!repoRes.ok) return null;
-    const data = await repoRes.json();
-
-    let release: RepoStats["release"] = null;
-    if (releaseRes && releaseRes.ok) {
-      const r = await releaseRes.json();
-      release = {
-        tag: r.tag_name,
-        url: r.html_url,
-        publishedAt: r.published_at,
-      };
-    }
-
-    return {
-      stars: data.stargazers_count ?? 0,
-      forks: data.forks_count ?? 0,
-      watchers: data.subscribers_count ?? 0,
-      issues: data.open_issues_count ?? 0,
-      pushedAt: data.pushed_at,
-      language: data.language ?? null,
-      archived: Boolean(data.archived),
-      release,
-      fetchedAt: Date.now(),
-    };
-  }
-
-  function render(container: HTMLElement, stats: RepoStats): void {
-    const set = (field: string, text: string, title?: string) => {
-      const el = container.querySelector<HTMLElement>(
-        `[data-field="${field}"]`,
-      );
-      if (!el) return;
-      el.textContent = text;
-      if (title) el.title = title;
-    };
-
-    set(
-      "stars",
-      nf.format(stats.stars),
-      `${stats.stars.toLocaleString()} stars`,
-    );
-    set(
-      "forks",
-      nf.format(stats.forks),
-      `${stats.forks.toLocaleString()} forks`,
-    );
-    set(
-      "watchers",
-      nf.format(stats.watchers),
-      `${stats.watchers.toLocaleString()} watching`,
-    );
-    set(
-      "issues",
-      nf.format(stats.issues),
-      `${stats.issues.toLocaleString()} open issues + PRs`,
-    );
-    set(
-      "pushed",
-      stats.pushedAt ? formatRelative(stats.pushedAt) : "—",
-      stats.pushedAt ? new Date(stats.pushedAt).toLocaleString() : "",
-    );
-
-    const extra = container.querySelector<HTMLElement>(".gh-extra");
-    if (extra) {
-      let shown = false;
-
-      if (stats.release) {
-        const wrap = extra.querySelector<HTMLElement>(".gh-release");
-        const link = extra.querySelector<HTMLAnchorElement>(".gh-release-link");
-        const age = extra.querySelector<HTMLElement>(".gh-release-age");
-        if (wrap && link && age) {
-          link.href = stats.release.url;
-          link.textContent = stats.release.tag;
-          age.textContent = `· ${formatRelative(stats.release.publishedAt)}`;
-          wrap.classList.remove("hidden");
-          shown = true;
-        }
-      }
-
-      if (stats.language) {
-        const wrap = extra.querySelector<HTMLElement>(".gh-language");
-        const name = extra.querySelector<HTMLElement>(".gh-language-name");
-        if (wrap && name) {
-          name.textContent = stats.language;
-          wrap.classList.remove("hidden");
-          shown = true;
-        }
-      }
-
-      if (stats.archived) {
-        extra.querySelector(".gh-archived")?.classList.remove("hidden");
-        shown = true;
-      }
-
-      if (shown) extra.classList.remove("hidden");
-      extra.classList.add("flex");
-    }
-
-    const meta = container.querySelector<HTMLElement>(".gh-stats-meta");
-    if (meta) {
-      meta.textContent = `Updated ${formatRelative(new Date(stats.fetchedAt).toISOString())}`;
-      meta.dataset.state = "ready";
-    }
-  }
-
-  function renderError(container: HTMLElement): void {
-    container.querySelectorAll<HTMLElement>("[data-field]").forEach((el) => {
-      el.textContent = "—";
-    });
-    const meta = container.querySelector<HTMLElement>(".gh-stats-meta");
-    if (meta) {
-      meta.textContent = "Stats unavailable";
-      meta.dataset.state = "error";
-    }
-  }
-
-  async function hydrate(container: HTMLElement): Promise<void> {
-    const repo = container.dataset.repo;
-    if (!repo) return;
-
-    const cached = readCache(repo);
-    if (cached) {
-      render(container, cached);
-      return;
-    }
-
-    try {
-      const stats = await fetchRepoStats(repo);
-      if (!stats) {
-        renderError(container);
-        return;
-      }
-      writeCache(repo, stats);
-      render(container, stats);
-    } catch {
-      renderError(container);
-    }
-  }
-
-  document
-    .querySelectorAll<HTMLElement>(".gh-stats")
-    .forEach((el) => void hydrate(el));
-</script>
