@@ -1,0 +1,39 @@
+name: Collect plugin repo stats
+
+on:
+  schedule:
+    # Daily at 13:00 UTC. Plugin repo metadata (stars, forks, latest release)
+    # changes slowly; daily is plenty.
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Fetch repo stats
+        env:
+          # GITHUB_TOKEN gives 5000 req/hr — plenty for the ~80 unique repos.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-repo-stats.js
+
+      - name: Commit and push stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats/repos.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update plugin repo stats"
+            git push
+          fi

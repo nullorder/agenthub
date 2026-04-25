@@ -3,7 +3,7 @@ name: Build and deploy site
 on:
   # Chain after marketplace build or traffic collection completes
   workflow_run:
-    workflows: ["Build marketplace.json", "Collect traffic stats", "Collect plugin view stats"]
+    workflows: ["Build marketplace.json", "Collect traffic stats", "Collect plugin view stats", "Collect plugin repo stats"]
     types: [completed]
   # Also trigger on site or stats changes
   push:
