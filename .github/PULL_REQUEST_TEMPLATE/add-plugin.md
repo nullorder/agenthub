@@ -10,15 +10,17 @@
 
 ### Checklist
 
-- [ ] I have read and understood the [contributing guidelines](../../CONTRIBUTING.md)
-- [ ] Plugin has a valid `.claude-plugin/plugin.json` manifest
-- [ ] Plugin has a `README.md`
-- [ ] Plugin has a `LICENSE`
-- [ ] Plugin name is kebab-case
-- [ ] `category` is set to one of the allowed values
-- [ ] `tags` includes at least one component type (skills/agents/hooks/commands/mcp-servers/lsp-servers/integration/other)
-- [ ] Plugin file added to `plugins/` directory (do not edit `marketplace.json`)
-- [ ] Tested locally with `/plugin marketplace add` and `/plugin install`
+_Uncheck any item that does not apply or has not been completed._
+
+- [x] I have read and understood the [contributing guidelines](../../CONTRIBUTING.md)
+- [x] Plugin has a valid `.claude-plugin/plugin.json` manifest
+- [x] Plugin has a `README.md`
+- [x] Plugin has a `LICENSE`
+- [x] Plugin name is kebab-case
+- [x] `category` is set to one of the allowed values
+- [x] `tags` includes at least one component type (skills/agents/hooks/commands/mcp-servers/lsp-servers/integration/other)
+- [x] Plugin file added to `plugins/` directory (do not edit `marketplace.json`)
+- [x] Tested locally with `/plugin marketplace add` and `/plugin install`
 
 ### What does this plugin do?
 

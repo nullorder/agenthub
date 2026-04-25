@@ -16,10 +16,12 @@
 
 ### Checklist
 
-- [ ] I have read and understood the [contributing guidelines](../../CONTRIBUTING.md)
-- [ ] I am the original author or maintainer of this plugin
-- [ ] Only my plugin's file in `plugins/` is modified (do not edit `marketplace.json`)
-- [ ] Tested locally with `/plugin marketplace add` and `/plugin install`
+_Uncheck any item that does not apply or has not been completed._
+
+- [x] I have read and understood the [contributing guidelines](../../CONTRIBUTING.md)
+- [x] I am the original author or maintainer of this plugin
+- [x] Only my plugin's file in `plugins/` is modified (do not edit `marketplace.json`)
+- [x] Tested locally with `/plugin marketplace add` and `/plugin install`
 
 ### Reason for update
 
