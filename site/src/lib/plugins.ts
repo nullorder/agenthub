@@ -9,7 +9,7 @@ const statsPath = resolve(process.cwd(), "../stats/plugins.json");
 
 export type Plugin = Record<string, any> & { name: string };
 
-function loadViewCounts(): Record<string, number> {
+export function loadViewCounts(): Record<string, number> {
   try {
     const stats = JSON.parse(readFileSync(statsPath, "utf-8"));
     return stats.plugins || {};
