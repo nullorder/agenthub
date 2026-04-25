@@ -4,9 +4,9 @@
 
 ### Type of change
 
-- [ ] Add a plugin → please use the [add-plugin template](?template=add-plugin.md) instead
-- [ ] Update a plugin → please use the [update-plugin template](?template=update-plugin.md) instead
-- [ ] Remove a plugin → please use the [remove-plugin template](?template=remove-plugin.md) instead
+- [ ] Add a plugin → please use the [add-plugin template](?expand=1&template=add-plugin.md) instead
+- [ ] Update a plugin → please use the [update-plugin template](?expand=1&template=update-plugin.md) instead
+- [ ] Remove a plugin → please use the [remove-plugin template](?expand=1&template=remove-plugin.md) instead
 - [ ] Marketplace / registry change (schema, validation, `plugins/` tooling)
 - [ ] Site / docs change (landing page, README, content)
 - [ ] CI / workflow / repo tooling
