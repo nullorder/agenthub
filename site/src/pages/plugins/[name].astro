@@ -14,6 +14,7 @@ import {
   getSourceRepo,
   getSourceLabel,
 } from "../../lib/source";
+import { loadViewCounts } from "../../lib/plugins";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -76,6 +77,8 @@ const categoryColors: Record<string, string> = {
   other: "bg-gray-500/20 text-gray-300",
 };
 const categoryColor = categoryColors[plugin.category] || categoryColors.other;
+
+const viewCount = loadViewCounts()[plugin.name] ?? 0;
 
 const authorKey = plugin.author.username;
 const sameAuthor = allPlugins.filter(
@@ -200,6 +203,7 @@ const jsonLd = {
         license={plugin.license}
         category={plugin.category}
         categoryColor={categoryColor}
+        viewCount={viewCount}
       />
 
       <p class="mb-6 text-lg leading-relaxed text-gray-300">
