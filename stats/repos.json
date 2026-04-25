@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T17:00:49.428Z",
+  "generated_at": "2026-04-25T17:26:17.293Z",
   "repos": {
     "Aaronontheweb/dotnet-skills": {
       "stars": 879,
@@ -46,11 +46,11 @@
       "release": null
     },
     "EveryInc/compound-engineering-plugin": {
-      "stars": 15506,
+      "stars": 15510,
       "forks": 1198,
       "watchers": 88,
-      "issues": 59,
-      "pushed_at": "2026-04-25T09:00:05Z",
+      "issues": 60,
+      "pushed_at": "2026-04-25T17:24:11Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -60,7 +60,7 @@
       }
     },
     "Jeffallan/claude-skills": {
-      "stars": 8549,
+      "stars": 8550,
       "forks": 698,
       "watchers": 56,
       "issues": 27,
@@ -74,8 +74,8 @@
       }
     },
     "JuliusBrussee/caveman": {
-      "stars": 46326,
-      "forks": 2424,
+      "stars": 46341,
+      "forks": 2425,
       "watchers": 104,
       "issues": 148,
       "pushed_at": "2026-04-18T10:11:39Z",
@@ -102,7 +102,7 @@
       }
     },
     "Lum1104/Understand-Anything": {
-      "stars": 8897,
+      "stars": 8899,
       "forks": 754,
       "watchers": 37,
       "issues": 5,
@@ -116,7 +116,7 @@
       }
     },
     "OthmanAdi/planning-with-files": {
-      "stars": 19599,
+      "stars": 19600,
       "forks": 1760,
       "watchers": 98,
       "issues": 5,
@@ -158,10 +158,10 @@
       }
     },
     "affaan-m/everything-claude-code": {
-      "stars": 166807,
+      "stars": 166820,
       "forks": 25870,
       "watchers": 861,
-      "issues": 161,
+      "issues": 162,
       "pushed_at": "2026-04-23T06:14:29Z",
       "language": "JavaScript",
       "archived": false,
@@ -196,7 +196,7 @@
       "release": null
     },
     "alirezarezvani/claude-skills": {
-      "stars": 12688,
+      "stars": 12690,
       "forks": 1677,
       "watchers": 121,
       "issues": 20,
@@ -254,7 +254,7 @@
       }
     },
     "automazeio/ccpm": {
-      "stars": 8028,
+      "stars": 8027,
       "forks": 812,
       "watchers": 40,
       "issues": 2,
@@ -278,7 +278,7 @@
       }
     },
     "blader/humanizer": {
-      "stars": 15150,
+      "stars": 15151,
       "forks": 1365,
       "watchers": 128,
       "issues": 49,
@@ -424,7 +424,7 @@
       }
     },
     "expo/skills": {
-      "stars": 1786,
+      "stars": 1787,
       "forks": 83,
       "watchers": 20,
       "issues": 19,
@@ -454,8 +454,8 @@
       "release": null
     },
     "garrytan/gstack": {
-      "stars": 83086,
-      "forks": 12100,
+      "stars": 83107,
+      "forks": 12102,
       "watchers": 509,
       "issues": 449,
       "pushed_at": "2026-04-25T15:45:20Z",
@@ -597,7 +597,7 @@
       "stars": 20680,
       "forks": 920,
       "watchers": 32,
-      "issues": 3,
+      "issues": 2,
       "pushed_at": "2026-04-25T00:30:11Z",
       "language": "JavaScript",
       "archived": false,
@@ -636,7 +636,7 @@
       }
     },
     "lackeyjb/playwright-skill": {
-      "stars": 2494,
+      "stars": 2495,
       "forks": 166,
       "watchers": 10,
       "issues": 16,
@@ -692,8 +692,8 @@
       }
     },
     "obra/superpowers": {
-      "stars": 167437,
-      "forks": 14736,
+      "stars": 167453,
+      "forks": 14737,
       "watchers": 688,
       "issues": 329,
       "pushed_at": "2026-04-24T02:02:37Z",
@@ -758,7 +758,7 @@
       "release": null
     },
     "ryoppippi/ccusage": {
-      "stars": 13338,
+      "stars": 13339,
       "forks": 509,
       "watchers": 21,
       "issues": 180,
@@ -948,7 +948,7 @@
       "release": null
     },
     "wshobson/agents": {
-      "stars": 34281,
+      "stars": 34282,
       "forks": 3713,
       "watchers": 316,
       "issues": 9,
