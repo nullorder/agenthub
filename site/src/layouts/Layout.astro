@@ -38,10 +38,11 @@ const imageUrl = new URL(image, Astro.site).toString();
     </script>
     <!-- GoatCounter -->
     <script is:inline data-goatcounter="https://nullorder.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-    <meta name="theme-color" content="#0b1020" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)" />
     {author && <meta name="author" content={author} />}
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" type="application/xml" title="Sitemap" href="/sitemap.xml" />
