@@ -1,5 +1,15 @@
 {
-  "generated_at": null,
+  "generated_at": "2026-04-25T17:26:46.139Z",
   "source": "goatcounter",
-  "plugins": {}
+  "range": {
+    "start": "2024-01-01T00:00:00Z",
+    "end": "2026-04-25T17:26:45.495Z"
+  },
+  "plugins": {
+    "caveman": 4,
+    "abstract": 2,
+    "c-level-skills": 1,
+    "a11y-audit": 1,
+    "ask-questions-if-underspecified": 1
+  }
 }
