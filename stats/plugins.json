@@ -1,14 +1,17 @@
 {
-  "generated_at": "2026-05-01T14:48:14.718Z",
+  "generated_at": "2026-05-05T15:47:47.065Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-05-01T14:48:13.867Z"
+    "end": "2026-05-05T15:47:46.193Z"
   },
   "plugins": {
     "caveman": 6,
+    "agent-teams": 3,
     "abstract": 2,
-    "agent-teams": 1,
+    "minister": 1,
+    "ani-skills": 1,
+    "archetypes": 1,
     "dev-browser": 1,
     "c-level-skills": 1,
     "a11y-audit": 1,
