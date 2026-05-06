@@ -2565,6 +2565,27 @@
       "license": "MIT"
     },
     {
+      "name": "iconify",
+      "source": {
+        "source": "npm",
+        "package": "@anistark/iconify"
+      },
+      "description": "Turn a logo image into a favicon set (16x16.ico + 16/48/128 PNG) without leaving Claude Code.",
+      "version": "0.2.1",
+      "author": {
+        "username": "anistark",
+        "name": "Kumar Anirudha"
+      },
+      "category": "development",
+      "tags": [
+        "commands",
+        "icons",
+        "favicon",
+        "images"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "imbue",
       "source": {
         "source": "git-subdir",
