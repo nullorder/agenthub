@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-12T16:14:38.481Z",
+  "generated_at": "2026-05-14T16:06:57.028Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-05-12T16:14:37.412Z"
+    "end": "2026-05-14T16:06:56.258Z"
   },
   "plugins": {
     "caveman": 8,
