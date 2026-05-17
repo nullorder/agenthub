@@ -20,53 +20,57 @@ const data = parse(readFileSync(yamlPath, "utf-8")) as {
 const collaborators: Collaborator[] = data?.collaborators ?? [];
 ---
 
-<section class="mt-12 rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-8 text-center">
+<section
+  class="mt-12 rounded-xl border border-white/10 bg-white/5 backdrop-blur-lg p-8 text-center"
+>
   <h2 class="mb-2 text-2xl font-bold text-white">Collaborators</h2>
   <p class="mb-6 text-base text-gray-400">
-    Companies and organizations who support AgentHub.
+    Organizations and Institutes who support AgentHub.
   </p>
 
-  {collaborators.length === 0 ? (
-    <div class="mx-auto max-w-xl rounded-lg border border-dashed border-white/15 bg-white/5 p-6 text-base text-gray-500">
-      <p class="mb-2">No collaborators yet.</p>
-      <p>
-        Want to support AgentHub?{" "}
-        <a
-          href="https://discord.gg/AJMEeFXxXy"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-blue-400 hover:text-blue-300 transition-colors"
-        >
-          Get in touch
-        </a>
-        .
-      </p>
-    </div>
-  ) : (
-    <div
-      class:list={[
-        "mx-auto gap-4",
-        collaborators.length === 1
-          ? "flex max-w-sm justify-center"
-          : "grid max-w-4xl sm:grid-cols-2 lg:grid-cols-3",
-      ]}
-    >
-      {collaborators.map((c) => (
-        <a
-          href={c.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex w-full flex-col items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-5 transition-all hover:border-white/20 hover:bg-white/10"
-        >
-          <img src={c.logo} alt={c.name} class="h-12 w-auto" />
-          <div>
-            <p class="font-semibold text-white">{c.name}</p>
-            {c.tagline && (
-              <p class="mt-1 text-base text-gray-400">{c.tagline}</p>
-            )}
-          </div>
-        </a>
-      ))}
-    </div>
-  )}
+  {
+    collaborators.length === 0 ? (
+      <div class="mx-auto max-w-xl rounded-lg border border-dashed border-white/15 bg-white/5 p-6 text-base text-gray-500">
+        <p class="mb-2">No collaborators yet.</p>
+        <p>
+          Want to support AgentHub?{" "}
+          <a
+            href="https://discord.gg/AJMEeFXxXy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            Get in touch
+          </a>
+          .
+        </p>
+      </div>
+    ) : (
+      <div
+        class:list={[
+          "mx-auto gap-4",
+          collaborators.length === 1
+            ? "flex max-w-sm justify-center"
+            : "grid max-w-4xl sm:grid-cols-2 lg:grid-cols-3",
+        ]}
+      >
+        {collaborators.map((c) => (
+          <a
+            href={c.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex w-full flex-col items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-5 transition-all hover:border-white/20 hover:bg-white/10"
+          >
+            <img src={c.logo} alt={c.name} class="h-12 w-auto" />
+            <div>
+              <p class="font-semibold text-white">{c.name}</p>
+              {c.tagline && (
+                <p class="mt-1 text-base text-gray-400">{c.tagline}</p>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    )
+  }
 </section>
