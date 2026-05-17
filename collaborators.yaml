@@ -8,8 +8,8 @@
 #
 # Add an entry below to feature a collaborator on the homepage.
 
-collaborators:
-  - name: Typo
-    url: https://typoapp.io/
-    logo: https://storage.googleapis.com/typo-website-static/typo-logo.png
-    tagline: Engineering Intelligence OS
+# collaborators:
+#   - name: Typo
+#     url: https://typoapp.io/
+#     logo: https://storage.googleapis.com/typo-website-static/typo-logo.png
+#     tagline: Engineering Intelligence OS
