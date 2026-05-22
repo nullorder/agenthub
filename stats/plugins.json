@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-05-16T14:49:17.144Z",
+  "generated_at": "2026-05-22T16:18:04.249Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-05-16T14:49:16.091Z"
+    "end": "2026-05-22T16:18:03.204Z"
   },
   "plugins": {
     "caveman": 8,
-    "agent-teams": 3,
+    "agent-teams": 4,
+    "abstract": 3,
     "iconify": 2,
     "ani-skills": 2,
-    "abstract": 2,
+    "a11y-audit": 2,
     "minister": 1,
     "archetypes": 1,
     "dev-browser": 1,
     "c-level-skills": 1,
-    "a11y-audit": 1,
     "ask-questions-if-underspecified": 1
   }
 }
