@@ -2154,6 +2154,28 @@
       "license": "MIT"
     },
     {
+      "name": "feluda",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anistark/feluda.git",
+        "path": "skills/feluda"
+      },
+      "description": "License compliance skill for Claude Code — automatically runs feluda before committing new dependencies and surfaces GPL/AGPL/restrictive license warnings inline. Supports Rust, Node.js, Go, Python, Java, .NET, Ruby, PHP, C/C++, and R.",
+      "version": "1.0.0",
+      "author": {
+        "username": "anistark",
+        "name": "Kumar Anirudha"
+      },
+      "category": "security",
+      "tags": [
+        "skills",
+        "rust",
+        "license",
+        "compliance"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "finance-skills",
       "source": {
         "source": "git-subdir",
