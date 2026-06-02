@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-29T17:28:46.591Z",
+  "generated_at": "2026-06-02T18:01:36.305Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-05-29T17:28:45.552Z"
+    "end": "2026-06-02T18:01:35.220Z"
   },
   "plugins": {
-    "caveman": 9,
+    "caveman": 10,
     "agent-teams": 4,
     "abstract": 3,
     "iconify": 2,
