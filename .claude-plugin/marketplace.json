@@ -5771,6 +5771,29 @@
       "license": "MIT"
     },
     {
+      "name": "x-twitter-scraper",
+      "source": {
+        "source": "github",
+        "repo": "Xquik-dev/x-twitter-scraper"
+      },
+      "description": "Xquik X data automation skill with REST API, MCP, webhooks, SDKs, extraction workflows, and confirmation-gated actions.",
+      "version": "2.4.16",
+      "author": {
+        "username": "Xquik-dev",
+        "name": "Xquik"
+      },
+      "category": "data",
+      "tags": [
+        "skills",
+        "mcp-servers",
+        "integration",
+        "x-api",
+        "webhooks",
+        "social-media"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "yaml-language-server",
       "source": {
         "source": "git-subdir",
