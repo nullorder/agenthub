@@ -2531,6 +2531,29 @@
       "license": "MIT"
     },
     {
+      "name": "hermes-tweet",
+      "source": {
+        "source": "github",
+        "repo": "Xquik-dev/hermes-tweet",
+        "sha": "341e991dd21e10105caf1456102f36b246f6e86e"
+      },
+      "description": "Native Hermes Agent plugin for X and Twitter automation with read-first workflows and approval-gated actions.",
+      "version": "0.1.6",
+      "author": {
+        "username": "Xquik-dev",
+        "name": "Xquik-dev"
+      },
+      "category": "productivity",
+      "license": "MIT",
+      "tags": [
+        "skills",
+        "integration",
+        "social-media",
+        "twitter",
+        "x"
+      ]
+    },
+    {
       "name": "hookify",
       "source": {
         "source": "git-subdir",
