@@ -5,8 +5,12 @@ on:
     paths:
       - 'plugins/**'
 
+# This workflow runs in the PR's (fork) context, so it gets a read-only token
+# and must not need write access. The validation result comment is posted by
+# the separate comment-on-pr.yml workflow, which runs in the base-repo context
+# with write permissions. See that file for why the split is necessary.
 permissions:
-  pull-requests: write
+  contents: read
 
 jobs:
   validate:
@@ -225,18 +229,35 @@ jobs:
             exit 1
           fi
 
-      - name: Comment on PR
+      # We can't post the result comment from here: on fork PRs the
+      # GITHUB_TOKEN is read-only, so any issues/PR write returns 403. Instead
+      # we render the comment body to a file and hand it off as an artifact to
+      # comment-on-pr.yml, which runs via workflow_run with a writable token.
+      - name: Render PR comment
+        id: render
         if: always() && steps.changes.outputs.has_changes == 'true'
         uses: actions/github-script@v7
+        env:
+          DUP_OUTCOME: ${{ steps.duplicates.outcome }}
+          VAL_OUTCOME: ${{ steps.validation.outcome }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+          DUP_RESULT: ${{ steps.duplicates.outputs.result }}
+          VAL_RESULT: ${{ steps.validation.outputs.result }}
+          BUILD_RESULT: ${{ steps.build.outputs.result }}
         with:
           script: |
-            const dup = `${{ steps.duplicates.outcome }}`;
-            const val = `${{ steps.validation.outcome }}`;
-            const build = `${{ steps.build.outcome }}`;
+            const fs = require('fs');
 
-            const dupResult = `${{ steps.duplicates.outputs.result }}`;
-            const valResult = `${{ steps.validation.outputs.result }}`;
-            const buildResult = `${{ steps.build.outputs.result }}`;
+            const dup = process.env.DUP_OUTCOME;
+            const val = process.env.VAL_OUTCOME;
+            const build = process.env.BUILD_OUTCOME;
+
+            // The shell steps emit literal "\n" sequences; turn them into real
+            // newlines so the error list renders as Markdown bullets.
+            const fixup = (s) => (s || '').replace(/\\n/g, '\n');
+            const dupResult = fixup(process.env.DUP_RESULT);
+            const valResult = fixup(process.env.VAL_RESULT);
+            const buildResult = fixup(process.env.BUILD_RESULT);
 
             const allPassed = dup === 'success' && val === 'success' && build === 'success';
             const icon = (s) => s === 'success' ? ':white_check_mark:' : s === 'skipped' ? ':next_track_button:' : ':x:';
@@ -259,28 +280,14 @@ jobs:
               body += `**HTML:**\n\`\`\`html\n<a href="https://agenthub.nullorder.org">\n  <img src="https://agenthub.nullorder.org/badge.svg" alt="AgentHub" />\n</a>\n\`\`\`\n`;
             }
 
-            // Find and update existing bot comment, or create new one
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-            });
+            fs.mkdirSync('pr-comment', { recursive: true });
+            fs.writeFileSync('pr-comment/body.md', body);
+            fs.writeFileSync('pr-comment/pr.txt', String(context.issue.number));
 
-            const marker = '## Plugin Validation';
-            const existing = comments.find(c => c.body.startsWith(marker));
-
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: existing.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body,
-              });
-            }
+      - name: Upload PR comment artifact
+        if: always() && steps.changes.outputs.has_changes == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-comment
+          path: pr-comment/
+          retention-days: 1
