@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-06-12T16:39:45.820Z",
+  "generated_at": "2026-06-17T16:51:37.781Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-06-12T16:39:44.505Z"
+    "end": "2026-06-17T16:51:36.672Z"
   },
   "plugins": {
-    "caveman": 10,
+    "caveman": 11,
     "agent-teams": 4,
     "ani-skills": 3,
     "abstract": 3,
     "iconify": 2,
     "a11y-audit": 2,
+    "c4-architecture": 1,
     "startup-business-analyst": 1,
     "feluda": 1,
     "minister": 1,
