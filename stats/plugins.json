@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-19T16:28:49.688Z",
+  "generated_at": "2026-06-23T16:22:51.126Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-06-19T16:28:48.719Z"
+    "end": "2026-06-23T16:22:50.177Z"
   },
   "plugins": {
     "caveman": 11,
@@ -12,6 +12,7 @@
     "abstract": 3,
     "iconify": 2,
     "a11y-audit": 2,
+    "clojure-lsp": 1,
     "c4-architecture": 1,
     "startup-business-analyst": 1,
     "feluda": 1,
