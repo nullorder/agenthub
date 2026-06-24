@@ -3,7 +3,7 @@
   "source": {
     "source": "github",
     "repo": "Xquik-dev/hermes-tweet",
-    "sha": "341e991dd21e10105caf1456102f36b246f6e86e"
+    "sha": "cd67f9c0b5b56df0906bccf900d4054d996f285c"
   },
   "description": "Native Hermes Agent plugin for X and Twitter automation with read-first workflows and approval-gated actions.",
   "version": "0.1.6",
