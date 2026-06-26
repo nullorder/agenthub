@@ -1,17 +1,19 @@
 {
-  "generated_at": "2026-06-23T16:22:51.126Z",
+  "generated_at": "2026-06-26T16:09:02.550Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-06-23T16:22:50.177Z"
+    "end": "2026-06-26T16:09:01.374Z"
   },
   "plugins": {
-    "caveman": 11,
-    "agent-teams": 4,
-    "ani-skills": 3,
-    "abstract": 3,
-    "iconify": 2,
+    "caveman": 12,
+    "agent-teams": 5,
+    "ani-skills": 4,
+    "abstract": 4,
+    "iconify": 3,
     "a11y-audit": 2,
+    "meigen-ai-design": 1,
+    "marketing-skills": 1,
     "clojure-lsp": 1,
     "c4-architecture": 1,
     "startup-business-analyst": 1,
