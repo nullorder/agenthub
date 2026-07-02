@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-30T16:22:17.682Z",
+  "generated_at": "2026-07-02T16:00:34.647Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-06-30T16:22:16.621Z"
+    "end": "2026-07-02T16:00:33.517Z"
   },
   "plugins": {
     "caveman": 12,
@@ -11,12 +11,12 @@
     "ani-skills": 4,
     "abstract": 4,
     "iconify": 3,
+    "c4-architecture": 2,
     "a11y-audit": 2,
     "code-to-prd": 1,
     "meigen-ai-design": 1,
     "marketing-skills": 1,
     "clojure-lsp": 1,
-    "c4-architecture": 1,
     "startup-business-analyst": 1,
     "feluda": 1,
     "minister": 1,
