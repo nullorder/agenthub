@@ -1,18 +1,21 @@
 {
-  "generated_at": "2026-07-02T16:00:34.647Z",
+  "generated_at": "2026-07-04T14:59:17.565Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-07-02T16:00:33.517Z"
+    "end": "2026-07-04T14:59:16.260Z"
   },
   "plugins": {
     "caveman": 12,
     "agent-teams": 7,
     "ani-skills": 4,
     "abstract": 4,
+    "bmad-plugin": 3,
     "iconify": 3,
     "c4-architecture": 2,
     "a11y-audit": 2,
+    "burpsuite-project-parser": 1,
+    "attune": 1,
     "code-to-prd": 1,
     "meigen-ai-design": 1,
     "marketing-skills": 1,
