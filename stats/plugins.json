@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-04T14:59:17.565Z",
+  "generated_at": "2026-07-07T16:21:11.855Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-07-04T14:59:16.260Z"
+    "end": "2026-07-07T16:21:10.679Z"
   },
   "plugins": {
     "caveman": 12,
@@ -12,6 +12,7 @@
     "abstract": 4,
     "bmad-plugin": 3,
     "iconify": 3,
+    "gt-sdlc": 2,
     "c4-architecture": 2,
     "a11y-audit": 2,
     "burpsuite-project-parser": 1,
