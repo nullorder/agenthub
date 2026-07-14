@@ -1,22 +1,27 @@
 {
-  "generated_at": "2026-07-10T16:17:08.095Z",
+  "generated_at": "2026-07-14T15:17:58.846Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-07-10T16:17:06.707Z"
+    "end": "2026-07-14T15:17:57.650Z"
   },
   "plugins": {
     "caveman": 12,
     "agent-teams": 7,
+    "ani-skills": 5,
     "abstract": 5,
-    "ani-skills": 4,
     "bmad-plugin": 3,
+    "c4-architecture": 3,
     "iconify": 3,
     "agentic-actions-auditor": 2,
     "gt-sdlc": 2,
-    "c4-architecture": 2,
     "feluda": 2,
     "a11y-audit": 2,
+    "numman-ali-orchestration": 1,
+    "business-growth-skills": 1,
+    "zai-cli": 1,
+    "deploy-on-aws": 1,
+    "aws-serverless": 1,
     "axiom-apple-skills": 1,
     "elixir-ls": 1,
     "open-source-maintainer": 1,
