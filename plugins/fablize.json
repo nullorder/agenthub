@@ -1,0 +1,19 @@
+{
+  "name": "fablize",
+  "source": {
+    "source": "github",
+    "repo": "fivetaku/fablize"
+  },
+  "description": "Harness that makes Opus behave like Fable, enforcing completion, evidence, and verification as procedure",
+  "version": "2.1.1",
+  "author": {
+    "username": "fivetaku"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
+}

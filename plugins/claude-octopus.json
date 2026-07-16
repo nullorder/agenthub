@@ -1,0 +1,21 @@
+{
+  "name": "claude-octopus",
+  "source": {
+    "source": "github",
+    "repo": "nyldn/claude-octopus"
+  },
+  "description": "Puts up to 8 AI models on every research, design, or coding task to surface blindspots before you ship",
+  "version": "9.52.0",
+  "author": {
+    "username": "nyldn"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "hooks",
+    "mcp-servers"
+  ],
+  "license": "MIT"
+}

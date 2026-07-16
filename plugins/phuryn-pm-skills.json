@@ -1,0 +1,19 @@
+{
+  "name": "phuryn-pm-skills",
+  "source": {
+    "source": "github",
+    "repo": "phuryn/pm-skills"
+  },
+  "description": "68 product-management skills and 42 workflows across 9 plugins, from discovery to growth",
+  "version": "2.1.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

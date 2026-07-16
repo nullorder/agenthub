@@ -1,0 +1,22 @@
+{
+  "name": "codex",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/openai/codex-plugin-cc.git",
+    "path": "plugins/codex"
+  },
+  "description": "Use OpenAI Codex from Claude Code to review code or delegate tasks",
+  "version": "1.0.6",
+  "author": {
+    "username": "openai",
+    "name": "OpenAI"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "hooks"
+  ],
+  "license": "Apache-2.0"
+}

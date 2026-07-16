@@ -1,0 +1,18 @@
+{
+  "name": "hello2cc",
+  "source": {
+    "source": "github",
+    "repo": "hellowind777/hello2cc"
+  },
+  "description": "Alignment layer that drives third-party models toward Opus-compatible workflows and output style",
+  "version": "0.5.11",
+  "author": {
+    "username": "hellowind777"
+  },
+  "category": "development",
+  "tags": [
+    "agents",
+    "hooks"
+  ],
+  "license": "Apache-2.0"
+}

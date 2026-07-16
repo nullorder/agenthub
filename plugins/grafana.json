@@ -1,0 +1,19 @@
+{
+  "name": "grafana",
+  "source": {
+    "source": "github",
+    "repo": "grafana/mcp-grafana"
+  },
+  "description": "Grafana plugin bundling the official MCP server for dashboards, datasources, and querying",
+  "version": "0.7.6",
+  "author": {
+    "username": "grafana",
+    "name": "Grafana Labs"
+  },
+  "category": "devops",
+  "tags": [
+    "mcp-servers",
+    "integration"
+  ],
+  "license": "Apache-2.0"
+}

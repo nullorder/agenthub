@@ -1,0 +1,20 @@
+{
+  "name": "pup",
+  "source": {
+    "source": "github",
+    "repo": "DataDog/pup"
+  },
+  "description": "Datadog CLI companion with 300+ subcommands plus skills and agents for monitoring, logs, APM, and security",
+  "version": "0.25.0",
+  "author": {
+    "username": "DataDog",
+    "name": "Datadog"
+  },
+  "category": "devops",
+  "tags": [
+    "skills",
+    "agents",
+    "commands"
+  ],
+  "license": "Apache-2.0"
+}

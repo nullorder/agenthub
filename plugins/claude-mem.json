@@ -1,0 +1,20 @@
+{
+  "name": "claude-mem",
+  "source": {
+    "source": "github",
+    "repo": "thedotmack/claude-mem"
+  },
+  "description": "Persistent memory that compresses session history and injects relevant context into future sessions",
+  "version": "13.11.0",
+  "author": {
+    "username": "thedotmack",
+    "name": "Alex Newman"
+  },
+  "category": "productivity",
+  "tags": [
+    "commands",
+    "hooks",
+    "mcp-servers"
+  ],
+  "license": "Apache-2.0"
+}

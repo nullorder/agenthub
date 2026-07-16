@@ -1,0 +1,20 @@
+{
+  "name": "plugins-for-claude-natives",
+  "source": {
+    "source": "github",
+    "repo": "team-attention/plugins-for-claude-natives"
+  },
+  "description": "Utility plugin collection for power users: agent-council, gmail, youtube-digest, and 11 more",
+  "version": "0.1.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands",
+    "integration"
+  ],
+  "license": "MIT"
+}

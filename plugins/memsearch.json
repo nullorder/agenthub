@@ -1,0 +1,20 @@
+{
+  "name": "memsearch",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/zilliztech/memsearch.git",
+    "path": "plugins/claude-code"
+  },
+  "description": "Automatic semantic memory backed by Milvus: markdown-first, remembers work across sessions",
+  "version": "0.4.14",
+  "author": {
+    "username": "zilliztech",
+    "name": "Zilliz"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "hooks"
+  ],
+  "license": "MIT"
+}

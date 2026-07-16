@@ -1,0 +1,21 @@
+{
+  "name": "claude-video-vision",
+  "source": {
+    "source": "github",
+    "repo": "jordanrendric/claude-video-vision"
+  },
+  "description": "Lets Claude watch and understand videos via frame extraction and multimodal audio analysis",
+  "version": "1.2.0",
+  "author": {
+    "username": "jordanrendric",
+    "name": "Jordan Vasconcelos"
+  },
+  "category": "other",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "mcp-servers"
+  ],
+  "license": "MIT"
+}

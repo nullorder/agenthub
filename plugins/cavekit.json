@@ -1,0 +1,19 @@
+{
+  "name": "cavekit",
+  "source": {
+    "source": "github",
+    "repo": "JuliusBrussee/cavekit"
+  },
+  "description": "Compressed spec-driven dev loop over a single SPEC.md file: grill, spec, research, review, build",
+  "version": "4.1.0",
+  "author": {
+    "username": "JuliusBrussee",
+    "name": "Julius Brussee"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

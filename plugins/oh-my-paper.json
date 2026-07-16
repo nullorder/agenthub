@@ -1,0 +1,21 @@
+{
+  "name": "oh-my-paper",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/LigphiDonk/Oh-my--paper.git",
+    "path": "plugins/oh-my-paper"
+  },
+  "description": "Academic research harness: literature survey, experiments, and paper-writing pipeline",
+  "version": "1.0.0",
+  "author": {
+    "username": "LigphiDonk"
+  },
+  "category": "other",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
+}

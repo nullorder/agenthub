@@ -1,0 +1,19 @@
+{
+  "name": "brooks-lint",
+  "source": {
+    "source": "github",
+    "repo": "hyhmrright/brooks-lint"
+  },
+  "description": "AI code reviews grounded in 12 classic engineering books, with decay diagnostics and citations",
+  "version": "1.4.0",
+  "author": {
+    "username": "hyhmrright"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
+}

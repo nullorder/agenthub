@@ -1,0 +1,17 @@
+{
+  "name": "adversarial-spec",
+  "source": {
+    "source": "github",
+    "repo": "zscole/adversarial-spec"
+  },
+  "description": "Iteratively refines product specs through multi-model debate until consensus",
+  "version": "1.0.0",
+  "author": {
+    "username": "zscole"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

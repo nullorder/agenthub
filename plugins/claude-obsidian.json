@@ -1,0 +1,21 @@
+{
+  "name": "claude-obsidian",
+  "source": {
+    "source": "github",
+    "repo": "AgriciDaniel/claude-obsidian"
+  },
+  "description": "Self-organizing second brain for Obsidian that files any source into a connected Markdown wiki",
+  "version": "1.9.2",
+  "author": {
+    "username": "AgriciDaniel",
+    "name": "Daniel Agrici"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
+}

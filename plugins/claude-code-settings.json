@@ -1,0 +1,19 @@
+{
+  "name": "claude-code-settings",
+  "source": {
+    "source": "github",
+    "repo": "feiskyer/claude-code-settings"
+  },
+  "description": "Curated Claude Code settings, agents, and skills for enhanced development workflows",
+  "version": "2.2.0",
+  "author": {
+    "username": "feiskyer",
+    "name": "Pengfei Ni"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "agents"
+  ],
+  "license": "MIT"
+}

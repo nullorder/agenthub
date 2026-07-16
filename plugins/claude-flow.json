@@ -1,0 +1,21 @@
+{
+  "name": "claude-flow",
+  "source": {
+    "source": "github",
+    "repo": "ruvnet/ruflo"
+  },
+  "description": "Agent orchestration with 150+ commands, 74+ specialized agents, SPARC methodology, and swarm coordination",
+  "version": "2.5.0",
+  "author": {
+    "username": "ruvnet",
+    "name": "Reuven Cohen"
+  },
+  "category": "development",
+  "tags": [
+    "agents",
+    "commands",
+    "hooks",
+    "mcp-servers"
+  ],
+  "license": "MIT"
+}

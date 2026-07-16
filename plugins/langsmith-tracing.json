@@ -1,0 +1,19 @@
+{
+  "name": "langsmith-tracing",
+  "source": {
+    "source": "github",
+    "repo": "langchain-ai/langsmith-claude-code-plugins"
+  },
+  "description": "Traces Claude Code conversations to LangSmith, including subagent and tool executions",
+  "version": "0.2.2",
+  "author": {
+    "username": "langchain-ai",
+    "name": "LangChain"
+  },
+  "category": "development",
+  "tags": [
+    "hooks",
+    "integration"
+  ],
+  "license": "MIT"
+}

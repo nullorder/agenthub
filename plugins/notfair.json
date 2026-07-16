@@ -1,0 +1,18 @@
+{
+  "name": "notfair",
+  "source": {
+    "source": "github",
+    "repo": "nowork-studio/NotFair"
+  },
+  "description": "SEO, GEO, Google Ads, and Meta Ads skills powered by Search Console, Google Ads, and Meta Marketing APIs",
+  "version": "0.25.7",
+  "author": {
+    "username": "nowork-studio",
+    "name": "NotFair"
+  },
+  "category": "other",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

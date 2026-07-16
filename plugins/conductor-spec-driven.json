@@ -1,0 +1,17 @@
+{
+  "name": "conductor-spec-driven",
+  "source": {
+    "source": "github",
+    "repo": "gemini-cli-extensions/conductor"
+  },
+  "description": "Spec-driven development skills for AI coding agents: specify, plan, and implement features",
+  "version": "1.0.0",
+  "author": {
+    "username": "gemini-cli-extensions"
+  },
+  "category": "development",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

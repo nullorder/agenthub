@@ -48,6 +48,23 @@
       "license": "MIT"
     },
     {
+      "name": "adversarial-spec",
+      "source": {
+        "source": "github",
+        "repo": "zscole/adversarial-spec"
+      },
+      "description": "Iteratively refines product specs through multi-model debate until consensus",
+      "version": "1.0.0",
+      "author": {
+        "username": "zscole"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "agent-teams",
       "source": {
         "source": "git-subdir",
@@ -86,29 +103,6 @@
       "license": "MIT"
     },
     {
-      "name": "amazon-location-service",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/amazon-location-service"
-      },
-      "description": "Guide developers through adding maps, places search, geocoding, routing, and other geospatial features with Amazon Location Service, including authentication setup, SDK integration, and best practices.",
-      "version": "1.0.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "other",
-      "tags": [
-        "aws",
-        "location",
-        "maps",
-        "geospatial",
-        "other"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "ani-skills",
       "source": {
         "source": "github",
@@ -143,6 +137,27 @@
       "category": "productivity",
       "tags": [
         "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "arscontexta",
+      "source": {
+        "source": "github",
+        "repo": "agenticnotetaking/arscontexta"
+      },
+      "description": "Conversational derivation engine that generates an agent-native second-brain memory architecture",
+      "version": "0.8.0",
+      "author": {
+        "username": "agenticnotetaking",
+        "name": "Heinrich"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks"
       ],
       "license": "MIT"
     },
@@ -243,56 +258,6 @@
       "license": "MIT"
     },
     {
-      "name": "aws-amplify",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/aws-amplify"
-      },
-      "description": "Build full-stack apps with AWS Amplify Gen 2 using guided workflows for authentication, data models, storage, GraphQL APIs, and Lambda functions.",
-      "version": "1.0.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "development",
-      "tags": [
-        "aws",
-        "amplify",
-        "fullstack",
-        "other"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "aws-serverless",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/aws-serverless"
-      },
-      "description": "Design, build, deploy, test, and debug serverless applications with AWS Serverless services.",
-      "version": "1.0.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "development",
-      "tags": [
-        "aws",
-        "serverless",
-        "lambda",
-        "durable functions",
-        "development",
-        "sam",
-        "api gateway",
-        "eventbridge",
-        "step functions",
-        "other"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "axiom-apple-skills",
       "source": {
         "source": "github",
@@ -334,6 +299,26 @@
       "license": "MIT"
     },
     {
+      "name": "beads",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/gastownhall/beads.git",
+        "path": "plugins/beads"
+      },
+      "description": "AI-supervised issue tracker giving coding agents persistent, queryable task memory across sessions",
+      "version": "1.1.0",
+      "author": {
+        "username": "gastownhall",
+        "name": "Steve Yegge"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "agents"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "beta-mcp-skills",
       "source": {
         "source": "git-subdir",
@@ -370,6 +355,25 @@
         "skills",
         "agents",
         "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "brooks-lint",
+      "source": {
+        "source": "github",
+        "repo": "hyhmrright/brooks-lint"
+      },
+      "description": "AI code reviews grounded in 12 classic engineering books, with decay diagnostics and citations",
+      "version": "1.4.0",
+      "author": {
+        "username": "hyhmrright"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands",
+        "hooks"
       ],
       "license": "MIT"
     },
@@ -507,6 +511,25 @@
       "license": "MIT"
     },
     {
+      "name": "cavekit",
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/cavekit"
+      },
+      "description": "Compressed spec-driven dev loop over a single SPEC.md file: grill, spec, research, review, build",
+      "version": "4.1.0",
+      "author": {
+        "username": "JuliusBrussee",
+        "name": "Julius Brussee"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "caveman",
       "source": {
         "source": "github",
@@ -595,27 +618,6 @@
       "category": "productivity",
       "tags": [
         "mcp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "clangd",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "clangd"
-      },
-      "description": "C/C++ language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "c",
-        "cpp",
-        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -755,6 +757,25 @@
       "license": "MIT"
     },
     {
+      "name": "claude-code-settings",
+      "source": {
+        "source": "github",
+        "repo": "feiskyer/claude-code-settings"
+      },
+      "description": "Curated Claude Code settings, agents, and skills for enhanced development workflows",
+      "version": "2.2.0",
+      "author": {
+        "username": "feiskyer",
+        "name": "Pengfei Ni"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "claude-code-soul",
       "source": {
         "source": "github",
@@ -793,6 +814,26 @@
       "license": "MIT"
     },
     {
+      "name": "claude-council",
+      "source": {
+        "source": "github",
+        "repo": "hex/claude-council"
+      },
+      "description": "Consult multiple AI coding agents like Gemini, OpenAI, Grok, and Perplexity for diverse perspectives",
+      "version": "2026.7.8",
+      "author": {
+        "username": "hex"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "claude-elixir-phoenix",
       "source": {
         "source": "git-subdir",
@@ -809,6 +850,27 @@
       "tags": [
         "skills",
         "commands"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "claude-flow",
+      "source": {
+        "source": "github",
+        "repo": "ruvnet/ruflo"
+      },
+      "description": "Agent orchestration with 150+ commands, 74+ specialized agents, SPARC methodology, and swarm coordination",
+      "version": "2.5.0",
+      "author": {
+        "username": "ruvnet",
+        "name": "Reuven Cohen"
+      },
+      "category": "development",
+      "tags": [
+        "agents",
+        "commands",
+        "hooks",
+        "mcp-servers"
       ],
       "license": "MIT"
     },
@@ -925,6 +987,68 @@
       "license": "MIT"
     },
     {
+      "name": "claude-mem",
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      },
+      "description": "Persistent memory that compresses session history and injects relevant context into future sessions",
+      "version": "13.11.0",
+      "author": {
+        "username": "thedotmack",
+        "name": "Alex Newman"
+      },
+      "category": "productivity",
+      "tags": [
+        "commands",
+        "hooks",
+        "mcp-servers"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "claude-obsidian",
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-obsidian"
+      },
+      "description": "Self-organizing second brain for Obsidian that files any source into a connected Markdown wiki",
+      "version": "1.9.2",
+      "author": {
+        "username": "AgriciDaniel",
+        "name": "Daniel Agrici"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "claude-octopus",
+      "source": {
+        "source": "github",
+        "repo": "nyldn/claude-octopus"
+      },
+      "description": "Puts up to 8 AI models on every research, design, or coding task to surface blindspots before you ship",
+      "version": "9.52.0",
+      "author": {
+        "username": "nyldn"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks",
+        "mcp-servers"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "claude-scientific-skills",
       "source": {
         "source": "github",
@@ -939,6 +1063,27 @@
       "category": "documentation",
       "tags": [
         "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "claude-video-vision",
+      "source": {
+        "source": "github",
+        "repo": "jordanrendric/claude-video-vision"
+      },
+      "description": "Lets Claude watch and understand videos via frame extraction and multimodal audio analysis",
+      "version": "1.2.0",
+      "author": {
+        "username": "jordanrendric",
+        "name": "Jordan Vasconcelos"
+      },
+      "category": "other",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "mcp-servers"
       ],
       "license": "MIT"
     },
@@ -984,25 +1129,6 @@
       "license": "MIT"
     },
     {
-      "name": "cloudflare-skills",
-      "source": {
-        "source": "github",
-        "repo": "cloudflare/skills"
-      },
-      "description": "Skills and commands for Cloudflare Workers, Pages, D1, R2, AI, and networking",
-      "version": "1.0.0",
-      "author": {
-        "username": "cloudflare",
-        "name": "Cloudflare"
-      },
-      "category": "devops",
-      "tags": [
-        "skills",
-        "commands"
-      ],
-      "license": "Apache-2.0"
-    },
-    {
       "name": "code-to-prd",
       "source": {
         "source": "git-subdir",
@@ -1039,6 +1165,28 @@
         "skills"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "codex",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/openai/codex-plugin-cc.git",
+        "path": "plugins/codex"
+      },
+      "description": "Use OpenAI Codex from Claude Code to review code or delegate tasks",
+      "version": "1.0.6",
+      "author": {
+        "username": "openai",
+        "name": "OpenAI"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "agents",
+        "commands",
+        "hooks"
+      ],
+      "license": "Apache-2.0"
     },
     {
       "name": "coding-tutor",
@@ -1108,6 +1256,23 @@
         "other"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "conductor-spec-driven",
+      "source": {
+        "source": "github",
+        "repo": "gemini-cli-extensions/conductor"
+      },
+      "description": "Spec-driven development skills for AI coding agents: specify, plan, and implement features",
+      "version": "1.0.0",
+      "author": {
+        "username": "gemini-cli-extensions"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
     },
     {
       "name": "conductor",
@@ -1303,31 +1468,6 @@
       "license": "MIT"
     },
     {
-      "name": "databases-on-aws",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/databases-on-aws"
-      },
-      "description": "Expert database guidance for the AWS database portfolio. Design schemas, execute queries, handle migrations, and choose the right database for your workload.",
-      "version": "1.0.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "data",
-      "tags": [
-        "aws",
-        "database",
-        "aurora",
-        "dsql",
-        "serverless",
-        "postgresql",
-        "other"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "debug-buttercup",
       "source": {
         "source": "git-subdir",
@@ -1362,29 +1502,6 @@
       "category": "development",
       "tags": [
         "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "deploy-on-aws",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/deploy-on-aws"
-      },
-      "description": "Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.",
-      "version": "1.1.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "devops",
-      "tags": [
-        "aws",
-        "deploy",
-        "infrastructure",
-        "cdk",
-        "other"
       ],
       "license": "MIT"
     },
@@ -2097,59 +2214,21 @@
       "license": "MIT"
     },
     {
-      "name": "expo-app-design",
+      "name": "fablize",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/expo/skills.git",
-        "path": "plugins/expo"
+        "source": "github",
+        "repo": "fivetaku/fablize"
       },
-      "description": "[Deprecated] Use the \"expo\" plugin instead. Build robust, productivity apps with Expo.",
-      "version": "1.0.0",
+      "description": "Harness that makes Opus behave like Fable, enforcing completion, evidence, and verification as procedure",
+      "version": "2.1.1",
       "author": {
-        "username": "expo",
-        "name": "Expo Team"
+        "username": "fivetaku"
       },
       "category": "productivity",
       "tags": [
-        "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "expo-deployment",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/expo/skills.git",
-        "path": "plugins/expo"
-      },
-      "description": "[Deprecated] Use the \"expo\" plugin instead. Deploying Expo apps to App Store, Play Store, and web.",
-      "version": "1.0.0",
-      "author": {
-        "username": "expo",
-        "name": "Expo Team"
-      },
-      "category": "devops",
-      "tags": [
-        "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "expo",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/expo/skills.git",
-        "path": "plugins/expo"
-      },
-      "description": "Official Expo skills for building, deploying, upgrading, and debugging Expo apps.",
-      "version": "1.0.0",
-      "author": {
-        "username": "expo",
-        "name": "Expo Team"
-      },
-      "category": "devops",
-      "tags": [
-        "skills"
+        "skills",
+        "commands",
+        "hooks"
       ],
       "license": "MIT"
     },
@@ -2193,24 +2272,6 @@
         "skills"
       ],
       "license": "MIT"
-    },
-    {
-      "name": "firebase-agent-skills",
-      "source": {
-        "source": "github",
-        "repo": "firebase/agent-skills"
-      },
-      "description": "Agent skills for Firebase SDK setup, feature configuration, and deployment",
-      "version": "1.0.0",
-      "author": {
-        "username": "firebase",
-        "name": "Firebase"
-      },
-      "category": "development",
-      "tags": [
-        "skills"
-      ],
-      "license": "Apache-2.0"
     },
     {
       "name": "firebase-apk-scanner",
@@ -2434,24 +2495,23 @@
       "license": "MIT"
     },
     {
-      "name": "gopls",
+      "name": "grafana",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "gopls"
+        "source": "github",
+        "repo": "grafana/mcp-grafana"
       },
-      "description": "Go language server",
-      "version": "1.0.0",
+      "description": "Grafana plugin bundling the official MCP server for dashboards, datasources, and querying",
+      "version": "0.7.6",
       "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
+        "username": "grafana",
+        "name": "Grafana Labs"
       },
-      "category": "development",
+      "category": "devops",
       "tags": [
-        "go",
-        "lsp-servers"
+        "mcp-servers",
+        "integration"
       ],
-      "license": "MIT"
+      "license": "Apache-2.0"
     },
     {
       "name": "gstack",
@@ -2491,6 +2551,42 @@
         "skills"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "harness",
+      "source": {
+        "source": "github",
+        "repo": "revfactory/harness"
+      },
+      "description": "Meta-skill that turns a domain description into an agent team and its skills, with six team-architecture patterns",
+      "version": "1.2.0",
+      "author": {
+        "username": "revfactory",
+        "name": "Robin"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "hello2cc",
+      "source": {
+        "source": "github",
+        "repo": "hellowind777/hello2cc"
+      },
+      "description": "Alignment layer that drives third-party models toward Opus-compatible workflows and output style",
+      "version": "0.5.11",
+      "author": {
+        "username": "hellowind777"
+      },
+      "category": "development",
+      "tags": [
+        "agents",
+        "hooks"
+      ],
+      "license": "Apache-2.0"
     },
     {
       "name": "helm-chart-builder",
@@ -2552,44 +2648,6 @@
         "twitter",
         "x"
       ]
-    },
-    {
-      "name": "hookify",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/athola/claude-night-market.git",
-        "path": "plugins/hookify"
-      },
-      "description": "Behavioral rules engine: create safety hooks through markdown configuration with pattern matching and zero-code rule authoring",
-      "version": "1.8.1",
-      "author": {
-        "username": "athola",
-        "name": "athola"
-      },
-      "category": "security",
-      "tags": [
-        "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "huggingface-trackio",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/huggingface/skills.git",
-        "path": "skills/huggingface-trackio"
-      },
-      "description": "Track and visualize ML training experiments with Trackio. Log metrics via Python API and retrieve them via CLI. Supports real-time dashboards synced to HF Spaces.",
-      "version": "1.0.0",
-      "author": {
-        "username": "huggingface",
-        "name": "Hugging Face"
-      },
-      "category": "data",
-      "tags": [
-        "skills"
-      ],
-      "license": "MIT"
     },
     {
       "name": "humanizer",
@@ -2669,46 +2727,6 @@
       "license": "MIT"
     },
     {
-      "name": "intelephense",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "intelephense"
-      },
-      "description": "PHP language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "php",
-        "lsp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "jdtls",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "jdtls"
-      },
-      "description": "Java language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "java",
-        "lsp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "jeffallan-claude-skills",
       "source": {
         "source": "github",
@@ -2728,22 +2746,21 @@
       "license": "MIT"
     },
     {
-      "name": "kotlin-lsp",
+      "name": "langsmith-tracing",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "kotlin-lsp"
+        "source": "github",
+        "repo": "langchain-ai/langsmith-claude-code-plugins"
       },
-      "description": "Kotlin language server",
-      "version": "1.0.0",
+      "description": "Traces Claude Code conversations to LangSmith, including subagent and tool executions",
+      "version": "0.2.2",
       "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
+        "username": "langchain-ai",
+        "name": "LangChain"
       },
       "category": "development",
       "tags": [
-        "kotlin",
-        "lsp-servers"
+        "hooks",
+        "integration"
       ],
       "license": "MIT"
     },
@@ -2842,26 +2859,6 @@
       "license": "MIT"
     },
     {
-      "name": "lua-language-server",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "lua-language-server"
-      },
-      "description": "Lua language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "lua",
-        "lsp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "marketing-skills",
       "source": {
         "source": "git-subdir",
@@ -2938,6 +2935,26 @@
       "license": "MIT"
     },
     {
+      "name": "memsearch",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/zilliztech/memsearch.git",
+        "path": "plugins/claude-code"
+      },
+      "description": "Automatic semantic memory backed by Milvus: markdown-first, remembers work across sessions",
+      "version": "0.4.14",
+      "author": {
+        "username": "zilliztech",
+        "name": "Zilliz"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "hooks"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "metronome",
       "source": {
         "source": "url",
@@ -2952,29 +2969,6 @@
       "category": "productivity",
       "tags": [
         "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "migration-to-aws",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/migration-to-aws"
-      },
-      "description": "This no-cost tool assesses your current cloud provider's usage, geography, and billing data to estimate and compare AWS services and pricing, and recommends migration or continued use of your current provider. AWS pricing is based on current published pricing and may vary over time. The tool may generate a .migration folder containing comparison and migration execution data, which you may delete upon completion or use to migrate to AWS.",
-      "version": "1.0.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "development",
-      "tags": [
-        "aws",
-        "gcp",
-        "migration",
-        "infrastructure",
-        "other"
       ],
       "license": "MIT"
     },
@@ -3075,6 +3069,24 @@
       "license": "MIT"
     },
     {
+      "name": "notfair",
+      "source": {
+        "source": "github",
+        "repo": "nowork-studio/NotFair"
+      },
+      "description": "SEO, GEO, Google Ads, and Meta Ads skills powered by Search Console, Google Ads, and Meta Marketing APIs",
+      "version": "0.25.7",
+      "author": {
+        "username": "nowork-studio",
+        "name": "NotFair"
+      },
+      "category": "other",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "nothing-design-skill",
       "source": {
         "source": "github",
@@ -3133,23 +3145,23 @@
       "license": "MIT"
     },
     {
-      "name": "omnisharp",
+      "name": "oh-my-paper",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "omnisharp"
+        "url": "https://github.com/LigphiDonk/Oh-my--paper.git",
+        "path": "plugins/oh-my-paper"
       },
-      "description": "C# language server",
+      "description": "Academic research harness: literature survey, experiments, and paper-writing pipeline",
       "version": "1.0.0",
       "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
+        "username": "LigphiDonk"
       },
-      "category": "development",
+      "category": "other",
       "tags": [
-        "csharp",
-        "dotnet",
-        "lsp-servers"
+        "skills",
+        "agents",
+        "commands",
+        "hooks"
       ],
       "license": "MIT"
     },
@@ -3344,6 +3356,25 @@
       "license": "MIT"
     },
     {
+      "name": "phuryn-pm-skills",
+      "source": {
+        "source": "github",
+        "repo": "phuryn/pm-skills"
+      },
+      "description": "68 product-management skills and 42 workflows across 9 plugins, from discovery to growth",
+      "version": "2.1.0",
+      "author": {
+        "username": "phuryn",
+        "name": "Paweł Huryn"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "commands"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "planning-with-files",
       "source": {
         "source": "github",
@@ -3359,24 +3390,6 @@
       "tags": [
         "skills",
         "commands"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "playwright-skill",
-      "source": {
-        "source": "github",
-        "repo": "lackeyjb/playwright-skill"
-      },
-      "description": "Browser automation skill using Playwright for testing and web interaction",
-      "version": "1.0.0",
-      "author": {
-        "username": "lackeyjb",
-        "name": "John Lackey"
-      },
-      "category": "testing",
-      "tags": [
-        "skills"
       ],
       "license": "MIT"
     },
@@ -3400,6 +3413,26 @@
       "license": "MIT"
     },
     {
+      "name": "plugins-for-claude-natives",
+      "source": {
+        "source": "github",
+        "repo": "team-attention/plugins-for-claude-natives"
+      },
+      "description": "Utility plugin collection for power users: agent-council, gmail, youtube-digest, and 11 more",
+      "version": "0.1.0",
+      "author": {
+        "username": "team-attention",
+        "name": "Team Attention"
+      },
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "commands",
+        "integration"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "pm-skills",
       "source": {
         "source": "git-subdir",
@@ -3417,6 +3450,44 @@
         "skills"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "ponytail",
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      },
+      "description": "Lazy-senior-dev mode that forces the simplest working solution: YAGNI, stdlib first, no unrequested abstractions",
+      "version": "4.8.4",
+      "author": {
+        "username": "DietrichGebert",
+        "name": "Dietrich Gebert"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands",
+        "hooks"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "postgres-skills",
+      "source": {
+        "source": "github",
+        "repo": "neondatabase/postgres-skills"
+      },
+      "description": "Postgres best practices and guidelines for coding agents, published by Neon",
+      "version": "1.0.0",
+      "author": {
+        "username": "neondatabase",
+        "name": "Neon"
+      },
+      "category": "data",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
     },
     {
       "name": "presentations",
@@ -3476,6 +3547,26 @@
       "license": "MIT"
     },
     {
+      "name": "pup",
+      "source": {
+        "source": "github",
+        "repo": "DataDog/pup"
+      },
+      "description": "Datadog CLI companion with 300+ subcommands plus skills and agents for monitoring, logs, APM, and security",
+      "version": "0.25.0",
+      "author": {
+        "username": "DataDog",
+        "name": "Datadog"
+      },
+      "category": "devops",
+      "tags": [
+        "skills",
+        "agents",
+        "commands"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
       "name": "pw",
       "source": {
         "source": "git-subdir",
@@ -3491,26 +3582,6 @@
       "category": "development",
       "tags": [
         "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "pyright",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "pyright"
-      },
-      "description": "Python language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "python",
-        "lsp-servers"
       ],
       "license": "MIT"
     },
@@ -3534,25 +3605,6 @@
       "license": "MIT"
     },
     {
-      "name": "ralph-claude-code",
-      "source": {
-        "source": "github",
-        "repo": "frankbria/ralph-claude-code"
-      },
-      "description": "Autonomous AI development loop with intelligent exit detection, rate limiting, and circuit breakers",
-      "version": "1.0.0",
-      "author": {
-        "username": "frankbria",
-        "name": "Frank Bria"
-      },
-      "category": "productivity",
-      "tags": [
-        "hooks",
-        "commands"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "recall",
       "source": {
         "source": "github",
@@ -3569,6 +3621,24 @@
         "commands"
       ],
       "license": "MIT"
+    },
+    {
+      "name": "replicate",
+      "source": {
+        "source": "github",
+        "repo": "replicate/skills"
+      },
+      "description": "Skills for finding, comparing, running, and prompting AI models on Replicate",
+      "version": "2.0.0",
+      "author": {
+        "username": "replicate",
+        "name": "Replicate"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
+      ],
+      "license": "Apache-2.0"
     },
     {
       "name": "research-summarizer",
@@ -3628,49 +3698,6 @@
       "license": "MIT"
     },
     {
-      "name": "rust-analyzer",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "rust-analyzer"
-      },
-      "description": "Rust language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "rust",
-        "lsp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "sagemaker-ai",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/sagemaker-ai"
-      },
-      "description": "Build, train, and deploy AI models with deep AWS AI/ML expertise brought directly into your coding assistants, covering the surface area of Amazon SageMaker AI.",
-      "version": "1.0.0",
-      "author": {
-        "username": "awslabs",
-        "name": "Amazon Web Services"
-      },
-      "category": "data",
-      "tags": [
-        "aws",
-        "sagemaker",
-        "machine-learning",
-        "generative-ai",
-        "other"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "sanctum",
       "source": {
         "source": "git-subdir",
@@ -3684,6 +3711,24 @@
         "name": "athola"
       },
       "category": "documentation",
+      "tags": [
+        "skills"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "sawyerhood-dev-browser",
+      "source": {
+        "source": "github",
+        "repo": "SawyerHood/dev-browser"
+      },
+      "description": "Browser automation with persistent page state so Claude Code can test and verify its own work",
+      "version": "0.2.9",
+      "author": {
+        "username": "SawyerHood",
+        "name": "Sawyer Hood"
+      },
+      "category": "testing",
       "tags": [
         "skills"
       ],
@@ -3955,48 +4000,6 @@
       "license": "Apache-2.0"
     },
     {
-      "name": "solargraph",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "solargraph"
-      },
-      "description": "Ruby language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "ruby",
-        "lsp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "sourcekit-lsp",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "sourcekit-lsp"
-      },
-      "description": "Swift language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "swift",
-        "ios",
-        "macos",
-        "lsp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "spec-kit",
       "source": {
         "source": "git-subdir",
@@ -4091,26 +4094,6 @@
       "license": "Apache-2.0"
     },
     {
-      "name": "stripe-ai",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/stripe/ai.git",
-        "path": "providers/claude/plugin/"
-      },
-      "description": "Skills and commands for building AI-powered products with Stripe payments and webhooks",
-      "version": "1.0.0",
-      "author": {
-        "username": "stripe",
-        "name": "Stripe"
-      },
-      "category": "development",
-      "tags": [
-        "skills",
-        "commands"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "supabase-agent-skills",
       "source": {
         "source": "github",
@@ -4144,27 +4127,6 @@
       "tags": [
         "skills",
         "mcp-servers"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "superpowers",
-      "source": {
-        "source": "github",
-        "repo": "obra/superpowers"
-      },
-      "description": "Agentic skills framework and software development methodology with structured TDD workflow",
-      "version": "1.0.0",
-      "author": {
-        "username": "obra",
-        "name": "Jesse Vincent"
-      },
-      "category": "development",
-      "tags": [
-        "skills",
-        "agents",
-        "commands",
-        "hooks"
       ],
       "license": "MIT"
     },
@@ -4224,6 +4186,24 @@
       "tags": [
         "skills",
         "hooks"
+      ],
+      "license": "MIT"
+    },
+    {
+      "name": "temporal",
+      "source": {
+        "source": "github",
+        "repo": "temporalio/claude-temporal-plugin"
+      },
+      "description": "Skills for the full Temporal lifecycle: app development, CLI, self-hosted server, and Temporal Cloud",
+      "version": "0.3.0",
+      "author": {
+        "username": "temporalio",
+        "name": "Temporal Technologies"
+      },
+      "category": "development",
+      "tags": [
+        "skills"
       ],
       "license": "MIT"
     },
@@ -4420,25 +4400,6 @@
       "license": "MIT"
     },
     {
-      "name": "upgrading-expo",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/expo/skills.git",
-        "path": "plugins/expo"
-      },
-      "description": "[Deprecated] Use the \"expo\" plugin instead. Guidelines for upgrading Expo SDK versions.",
-      "version": "1.0.0",
-      "author": {
-        "username": "expo",
-        "name": "Expo Team"
-      },
-      "category": "development",
-      "tags": [
-        "skills"
-      ],
-      "license": "MIT"
-    },
-    {
       "name": "usage-estimate",
       "source": {
         "source": "npm",
@@ -4492,27 +4453,6 @@
       "category": "development",
       "tags": [
         "skills"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "vtsls",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/boostvolt/claude-code-lsps.git",
-        "path": "vtsls"
-      },
-      "description": "TypeScript/JavaScript language server",
-      "version": "1.0.0",
-      "author": {
-        "username": "boostvolt",
-        "name": "Jan Kott"
-      },
-      "category": "development",
-      "tags": [
-        "typescript",
-        "javascript",
-        "lsp-servers"
       ],
       "license": "MIT"
     },

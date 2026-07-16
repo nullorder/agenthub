@@ -1,0 +1,18 @@
+{
+  "name": "sawyerhood-dev-browser",
+  "source": {
+    "source": "github",
+    "repo": "SawyerHood/dev-browser"
+  },
+  "description": "Browser automation with persistent page state so Claude Code can test and verify its own work",
+  "version": "0.2.9",
+  "author": {
+    "username": "SawyerHood",
+    "name": "Sawyer Hood"
+  },
+  "category": "testing",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

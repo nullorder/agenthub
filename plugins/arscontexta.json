@@ -1,0 +1,21 @@
+{
+  "name": "arscontexta",
+  "source": {
+    "source": "github",
+    "repo": "agenticnotetaking/arscontexta"
+  },
+  "description": "Conversational derivation engine that generates an agent-native second-brain memory architecture",
+  "version": "0.8.0",
+  "author": {
+    "username": "agenticnotetaking",
+    "name": "Heinrich"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "agents",
+    "commands",
+    "hooks"
+  ],
+  "license": "MIT"
+}
