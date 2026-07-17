@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-14T15:17:58.846Z",
+  "generated_at": "2026-07-17T15:07:15.745Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-07-14T15:17:57.650Z"
+    "end": "2026-07-17T15:07:14.730Z"
   },
   "plugins": {
     "caveman": 12,
@@ -20,8 +20,6 @@
     "numman-ali-orchestration": 1,
     "business-growth-skills": 1,
     "zai-cli": 1,
-    "deploy-on-aws": 1,
-    "aws-serverless": 1,
     "axiom-apple-skills": 1,
     "elixir-ls": 1,
     "open-source-maintainer": 1,
