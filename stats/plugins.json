@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-07-17T15:07:15.745Z",
+  "generated_at": "2026-07-21T15:28:57.217Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-07-17T15:07:14.730Z"
+    "end": "2026-07-21T15:28:55.811Z"
   },
   "plugins": {
-    "caveman": 12,
+    "caveman": 14,
     "agent-teams": 7,
     "ani-skills": 5,
     "abstract": 5,
+    "gt-sdlc": 3,
     "bmad-plugin": 3,
     "c4-architecture": 3,
     "iconify": 3,
     "agentic-actions-auditor": 2,
-    "gt-sdlc": 2,
     "feluda": 2,
     "a11y-audit": 2,
     "numman-ali-orchestration": 1,
