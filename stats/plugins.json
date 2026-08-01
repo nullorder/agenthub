@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-28T15:59:14.380Z",
+  "generated_at": "2026-08-01T14:53:22.181Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-07-28T15:59:13.222Z"
+    "end": "2026-08-01T14:53:20.910Z"
   },
   "plugins": {
-    "caveman": 14,
+    "caveman": 15,
     "agent-teams": 7,
+    "abstract": 6,
     "ani-skills": 5,
-    "abstract": 5,
     "c4-architecture": 4,
     "iconify": 4,
     "gt-sdlc": 3,
@@ -17,7 +17,9 @@
     "agentic-actions-auditor": 2,
     "meigen-ai-design": 2,
     "feluda": 2,
+    "dev-browser": 2,
     "a11y-audit": 2,
+    "usage-estimate": 1,
     "numman-ali-orchestration": 1,
     "business-growth-skills": 1,
     "zai-cli": 1,
@@ -33,7 +35,6 @@
     "startup-business-analyst": 1,
     "minister": 1,
     "archetypes": 1,
-    "dev-browser": 1,
     "c-level-skills": 1,
     "ask-questions-if-underspecified": 1
   }
