@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-04T16:08:07.135Z",
+  "generated_at": "2026-08-08T14:23:52.203Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-08-04T16:08:05.593Z"
+    "end": "2026-08-08T14:23:50.992Z"
   },
   "plugins": {
     "caveman": 15,
@@ -27,6 +27,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "cartograph": 1,
     "sutras": 1,
     "astral-plugins": 1,
     "usage-estimate": 1,
