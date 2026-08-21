@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-19T14:24:13.762Z",
+  "generated_at": "2026-08-21T14:25:53.019Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-08-19T14:24:12.562Z"
+    "end": "2026-08-21T14:25:51.011Z"
   },
   "plugins": {
     "caveman": 15,
@@ -30,6 +30,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "claude-context-optimizer": 1,
     "skill-improver": 1,
     "claude-k8s-plugin": 1,
     "gstack": 1,
