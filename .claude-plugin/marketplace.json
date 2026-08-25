@@ -3648,6 +3648,28 @@
       "license": "MIT"
     },
     {
+      "name": "reimagine-it",
+      "source": {
+        "source": "github",
+        "repo": "Kayforkind/reimagine-it"
+      },
+      "description": "Redesign any file from its own nouns, dates, and colors — webpage, paper infographic, living SVG, Three.js room, playable simulation. Not a mood board.",
+      "version": "2.3.0",
+      "author": {
+        "username": "Kayforkind",
+        "name": "Kayforkind"
+      },
+      "category": "productivity",
+      "license": "MIT",
+      "tags": [
+        "skills",
+        "design",
+        "infographic",
+        "html",
+        "svg"
+      ]
+    },
+    {
       "name": "replicate",
       "source": {
         "source": "github",
