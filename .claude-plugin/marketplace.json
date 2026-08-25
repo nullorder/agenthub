@@ -2859,6 +2859,31 @@
       "license": "MIT"
     },
     {
+      "name": "llm-box",
+      "source": {
+        "source": "git",
+        "url": "https://github.com/alib8b8/llm-box.git"
+      },
+      "description": "Terminal-first workflow automation engine. Generate and execute YAML workflows from plain English descriptions. Features 20+ built-in nodes, 15+ LLM providers, and MCP server mode.",
+      "version": "0.3.0",
+      "author": {
+        "username": "alib8b8",
+        "name": "alib8b8"
+      },
+      "category": "development",
+      "tags": [
+        "skills",
+        "commands",
+        "mcp-servers",
+        "workflow",
+        "automation",
+        "cli",
+        "yaml",
+        "llm"
+      ],
+      "license": "MIT"
+    },
+    {
       "name": "marketing-skills",
       "source": {
         "source": "git-subdir",
