@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-21T14:25:53.019Z",
+  "generated_at": "2026-08-26T14:36:07.436Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-08-21T14:25:51.011Z"
+    "end": "2026-08-26T14:36:05.642Z"
   },
   "plugins": {
     "caveman": 15,
     "agent-teams": 7,
+    "ani-skills": 6,
     "abstract": 6,
     "iconify": 5,
-    "ani-skills": 5,
     "c4-architecture": 4,
     "agentic-actions-auditor": 3,
     "gt-sdlc": 3,
@@ -30,6 +30,9 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "imax-view": 1,
+    "llm-box": 1,
+    "reimagine-it": 1,
     "claude-context-optimizer": 1,
     "skill-improver": 1,
     "claude-k8s-plugin": 1,
