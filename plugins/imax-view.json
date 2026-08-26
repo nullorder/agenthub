@@ -1,0 +1,16 @@
+{
+  "name": "imax-view",
+  "source": {
+    "source": "github",
+    "repo": "anistark/imax-view"
+  },
+  "description": "House visual system for anything with a rendered appearance. Sets the frame ratio, 15-column grid, monospace type scale, spacing, and palette, derived from the IMAX 15/70 film format.",
+  "version": "0.1.0",
+  "author": {
+    "username": "anistark",
+    "name": "Kumar Anirudha"
+  },
+  "category": "design",
+  "tags": ["skills", "design-system", "design-tokens", "css"],
+  "license": "MIT"
+}
