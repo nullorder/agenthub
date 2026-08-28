@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-26T14:36:07.436Z",
+  "generated_at": "2026-08-28T23:19:59.309Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-08-26T14:36:05.642Z"
+    "end": "2026-08-28T23:19:57.586Z"
   },
   "plugins": {
     "caveman": 15,
@@ -30,6 +30,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "scribe": 1,
     "imax-view": 1,
     "llm-box": 1,
     "reimagine-it": 1,
