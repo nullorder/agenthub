@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-28T23:19:59.309Z",
+  "generated_at": "2026-09-01T17:30:41.763Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-08-28T23:19:57.586Z"
+    "end": "2026-09-01T17:30:40.492Z"
   },
   "plugins": {
     "caveman": 15,
@@ -12,6 +12,8 @@
     "abstract": 6,
     "iconify": 5,
     "c4-architecture": 4,
+    "security-scanner-plugin": 3,
+    "claude-council": 3,
     "agentic-actions-auditor": 3,
     "gt-sdlc": 3,
     "bmad-plugin": 3,
