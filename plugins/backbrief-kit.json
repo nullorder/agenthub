@@ -1,0 +1,21 @@
+{
+  "name": "backbrief-kit",
+  "source": {
+    "source": "github",
+    "repo": "charlesashe/backbrief-kit"
+  },
+  "description": "Run a Claude Code project like a team instead of one long chat: an orchestrator that plans and routes work to specialist agents, a fresh-context verifier that checks finished artifacts before they ship, and project memory that survives across sessions via /handoff and /pickup.",
+  "version": "2.10.0",
+  "author": {
+    "username": "charlesashe",
+    "name": "Charles Ashe"
+  },
+  "category": "productivity",
+  "license": "Custom (source-available; free to use and share unmodified, not for resale)",
+  "tags": [
+    "commands",
+    "orchestration",
+    "verification",
+    "project-memory"
+  ]
+}
