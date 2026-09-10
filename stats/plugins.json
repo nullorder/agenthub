@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-08T17:40:53.213Z",
+  "generated_at": "2026-09-10T17:24:58.843Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-09-08T17:40:51.380Z"
+    "end": "2026-09-10T17:24:57.316Z"
   },
   "plugins": {
     "caveman": 16,
@@ -11,12 +11,12 @@
     "ani-skills": 6,
     "abstract": 6,
     "iconify": 5,
+    "gt-sdlc": 4,
     "c4-architecture": 4,
     "product-skills": 3,
     "security-scanner-plugin": 3,
     "claude-council": 3,
     "agentic-actions-auditor": 3,
-    "gt-sdlc": 3,
     "bmad-plugin": 3,
     "plugin-eval": 2,
     "gauntlet": 2,
