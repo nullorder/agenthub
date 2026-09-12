@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-10T17:24:58.843Z",
+  "generated_at": "2026-09-12T16:39:36.888Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-09-10T17:24:57.316Z"
+    "end": "2026-09-12T16:39:35.390Z"
   },
   "plugins": {
     "caveman": 16,
@@ -33,6 +33,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "understand-anything": 1,
     "humanizer": 1,
     "phuryn-pm-skills": 1,
     "scribe": 1,
