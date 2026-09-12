@@ -59,6 +59,13 @@ We welcome plugins of all kinds — skills, commands, agents, hooks, MCP servers
 
 Your plugin code stays in **your own repo**. You submit a PR that adds a reference to it in our `plugins/` directory. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
+## Other marketplaces
+
+AgentHub focuses on plugins that aren't already covered elsewhere. Before submitting, check these too — and browse them if you can't find what you need here:
+
+- **Claude official marketplace** — https://github.com/anthropics/claude-plugins-official
+- **AI Hero skills** — https://www.aihero.dev/skills
+
 ## Badge
 
 If you wanna add your plugin to Agenthub, you can also add this badge to your plugin's README:
