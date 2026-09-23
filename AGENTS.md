@@ -101,9 +101,9 @@ All git-based sources optionally accept `"ref"` (branch/tag) and `"sha"` (exact 
 
 ### Updating a plugin
 
-1. Edit the existing file in `plugins/`
+1. Edit the existing file in `plugins/` (e.g. a version bump only changes `"version"` in `plugins/<plugin-name>.json`)
 2. Do not rename the file unless the plugin name is changing
-3. Do not touch `.claude-plugin/marketplace.json`
+3. Do not touch `.claude-plugin/marketplace.json`, even though it contains the same fields. The `build-marketplace.yml` workflow regenerates it on push to `main`
 
 ### Removing a plugin
 
