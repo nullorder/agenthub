@@ -5863,6 +5863,28 @@
       "license": "MIT"
     },
     {
+      "name": "yylo-skills",
+      "source": {
+        "source": "github",
+        "repo": "yylo-dev/yylo-skills"
+      },
+      "description": "Eight workflow skills for coding agents: Ledger task management and Kanban, PDR planning, project understanding, wiki, workflow and artifact records, benchmark studies, and the Ralph execution loop. Works in Claude Code, Codex, and pi.",
+      "version": "2.1.0",
+      "author": {
+        "username": "yylo-dev",
+        "name": "YYLO"
+      },
+      "category": "productivity",
+      "license": "MIT",
+      "tags": [
+        "skills",
+        "task-management",
+        "kanban",
+        "workflow",
+        "benchmarking"
+      ]
+    },
+    {
       "name": "zai-cli",
       "source": {
         "source": "git-subdir",
