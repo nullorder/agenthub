@@ -1,8 +1,9 @@
 {
   "name": "nothing-design-skill",
   "source": {
-    "source": "github",
-    "repo": "dominikmartn/nothing-design-skill"
+    "source": "git-subdir",
+    "url": "https://github.com/dominikmartn/nothing-design-skill.git",
+    "path": "nothing-design"
   },
   "description": "UI generation skill in Nothing design language with dot matrix aesthetics",
   "version": "1.0.0",

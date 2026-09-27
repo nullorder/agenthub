@@ -13,7 +13,8 @@
   },
   "category": "testing",
   "tags": [
-    "skills"
+    "agents",
+    "commands"
   ],
   "license": "MIT"
 }

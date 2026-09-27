@@ -1,8 +1,9 @@
 {
   "name": "understand-anything",
   "source": {
-    "source": "github",
-    "repo": "Lum1104/Understand-Anything"
+    "source": "git-subdir",
+    "url": "https://github.com/Lum1104/Understand-Anything.git",
+    "path": "understand-anything-plugin"
   },
   "description": "Skills that turn any codebase into an interactive knowledge graph",
   "version": "1.0.0",

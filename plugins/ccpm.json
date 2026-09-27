@@ -1,8 +1,9 @@
 {
   "name": "ccpm",
   "source": {
-    "source": "github",
-    "repo": "automazeio/ccpm"
+    "source": "git-subdir",
+    "url": "https://github.com/automazeio/ccpm.git",
+    "path": "skill/ccpm"
   },
   "description": "Project management for Claude Code using GitHub Issues",
   "version": "1.0.0",

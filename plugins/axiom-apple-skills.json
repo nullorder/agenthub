@@ -1,8 +1,9 @@
 {
   "name": "axiom-apple-skills",
   "source": {
-    "source": "github",
-    "repo": "CharlesWiltgen/Axiom"
+    "source": "git-subdir",
+    "url": "https://github.com/CharlesWiltgen/Axiom.git",
+    "path": ".claude-plugin/plugins/axiom"
   },
   "description": "Battle-tested skills for iOS, iPadOS, watchOS, and tvOS development",
   "version": "1.0.0",

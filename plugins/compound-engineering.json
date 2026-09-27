@@ -1,9 +1,8 @@
 {
   "name": "compound-engineering",
   "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/EveryInc/compound-engineering-plugin.git",
-    "path": "plugins/compound-engineering"
+    "source": "github",
+    "repo": "EveryInc/compound-engineering-plugin"
   },
   "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last.",
   "version": "1.0.0",

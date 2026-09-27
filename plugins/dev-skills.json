@@ -3,7 +3,7 @@
   "source": {
     "source": "git-subdir",
     "url": "https://github.com/shinpr/claude-code-workflows.git",
-    "path": "skills-only"
+    "path": "dev-skills"
   },
   "description": "Lightweight skills for users with existing workflows - coding best practices, testing principles, and design guidelines without recipe workflows or agents",
   "version": "1.0.0",
