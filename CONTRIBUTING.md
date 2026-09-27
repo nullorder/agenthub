@@ -36,7 +36,7 @@ With the following content:
 
 The `tags` field is **required** and must include **at least one** of the component types below. It tells users what your plugin provides:
 
-- `skills` — skill directories with `SKILL.md`
+- `skills` — skill directories with `SKILL.md`, at `skills/<name>/SKILL.md` in the plugin or wherever its `plugin.json` `skills` field points. The weekly audit flags a plugin tagged `skills` that ships none there, since apps that install skills from AgentHub filter on this tag
 - `agents` — subagent markdown files
 - `commands` — slash command markdown files
 - `hooks` — event hooks (`hooks.json`)

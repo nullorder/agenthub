@@ -2,6 +2,12 @@
 // Check every plugin source for accessibility and open/update a GitHub issue
 // listing any that return 404 or are otherwise unreachable. Designed to run
 // weekly in CI so stale plugins are caught before users notice.
+//
+// For plugins on GitHub it also reads the repo tree and flags two kinds of
+// drift: a git-subdir `path` that no longer exists, and a `skills` tag on a
+// plugin that ships no SKILL.md where Claude Code looks for one. Apps that
+// install skills from the catalogue filter on that tag, so a wrong one shows
+// users plugins they cannot install anything from.
 
 import { readFileSync, readdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -54,6 +60,66 @@ async function checkGitHub(repo) {
   return { ok: true, archived: Boolean(data.archived) };
 }
 
+/** Every path in the repo at `at`, or null when the tree is too big to list. */
+async function readTree(repo, at) {
+  const res = await fetch(
+    `https://api.github.com/repos/${repo}/git/trees/${encodeURIComponent(at)}?recursive=1`,
+    { headers: ghHeaders },
+  );
+  if (!res.ok) return { ok: false, reason: `tree at ${at}: HTTP ${res.status}` };
+  const data = await res.json();
+  if (data.truncated) return { ok: true, tree: null };
+  return { ok: true, tree: data.tree };
+}
+
+async function readBlob(repo, sha) {
+  const res = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${sha}`, {
+    headers: ghHeaders,
+  });
+  if (!res.ok) return null;
+  const data = await res.json();
+  return Buffer.from(data.content, "base64").toString("utf-8");
+}
+
+const clean = (path) => (path || "").trim().replace(/^(\.\/)+/, "").replace(/^\/+|\/+$/g, "");
+
+/**
+ * Whether the plugin at `root` ships a skill, the way Claude Code finds one:
+ * each place the manifest's `skills` field names, or `skills/` when it names
+ * none, is either a skill folder itself or holds `<name>/SKILL.md`. A lone
+ * SKILL.md at the plugin root also counts.
+ */
+async function hasSkills(repo, tree, root) {
+  const prefix = root ? `${root}/` : "";
+  const files = new Set(
+    tree.filter((e) => e.type === "blob" && e.path.startsWith(prefix)).map((e) => e.path.slice(prefix.length)),
+  );
+
+  let places = ["skills"];
+  const manifest = tree.find((e) => e.path === `${prefix}.claude-plugin/plugin.json`);
+  if (manifest) {
+    try {
+      const declared = JSON.parse((await readBlob(repo, manifest.sha)) ?? "{}").skills;
+      const list = typeof declared === "string" ? [declared] : Array.isArray(declared) ? declared : [];
+      const paths = list.filter((p) => typeof p === "string").map(clean);
+      if (paths.length > 0) places = paths;
+    } catch {
+      // An unreadable manifest is Claude Code's problem to report; fall back to the default.
+    }
+  }
+
+  for (const place of places) {
+    const at = place ? `${place}/` : "";
+    if (files.has(`${at}SKILL.md`)) return true;
+    for (const file of files) {
+      if (!file.startsWith(at)) continue;
+      const rest = file.slice(at.length).split("/");
+      if (rest.length === 2 && rest[1] === "SKILL.md") return true;
+    }
+  }
+  return files.has("SKILL.md");
+}
+
 async function checkNpm(pkg) {
   const res = await fetch(
     `https://registry.npmjs.org/${encodeURIComponent(pkg)}`,
@@ -66,6 +132,7 @@ async function checkNpm(pkg) {
 
 const failures = [];
 const archived = [];
+const mistagged = [];
 
 for (const plugin of plugins) {
   const { file, name, source } = plugin;
@@ -81,6 +148,20 @@ for (const plugin of plugins) {
         continue;
       }
       result = await checkGitHub(repo);
+      if (result.ok) {
+        const at = source.sha || source.ref || "HEAD";
+        const read = await readTree(repo, at);
+        const root = source.source === "git-subdir" ? clean(source.path) : "";
+        if (!read.ok) {
+          result = { ok: false, reason: read.reason };
+        } else if (read.tree) {
+          if (root && !read.tree.some((e) => e.path.startsWith(`${root}/`))) {
+            result = { ok: false, reason: `folder \`${root}\` not found in ${repo}` };
+          } else if (plugin.tags?.includes("skills") && !(await hasSkills(repo, read.tree, root))) {
+            mistagged.push({ file, name });
+          }
+        }
+      }
     }
   } catch (e) {
     result = { ok: false, reason: e.message };
@@ -94,10 +175,12 @@ for (const plugin of plugins) {
 }
 
 console.log(
-  `Audited ${plugins.length} plugins — ${failures.length} unreachable, ${archived.length} archived`,
+  `Audited ${plugins.length} plugins — ${failures.length} unreachable, ${archived.length} archived, ${mistagged.length} mistagged`,
 );
+for (const { file, reason } of failures) console.log(`  unreachable  ${file}: ${reason}`);
+for (const { file } of mistagged) console.log(`  mistagged    ${file}: tagged skills, ships none`);
 
-if (failures.length === 0 && archived.length === 0) {
+if (failures.length === 0 && archived.length === 0 && mistagged.length === 0) {
   console.log("All plugins OK.");
   process.exit(0);
 }
@@ -115,6 +198,15 @@ if (failures.length > 0) {
   body += "\n";
 }
 
+if (mistagged.length > 0) {
+  body += `### Tagged \`skills\` but ship none (${mistagged.length})\n\n`;
+  body += `No SKILL.md where Claude Code looks for one (\`skills/<name>/SKILL.md\`, or the paths in the manifest's \`skills\` field). Drop the \`skills\` tag or point the source at the right folder:\n\n`;
+  for (const { file, name } of mistagged) {
+    body += `- [ ] \`${file}\` (**${name}**)\n`;
+  }
+  body += "\n";
+}
+
 if (archived.length > 0) {
   body += `### Archived repos (${archived.length})\n\n`;
   body += `These plugins still exist but their source repo is archived. No action required unless you want to remove them.\n\n`;
@@ -126,7 +218,7 @@ if (archived.length > 0) {
 
 body += `_Generated by the [weekly plugin audit](../../actions/workflows/plugin-audit.yml)._`;
 
-const issueTitle = `Plugin audit (${date}): ${failures.length} unreachable`;
+const issueTitle = `Plugin audit (${date}): ${failures.length} unreachable, ${mistagged.length} mistagged`;
 
 // Create or update the open audit issue
 if (GH_REPO) {
