@@ -1,0 +1,22 @@
+{
+  "name": "darkmoon",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/ASCIT31/darkmoon-mcp-server.git",
+    "path": "plugins/darkmoon"
+  },
+  "description": "Start an authorized autonomous AI pentest run on your self-hosted Darkmoon Pro, poll its status, list campaigns and read findings over MCP. Requires a Darkmoon Pro dashboard; run_pentest is not read only.",
+  "version": "0.1.0",
+  "author": {
+    "username": "ASCIT31",
+    "name": "ASC-IT"
+  },
+  "category": "security",
+  "tags": [
+    "skills",
+    "mcp-servers",
+    "pentest",
+    "security"
+  ],
+  "license": "GPL-3.0-only"
+}
