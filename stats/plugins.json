@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-06T19:15:16.632Z",
+  "generated_at": "2026-10-08T19:35:15.276Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-10-06T19:15:14.638Z"
+    "end": "2026-10-08T19:35:13.597Z"
   },
   "plugins": {
     "caveman": 16,
-    "agent-teams": 9,
-    "iconify": 7,
+    "agent-teams": 10,
+    "iconify": 8,
     "ani-skills": 7,
     "abstract": 6,
     "gt-sdlc": 4,
@@ -27,6 +27,7 @@
     "hermes-tweet": 2,
     "astral-plugins": 2,
     "usage-estimate": 2,
+    "zai-cli": 2,
     "elixir-ls": 2,
     "burpsuite-project-parser": 2,
     "code-to-prd": 2,
@@ -37,6 +38,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "bash-language-server": 1,
     "terraform-module-generation": 1,
     "audit-context-building": 1,
     "dart-analyzer": 1,
@@ -53,7 +55,6 @@
     "cartograph": 1,
     "numman-ali-orchestration": 1,
     "business-growth-skills": 1,
-    "zai-cli": 1,
     "axiom-apple-skills": 1,
     "open-source-maintainer": 1,
     "mcp-toolkit": 1,
