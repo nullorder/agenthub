@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-08T19:35:15.276Z",
+  "generated_at": "2026-10-10T18:07:59.760Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-10-08T19:35:13.597Z"
+    "end": "2026-10-10T18:07:57.961Z"
   },
   "plugins": {
     "caveman": 16,
-    "agent-teams": 10,
+    "agent-teams": 11,
     "iconify": 8,
     "ani-skills": 7,
     "abstract": 6,
@@ -18,7 +18,9 @@
     "security-scanner-plugin": 3,
     "claude-council": 3,
     "agentic-actions-auditor": 3,
+    "meigen-ai-design": 3,
     "startup-business-analyst": 3,
+    "dart-analyzer": 2,
     "claude-context-optimizer": 2,
     "plugin-eval": 2,
     "gauntlet": 2,
@@ -31,7 +33,6 @@
     "elixir-ls": 2,
     "burpsuite-project-parser": 2,
     "code-to-prd": 2,
-    "meigen-ai-design": 2,
     "marketing-skills": 2,
     "clojure-lsp": 2,
     "feluda": 2,
@@ -41,7 +42,6 @@
     "bash-language-server": 1,
     "terraform-module-generation": 1,
     "audit-context-building": 1,
-    "dart-analyzer": 1,
     "autoresearch-agent": 1,
     "understand-anything": 1,
     "humanizer": 1,
