@@ -1,0 +1,19 @@
+{
+  "name": "podcast",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/podcast"
+  },
+  "description": "Generate Korean podcast episodes from URLs, tweets, or articles with OpenAI TTS and YouTube auto-upload",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

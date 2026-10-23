@@ -1,0 +1,21 @@
+{
+  "name": "session-wrap",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/session-wrap"
+  },
+  "description": "Session wrap-up workflow with multi-agent analysis for documentation, automation, learning, and follow-up",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "agents",
+    "commands"
+  ],
+  "license": "MIT"
+}

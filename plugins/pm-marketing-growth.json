@@ -1,0 +1,20 @@
+{
+  "name": "pm-marketing-growth",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-marketing-growth"
+  },
+  "description": "Product marketing and growth skills: marketing ideas, value proposition statements, North Star metrics, product naming, and positioning",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

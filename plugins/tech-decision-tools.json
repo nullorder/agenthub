@@ -1,0 +1,20 @@
+{
+  "name": "tech-decision-tools",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/dev"
+  },
+  "description": "Developer workflow tools: community opinion scanning and structured technical decision-making",
+  "version": "1.1.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "agents"
+  ],
+  "license": "MIT"
+}

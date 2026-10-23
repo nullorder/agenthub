@@ -1,0 +1,20 @@
+{
+  "name": "pm-data-analytics",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-data-analytics"
+  },
+  "description": "Data analytics skills for PMs: SQL query generation, cohort analysis, and A/B test analysis",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "data",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

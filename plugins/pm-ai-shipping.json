@@ -1,0 +1,20 @@
+{
+  "name": "pm-ai-shipping",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-ai-shipping"
+  },
+  "description": "AI shipping kit for PMs and founders: document a vibe-coded app, review it for defects, and produce a reviewer-ready shipping packet",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "development",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

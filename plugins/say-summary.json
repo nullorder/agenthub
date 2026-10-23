@@ -1,0 +1,19 @@
+{
+  "name": "say-summary",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/say-summary"
+  },
+  "description": "Speaks a short summary of each response using macOS text-to-speech (Korean/English)",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "hooks"
+  ],
+  "license": "MIT"
+}

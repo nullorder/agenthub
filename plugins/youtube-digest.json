@@ -1,0 +1,19 @@
+{
+  "name": "youtube-digest",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/youtube-digest"
+  },
+  "description": "Summarize YouTube videos with transcript, insights, Korean translation, and quizzes",
+  "version": "0.2.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

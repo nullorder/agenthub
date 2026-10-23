@@ -1,0 +1,20 @@
+{
+  "name": "kakaotalk",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/kakaotalk"
+  },
+  "description": "Send and read KakaoTalk messages on macOS using the Accessibility API",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "integration"
+  ],
+  "license": "MIT"
+}

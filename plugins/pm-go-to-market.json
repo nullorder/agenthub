@@ -1,0 +1,20 @@
+{
+  "name": "pm-go-to-market",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-go-to-market"
+  },
+  "description": "Go-to-market skills for PMs: GTM strategy, growth loops, GTM motions, beachhead segments, and ideal customer profiles",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

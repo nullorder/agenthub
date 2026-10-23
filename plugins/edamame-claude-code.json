@@ -15,6 +15,7 @@
     "skills",
     "agents",
     "commands",
+    "hooks",
     "mcp-servers"
   ],
   "license": "Apache-2.0"

@@ -56,6 +56,7 @@ jobs:
             new_repo=$(jq -r '.source.repo // empty' "$new_file")
             new_url=$(jq -r '.source.url // empty' "$new_file")
             new_package=$(jq -r '.source.package // empty' "$new_file")
+            new_path=$(jq -r '.source.path // empty' "$new_file")
 
             for existing in plugins/*.json; do
               [ -f "$existing" ] || continue
@@ -79,10 +80,19 @@ jobs:
                       errors=$((errors + 1))
                     fi
                     ;;
-                  url|git-subdir)
+                  url)
                     existing_url=$(jq -r '.source.url // empty' "$existing")
                     if [ -n "$new_url" ] && [ "$new_url" = "$existing_url" ]; then
                       output="${output}- Duplicate source URL \`$new_url\` in \`$new_file\` (already exists in \`$existing\`)\n"
+                      errors=$((errors + 1))
+                    fi
+                    ;;
+                  git-subdir)
+                    # Monorepos hold many plugins, so only the same folder of the same repo is a duplicate.
+                    existing_url=$(jq -r '.source.url // empty' "$existing")
+                    existing_path=$(jq -r '.source.path // empty' "$existing")
+                    if [ -n "$new_url" ] && [ "$new_url" = "$existing_url" ] && [ "$new_path" = "$existing_path" ]; then
+                      output="${output}- Duplicate source \`$new_url\` (\`$new_path\`) in \`$new_file\` (already exists in \`$existing\`)\n"
                       errors=$((errors + 1))
                     fi
                     ;;

@@ -1,0 +1,19 @@
+{
+  "name": "agent-council",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/agent-council"
+  },
+  "description": "Collect and synthesize opinions from multiple AI agents (Gemini, GPT, Codex)",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

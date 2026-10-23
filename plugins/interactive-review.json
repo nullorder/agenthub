@@ -1,0 +1,20 @@
+{
+  "name": "interactive-review",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/interactive-review"
+  },
+  "description": "Interactive markdown review with a web UI for visual plan and document approval",
+  "version": "1.0.4",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "mcp-servers"
+  ],
+  "license": "MIT"
+}

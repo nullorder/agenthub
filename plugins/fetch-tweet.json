@@ -1,0 +1,19 @@
+{
+  "name": "fetch-tweet",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/fetch-tweet"
+  },
+  "description": "Fetch full tweet text, author info, and engagement data from X/Twitter URLs without authentication",
+  "version": "0.1.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

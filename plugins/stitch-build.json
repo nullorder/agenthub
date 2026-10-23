@@ -1,0 +1,19 @@
+{
+  "name": "stitch-build",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/google-labs-code/stitch-skills.git",
+    "path": "plugins/stitch-build"
+  },
+  "description": "Google Stitch code generation: convert designs to React components, integrate shadcn/ui, and generate walkthrough videos with Remotion",
+  "version": "1.0.0",
+  "author": {
+    "username": "google-labs-code",
+    "name": "Google Labs Code"
+  },
+  "category": "design",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

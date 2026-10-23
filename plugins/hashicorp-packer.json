@@ -1,17 +1,17 @@
 {
-  "name": "terraform-code-generation",
+  "name": "hashicorp-packer",
   "source": {
     "source": "git-subdir",
     "url": "https://github.com/hashicorp/agent-skills.git",
-    "path": "terraform/code-generation"
+    "path": "plugins/packer"
   },
-  "description": "Terraform code generation skills including HCL generation, style guides, and testing.",
+  "description": "HashiCorp Packer skills for AWS, Azure, and Windows image building and HCP Packer registry workflows",
   "version": "1.0.0",
   "author": {
     "username": "hashicorp",
     "name": "HashiCorp"
   },
-  "category": "development",
+  "category": "devops",
   "tags": [
     "skills"
   ],

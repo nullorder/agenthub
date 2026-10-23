@@ -1,0 +1,20 @@
+{
+  "name": "gmail",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/gmail"
+  },
+  "description": "Multi-account Gmail integration to read, search, send, and manage emails with a 5-step sending workflow",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "integration"
+  ],
+  "license": "MIT"
+}

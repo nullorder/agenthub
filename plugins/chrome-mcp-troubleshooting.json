@@ -1,9 +1,9 @@
 {
-  "name": "claude-in-chrome-troubleshooting",
+  "name": "chrome-mcp-troubleshooting",
   "source": {
     "source": "git-subdir",
     "url": "https://github.com/trailofbits/skills.git",
-    "path": "plugins/claude-in-chrome-troubleshooting"
+    "path": "plugins/chrome-mcp-troubleshooting"
   },
   "description": "Diagnose and fix Claude in Chrome MCP extension connectivity issues",
   "version": "1.0.0",

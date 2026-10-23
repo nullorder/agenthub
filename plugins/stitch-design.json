@@ -1,0 +1,19 @@
+{
+  "name": "stitch-design",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/google-labs-code/stitch-skills.git",
+    "path": "plugins/stitch-design"
+  },
+  "description": "Google Stitch design workflows: convert code to designs, generate screens from text or images, manage design systems, and upload assets",
+  "version": "1.0.0",
+  "author": {
+    "username": "google-labs-code",
+    "name": "Google Labs Code"
+  },
+  "category": "design",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

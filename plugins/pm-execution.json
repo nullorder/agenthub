@@ -1,0 +1,20 @@
+{
+  "name": "pm-execution",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-execution"
+  },
+  "description": "Product execution skills: PRDs, OKRs, roadmaps, sprints, pre-mortems, stakeholder maps, user stories, and prioritization frameworks",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

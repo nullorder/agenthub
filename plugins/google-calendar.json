@@ -1,0 +1,20 @@
+{
+  "name": "google-calendar",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/google-calendar"
+  },
+  "description": "Multi-account Google Calendar integration with parallel querying and conflict detection",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "integration"
+  ],
+  "license": "MIT"
+}

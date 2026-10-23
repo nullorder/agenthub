@@ -1,0 +1,19 @@
+{
+  "name": "team-assemble",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/team-assemble"
+  },
+  "description": "Dynamically assemble expert agent teams for complex tasks using Claude Code's agent teams feature",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

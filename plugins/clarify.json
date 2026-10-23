@@ -1,0 +1,19 @@
+{
+  "name": "clarify",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/clarify"
+  },
+  "description": "Three lenses for clarity: vague requirements to specs, strategy blind spots via Known/Unknown quadrants, and content vs form leverage",
+  "version": "2.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills"
+  ],
+  "license": "MIT"
+}

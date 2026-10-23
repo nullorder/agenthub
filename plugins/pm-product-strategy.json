@@ -1,0 +1,20 @@
+{
+  "name": "pm-product-strategy",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-product-strategy"
+  },
+  "description": "Product strategy skills for PMs: vision, strategy and lean canvases, value propositions, SWOT, PESTLE, Porter's Five Forces, and monetization",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

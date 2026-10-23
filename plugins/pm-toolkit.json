@@ -1,0 +1,20 @@
+{
+  "name": "pm-toolkit",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-toolkit"
+  },
+  "description": "PM utility skills: resume review, NDA drafting, privacy policy generation, and grammar and flow checking",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

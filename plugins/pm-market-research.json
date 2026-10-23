@@ -1,0 +1,20 @@
+{
+  "name": "pm-market-research",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/phuryn/pm-skills.git",
+    "path": "pm-market-research"
+  },
+  "description": "Market research skills for PMs: user personas, market segmentation and sizing, sentiment analysis, and competitive analysis",
+  "version": "2.2.0",
+  "author": {
+    "username": "phuryn",
+    "name": "Paweł Huryn"
+  },
+  "category": "productivity",
+  "tags": [
+    "skills",
+    "commands"
+  ],
+  "license": "MIT"
+}

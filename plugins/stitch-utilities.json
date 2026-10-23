@@ -1,0 +1,19 @@
+{
+  "name": "stitch-utilities",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/google-labs-code/stitch-skills.git",
+    "path": "plugins/stitch-utilities"
+  },
+  "description": "Google Stitch utilities: generate DESIGN.md specs, enhance prompts, and build multi-page sites with stitch-loop",
+  "version": "1.0.0",
+  "author": {
+    "username": "google-labs-code",
+    "name": "Google Labs Code"
+  },
+  "category": "design",
+  "tags": [
+    "skills"
+  ],
+  "license": "Apache-2.0"
+}

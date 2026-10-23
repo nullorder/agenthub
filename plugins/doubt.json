@@ -1,0 +1,19 @@
+{
+  "name": "doubt",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/team-attention/plugins-for-claude-natives.git",
+    "path": "plugins/doubt"
+  },
+  "description": "Force the agent to re-validate its last answer when you have doubts (!doubt)",
+  "version": "1.0.0",
+  "author": {
+    "username": "team-attention",
+    "name": "Team Attention"
+  },
+  "category": "productivity",
+  "tags": [
+    "hooks"
+  ],
+  "license": "MIT"
+}
