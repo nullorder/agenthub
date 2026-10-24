@@ -1,0 +1,21 @@
+{
+  "name": "deed-page",
+  "source": {
+    "source": "github",
+    "repo": "f-o-x11/deed-page-skill"
+  },
+  "description": "Publish HTML or a static folder from Claude Code to a live https://<slug>.deed.page URL with one HTTP PUT or the bundled remote MCP server. Free plan needs no account.",
+  "version": "1.1.0",
+  "author": {
+    "username": "f-o-x11",
+    "name": "Avatar 8 LLC"
+  },
+  "category": "devops",
+  "tags": [
+    "skills",
+    "mcp-servers",
+    "hosting",
+    "static-sites"
+  ],
+  "license": "MIT"
+}
