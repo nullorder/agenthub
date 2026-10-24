@@ -1,0 +1,15 @@
+{
+  "name": "buddy-chat",
+  "source": {
+    "source": "github",
+    "repo": "MrMirhan/claude-buddy-chat"
+  },
+  "description": "End-to-end encrypted, quantum-resistant chat between Claude Code users: direct chats, groups and read receipts in a pane, with no server to run.",
+  "version": "0.14.0",
+  "author": {
+    "username": "MrMirhan"
+  },
+  "category": "productivity",
+  "license": "MIT",
+  "tags": ["hooks", "chat", "messaging", "encryption"]
+}
