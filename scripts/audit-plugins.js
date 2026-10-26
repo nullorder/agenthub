@@ -31,6 +31,19 @@ const ghHeaders = {
   "User-Agent": "agenthub-audit",
 };
 
+const { Authorization, ...anonHeaders } = ghHeaders;
+
+/**
+ * GET a public GitHub API resource. Some orgs refuse the Actions token on
+ * content endpoints (HTTP 403) even for public repos, so a 403 is retried
+ * without it before the plugin is reported.
+ */
+async function ghRead(url) {
+  const res = await fetch(url, { headers: ghHeaders });
+  if (res.status !== 403) return res;
+  return fetch(url, { headers: anonHeaders });
+}
+
 function extractGitHubRepo(source) {
   if (!source) return null;
   if (source.source === "github") return source.repo || null;
@@ -49,9 +62,7 @@ const plugins = readdirSync(pluginsDir)
   });
 
 async function checkGitHub(repo) {
-  const res = await fetch(`https://api.github.com/repos/${repo}`, {
-    headers: ghHeaders,
-  });
+  const res = await ghRead(`https://api.github.com/repos/${repo}`);
   if (res.status === 404) return { ok: false, reason: "repo not found (404)" };
   if (res.status === 451)
     return { ok: false, reason: "unavailable for legal reasons (451)" };
@@ -62,9 +73,8 @@ async function checkGitHub(repo) {
 
 /** Every path in the repo at `at`, or null when the tree is too big to list. */
 async function readTree(repo, at) {
-  const res = await fetch(
+  const res = await ghRead(
     `https://api.github.com/repos/${repo}/git/trees/${encodeURIComponent(at)}?recursive=1`,
-    { headers: ghHeaders },
   );
   if (!res.ok) return { ok: false, reason: `tree at ${at}: HTTP ${res.status}` };
   const data = await res.json();
@@ -73,9 +83,7 @@ async function readTree(repo, at) {
 }
 
 async function readBlob(repo, sha) {
-  const res = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${sha}`, {
-    headers: ghHeaders,
-  });
+  const res = await ghRead(`https://api.github.com/repos/${repo}/git/blobs/${sha}`);
   if (!res.ok) return null;
   const data = await res.json();
   return Buffer.from(data.content, "base64").toString("utf-8");
