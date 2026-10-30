@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-27T19:08:25.501Z",
+  "generated_at": "2026-10-30T18:55:59.478Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-10-27T19:08:23.952Z"
+    "end": "2026-10-30T18:55:58.080Z"
   },
   "plugins": {
-    "caveman": 20,
+    "caveman": 21,
     "agent-teams": 11,
     "iconify": 8,
     "ani-skills": 8,
