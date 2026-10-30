@@ -406,7 +406,7 @@
         "repo": "MrMirhan/claude-buddy-chat"
       },
       "description": "End-to-end encrypted, quantum-resistant chat between Claude Code users: direct chats, groups and read receipts in a pane, with no server to run.",
-      "version": "0.21.0",
+      "version": "0.21.2",
       "author": {
         "username": "MrMirhan"
       },
