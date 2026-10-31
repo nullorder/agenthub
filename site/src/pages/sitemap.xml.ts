@@ -6,6 +6,7 @@ export const prerender = true;
 
 const TOP_LEVEL_PATHS = [
   { path: "/", priority: "1.0", changefreq: "daily" },
+  { path: "/submit", priority: "0.6", changefreq: "monthly" },
   { path: "/stats", priority: "0.6", changefreq: "weekly" },
   { path: "/coc", priority: "0.3", changefreq: "yearly" },
   { path: "/license", priority: "0.3", changefreq: "yearly" },
@@ -31,7 +32,11 @@ export async function GET({ site }: APIContext) {
     "../.claude-plugin/marketplace.json",
   );
   const marketplace = JSON.parse(readFileSync(marketplacePath, "utf-8"));
-  const plugins: Array<{ name: string }> = marketplace.plugins || [];
+  const plugins: Array<{ name: string; author?: { username?: string } }> =
+    marketplace.plugins || [];
+  const authors = [
+    ...new Set(plugins.map((p) => p.author?.username).filter(Boolean)),
+  ] as string[];
 
   const today = new Date().toISOString().slice(0, 10);
 
@@ -47,6 +52,12 @@ export async function GET({ site }: APIContext) {
       lastmod: today,
       changefreq: "weekly",
       priority: "0.8",
+    })),
+    ...authors.map((username) => ({
+      loc: `${origin}/authors/${encodeURIComponent(username)}/`,
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.5",
     })),
   ];
 

@@ -4,7 +4,7 @@ import RetroGlobe from './RetroGlobe.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<footer class="mt-auto relative border-t border-white/10 bg-white/5 backdrop-blur-xl overflow-x-clip">
+<footer class="mt-auto relative border-t border-line bg-panel backdrop-blur-xl overflow-x-clip">
   <!-- Giant globe popping out of the footer top-right (desktop only) -->
   <div aria-hidden="true" class="footer-watermark pointer-events-none absolute hidden select-none md:block">
     <RetroGlobe size="footer-watermark-globe" showOrbitText={false} />
@@ -16,22 +16,22 @@ const base = import.meta.env.BASE_URL;
       <div class="text-center md:text-left">
         <a href={base} class="inline-flex flex-col items-center gap-2 no-underline sm:flex-row sm:gap-3" aria-label="AgentHub">
           <RetroGlobe size="footer-brand-globe" />
-          <span class="font-pixel text-xl font-bold tracking-tight text-white sm:text-2xl">AGENTHUB</span>
+          <span class="font-pixel text-[21px] tracking-tight text-ink sm:text-[28px]">AGENTHUB</span>
         </a>
-        <p class="mt-4 max-w-xs text-sm text-gray-400 mx-auto md:mx-0">
+        <p class="mt-4 max-w-xs text-sm text-ink-2 mx-auto md:mx-0">
           Community-driven plugin marketplace for Claude Code.
         </p>
       </div>
 
       <div class="hidden md:block">
-        <h3 class="mb-4 text-lg font-semibold text-blue-400">Community</h3>
-        <ul class="space-y-2 text-base text-gray-400">
+        <h3 class="mb-4 text-lg font-semibold text-cyan">Community</h3>
+        <ul class="space-y-2 text-base text-ink-2">
           <li>
             <a
               href="https://discord.gg/AJMEeFXxXy"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors"
+              class="inline-flex items-center gap-2 hover:text-ink transition-colors"
             >
               <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
                 ><path
@@ -46,7 +46,7 @@ const base = import.meta.env.BASE_URL;
               href="https://x.com/orderofnull"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors"
+              class="inline-flex items-center gap-2 hover:text-ink transition-colors"
             >
               <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
                 ><path
@@ -61,7 +61,7 @@ const base = import.meta.env.BASE_URL;
               href="https://github.com/nullorder/agenthub"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors"
+              class="inline-flex items-center gap-2 hover:text-ink transition-colors"
             >
               <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
                 ><path
@@ -75,12 +75,14 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <div class="text-center md:text-left">
-        <h3 class="mb-4 text-lg font-semibold text-blue-400">About</h3>
-        <ul class="space-y-2 text-base text-gray-400">
-          <li><a href={`${base}license`} class="hover:text-white transition-colors">MIT License</a></li>
-          <li><a href={`${base}privacy`} class="hover:text-white transition-colors">Privacy</a></li>
-          <li><a href={`${base}coc`} class="hover:text-white transition-colors">Code of Conduct</a></li>
-          <li><a href={`${base}stats`} class="hover:text-white transition-colors">Traffic Stats</a></li>
+        <h3 class="mb-4 text-lg font-semibold text-cyan">About</h3>
+        <ul class="space-y-2 text-base text-ink-2">
+          <li><a href={`${base}submit`} class="hover:text-ink transition-colors">Add your plugin</a></li>
+          <li><a href={`${base}#makers`} class="hover:text-ink transition-colors">Makers</a></li>
+          <li><a href={`${base}license`} class="hover:text-ink transition-colors">MIT License</a></li>
+          <li><a href={`${base}privacy`} class="hover:text-ink transition-colors">Privacy</a></li>
+          <li><a href={`${base}coc`} class="hover:text-ink transition-colors">Code of Conduct</a></li>
+          <li><a href={`${base}stats`} class="hover:text-ink transition-colors">Traffic Stats</a></li>
         </ul>
       </div>
     </div>
@@ -91,7 +93,7 @@ const base = import.meta.env.BASE_URL;
         href="https://discord.gg/AJMEeFXxXy"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-gray-400 hover:text-white transition-colors"
+        class="text-ink-2 hover:text-ink transition-colors"
         aria-label="Discord"
       >
         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
@@ -104,7 +106,7 @@ const base = import.meta.env.BASE_URL;
         href="https://x.com/orderofnull"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-gray-400 hover:text-white transition-colors"
+        class="text-ink-2 hover:text-ink transition-colors"
         aria-label="X / Twitter"
       >
         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
@@ -117,7 +119,7 @@ const base = import.meta.env.BASE_URL;
         href="https://github.com/nullorder/agenthub"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-gray-400 hover:text-white transition-colors"
+        class="text-ink-2 hover:text-ink transition-colors"
         aria-label="GitHub"
       >
         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
@@ -128,8 +130,8 @@ const base = import.meta.env.BASE_URL;
       </a>
     </div>
 
-    <div class="mt-12 flex flex-col-reverse items-center gap-4 border-t border-white/5 pt-6 text-sm text-gray-500 sm:flex-row sm:justify-between">
-      <span>Built with Astro · by nullorder</span>
+    <div class="mt-12 flex flex-col-reverse items-center gap-4 border-t border-line-soft pt-6 text-sm text-ink-3 sm:flex-row sm:justify-between">
+      <span>Built with Astro · by nullorder · Set in <a href="https://pixelspace.anirudha.dev" target="_blank" rel="noopener noreferrer" class="hover:text-ink underline-offset-2 hover:underline">Pixelspace</a></span>
       <a
         href="https://github.com/nullorder"
         target="_blank"

@@ -11,18 +11,18 @@ const hasStep = step !== undefined && label !== undefined;
 
 <li>
   {hasStep && (
-    <div class="mb-2 flex items-center gap-2 text-sm text-gray-400">
-      <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-white">
+    <div class="mb-2 flex items-center gap-2 text-sm text-ink-2">
+      <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-panel-2 text-xs font-semibold text-ink">
         {step}
       </span>
       <span>{label}</span>
     </div>
   )}
   <div class="install-cmd group relative">
-    <pre class="overflow-x-auto rounded-lg border border-white/10 bg-black/40 px-4 py-3 font-mono text-sm text-gray-200"><code>{command}</code></pre>
+    <pre class="overflow-x-auto rounded-lg border border-line bg-black/40 px-4 py-3 font-mono text-sm text-ink"><code>{command}</code></pre>
     <button
       type="button"
-      class="copy-btn absolute right-2 top-2 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-gray-400 opacity-0 transition-all hover:border-white/20 hover:text-white group-hover:opacity-100"
+      class="copy-btn absolute right-2 top-2 rounded-md border border-line bg-panel px-2 py-1 text-xs text-ink-2 opacity-0 transition-all hover:border-line-strong hover:text-ink group-hover:opacity-100"
       data-copy={command}
     >
       Copy

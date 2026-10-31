@@ -111,24 +111,24 @@ const metaText = stats
   : "Stats unavailable";
 ---
 
-<div class="gh-stats mb-6 border-t border-white/5 pt-5">
+<div class="gh-stats mb-6 border-t border-line-soft pt-5">
   <div class="mb-3 flex items-center justify-between">
-    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-ink-3">
       Repository stats
     </h3>
-    <span class="text-xs text-gray-600">{metaText}</span>
+    <span class="text-xs text-ink-3">{metaText}</span>
   </div>
 
   <div class="grid grid-cols-2 gap-2 sm:grid-cols-5">
     {
       tiles.map(({ label, value, title, size }) => (
-        <div class="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5">
-          <div class="text-[10px] font-medium uppercase tracking-wider text-gray-500">
+        <div class="rounded-lg border border-line bg-white/[0.03] px-3 py-2.5">
+          <div class="text-[10px] font-medium uppercase tracking-wider text-ink-3">
             {label}
           </div>
           <div
             class:list={[
-              "mt-1 font-mono font-semibold text-white",
+              "mt-1 font-mono font-semibold text-ink",
               size === "lg" ? "text-lg" : "text-sm",
             ]}
             title={title}
@@ -142,27 +142,27 @@ const metaText = stats
 
   {
     stats && (stats.release || stats.language || stats.archived) && (
-      <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-400">
+      <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2">
         {stats.release && (
           <span>
-            <span class="text-gray-500">Latest release:</span>
+            <span class="text-ink-3">Latest release:</span>
             <a
-              class="ml-1 font-mono text-blue-400 hover:underline"
+              class="ml-1 font-mono text-cyan hover:underline"
               href={stats.release.url}
               target="_blank"
               rel="noopener noreferrer"
             >
               {stats.release.tag}
             </a>
-            <span class="ml-1 text-gray-500">
+            <span class="ml-1 text-ink-3">
               · {formatRelative(stats.release.published_at, now)}
             </span>
           </span>
         )}
         {stats.language && (
           <span>
-            <span class="text-gray-500">Primary language:</span>
-            <span class="ml-1 text-gray-300">{stats.language}</span>
+            <span class="text-ink-3">Primary language:</span>
+            <span class="ml-1 text-ink-2">{stats.language}</span>
           </span>
         )}
         {stats.archived && (

@@ -1,11 +1,19 @@
 ---
 ---
 
-<div class="mb-6">
+<div class="relative mb-6">
+  <span class="font-pixel pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[14px] text-cyan" aria-hidden="true">&gt;</span>
   <input
-    type="text"
+    type="search"
     id="search-input"
-    placeholder="Search plugins..."
-    class="w-full rounded-lg border border-white/10 bg-white/5 backdrop-blur-lg px-4 py-3 text-base text-gray-100 placeholder-gray-400 outline-none transition-colors focus:border-emerald-400/50 focus:ring-1 focus:ring-emerald-400/50"
+    placeholder="Filter by name, tag, or maker"
+    aria-label="Filter plugins"
+    class="w-full rounded-lg border border-line bg-panel py-3 pl-10 pr-24 text-base text-ink placeholder-ink-3 outline-none backdrop-blur-lg transition-colors focus:border-cyan/50 focus:ring-1 focus:ring-cyan/50"
   />
+  <button
+    type="button"
+    data-open-palette
+    class="absolute right-2 top-1/2 hidden -translate-y-1/2 items-center gap-1 rounded-md border border-line px-2 py-1 font-mono text-xs text-ink-3 hover:text-ink sm:flex"
+    aria-label="Open command palette"
+  >⌘K</button>
 </div>

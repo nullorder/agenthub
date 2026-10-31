@@ -1,0 +1,196 @@
+---
+---
+
+<dialog
+  id="command-palette"
+  class="cmdk m-auto w-[min(640px,calc(100vw-2rem))] max-h-[min(560px,80vh)] overflow-hidden rounded-xl border border-cyan/40 bg-canvas/95 p-0 text-ink shadow-2xl backdrop-blur-xl"
+  aria-label="Search AgentHub"
+>
+  <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+    <span class="font-pixel text-[14px] text-cyan" aria-hidden="true">&gt;</span>
+    <input
+      type="text"
+      data-role="input"
+      class="min-w-0 flex-1 bg-transparent font-mono text-base text-ink placeholder:text-ink-3 outline-none"
+      placeholder="search plugins, makers, pages"
+      autocomplete="off"
+      spellcheck="false"
+      role="combobox"
+      aria-expanded="true"
+      aria-controls="cmdk-results"
+      aria-autocomplete="list"
+    />
+    <kbd class="rounded border border-line px-1.5 font-mono text-xs text-ink-3">esc</kbd>
+  </div>
+  <ul id="cmdk-results" data-role="results" role="listbox" class="max-h-[min(440px,64vh)] overflow-y-auto p-2"></ul>
+  <div class="flex flex-wrap gap-x-4 gap-y-1 border-t border-line px-4 py-2 font-mono text-xs text-ink-3">
+    <span>↑↓ move</span><span>⏎ open</span><span>⇥ add to loadout</span>
+  </div>
+</dialog>
+
+<style>
+  .cmdk::backdrop { background: rgb(0 0 0 / 0.55); backdrop-filter: blur(2px); }
+  :global(html.light) .cmdk::backdrop { background: rgb(15 23 42 / 0.25); }
+  .cmdk :global(.cmdk-item[aria-selected="true"]) { background: var(--panel-2); box-shadow: inset 2px 0 0 var(--cyan); }
+</style>
+
+<script>
+  import { avatarHtml, esc } from "../lib/card";
+  import { hasPlugin, togglePlugin } from "../scripts/loadout";
+
+  type Item = { kind: "plugin" | "maker" | "page"; label: string; detail: string; href: string; key: string; user?: string };
+
+  const dialog = document.getElementById("command-palette") as HTMLDialogElement;
+  const input = dialog.querySelector<HTMLInputElement>('[data-role="input"]')!;
+  const list = dialog.querySelector<HTMLUListElement>('[data-role="results"]')!;
+
+  const PAGES: Item[] = [
+    { kind: "page", label: "Browse all plugins", detail: "home", href: "/#catalog", key: "home browse catalog plugins" },
+    { kind: "page", label: "Add your plugin", detail: "submit", href: "/submit", key: "add submit publish contribute plugin" },
+    { kind: "page", label: "Makers", detail: "authors", href: "/#makers", key: "makers authors people community" },
+    { kind: "page", label: "Traffic stats", detail: "stats", href: "/stats", key: "stats traffic analytics" },
+    { kind: "page", label: "Code of conduct", detail: "coc", href: "/coc", key: "code of conduct rules" },
+  ];
+
+  let items: Item[] = PAGES;
+  let loaded: Promise<void> | null = null;
+  let results: Item[] = [];
+  let active = 0;
+
+  function load() {
+    loaded ??= fetch("/plugins.json")
+      .then((r) => r.json())
+      .then((plugins: any[]) => {
+        const makers = new Map<string, Item>();
+        const pluginItems = plugins.map((p) => {
+          const u = p.author?.username;
+          if (u && !makers.has(u)) {
+            makers.set(u, {
+              kind: "maker",
+              label: p.author.name || u,
+              detail: `@${u}`,
+              href: `/authors/${u}`,
+              key: `${p.author.name || ""} ${u}`.toLowerCase(),
+              user: u,
+            });
+          }
+          return {
+            kind: "plugin" as const,
+            label: p.name,
+            detail: p.description || "",
+            href: `/plugins/${p.name}`,
+            key: `${p.name} ${p.description || ""} ${(p.tags || []).join(" ")} ${p.category} ${p.author?.name || ""} ${u || ""}`.toLowerCase(),
+            user: u,
+          };
+        });
+        items = [...pluginItems, ...makers.values(), ...PAGES];
+      })
+      .catch(() => {});
+    return loaded;
+  }
+
+  function score(item: Item, q: string): number {
+    const label = item.label.toLowerCase();
+    if (label === q) return 100;
+    if (label.startsWith(q)) return 80;
+    if (item.user?.toLowerCase().startsWith(q)) return item.kind === "maker" ? 70 : 20;
+    if (label.includes(q)) return 60;
+    if (item.key.includes(q)) return 30;
+    return 0;
+  }
+
+  function search() {
+    const q = input.value.trim().toLowerCase();
+    if (!q) {
+      results = [...items.filter((i) => i.kind === "plugin").slice(0, 6), ...PAGES];
+    } else {
+      results = items
+        .map((item) => ({ item, s: score(item, q) }))
+        .filter((r) => r.s > 0)
+        .sort((a, b) => b.s - a.s || (a.item.kind === "plugin" ? -1 : 1))
+        .slice(0, 30)
+        .map((r) => r.item);
+    }
+    active = 0;
+    render();
+  }
+
+  function render() {
+    if (!results.length) {
+      list.innerHTML = `<li class="px-3 py-6 text-center text-sm text-ink-3">No match. Try a plugin name, a tag, or a maker.</li>`;
+      return;
+    }
+    list.innerHTML = results
+      .map((item, i) => {
+        const icon =
+          item.kind === "page"
+            ? `<span class="font-pixel text-[14px] text-magenta w-5 text-center">»</span>`
+            : avatarHtml(item.user, 20);
+        const badge =
+          item.kind === "plugin" && hasPlugin(item.label)
+            ? `<span class="ml-auto shrink-0 font-mono text-xs text-cyan">✓ loadout</span>`
+            : `<span class="ml-auto shrink-0 font-mono text-xs text-ink-3">${item.kind}</span>`;
+        return `<li id="cmdk-${i}" role="option" aria-selected="${i === active}" data-index="${i}" class="cmdk-item flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2">
+          ${icon}
+          <span class="min-w-0"><span class="block truncate text-sm text-ink">${esc(item.label)}</span><span class="block truncate text-xs text-ink-3">${esc(item.detail)}</span></span>
+          ${badge}
+        </li>`;
+      })
+      .join("");
+    input.setAttribute("aria-activedescendant", `cmdk-${active}`);
+    list.querySelector(`[data-index="${active}"]`)?.scrollIntoView({ block: "nearest" });
+  }
+
+  function open() {
+    if (dialog.open) return;
+    input.value = "";
+    dialog.showModal();
+    input.focus();
+    search();
+    load().then(search);
+  }
+
+  function go(item?: Item) {
+    if (!item) return;
+    dialog.close();
+    window.location.href = item.href;
+  }
+
+  input.addEventListener("input", search);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      const n = results.length;
+      if (!n) return;
+      active = (active + (e.key === "ArrowDown" ? 1 : -1) + n) % n;
+      render();
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      go(results[active]);
+    } else if (e.key === "Tab" && results[active]?.kind === "plugin") {
+      e.preventDefault();
+      togglePlugin(results[active].label);
+      render();
+    }
+  });
+  list.addEventListener("click", (e) => {
+    const li = (e.target as Element).closest<HTMLElement>("[data-index]");
+    if (li) go(results[Number(li.dataset.index)]);
+  });
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const typing = (e.target as Element | null)?.closest("input, textarea, select, [contenteditable]");
+    if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || (e.key === "/" && !typing)) {
+      e.preventDefault();
+      open();
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if ((e.target as Element | null)?.closest("[data-open-palette]")) open();
+  });
+  // Warm the data when the browser is idle so the first open is instant.
+  if ("requestIdleCallback" in window) requestIdleCallback(() => load(), { timeout: 4000 });
+</script>

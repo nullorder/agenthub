@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import Loader from '../components/Loader.astro';
+import Loadout from '../components/Loadout.astro';
+import CommandPalette from '../components/CommandPalette.astro';
 
 interface Props {
   title: string;
@@ -65,16 +67,19 @@ const imageUrl = new URL(image, Astro.site).toString();
     <meta name="twitter:image" content={imageUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-    <style define:vars={{ fontUrl: `url(${base}fonts/Pixeled.ttf)` }}>
-      @font-face {
-        font-family: 'Pixeled';
-        src: var(--fontUrl) format('truetype');
-        font-weight: normal;
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="preload" href={`${base}fonts/Pixelspace-Regular.woff2`} as="font" type="font/woff2" crossorigin />
+    <style
+      is:inline
+      set:html={`@font-face {
+        font-family: 'Pixelspace';
+        src: url('${base}fonts/Pixelspace-Regular.woff2') format('woff2'),
+             url('${base}fonts/Pixelspace-Regular.ttf') format('truetype');
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
-      }
-    </style>
+      }`}
+    />
     {jsonLd && (
       <script
         is:inline
@@ -88,10 +93,18 @@ const imageUrl = new URL(image, Astro.site).toString();
         var t = localStorage.getItem('theme') || 'system';
         var e = t === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : t;
         document.documentElement.classList.add(e);
+        // The boot animation plays once per browser session, and never for
+        // visitors who ask for reduced motion.
+        try {
+          if (sessionStorage.getItem('ah:booted') || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('booted');
+          }
+        } catch (err) {}
       })();
     </script>
+    <style is:inline>html.booted #loader { display: none; }</style>
   </head>
-  <body class="font-nunito text-gray-100 min-h-screen relative flex flex-col">
+  <body class="font-nunito text-ink min-h-screen relative flex flex-col">
     <div class="fixed inset-0 -z-10">
       <img src={`${base}bg.webp`} alt="" class="bg-dark h-full w-full object-cover" />
       <img src={`${base}bg-light.png`} alt="" class="bg-light absolute inset-0 h-full w-full object-cover" />
@@ -102,11 +115,16 @@ const imageUrl = new URL(image, Astro.site).toString();
 
     <slot />
 
+    <Loadout />
+    <CommandPalette />
+
     <script>
       const start = Date.now();
+      const loader = document.getElementById('loader');
+      if (document.documentElement.classList.contains('booted')) loader?.remove();
+      try { sessionStorage.setItem('ah:booted', '1'); } catch {}
       window.addEventListener('load', () => {
-        const loader = document.getElementById('loader');
-        if (!loader) return;
+        if (!loader || !loader.isConnected) return;
         const elapsed = Date.now() - start;
         const delay = Math.max(0, 2000 - elapsed);
         setTimeout(() => {

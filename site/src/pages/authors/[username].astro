@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import PluginCard from "../../components/PluginCard.astro";
+import { loadAuthors, type Author } from "../../lib/plugins";
+import { avatarHtml, compactNumber, relTime } from "../../lib/card";
+
+export async function getStaticPaths() {
+  const authors = loadAuthors();
+  return authors.map((author, i) => ({
+    params: { username: author.username },
+    props: { author, rank: i + 1, total: authors.length },
+  }));
+}
+
+const { author, rank, total } = Astro.props as { author: Author; rank: number; total: number };
+
+const latest = author.plugins
+  .map((p) => p.updatedAt)
+  .filter(Boolean)
+  .sort()
+  .at(-1) as string | undefined;
+const categories = [...new Set(author.plugins.map((p) => p.category))];
+const stats = [
+  { value: String(author.plugins.length), label: author.plugins.length === 1 ? "plugin" : "plugins" },
+  { value: compactNumber(author.views), label: "views" },
+  ...(author.stars ? [{ value: compactNumber(author.stars), label: "stars" }] : []),
+];
+
+const siteUrl = new URL(`/authors/${author.username}`, Astro.site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: siteUrl,
+  mainEntity: {
+    "@type": "Person",
+    name: author.name,
+    alternateName: author.username,
+    url: author.url,
+  },
+};
+---
+
+<Layout
+  title={`${author.name} — Claude Code plugins | AgentHub`}
+  description={`${author.plugins.length} Claude Code plugin${author.plugins.length === 1 ? "" : "s"} by ${author.name} on AgentHub.`}
+  jsonLd={jsonLd}
+>
+  <Navbar />
+
+  <div class="mx-auto w-full max-w-6xl flex-1 px-4 py-10 lg:px-8">
+    <a href="/#makers" class="mb-8 inline-flex items-center gap-2 text-sm text-ink-2 hover:text-ink">← All makers</a>
+
+    <header class="hud-panel mb-10 flex flex-col gap-6 sm:flex-row sm:items-center">
+      <a href={author.url} target="_blank" rel="noopener noreferrer" class="author-portrait self-center sm:self-auto" aria-label={`${author.name} on GitHub`} set:html={avatarHtml(author.username, 112, { sharp: true })} />
+      <div class="min-w-0 flex-1 text-center sm:text-left">
+        <p class="hud-label mb-3">Maker {String(rank).padStart(3, "0")} / {total}</p>
+        <h1 class="font-pixel text-[28px] leading-tight text-ink [overflow-wrap:break-word] sm:text-[42px]">{author.name}</h1>
+        <p class="mt-2 font-mono text-sm text-ink-2">
+          <a href={author.url} target="_blank" rel="noopener noreferrer" class="author-name">@{author.username}</a>
+          {latest && <span class="text-ink-3"> · last active <time datetime={latest} data-reltime>{relTime(latest)}</time> ago</span>}
+        </p>
+        <p class="mt-3 flex flex-wrap justify-center gap-1.5 sm:justify-start">
+          {categories.map((c) => <a href={`/?category=${c}#catalog`} class={`cat cat-${c} rounded-full px-2.5 py-0.5 text-xs font-medium`}>{c}</a>)}
+        </p>
+      </div>
+      <dl class="flex justify-center gap-8 sm:flex-col sm:gap-3 sm:text-right">
+        {stats.map((s) => (
+          <div>
+            <dd class="font-pixel text-[28px] leading-none text-ink">{s.value}</dd>
+            <dt class="mt-1 text-xs text-ink-3">{s.label}</dt>
+          </div>
+        ))}
+      </dl>
+    </header>
+
+    <h2 class="hud-label mb-4">Plugins · {author.plugins.length}</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {author.plugins.map((p) => <PluginCard {...p} />)}
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .author-portrait :global(.px-avatar) { border-radius: 10px; box-shadow: 0 0 0 1px var(--line), 0 0 0 6px var(--panel); }
+</style>
+
+<script>
+  import { relTime } from "../../lib/card";
+
+  document.querySelectorAll<HTMLTimeElement>("time[data-reltime]").forEach((t) => {
+    t.textContent = relTime(t.dateTime);
+  });
+
+  // Portrait starts as an 8-bit sprite and resolves to the full photo.
+  const img = document.querySelector<HTMLImageElement>(".author-portrait img[data-sharp]");
+  if (img) {
+    const sharp = new Image();
+    sharp.onload = () => {
+      img.src = sharp.src;
+      img.classList.add("is-sharp");
+    };
+    setTimeout(() => (sharp.src = img.dataset.sharp!), 600);
+  }
+</script>

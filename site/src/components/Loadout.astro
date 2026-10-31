@@ -1,0 +1,125 @@
+---
+---
+
+<section
+  id="loadout"
+  class="loadout-tray pointer-events-none fixed inset-x-0 bottom-0 z-40 px-3 pb-3 sm:px-4 sm:pb-4"
+  aria-label="Loadout"
+  hidden
+>
+  <div class="pointer-events-auto mx-auto max-w-2xl rounded-xl border border-cyan/40 bg-canvas/90 p-3 shadow-2xl shadow-black/40 backdrop-blur-xl sm:p-4">
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+      <span class="font-pixel text-[14px] text-ink">LOADOUT <span data-role="count" class="text-magenta">0</span></span>
+      <ul data-role="chips" class="flex min-w-0 flex-1 flex-wrap gap-1.5" aria-label="Plugins in loadout"></ul>
+      <div class="ml-auto flex items-center gap-2">
+        <button type="button" data-role="expand" class="loadout-toggle" aria-expanded="false" aria-controls="loadout-commands">Commands</button>
+        <button type="button" data-role="copy" class="loadout-toggle !bg-cyan !text-canvas">Copy</button>
+        <button type="button" data-role="clear" class="rounded p-1 text-ink-3 hover:text-ink" aria-label="Clear loadout">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="loadout-commands" data-role="panel" class="mt-3 border-t border-line pt-3" hidden>
+      <div class="mb-2 flex items-center gap-2" role="tablist" aria-label="Command format">
+        <button type="button" role="tab" data-mode="shell" class="loadout-mode hud-label !text-xs" aria-selected="true">Terminal</button>
+        <button type="button" role="tab" data-mode="slash" class="loadout-mode hud-label !text-xs" aria-selected="false">Claude Code</button>
+      </div>
+      <pre data-role="commands" class="max-h-48 overflow-auto rounded-lg border border-line bg-panel p-3 font-mono text-xs leading-relaxed text-ink-2"></pre>
+      <p data-role="hint" class="mt-2 text-xs text-ink-3">Paste into your terminal. Each line runs in order.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .loadout-mode { opacity: 0.55; }
+  .loadout-mode::before { content: "" !important; }
+  .loadout-mode[aria-selected="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+  :global(html.has-loadout body) { padding-bottom: 6rem; }
+</style>
+
+<script>
+  import {
+    clearLoadout,
+    getLoadout,
+    onLoadoutChange,
+    removePlugin,
+    shellCommands,
+    slashCommands,
+    wireToggles,
+  } from "../scripts/loadout";
+
+  const tray = document.getElementById("loadout")!;
+  const count = tray.querySelector<HTMLElement>('[data-role="count"]')!;
+  const chips = tray.querySelector<HTMLUListElement>('[data-role="chips"]')!;
+  const panel = tray.querySelector<HTMLElement>('[data-role="panel"]')!;
+  const expand = tray.querySelector<HTMLButtonElement>('[data-role="expand"]')!;
+  const copy = tray.querySelector<HTMLButtonElement>('[data-role="copy"]')!;
+  const pre = tray.querySelector<HTMLElement>('[data-role="commands"]')!;
+  const hint = tray.querySelector<HTMLElement>('[data-role="hint"]')!;
+  const modes = tray.querySelectorAll<HTMLButtonElement>(".loadout-mode");
+  let mode: "shell" | "slash" = "shell";
+
+  function commands() {
+    return mode === "shell" ? shellCommands(getLoadout()) : slashCommands(getLoadout());
+  }
+
+  function render(names: string[]) {
+    tray.hidden = names.length === 0;
+    document.documentElement.classList.toggle("has-loadout", names.length > 0);
+    count.textContent = String(names.length);
+    chips.replaceChildren(
+      ...names.map((name) => {
+        const li = document.createElement("li");
+        li.className = "flex items-center gap-1 whitespace-nowrap rounded border border-line bg-panel px-1.5 py-0.5 font-mono text-xs text-ink-2";
+        const link = document.createElement("a");
+        link.href = `/plugins/${name}`;
+        link.textContent = name;
+        link.className = "hover:text-cyan";
+        const x = document.createElement("button");
+        x.type = "button";
+        x.textContent = "×";
+        x.className = "text-ink-3 hover:text-ink";
+        x.setAttribute("aria-label", `Remove ${name}`);
+        x.addEventListener("click", () => removePlugin(name));
+        li.append(link, x);
+        return li;
+      }),
+    );
+    pre.textContent = commands();
+  }
+
+  expand.addEventListener("click", () => {
+    const open = panel.hidden;
+    panel.hidden = !open;
+    expand.setAttribute("aria-expanded", String(open));
+  });
+
+  modes.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      mode = btn.dataset.mode as "shell" | "slash";
+      modes.forEach((b) => b.setAttribute("aria-selected", String(b === btn)));
+      hint.textContent =
+        mode === "shell"
+          ? "Paste into your terminal. Each line runs in order."
+          : "Run these inside Claude Code, one at a time.";
+      pre.textContent = commands();
+    }),
+  );
+
+  copy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(commands());
+      copy.textContent = "Copied";
+    } catch {
+      panel.hidden = false;
+      expand.setAttribute("aria-expanded", "true");
+      copy.textContent = "Select below";
+    }
+    setTimeout(() => (copy.textContent = "Copy"), 1600);
+  });
+
+  tray.querySelector('[data-role="clear"]')!.addEventListener("click", clearLoadout);
+
+  wireToggles();
+  onLoadoutChange(render);
+</script>
