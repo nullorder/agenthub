@@ -1,0 +1,30 @@
+{
+  "name": "lunch-reel",
+  "source": {
+    "source": "github",
+    "repo": "skillstack-lab/lunch-reel"
+  },
+  "description": "Spoiler-free MLB catch-up plans and private local reels from MLB's public per-play highlights. Plan-only needs no video; render stays on your machine.",
+  "version": "1.0.0",
+  "author": {
+    "username": "ssdesk-bot"
+  },
+  "category": "productivity",
+  "license": "MIT",
+  "tags": ["skills", "mlb", "highlights", "video", "agent-skills"]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
