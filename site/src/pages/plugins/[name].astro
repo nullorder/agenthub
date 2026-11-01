@@ -14,17 +14,11 @@ import {
   getSourceRepo,
   getSourceLabel,
 } from "../../lib/source";
-import { loadViewCounts } from "../../lib/plugins";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { loadPlugins } from "../../lib/plugins";
+import { categoryClass } from "../../lib/card";
 
 export async function getStaticPaths() {
-  const marketplacePath = resolve(
-    process.cwd(),
-    "../.claude-plugin/marketplace.json",
-  );
-  const marketplace = JSON.parse(readFileSync(marketplacePath, "utf-8"));
-  const plugins = marketplace.plugins || [];
+  const plugins = loadPlugins();
 
   return plugins.map((plugin: any) => ({
     params: { name: plugin.name },
@@ -65,20 +59,9 @@ const authorUrl =
     ? `https://github.com/${plugin.author.username}`
     : "");
 
-const categoryColors: Record<string, string> = {
-  development: "bg-blue-500/20 text-blue-300",
-  testing: "bg-green-500/20 text-green-300",
-  devops: "bg-orange-500/20 text-orange-300",
-  security: "bg-red-500/20 text-red-300",
-  documentation: "bg-purple-500/20 text-purple-300",
-  productivity: "bg-yellow-500/20 text-yellow-300",
-  data: "bg-cyan-500/20 text-cyan-300",
-  design: "bg-pink-500/20 text-pink-300",
-  other: "bg-gray-500/20 text-gray-300",
-};
-const categoryColor = categoryColors[plugin.category] || categoryColors.other;
+const categoryColor = categoryClass(plugin.category);
 
-const viewCount = loadViewCounts()[plugin.name] ?? 0;
+const viewCount = (plugin as any).views ?? 0;
 
 const authorKey = plugin.author.username;
 const sameAuthor = allPlugins.filter(
@@ -175,7 +158,7 @@ const jsonLd = {
   <div class="mx-auto w-full max-w-5xl px-4 py-10 flex-1 lg:px-8">
     <a
       href="/"
-      class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors mb-6"
+      class="inline-flex items-center gap-1 text-sm text-ink-2 hover:text-ink transition-colors mb-6"
     >
       <svg
         width="16"
@@ -193,9 +176,10 @@ const jsonLd = {
     </a>
 
     <article
-      class="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 shadow-lg shadow-black/20 sm:p-8"
+      class="rounded-2xl border border-line bg-panel p-6 shadow-lg shadow-black/20 sm:p-8"
     >
       <PluginHeader
+        authorUsername={plugin.author.username}
         name={plugin.name}
         authorDisplay={authorDisplay}
         authorUrl={authorUrl}
@@ -206,14 +190,14 @@ const jsonLd = {
         viewCount={viewCount}
       />
 
-      <p class="mb-6 text-lg leading-relaxed text-gray-300">
+      <p class="mb-6 text-lg leading-relaxed text-ink-2">
         {plugin.description}
       </p>
 
       {plugin.tags && plugin.tags.length > 0 && (
         <div class="mb-6 flex flex-wrap gap-2">
           {plugin.tags.map((tag) => (
-            <span class="rounded border border-white/10 bg-white/5 px-2 py-1 text-xs font-medium text-gray-400">
+            <span class="rounded border border-line bg-panel px-2 py-1 text-xs font-medium text-ink-2">
               {tag}
             </span>
           ))}

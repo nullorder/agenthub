@@ -3,9 +3,11 @@ interface Props {
   size?: string;
   showHud?: boolean;
   showOrbitText?: boolean;
+  /** Tilt toward the pointer (hero use). */
+  interactive?: boolean;
 }
 
-const { size = 'h-64 w-64 mx-auto', showHud = false, showOrbitText = true } = Astro.props;
+const { size = 'h-64 w-64 mx-auto', showHud = false, showOrbitText = true, interactive = false } = Astro.props;
 
 // Unique suffix per instance so SVG-def IDs don't collide when the loader
 // and the header globe are mounted at the same time during page load.
@@ -19,7 +21,7 @@ const sep = '      \u2726      ';
 const chars = Array.from(word + sep);
 ---
 
-<div class={`retro-globe ${size}`} data-uid={uid} data-orbit-text={showOrbitText ? '1' : '0'}>
+<div class={`retro-globe ${size}`} data-uid={uid} data-orbit-text={showOrbitText ? '1' : '0'} data-interactive={interactive ? '1' : undefined}>
   <div class="rg-scene">
     <!-- Behind-globe text letters -->
     {showOrbitText && <div class="rg-layer rg-text-layer rg-back-text" data-role="back-text"></div>}
@@ -167,7 +169,7 @@ const chars = Array.from(word + sep);
     position: absolute;
     left: 50%;
     top: 50%;
-    font-family: "Press Start 2P", "Pixeled", ui-monospace, monospace;
+    font-family: "Pixelspace", ui-monospace, monospace;
     /* Scale the orbit text with the rendered globe size so the component
        reads well at any scale (navbar 40px through hero ~760px). */
     font-size: clamp(3px, 7cqmin, 22px);
@@ -350,8 +352,43 @@ const chars = Array.from(word + sep);
 
     const tilt = (-20 * Math.PI) / 180;
     const start = performance.now();
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Skip work while offscreen (the hero globe scrolls away; the loader's
+    // globe is removed from the DOM once boot finishes).
+    let visible = true;
+    let running = false;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        const wasVisible = visible;
+        visible = entry.isIntersecting;
+        if (visible && !wasVisible && !reduceMotion && !running) {
+          running = true;
+          requestAnimationFrame(frame);
+        }
+      }).observe(root);
+    }
+
+    if (root.dataset.interactive === '1' && !reduceMotion) {
+      let rx = 0, ry = 0, tx = 0, ty = 0, raf = 0;
+      const ease = () => {
+        rx += (tx - rx) * 0.08;
+        ry += (ty - ry) * 0.08;
+        scene.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+        raf = Math.abs(tx - rx) + Math.abs(ty - ry) > 0.05 ? requestAnimationFrame(ease) : 0;
+      };
+      window.addEventListener('pointermove', (e) => {
+        const r = root.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+        const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+        tx = Math.max(-1, Math.min(1, dy)) * -14;
+        ty = Math.max(-1, Math.min(1, dx)) * 18;
+        if (!raf) raf = requestAnimationFrame(ease);
+      }, { passive: true });
+    }
 
     function frame(now: number) {
+      if (!root.isConnected) { running = false; return; }
       const spinRate = (now / 16000) * Math.PI * 2;
       const rect = scene.getBoundingClientRect();
       if (rect.width > 0) {
@@ -416,8 +453,10 @@ const chars = Array.from(word + sep);
         el.style.transform = `rotate(${deg}deg)`;
       });
 
-      requestAnimationFrame(frame);
+      running = visible && !reduceMotion;
+      if (running) requestAnimationFrame(frame);
     }
+    running = true;
     requestAnimationFrame(frame);
   }
 

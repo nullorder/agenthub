@@ -1,87 +1,90 @@
 ---
+import RetroGlobe from "./RetroGlobe.astro";
+
 interface Props {
   pluginCount: number;
   authorCount: number;
+  newCount: number;
 }
 
-const { pluginCount, authorCount } = Astro.props;
+const { pluginCount, authorCount, newCount } = Astro.props;
+const stats = [
+  { value: String(pluginCount), label: "plugins" },
+  { value: String(authorCount), label: "makers" },
+  { value: String(newCount), label: "new in 30 days" },
+];
 ---
 
-<header class="mb-10 text-center">
-  <h1 class="font-pixel mb-2 text-[clamp(1.75rem,9vw,3.75rem)] font-bold tracking-tight text-white">
-    AGENTHUB
-  </h1>
-  <p class="text-xl text-gray-400">
-    Community-driven plugin marketplace for Claude Code
-  </p>
-  <div
-    class="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-1.5"
-  >
-    <code class="text-base text-gray-300"
-      >/plugin marketplace add nullorder/agenthub</code
-    >
-    <button
-      id="copy-cmd"
-      class="rounded p-1 text-gray-500 hover:text-white transition-colors"
-      aria-label="Copy command"
-    >
-      <svg
-        id="copy-icon"
-        class="h-4 w-4"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-      </svg>
-      <svg
-        id="check-icon"
-        class="h-4 w-4 hidden text-green-400"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path d="M20 6L9 17l-5-5"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="mt-8 flex items-start justify-center gap-12 sm:gap-20">
-    <div class="flex flex-col items-center">
-      <span
-        class="font-pixel text-4xl sm:text-5xl font-bold leading-none text-white"
-      >
-        {pluginCount}
-      </span>
-      <span class="mt-2 text-sm text-gray-400">plugins</span>
+<header class="hero mb-14 grid grid-cols-[minmax(0,1fr)] items-center gap-6 lg:mb-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10">
+  <div class="order-2 text-center lg:order-1 lg:text-left">
+    <p class="hud-label mb-5">Null order · plugin registry</p>
+    <h1 class="font-pixel text-[42px] leading-none text-ink sm:text-[56px] xl:text-[70px]">AGENTHUB</h1>
+    <p class="mx-auto mt-5 max-w-xl text-xl leading-relaxed text-ink-2 lg:mx-0">
+      Community-built plugins for Claude Code, from {authorCount} makers. Find one, add it to your loadout, install in one paste.
+    </p>
+
+    <div class="mt-6 inline-flex max-w-full items-center gap-2 rounded-lg border border-line bg-panel px-3 py-1.5 backdrop-blur-sm">
+      <span class="font-pixel text-[14px] text-cyan" aria-hidden="true">&gt;</span>
+      <code class="truncate text-base text-ink-2">/plugin marketplace add nullorder/agenthub</code>
+      <button id="copy-cmd" class="shrink-0 rounded p-1 text-ink-3 transition-colors hover:text-ink" aria-label="Copy command">
+        <svg id="copy-icon" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <svg id="check-icon" class="hidden h-4 w-4 text-maker" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5"></path>
+        </svg>
+      </button>
     </div>
-    <div class="flex flex-col items-center">
-      <span
-        class="font-pixel text-4xl sm:text-5xl font-bold leading-none text-white"
-      >
-        {authorCount}
-      </span>
-      <span class="mt-2 text-sm text-gray-400">authors</span>
+
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+      <a href="#catalog" class="rounded-lg bg-cyan px-4 py-2 text-base font-medium text-canvas transition-opacity hover:opacity-90">Browse plugins</a>
+      <button type="button" data-open-palette class="flex items-center gap-2 rounded-lg border border-line bg-panel px-4 py-2 text-base text-ink-2 transition-colors hover:border-line-strong hover:text-ink">
+        Search
+        <kbd class="rounded border border-line px-1.5 font-mono text-xs text-ink-3">⌘K</kbd>
+      </button>
+      <a href="/submit" class="rounded-lg border border-line bg-panel px-4 py-2 text-base text-ink-2 transition-colors hover:border-line-strong hover:text-ink">Add your plugin</a>
     </div>
+
+    <dl class="mt-10 flex justify-center gap-10 sm:gap-14 lg:justify-start">
+      {stats.map((s) => (
+        <div class="flex flex-col items-center lg:items-start">
+          <dt class="order-2 mt-3 text-sm text-ink-3">{s.label}</dt>
+          <dd class="font-pixel order-1 text-[35px] leading-none text-ink sm:text-[42px]">{s.value}</dd>
+        </div>
+      ))}
+    </dl>
   </div>
 
-  <script>
-    const copyBtn = document.getElementById("copy-cmd");
-    const copyIcon = document.getElementById("copy-icon");
-    const checkIcon = document.getElementById("check-icon");
-
-    copyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(
-        "/plugin marketplace add nullorder/agenthub",
-      );
-      copyIcon.classList.add("hidden");
-      checkIcon.classList.remove("hidden");
-      setTimeout(() => {
-        copyIcon.classList.remove("hidden");
-        checkIcon.classList.add("hidden");
-      }, 2000);
-    });
-  </script>
+  <div class="order-1 overflow-x-clip lg:order-2">
+    <RetroGlobe size="hero-globe" showHud={true} interactive={true} />
+  </div>
 </header>
+
+<style>
+  .hero :global(.hero-globe) {
+    display: block;
+    width: min(460px, 78vw);
+    aspect-ratio: 1;
+    height: auto;
+    margin-inline: auto;
+  }
+  @media (max-width: 1023px) {
+    .hero :global(.hero-globe) { width: min(300px, 70vw); }
+  }
+</style>
+
+<script>
+  const copyBtn = document.getElementById("copy-cmd")!;
+  const copyIcon = document.getElementById("copy-icon")!;
+  const checkIcon = document.getElementById("check-icon")!;
+
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText("/plugin marketplace add nullorder/agenthub");
+    copyIcon.classList.add("hidden");
+    checkIcon.classList.remove("hidden");
+    setTimeout(() => {
+      copyIcon.classList.remove("hidden");
+      checkIcon.classList.add("hidden");
+    }, 2000);
+  });
+</script>

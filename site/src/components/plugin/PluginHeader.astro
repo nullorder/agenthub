@@ -1,6 +1,9 @@
 ---
+import { avatarHtml, esc, loadoutButtonHtml } from "../../lib/card";
+
 interface Props {
   name: string;
+  authorUsername?: string;
   authorDisplay: string;
   authorUrl: string;
   version?: string;
@@ -12,6 +15,7 @@ interface Props {
 
 const {
   name,
+  authorUsername,
   authorDisplay,
   authorUrl,
   version,
@@ -33,41 +37,35 @@ const viewsTitle = `${displayedViews.toLocaleString()} ${
 
 <header class="mb-6 flex flex-wrap items-start justify-between gap-4">
   <div class="min-w-0">
-    <h1 class="font-pixel text-3xl font-bold text-white break-words sm:text-4xl">
-      {name}
-    </h1>
-    <div class="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-400">
-      <span>
-        by {authorUrl ? (
-          <a
-            href={authorUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-400 hover:underline"
-          >
-            {authorDisplay}
-          </a>
-        ) : (
-          <span class="text-white">{authorDisplay}</span>
-        )}
-      </span>
+    <h1 class="font-pixel text-[28px] leading-tight text-ink [overflow-wrap:break-word] sm:text-[42px]" set:html={esc(name).replace(/-/g, "-<wbr>")} />
+    <div class="mt-3 flex flex-wrap items-center gap-2 text-sm text-ink-2">
+      {authorUsername ? (
+        <a href={`/authors/${authorUsername}`} class="flex items-center gap-2">
+          <Fragment set:html={avatarHtml(authorUsername, 24, { sharp: false })} />
+          <span class="author-name">{authorDisplay}</span>
+        </a>
+      ) : authorUrl ? (
+        <a href={authorUrl} target="_blank" rel="noopener noreferrer" class="author-name">{authorDisplay}</a>
+      ) : (
+        <span class="text-ink">{authorDisplay}</span>
+      )}
       {version && (
         <>
-          <span class="text-gray-600">•</span>
-          <span class="rounded bg-white/10 px-2 py-0.5 font-mono text-xs text-gray-300">
+          <span class="text-ink-3">•</span>
+          <span class="rounded bg-panel-2 px-2 py-0.5 font-mono text-xs text-ink-2">
             v{version}
           </span>
         </>
       )}
       {license && (
         <>
-          <span class="text-gray-600">•</span>
+          <span class="text-ink-3">•</span>
           <span class="license-badge rounded px-2 py-0.5 text-xs font-medium">
             {license}
           </span>
         </>
       )}
-      <span class="text-gray-600">•</span>
+      <span class="text-ink-3">•</span>
       <span
         class={`rounded-full px-2.5 py-0.5 text-xs font-medium ${categoryColor}`}
       >
@@ -75,8 +73,10 @@ const viewsTitle = `${displayedViews.toLocaleString()} ${
       </span>
     </div>
   </div>
+  <div class="flex shrink-0 items-center gap-2">
+  <Fragment set:html={loadoutButtonHtml(name, "!py-1 !text-sm")} />
   <span
-    class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm font-medium text-gray-300"
+    class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-panel px-3 py-1 text-sm font-medium text-ink-2"
     title={viewsTitle}
     aria-label={viewsTitle}
   >
@@ -96,4 +96,5 @@ const viewsTitle = `${displayedViews.toLocaleString()} ${
     </svg>
     <span class="font-mono">{viewsText}</span>
   </span>
+  </div>
 </header>

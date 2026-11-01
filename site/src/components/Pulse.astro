@@ -1,0 +1,103 @@
+---
+// The "alive" strip on the homepage: most viewed leaderboard, registry
+// activity feed, and the makers wall.
+import { avatarHtml, compactNumber, relTime } from "../lib/card";
+import { loadActivity, loadAuthors, loadPlugins } from "../lib/plugins";
+
+const top = loadPlugins().filter((p) => p.views > 0).slice(0, 5);
+const maxViews = top[0]?.views || 1;
+const BAR = 12;
+const bar = (views: number) => {
+  const filled = Math.max(1, Math.round((views / maxViews) * BAR));
+  return "█".repeat(filled) + "░".repeat(BAR - filled);
+};
+
+const activity = loadActivity(7);
+const verb = { added: "launched", updated: "updated", removed: "retired" } as const;
+
+const authors = loadAuthors();
+---
+
+<section class="mb-14 grid grid-cols-1 gap-4 lg:mb-20 lg:grid-cols-2" aria-label="Registry pulse">
+  <div class="hud-panel">
+    <h2 class="hud-label mb-4">Most viewed</h2>
+    <ol class="space-y-2.5">
+      {top.map((p, i) => (
+        <li>
+          <a href={`/plugins/${p.name}`} class="group grid grid-cols-[2ch_minmax(0,1fr)_auto] items-center gap-3 text-sm sm:grid-cols-[2ch_minmax(0,11rem)_1fr_auto]">
+            <span class="font-mono text-ink-3">{String(i + 1).padStart(2, "0")}</span>
+            <span class="truncate text-ink transition-colors group-hover:text-cyan">{p.name}</span>
+            <span class="font-pixel hidden text-[14px] leading-none text-cyan/80 sm:block" aria-hidden="true">{bar(p.views)}</span>
+            <span class="font-mono text-xs text-magenta">▲ {compactNumber(p.views)}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <div class="hud-panel">
+    <h2 class="hud-label mb-4">Transmission log</h2>
+    {activity.length ? (
+      <ul class="space-y-2.5 font-mono text-xs leading-relaxed sm:text-[13px]">
+        {activity.map((e) => (
+          <li class="flex items-baseline gap-3">
+            <time class="w-8 shrink-0 text-right text-ink-3" datetime={e.date} data-reltime>{relTime(e.date)}</time>
+            <span class="min-w-0 text-ink-2">
+              {e.author && <a href={`/authors/${e.author}`} class="author-name">{e.author}</a>}{" "}
+              {verb[e.type]}{" "}
+              {e.type === "removed" ? (
+                <span class="text-ink">{e.plugin}</span>
+              ) : (
+                <a href={`/plugins/${e.plugin}`} class="text-ink hover:text-cyan">{e.plugin}</a>
+              )}
+              {e.type === "updated" && e.to && <span class="text-magenta"> → {e.to}</span>}
+              {e.type === "added" && <span class="text-cyan"> + new</span>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-sm text-ink-3">No recent transmissions.</p>
+    )}
+  </div>
+
+  <div id="makers" class="hud-panel scroll-mt-24 lg:col-span-2">
+    <div class="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+      <h2 class="hud-label">Makers · {authors.length}</h2>
+      <a href="/submit" class="font-mono text-xs text-cyan hover:underline">Become one →</a>
+    </div>
+    <ul class="makers-wall flex flex-wrap gap-2">
+      {authors.map((a) => (
+        <li>
+          <a
+            href={`/authors/${a.username}`}
+            class="maker block rounded-[4px] outline-offset-2 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-cyan"
+            title={`${a.name} · ${a.plugins.length} plugin${a.plugins.length === 1 ? "" : "s"}`}
+            aria-label={`${a.name}, ${a.plugins.length} plugin${a.plugins.length === 1 ? "" : "s"}`}
+            set:html={avatarHtml(a.username, 36, { sharp: true })}
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<script>
+  import { relTime } from "../lib/card";
+
+  document.querySelectorAll<HTMLTimeElement>("time[data-reltime]").forEach((t) => {
+    t.textContent = relTime(t.dateTime);
+  });
+
+  // Makers sharpen from 8-bit to full resolution on hover.
+  document.querySelectorAll<HTMLAnchorElement>(".makers-wall .maker").forEach((link) => {
+    const img = link.querySelector<HTMLImageElement>("img[data-sharp]");
+    if (!img) return;
+    const sharpen = () => {
+      img.src = img.dataset.sharp!;
+      img.classList.add("is-sharp");
+    };
+    link.addEventListener("pointerenter", sharpen, { once: true });
+    link.addEventListener("focus", sharpen, { once: true });
+  });
+</script>

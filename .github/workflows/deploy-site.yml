@@ -32,6 +32,9 @@ jobs:
         with:
           # Ensure we get the latest commit (including the marketplace rebuild commit)
           ref: main
+          # Full history: the site reads git log of plugins/ for join dates,
+          # "recently updated" sorting and the activity feed.
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
         with:

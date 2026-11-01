@@ -1,0 +1,244 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { loadPlugins } from "../lib/plugins";
+import { CATEGORIES } from "../lib/card";
+import { getSourceRepo } from "../lib/source";
+
+const plugins = loadPlugins();
+const existing = {
+  names: plugins.map((p) => p.name),
+  repos: plugins.map((p) => getSourceRepo(p.source)).filter(Boolean),
+};
+const TAGS = ["skills", "agents", "commands", "hooks", "mcp-servers", "lsp-servers", "integration"];
+const field = "w-full rounded-lg border border-line bg-panel px-3 py-2 text-base text-ink placeholder-ink-3 outline-none transition-colors focus:border-cyan/60 focus:ring-1 focus:ring-cyan/50";
+const label = "mb-1.5 block text-sm font-medium text-ink";
+const help = "mt-1 text-xs text-ink-3";
+---
+
+<Layout title="Add your plugin — AgentHub" description="List your Claude Code plugin on AgentHub in a couple of minutes. Fill in the form and open a pull request on GitHub.">
+  <Navbar />
+
+  <div class="mx-auto w-full max-w-6xl flex-1 px-4 py-10 lg:px-8">
+    <p class="hud-label mb-4">Transmit a plugin</p>
+    <h1 class="font-pixel text-[35px] leading-tight text-ink sm:text-[42px]">Add your plugin</h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-2">
+      Fill this in and we'll write the registry entry for you. The last step opens GitHub with the file ready, so you just review it and open the pull request. Your code stays in your own repo.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
+      <form id="submit-form" class="hud-panel space-y-5" novalidate>
+        <div>
+          <label for="f-name" class={label}>Plugin name</label>
+          <input id="f-name" name="name" class={field} placeholder="react-test-generator" autocomplete="off" spellcheck="false" required />
+          <p class={help}>Lowercase words joined by hyphens. Avoid “claude”, “anthropic”, and “official”.</p>
+          <p class="field-error" data-for="name"></p>
+        </div>
+
+        <div>
+          <label for="f-description" class={label}>Description</label>
+          <textarea id="f-description" name="description" rows="2" class={field} placeholder="Generates React Testing Library tests for a component" required></textarea>
+          <p class="field-error" data-for="description"></p>
+        </div>
+
+        <fieldset>
+          <legend class={label}>Where the code lives</legend>
+          <div class="mb-3 flex flex-wrap gap-2" role="radiogroup">
+            {[["github", "GitHub repo"], ["git-subdir", "Folder in a repo"], ["url", "Other git host"], ["npm", "npm package"]].map(([value, text], i) => (
+              <label class="filter-chip cursor-pointer has-[:checked]:border-cyan/60 has-[:checked]:text-ink">
+                <input type="radio" name="sourceType" value={value} checked={i === 0} class="sr-only" />{text}
+              </label>
+            ))}
+          </div>
+          <div data-source="github">
+            <input name="repo" class={field} placeholder="owner/repo" spellcheck="false" />
+          </div>
+          <div data-source="git-subdir url" hidden class="space-y-3">
+            <input name="url" class={field} placeholder="https://github.com/owner/repo.git" spellcheck="false" />
+            <input name="path" data-source="git-subdir" class={field} placeholder="packages/my-plugin" spellcheck="false" />
+          </div>
+          <div data-source="npm" hidden>
+            <input name="package" class={field} placeholder="@scope/plugin-name" spellcheck="false" />
+          </div>
+          <p class="field-error" data-for="source"></p>
+        </fieldset>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="f-version" class={label}>Version</label>
+            <input id="f-version" name="version" class={field} value="1.0.0" spellcheck="false" />
+            <p class="field-error" data-for="version"></p>
+          </div>
+          <div>
+            <label for="f-license" class={label}>License</label>
+            <input id="f-license" name="license" class={field} value="MIT" spellcheck="false" />
+            <p class={help}>SPDX identifier, like MIT or Apache-2.0.</p>
+            <p class="field-error" data-for="license"></p>
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="f-username" class={label}>Your GitHub username</label>
+            <input id="f-username" name="username" class={field} placeholder="octocat" spellcheck="false" />
+            <p class="field-error" data-for="username"></p>
+          </div>
+          <div>
+            <label for="f-author" class={label}>Display name <span class="text-ink-3">(optional)</span></label>
+            <input id="f-author" name="authorName" class={field} placeholder="Mona Lisa" />
+          </div>
+        </div>
+
+        <div>
+          <label for="f-category" class={label}>Category</label>
+          <select id="f-category" name="category" class={field}>
+            {CATEGORIES.map((c) => <option value={c}>{c}</option>)}
+          </select>
+        </div>
+
+        <fieldset>
+          <legend class={label}>What it ships <span class="text-ink-3">(optional)</span></legend>
+          <div class="flex flex-wrap gap-2">
+            {TAGS.map((t) => (
+              <label class="filter-chip cursor-pointer has-[:checked]:border-cyan/60 has-[:checked]:text-ink">
+                <input type="checkbox" name="tags" value={t} class="sr-only" />{t}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      </form>
+
+      <aside class="lg:sticky lg:top-24 lg:self-start">
+        <div class="hud-panel">
+          <div class="mb-3 flex items-center justify-between gap-2">
+            <h2 class="hud-label">plugins/<span id="file-name">your-plugin</span>.json</h2>
+            <span id="status" class="font-mono text-xs text-ink-3">waiting for input</span>
+          </div>
+          <pre id="preview" class="max-h-[420px] overflow-auto rounded-lg border border-line bg-canvas/60 p-4 font-mono text-xs leading-relaxed text-ink-2"></pre>
+          <a id="open-pr" href="#" class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-cyan px-4 py-2.5 text-base font-medium text-canvas transition-opacity hover:opacity-90 aria-disabled:pointer-events-none aria-disabled:opacity-40" aria-disabled="true" target="_blank" rel="noopener noreferrer">
+            Open pull request on GitHub →
+          </a>
+          <p class="mt-3 text-xs text-ink-3">
+            GitHub will ask you to fork the repo and commit the file. CI then checks it and a maintainer reviews it. See the <a href="https://github.com/nullorder/agenthub/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="text-cyan hover:underline">contributing guide</a>.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script type="application/json" id="existing-plugins" set:html={JSON.stringify(existing)} />
+
+  <Footer />
+</Layout>
+
+<style>
+  .field-error { margin-top: 0.25rem; font-size: 0.8125rem; color: #f87171; }
+  .field-error:empty { display: none; }
+  :global(html.light) .field-error { color: #b91c1c; }
+</style>
+
+<script>
+  const form = document.getElementById("submit-form") as HTMLFormElement;
+  const preview = document.getElementById("preview")!;
+  const fileName = document.getElementById("file-name")!;
+  const status = document.getElementById("status")!;
+  const openPr = document.getElementById("open-pr") as HTMLAnchorElement;
+  const existing: { names: string[]; repos: string[] } = JSON.parse(
+    document.getElementById("existing-plugins")!.textContent || "{}",
+  );
+  const touched = new Set<string>();
+
+  const val = (name: string) => ((form.elements.namedItem(name) as HTMLInputElement | null)?.value || "").trim();
+
+  function sourceType() {
+    return (form.querySelector<HTMLInputElement>('input[name="sourceType"]:checked')?.value || "github");
+  }
+
+  function buildSource() {
+    const type = sourceType();
+    if (type === "github") return { source: "github", repo: val("repo").replace(/^https?:\/\/github\.com\//, "").replace(/\.git$/, "").replace(/\/$/, "") };
+    if (type === "npm") return { source: "npm", package: val("package") };
+    if (type === "git-subdir") return { source: "git-subdir", url: val("url"), path: val("path") };
+    return { source: "url", url: val("url") };
+  }
+
+  function validate(entry: any) {
+    const errors: Record<string, string> = {};
+    if (!entry.name) errors.name = "Give your plugin a name.";
+    else if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(entry.name)) errors.name = "Use lowercase letters, numbers, and single hyphens.";
+    else if (/claude|anthropic|official/.test(entry.name)) errors.name = "Names can't include claude, anthropic, or official.";
+    else if (existing.names.includes(entry.name)) errors.name = "That name is taken. Try another.";
+    if (!entry.description) errors.description = "Add a one-line description.";
+    const s = entry.source;
+    if (s.source === "github" && !/^[\w.-]+\/[\w.-]+$/.test(s.repo)) errors.source = "Enter the repo as owner/repo.";
+    else if (s.source === "github" && existing.repos.includes(s.repo)) errors.source = "This repo is already listed. Ask the maintainers if it ships another plugin.";
+    else if ((s.source === "url" || s.source === "git-subdir") && !/^https?:\/\/.+/.test(s.url)) errors.source = "Enter the full git URL.";
+    else if (s.source === "git-subdir" && !s.path) errors.source = "Enter the folder path inside the repo.";
+    else if (s.source === "npm" && !s.package) errors.source = "Enter the npm package name.";
+    if (!/^\d+\.\d+\.\d+([-+].+)?$/.test(entry.version)) errors.version = "Use a semantic version like 1.0.0.";
+    if (!entry.license) errors.license = "Add a license identifier.";
+    if (!entry.author.username) errors.username = "Add your GitHub username.";
+    return errors;
+  }
+
+  function render() {
+    const tags = [...form.querySelectorAll<HTMLInputElement>('input[name="tags"]:checked')].map((i) => i.value);
+    const author: Record<string, string> = { username: val("username") };
+    if (val("authorName")) author.name = val("authorName");
+    const entry: Record<string, unknown> = {
+      name: val("name"),
+      source: buildSource(),
+      description: val("description"),
+      version: val("version"),
+      author,
+      category: val("category"),
+      license: val("license"),
+    };
+    if (tags.length) entry.tags = tags;
+
+    const json = JSON.stringify(entry, null, 2) + "\n";
+    preview.textContent = json;
+    fileName.textContent = (entry.name as string) || "your-plugin";
+
+    const errors = validate(entry);
+    form.querySelectorAll<HTMLElement>(".field-error").forEach((el) => {
+      const key = el.dataset.for!;
+      el.textContent = touched.has(key) ? errors[key] || "" : "";
+    });
+    const ok = Object.keys(errors).length === 0;
+    status.textContent = ok ? "ready to transmit" : `${Object.keys(errors).length} to fix`;
+    status.className = `font-mono text-xs ${ok ? "text-maker" : "text-ink-3"}`;
+    openPr.setAttribute("aria-disabled", String(!ok));
+    openPr.href = ok
+      ? `https://github.com/nullorder/agenthub/new/main/plugins?filename=${encodeURIComponent(`${entry.name}.json`)}&value=${encodeURIComponent(json)}`
+      : "#";
+  }
+
+  const keyFor = (name: string) => (["repo", "url", "path", "package"].includes(name) ? "source" : name);
+
+  form.addEventListener("input", (e) => {
+    const target = e.target as HTMLInputElement;
+    if (target.name === "sourceType") {
+      form.querySelectorAll<HTMLElement>("[data-source]").forEach((el) => {
+        el.hidden = !el.dataset.source!.split(" ").includes(target.value);
+      });
+    }
+    render();
+  });
+  form.addEventListener("focusout", (e) => {
+    const name = (e.target as HTMLInputElement).name;
+    if (name) touched.add(keyFor(name));
+    render();
+  });
+  openPr.addEventListener("click", (e) => {
+    if (openPr.getAttribute("aria-disabled") === "true") {
+      e.preventDefault();
+      ["name", "description", "source", "version", "license", "username"].forEach((k) => touched.add(k));
+      render();
+      form.querySelector<HTMLElement>(".field-error:not(:empty)")?.closest("div, fieldset")?.querySelector<HTMLElement>("input, textarea")?.focus();
+    }
+  });
+  form.addEventListener("submit", (e) => e.preventDefault());
+  render();
+</script>
