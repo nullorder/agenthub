@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-30T18:55:59.478Z",
+  "generated_at": "2026-11-03T20:21:08.005Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-10-30T18:55:58.080Z"
+    "end": "2026-11-03T20:21:06.571Z"
   },
   "plugins": {
-    "caveman": 21,
+    "caveman": 22,
     "agent-teams": 11,
-    "iconify": 8,
-    "ani-skills": 8,
+    "iconify": 9,
+    "ani-skills": 9,
     "c4-architecture": 6,
     "feluda": 6,
     "abstract": 6,
