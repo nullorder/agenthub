@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-03T20:21:08.005Z",
+  "generated_at": "2026-11-06T20:10:25.206Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-11-03T20:21:06.571Z"
+    "end": "2026-11-06T20:10:23.493Z"
   },
   "plugins": {
-    "caveman": 22,
+    "caveman": 23,
     "agent-teams": 11,
     "iconify": 9,
     "ani-skills": 9,
@@ -19,12 +19,12 @@
     "product-skills": 3,
     "security-scanner-plugin": 3,
     "claude-council": 3,
+    "plugin-eval": 3,
     "agentic-actions-auditor": 3,
     "code-to-prd": 3,
     "startup-business-analyst": 3,
     "dart-analyzer": 2,
     "claude-context-optimizer": 2,
-    "plugin-eval": 2,
     "gauntlet": 2,
     "gstack": 2,
     "compound-engineering": 2,
@@ -40,6 +40,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "supply-chain-risk-auditor": 1,
     "adversarial-spec": 1,
     "bash-language-server": 1,
     "audit-context-building": 1,
