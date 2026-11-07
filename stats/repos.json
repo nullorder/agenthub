@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T19:50:42.717Z",
+  "generated_at": "2026-11-07T17:56:24.675Z",
   "repos": {
     "ASCIT31/darkmoon-mcp-server": {
       "stars": 0,
@@ -16,7 +16,7 @@
       }
     },
     "Aaronontheweb/dotnet-skills": {
-      "stars": 1250,
+      "stars": 1251,
       "forks": 117,
       "watchers": 14,
       "issues": 6,
@@ -30,8 +30,8 @@
       }
     },
     "AgriciDaniel/claude-obsidian": {
-      "stars": 16226,
-      "forks": 1599,
+      "stars": 16239,
+      "forks": 1598,
       "watchers": 62,
       "issues": 25,
       "pushed_at": "2026-10-25T22:24:31Z",
@@ -71,21 +71,21 @@
       "stars": 1040,
       "forks": 138,
       "watchers": 4,
-      "issues": 6,
-      "pushed_at": "2026-11-06T18:01:54Z",
+      "issues": 7,
+      "pushed_at": "2026-11-07T16:26:55Z",
       "language": "Rust",
       "archived": false,
       "release": {
-        "tag": "v2.4.1",
-        "url": "https://github.com/DataDog/pup/releases/tag/v2.4.1",
-        "published_at": "2026-11-03T17:52:00Z"
+        "tag": "v2.4.2",
+        "url": "https://github.com/DataDog/pup/releases/tag/v2.4.2",
+        "published_at": "2026-11-07T00:37:14Z"
       }
     },
     "DietrichGebert/ponytail": {
-      "stars": 185772,
-      "forks": 10280,
-      "watchers": 433,
-      "issues": 183,
+      "stars": 186256,
+      "forks": 10308,
+      "watchers": 435,
+      "issues": 184,
       "pushed_at": "2026-10-29T11:59:31Z",
       "language": "JavaScript",
       "archived": false,
@@ -96,7 +96,7 @@
       }
     },
     "DrCatHicks/learning-opportunities": {
-      "stars": 2544,
+      "stars": 2545,
       "forks": 93,
       "watchers": 17,
       "issues": 10,
@@ -106,11 +106,11 @@
       "release": null
     },
     "EveryInc/compound-engineering-plugin": {
-      "stars": 25958,
-      "forks": 2059,
+      "stars": 25969,
+      "forks": 2057,
       "watchers": 129,
-      "issues": 95,
-      "pushed_at": "2026-11-06T05:33:23Z",
+      "issues": 97,
+      "pushed_at": "2026-11-07T06:03:44Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -120,8 +120,8 @@
       }
     },
     "Jeffallan/claude-skills": {
-      "stars": 12248,
-      "forks": 1177,
+      "stars": 12264,
+      "forks": 1176,
       "watchers": 85,
       "issues": 40,
       "pushed_at": "2026-10-30T18:00:19Z",
@@ -134,8 +134,8 @@
       }
     },
     "JuliusBrussee/cavekit": {
-      "stars": 1160,
-      "forks": 88,
+      "stars": 1161,
+      "forks": 87,
       "watchers": 14,
       "issues": 18,
       "pushed_at": "2026-08-14T22:07:51Z",
@@ -148,11 +148,11 @@
       }
     },
     "JuliusBrussee/caveman": {
-      "stars": 117983,
-      "forks": 6860,
+      "stars": 118135,
+      "forks": 6869,
       "watchers": 254,
-      "issues": 69,
-      "pushed_at": "2026-11-06T11:35:30Z",
+      "issues": 66,
+      "pushed_at": "2026-11-07T03:27:47Z",
       "language": "Go",
       "archived": false,
       "release": {
@@ -162,10 +162,10 @@
       }
     },
     "K-Dense-AI/claude-scientific-skills": {
-      "stars": 56317,
-      "forks": 4957,
+      "stars": 56390,
+      "forks": 4960,
       "watchers": 213,
-      "issues": 80,
+      "issues": 82,
       "pushed_at": "2026-11-02T09:23:27Z",
       "language": "Python",
       "archived": false,
@@ -176,11 +176,11 @@
       }
     },
     "Kayforkind/reimagine-it": {
-      "stars": 212,
+      "stars": 213,
       "forks": 31,
       "watchers": 7,
       "issues": 7,
-      "pushed_at": "2026-11-01T16:23:45Z",
+      "pushed_at": "2026-11-07T14:13:13Z",
       "language": "JavaScript",
       "archived": false,
       "release": {
@@ -191,7 +191,7 @@
     },
     "LigphiDonk/Oh-my--paper": {
       "stars": 753,
-      "forks": 53,
+      "forks": 54,
       "watchers": 1,
       "issues": 8,
       "pushed_at": "2026-04-15T08:53:14Z",
@@ -200,11 +200,11 @@
       "release": null
     },
     "Lum1104/Understand-Anything": {
-      "stars": 91094,
-      "forks": 7782,
-      "watchers": 287,
-      "issues": 353,
-      "pushed_at": "2026-11-06T06:40:28Z",
+      "stars": 91222,
+      "forks": 7790,
+      "watchers": 286,
+      "issues": 352,
+      "pushed_at": "2026-11-07T05:37:08Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -224,17 +224,17 @@
       "release": null
     },
     "OthmanAdi/planning-with-files": {
-      "stars": 27923,
-      "forks": 2313,
-      "watchers": 111,
-      "issues": 11,
-      "pushed_at": "2026-11-04T18:13:42Z",
+      "stars": 27940,
+      "forks": 2314,
+      "watchers": 112,
+      "issues": 6,
+      "pushed_at": "2026-11-07T11:24:31Z",
       "language": "Shell",
       "archived": false,
       "release": {
-        "tag": "v3.28.0",
-        "url": "https://github.com/OthmanAdi/planning-with-files/releases/tag/v3.28.0",
-        "published_at": "2026-11-03T02:02:21Z"
+        "tag": "v3.28.1",
+        "url": "https://github.com/OthmanAdi/planning-with-files/releases/tag/v3.28.1",
+        "published_at": "2026-11-07T11:24:33Z"
       }
     },
     "PabloLION/bmad-plugin": {
@@ -266,8 +266,8 @@
       }
     },
     "SawyerHood/dev-browser": {
-      "stars": 6723,
-      "forks": 439,
+      "stars": 6726,
+      "forks": 441,
       "watchers": 18,
       "issues": 22,
       "pushed_at": "2026-11-03T21:31:14Z",
@@ -283,8 +283,8 @@
       "stars": 37,
       "forks": 3,
       "watchers": 0,
-      "issues": 2,
-      "pushed_at": "2026-11-05T17:36:37Z",
+      "issues": 3,
+      "pushed_at": "2026-11-07T06:56:35Z",
       "language": "Python",
       "archived": false,
       "release": {
@@ -295,10 +295,10 @@
     },
     "Xquik-dev/x-twitter-scraper": {
       "stars": 227,
-      "forks": 23,
+      "forks": 24,
       "watchers": 2,
-      "issues": 2,
-      "pushed_at": "2026-11-05T21:09:57Z",
+      "issues": 4,
+      "pushed_at": "2026-11-07T15:34:56Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -308,11 +308,11 @@
       }
     },
     "affaan-m/everything-claude-code": {
-      "stars": 298464,
-      "forks": 44116,
-      "watchers": 1467,
-      "issues": 237,
-      "pushed_at": "2026-11-06T05:29:44Z",
+      "stars": 299024,
+      "forks": 44181,
+      "watchers": 1469,
+      "issues": 241,
+      "pushed_at": "2026-11-06T21:21:50Z",
       "language": "JavaScript",
       "archived": false,
       "release": {
@@ -322,7 +322,7 @@
       }
     },
     "agenticnotetaking/arscontexta": {
-      "stars": 3517,
+      "stars": 3518,
       "forks": 234,
       "watchers": 32,
       "issues": 35,
@@ -352,7 +352,7 @@
       "release": null
     },
     "akin-ozer/cc-devops-skills": {
-      "stars": 332,
+      "stars": 333,
       "forks": 38,
       "watchers": 2,
       "issues": 8,
@@ -390,10 +390,10 @@
       }
     },
     "alirezarezvani/claude-skills": {
-      "stars": 29411,
-      "forks": 4079,
-      "watchers": 235,
-      "issues": 0,
+      "stars": 29448,
+      "forks": 4083,
+      "watchers": 234,
+      "issues": 1,
       "pushed_at": "2026-11-05T06:58:08Z",
       "language": "Python",
       "archived": false,
@@ -461,8 +461,8 @@
       "stars": 348,
       "forks": 39,
       "watchers": 0,
-      "issues": 15,
-      "pushed_at": "2026-11-05T20:15:01Z",
+      "issues": 16,
+      "pushed_at": "2026-11-07T04:28:08Z",
       "language": "Python",
       "archived": false,
       "release": {
@@ -472,8 +472,8 @@
       }
     },
     "automazeio/ccpm": {
-      "stars": 8432,
-      "forks": 841,
+      "stars": 8435,
+      "forks": 840,
       "watchers": 39,
       "issues": 1,
       "pushed_at": "2026-11-04T13:13:23Z",
@@ -482,9 +482,9 @@
       "release": null
     },
     "blader/humanizer": {
-      "stars": 65590,
-      "forks": 5186,
-      "watchers": 279,
+      "stars": 65927,
+      "forks": 5211,
+      "watchers": 280,
       "issues": 16,
       "pushed_at": "2026-10-28T07:17:33Z",
       "language": "Python",
@@ -584,7 +584,7 @@
       "release": null
     },
     "dominikmartn/nothing-design-skill": {
-      "stars": 2850,
+      "stars": 2853,
       "forks": 165,
       "watchers": 8,
       "issues": 4,
@@ -604,7 +604,7 @@
       "release": null
     },
     "egorfedorov/claude-context-optimizer": {
-      "stars": 130,
+      "stars": 131,
       "forks": 13,
       "watchers": 0,
       "issues": 2,
@@ -646,7 +646,7 @@
       }
     },
     "feiskyer/claude-code-settings": {
-      "stars": 1675,
+      "stars": 1676,
       "forks": 239,
       "watchers": 16,
       "issues": 3,
@@ -670,25 +670,25 @@
       }
     },
     "garrytan/gstack": {
-      "stars": 140395,
-      "forks": 20727,
-      "watchers": 764,
-      "issues": 71,
-      "pushed_at": "2026-11-06T19:44:20Z",
+      "stars": 140620,
+      "forks": 20760,
+      "watchers": 763,
+      "issues": 66,
+      "pushed_at": "2026-11-07T17:47:32Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
-        "tag": "v1.96.0.0",
-        "url": "https://github.com/garrytan/gstack/releases/tag/v1.96.0.0",
-        "published_at": "2026-11-05T14:05:48Z"
+        "tag": "v1.97.0.0",
+        "url": "https://github.com/garrytan/gstack/releases/tag/v1.97.0.0",
+        "published_at": "2026-11-07T14:02:19Z"
       }
     },
     "gastownhall/beads": {
-      "stars": 28556,
-      "forks": 1935,
+      "stars": 28573,
+      "forks": 1936,
       "watchers": 89,
-      "issues": 1625,
-      "pushed_at": "2026-11-06T19:05:18Z",
+      "issues": 1635,
+      "pushed_at": "2026-11-07T17:34:29Z",
       "language": "Go",
       "archived": false,
       "release": {
@@ -740,17 +740,17 @@
       "forks": 63,
       "watchers": 9,
       "issues": 7,
-      "pushed_at": "2026-11-06T15:12:36Z",
+      "pushed_at": "2026-11-07T17:51:33Z",
       "language": "Python",
       "archived": false,
       "release": {
-        "tag": "flow-next-v9.8.0",
-        "url": "https://github.com/gmickel/flow-next/releases/tag/flow-next-v9.8.0",
-        "published_at": "2026-11-06T15:12:52Z"
+        "tag": "flow-next-v9.9.0",
+        "url": "https://github.com/gmickel/flow-next/releases/tag/flow-next-v9.9.0",
+        "published_at": "2026-11-07T17:51:49Z"
       }
     },
     "google-labs-code/stitch-skills": {
-      "stars": 8689,
+      "stars": 8691,
       "forks": 1048,
       "watchers": 83,
       "issues": 19,
@@ -765,10 +765,10 @@
     },
     "grafana/mcp-grafana": {
       "stars": 3646,
-      "forks": 487,
+      "forks": 490,
       "watchers": 116,
       "issues": 102,
-      "pushed_at": "2026-11-06T18:57:03Z",
+      "pushed_at": "2026-11-06T20:54:19Z",
       "language": "Go",
       "archived": false,
       "release": {
@@ -778,7 +778,7 @@
       }
     },
     "greggh/claude-code.nvim": {
-      "stars": 2106,
+      "stars": 2107,
       "forks": 73,
       "watchers": 11,
       "issues": 85,
@@ -802,7 +802,7 @@
       "release": null
     },
     "hashicorp/agent-skills": {
-      "stars": 917,
+      "stars": 919,
       "forks": 136,
       "watchers": 14,
       "issues": 13,
@@ -830,8 +830,8 @@
       }
     },
     "hex/claude-council": {
-      "stars": 921,
-      "forks": 108,
+      "stars": 922,
+      "forks": 106,
       "watchers": 6,
       "issues": 1,
       "pushed_at": "2026-11-01T19:37:38Z",
@@ -858,11 +858,11 @@
       }
     },
     "hyhmrright/brooks-lint": {
-      "stars": 1564,
+      "stars": 1567,
       "forks": 74,
       "watchers": 3,
       "issues": 0,
-      "pushed_at": "2026-11-06T15:08:36Z",
+      "pushed_at": "2026-11-07T09:01:48Z",
       "language": "HTML",
       "archived": false,
       "release": {
@@ -882,7 +882,7 @@
       "release": null
     },
     "jarrodwatts/claude-hud": {
-      "stars": 29122,
+      "stars": 29132,
       "forks": 1334,
       "watchers": 36,
       "issues": 5,
@@ -910,7 +910,7 @@
       }
     },
     "jordanrendric/claude-video-vision": {
-      "stars": 1468,
+      "stars": 1470,
       "forks": 170,
       "watchers": 10,
       "issues": 11,
@@ -924,11 +924,11 @@
       }
     },
     "kenryu42/claude-code-safety-net": {
-      "stars": 1932,
-      "forks": 90,
+      "stars": 1948,
+      "forks": 91,
       "watchers": 8,
-      "issues": 2,
-      "pushed_at": "2026-11-06T06:53:39Z",
+      "issues": 3,
+      "pushed_at": "2026-11-07T17:54:35Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -941,8 +941,8 @@
       "stars": 73,
       "forks": 19,
       "watchers": 0,
-      "issues": 18,
-      "pushed_at": "2026-11-06T19:45:13Z",
+      "issues": 15,
+      "pushed_at": "2026-11-07T08:28:53Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -953,7 +953,7 @@
     },
     "major7apps/pensyve": {
       "stars": 99,
-      "forks": 18,
+      "forks": 17,
       "watchers": 5,
       "issues": 26,
       "pushed_at": "2026-11-05T12:55:51Z",
@@ -990,8 +990,8 @@
       }
     },
     "nowork-studio/NotFair": {
-      "stars": 4114,
-      "forks": 519,
+      "stars": 4118,
+      "forks": 520,
       "watchers": 17,
       "issues": 7,
       "pushed_at": "2026-11-06T17:38:33Z",
@@ -1014,11 +1014,11 @@
       }
     },
     "nyldn/claude-octopus": {
-      "stars": 4397,
+      "stars": 4404,
       "forks": 415,
       "watchers": 23,
-      "issues": 27,
-      "pushed_at": "2026-11-06T19:32:43Z",
+      "issues": 29,
+      "pushed_at": "2026-11-07T17:46:31Z",
       "language": "Shell",
       "archived": false,
       "release": {
@@ -1056,10 +1056,10 @@
       }
     },
     "openai/codex-plugin-cc": {
-      "stars": 34941,
-      "forks": 2423,
+      "stars": 34961,
+      "forks": 2425,
       "watchers": 110,
-      "issues": 545,
+      "issues": 544,
       "pushed_at": "2026-07-08T00:17:31Z",
       "language": "JavaScript",
       "archived": false,
@@ -1071,7 +1071,7 @@
     },
     "pdugan20/claudelint": {
       "stars": 14,
-      "forks": 5,
+      "forks": 4,
       "watchers": 1,
       "issues": 5,
       "pushed_at": "2026-11-03T04:40:21Z",
@@ -1084,8 +1084,8 @@
       }
     },
     "phuryn/pm-skills": {
-      "stars": 27743,
-      "forks": 2870,
+      "stars": 27752,
+      "forks": 2872,
       "watchers": 224,
       "issues": 49,
       "pushed_at": "2026-10-29T19:09:57Z",
@@ -1119,7 +1119,7 @@
     },
     "revfactory/harness": {
       "stars": 9335,
-      "forks": 1342,
+      "forks": 1344,
       "watchers": 53,
       "issues": 3,
       "pushed_at": "2026-09-28T05:19:20Z",
@@ -1128,11 +1128,11 @@
       "release": null
     },
     "ruvnet/ruflo": {
-      "stars": 81073,
-      "forks": 9543,
-      "watchers": 476,
-      "issues": 654,
-      "pushed_at": "2026-11-06T18:31:29Z",
+      "stars": 81151,
+      "forks": 9546,
+      "watchers": 477,
+      "issues": 648,
+      "pushed_at": "2026-11-07T04:46:23Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
@@ -1142,11 +1142,11 @@
       }
     },
     "ryoppippi/ccusage": {
-      "stars": 19345,
-      "forks": 910,
+      "stars": 19355,
+      "forks": 911,
       "watchers": 27,
-      "issues": 12,
-      "pushed_at": "2026-11-06T17:53:26Z",
+      "issues": 10,
+      "pushed_at": "2026-11-07T08:37:07Z",
       "language": "Rust",
       "archived": false,
       "release": {
@@ -1156,8 +1156,8 @@
       }
     },
     "sangrokjung/claude-forge": {
-      "stars": 873,
-      "forks": 183,
+      "stars": 874,
+      "forks": 182,
       "watchers": 7,
       "issues": 32,
       "pushed_at": "2026-09-03T11:14:41Z",
@@ -1198,8 +1198,8 @@
       }
     },
     "shinpr/claude-code-workflows": {
-      "stars": 711,
-      "forks": 107,
+      "stars": 712,
+      "forks": 106,
       "watchers": 8,
       "issues": 0,
       "pushed_at": "2026-11-06T04:19:10Z",
@@ -1250,8 +1250,8 @@
       "release": null
     },
     "snyk/agent-scan": {
-      "stars": 3218,
-      "forks": 297,
+      "stars": 3222,
+      "forks": 296,
       "watchers": 12,
       "issues": 25,
       "pushed_at": "2026-11-06T16:13:58Z",
@@ -1264,7 +1264,7 @@
       }
     },
     "st0012/ruby-skills": {
-      "stars": 124,
+      "stars": 125,
       "forks": 7,
       "watchers": 5,
       "issues": 2,
@@ -1288,8 +1288,8 @@
       }
     },
     "supabase/agent-skills": {
-      "stars": 3015,
-      "forks": 265,
+      "stars": 3025,
+      "forks": 263,
       "watchers": 13,
       "issues": 527,
       "pushed_at": "2026-11-05T12:42:22Z",
@@ -1326,25 +1326,25 @@
       }
     },
     "thedotmack/claude-mem": {
-      "stars": 113931,
-      "forks": 9887,
+      "stars": 114352,
+      "forks": 9921,
       "watchers": 359,
-      "issues": 125,
-      "pushed_at": "2026-11-06T19:32:18Z",
+      "issues": 66,
+      "pushed_at": "2026-11-07T16:38:14Z",
       "language": "TypeScript",
       "archived": false,
       "release": {
-        "tag": "v15.10.1",
-        "url": "https://github.com/thedotmack/claude-mem/releases/tag/v15.10.1",
-        "published_at": "2026-11-06T11:52:02Z"
+        "tag": "v15.11.1",
+        "url": "https://github.com/thedotmack/claude-mem/releases/tag/v15.11.1",
+        "published_at": "2026-11-07T09:51:54Z"
       }
     },
     "timescale/pg-aiguide": {
-      "stars": 1884,
+      "stars": 1885,
       "forks": 120,
       "watchers": 12,
       "issues": 15,
-      "pushed_at": "2026-11-06T14:30:09Z",
+      "pushed_at": "2026-11-06T21:16:25Z",
       "language": "Python",
       "archived": false,
       "release": {
@@ -1354,7 +1354,7 @@
       }
     },
     "trailofbits/skills": {
-      "stars": 8046,
+      "stars": 8061,
       "forks": 683,
       "watchers": 65,
       "issues": 154,
@@ -1364,10 +1364,10 @@
       "release": null
     },
     "vercel-labs/agent-skills": {
-      "stars": 33634,
-      "forks": 2940,
-      "watchers": 126,
-      "issues": 192,
+      "stars": 33682,
+      "forks": 2943,
+      "watchers": 125,
+      "issues": 193,
       "pushed_at": "2026-10-28T19:17:28Z",
       "language": "JavaScript",
       "archived": false,
@@ -1378,8 +1378,8 @@
       }
     },
     "wshobson/agents": {
-      "stars": 42261,
-      "forks": 4464,
+      "stars": 42280,
+      "forks": 4468,
       "watchers": 314,
       "issues": 6,
       "pushed_at": "2026-11-05T15:57:30Z",
@@ -1398,10 +1398,10 @@
       "release": null
     },
     "zilliztech/memsearch": {
-      "stars": 2825,
-      "forks": 278,
+      "stars": 2831,
+      "forks": 279,
       "watchers": 10,
-      "issues": 259,
+      "issues": 263,
       "pushed_at": "2026-11-06T03:07:55Z",
       "language": "Python",
       "archived": false,
