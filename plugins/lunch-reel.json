@@ -4,7 +4,7 @@
     "source": "github",
     "repo": "skillstack-lab/lunch-reel"
   },
-  "description": "Spoiler-free MLB catch-up plans and private local reels from MLB's public per-play highlights. Plan-only needs no video; render stays on your machine.",
+  "description": "Time-budgeted MLB catch-up plans from public play-by-play and highlight listings. Plan-only downloads no video; optional local rendering stays on your machine. Some highlight titles can reveal the result.",
   "version": "1.0.0",
   "author": {
     "username": "ssdesk-bot"
