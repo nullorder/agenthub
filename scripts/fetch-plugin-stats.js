@@ -19,23 +19,84 @@ if (!TOKEN) {
 }
 
 const start = process.env.GOATCOUNTER_START || "2024-01-01T00:00:00Z";
-const end = new Date().toISOString();
+// GoatCounter wants hour-aligned ranges, so round up to the next full hour.
+const endDate = new Date();
+endDate.setUTCHours(endDate.getUTCHours() + 1, 0, 0, 0);
+const end = endDate.toISOString().replace(".000Z", "Z");
 
 const url = new URL(`https://${SITE}.goatcounter.com/api/v0/stats/hits`);
 url.searchParams.set("start", start);
 url.searchParams.set("end", end);
 url.searchParams.set("limit", "100");
 
-const res = await fetch(url, {
-  headers: { Authorization: `Bearer ${TOKEN}` },
-});
+// The API intermittently answers a valid, authenticated request with a 404,
+// and the same request succeeds on a later try. Retry that, rate limits, 5xx
+// and network errors; fail straight away on anything else (e.g. a bad token).
+const RETRY_DELAYS_S = [10, 30, 90];
+const isRetryable = (status) =>
+  status === 404 || status === 408 || status === 429 || status >= 500;
 
-if (!res.ok) {
-  console.error(`GoatCounter API ${res.status}: ${await res.text()}`);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const fail = (msg) => {
+  console.error(`::error::${msg}`);
   process.exit(1);
+};
+
+// Asking for JSON makes GoatCounter return {"error": "..."} instead of an
+// HTML error page, so the log says what actually went wrong.
+async function errorMessage(res) {
+  const body = await res.text();
+  try {
+    const json = JSON.parse(body);
+    return json.error || JSON.stringify(json.errors ?? json);
+  } catch {
+    const h1 = body.match(/<h1>([^<]*)<\/h1>/i)?.[1];
+    return h1 || body.replace(/\s+/g, " ").slice(0, 200);
+  }
 }
 
-const data = await res.json();
+async function fetchHits() {
+  const attempts = RETRY_DELAYS_S.length + 1;
+  for (let attempt = 1; ; attempt++) {
+    let res;
+    let reason;
+    try {
+      res = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (err) {
+      reason = `network error: ${err.cause?.message || err.message}`;
+    }
+
+    if (res?.ok) return res.json();
+
+    if (res) {
+      reason = `${res.status} ${await errorMessage(res)}`;
+      if (res.status === 401 || res.status === 403) {
+        fail(`GoatCounter API ${reason}. Check the GOATCOUNTER_TOKEN secret.`);
+      }
+      if (!isRetryable(res.status)) fail(`GoatCounter API ${reason}`);
+    }
+
+    if (attempt === attempts) {
+      fail(`GoatCounter API ${reason} (gave up after ${attempts} attempts)`);
+    }
+
+    const retryAfter = Number(res?.headers.get("Retry-After"));
+    const wait = retryAfter > 0 ? Math.min(retryAfter, 120) : RETRY_DELAYS_S[attempt - 1];
+    console.warn(
+      `::warning::GoatCounter API ${reason}, retrying in ${wait}s (attempt ${attempt}/${attempts})`,
+    );
+    await sleep(wait * 1000);
+  }
+}
+
+const data = await fetchHits();
 
 const marketplace = JSON.parse(
   readFileSync(resolve(REPO_ROOT, ".claude-plugin/marketplace.json"), "utf-8"),
