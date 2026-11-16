@@ -8,12 +8,17 @@
 
 <p align="center">A community-driven plugin marketplace for Claude Code. Open to everyone.</p>
 
-[![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://discord.gg/AJMEeFXxXy)
-[![X (Twitter)](https://img.shields.io/badge/@orderofnull-000000?logo=x&logoColor=white)](https://x.com/orderofnull)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://discord.gg/AJMEeFXxXy"><img src="https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://x.com/orderofnull"><img src="https://img.shields.io/badge/@orderofnull-000000?logo=x&logoColor=white" alt="X (Twitter)" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+</p>
 
 <!-- STATS:START -->
-**326** plugins | **102** authors
+<p align="center">
+  <a href="https://agenthub.nullorder.org"><img src="https://img.shields.io/badge/plugins-326-22d3ee?style=for-the-badge&labelColor=1e293b" alt="326 plugins" /></a>
+  <a href="https://agenthub.nullorder.org/#makers"><img src="https://img.shields.io/badge/authors-102-86efac?style=for-the-badge&labelColor=1e293b" alt="102 authors" /></a>
+</p>
 <!-- STATS:END -->
 
 ## Install

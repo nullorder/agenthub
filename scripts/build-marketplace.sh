@@ -47,8 +47,12 @@ README="$REPO_ROOT/README.md"
 if [ -f "$README" ]; then
   awk -v pc="$plugin_count" -v cc="$author_count" '
     /<!-- STATS:START -->/ {
+      badge = "https://img.shields.io/badge/%s-%s-%s?style=for-the-badge&labelColor=1e293b"
       print "<!-- STATS:START -->"
-      print "**" pc "** plugins | **" cc "** authors"
+      print "<p align=\"center\">"
+      printf "  <a href=\"https://agenthub.nullorder.org\"><img src=\"" badge "\" alt=\"%s plugins\" /></a>\n", "plugins", pc, "22d3ee", pc
+      printf "  <a href=\"https://agenthub.nullorder.org/#makers\"><img src=\"" badge "\" alt=\"%s authors\" /></a>\n", "authors", cc, "86efac", cc
+      print "</p>"
       print "<!-- STATS:END -->"
       skip=1; next
     }

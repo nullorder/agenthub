@@ -7,9 +7,9 @@ const authors = loadAuthors();
 ---
 
 <section id="makers" class="hud-panel mt-4 scroll-mt-24" aria-labelledby="makers-title">
-  <div class="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+  <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
     <h2 id="makers-title" class="hud-label">Makers · {authors.length}</h2>
-    <a href="/submit" class="font-mono text-xs text-cyan hover:underline">Become one →</a>
+    <a href="/submit" class="loadout-toggle !px-3 !py-1">Become one →</a>
   </div>
   <ul class="makers-wall flex flex-wrap gap-2">
     {authors.map((a) => (
