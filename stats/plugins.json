@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-13T20:42:40.164Z",
+  "generated_at": "2026-11-16T21:15:32.540Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-11-13T20:42:38.787Z"
+    "end": "2026-11-16T22:00:00Z"
   },
   "plugins": {
-    "caveman": 23,
-    "agent-teams": 11,
+    "caveman": 27,
+    "agent-teams": 12,
     "iconify": 9,
     "ani-skills": 9,
     "c4-architecture": 6,
     "feluda": 6,
     "abstract": 6,
-    "plugin-eval": 4,
+    "plugin-eval": 5,
     "gt-sdlc": 4,
     "bmad-plugin": 4,
     "meigen-ai-design": 4,
@@ -40,6 +40,8 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "stitch-design": 1,
+    "wshobson-cicd-automation": 1,
     "supply-chain-risk-auditor": 1,
     "adversarial-spec": 1,
     "bash-language-server": 1,
