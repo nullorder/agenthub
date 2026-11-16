@@ -1,8 +1,8 @@
 ---
-// The "alive" strip on the homepage: most viewed leaderboard, registry
-// activity feed, and the makers wall.
-import { avatarHtml, compactNumber, relTime } from "../lib/card";
-import { loadActivity, loadAuthors, loadPlugins } from "../lib/plugins";
+// The "alive" strip on the homepage: most viewed leaderboard and registry
+// activity feed. The makers wall lives in Makers.astro, below the CTA.
+import { compactNumber, relTime } from "../lib/card";
+import { loadActivity, loadPlugins } from "../lib/plugins";
 
 const top = loadPlugins().filter((p) => p.views > 0).slice(0, 5);
 const maxViews = top[0]?.views || 1;
@@ -14,8 +14,6 @@ const bar = (views: number) => {
 
 const activity = loadActivity(7);
 const verb = { added: "launched", updated: "updated", removed: "retired" } as const;
-
-const authors = loadAuthors();
 ---
 
 <section class="mb-14 grid grid-cols-1 gap-4 lg:mb-20 lg:grid-cols-2" aria-label="Registry pulse">
@@ -60,26 +58,6 @@ const authors = loadAuthors();
       <p class="text-sm text-ink-3">No recent transmissions.</p>
     )}
   </div>
-
-  <div id="makers" class="hud-panel scroll-mt-24 lg:col-span-2">
-    <div class="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-      <h2 class="hud-label">Makers · {authors.length}</h2>
-      <a href="/submit" class="font-mono text-xs text-cyan hover:underline">Become one →</a>
-    </div>
-    <ul class="makers-wall flex flex-wrap gap-2">
-      {authors.map((a) => (
-        <li>
-          <a
-            href={`/authors/${a.username}`}
-            class="maker block rounded-[4px] outline-offset-2 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-cyan"
-            title={`${a.name} · ${a.plugins.length} plugin${a.plugins.length === 1 ? "" : "s"}`}
-            aria-label={`${a.name}, ${a.plugins.length} plugin${a.plugins.length === 1 ? "" : "s"}`}
-            set:html={avatarHtml(a.username, 36, { sharp: true })}
-          />
-        </li>
-      ))}
-    </ul>
-  </div>
 </section>
 
 <script>
@@ -87,17 +65,5 @@ const authors = loadAuthors();
 
   document.querySelectorAll<HTMLTimeElement>("time[data-reltime]").forEach((t) => {
     t.textContent = relTime(t.dateTime);
-  });
-
-  // Makers sharpen from 8-bit to full resolution on hover.
-  document.querySelectorAll<HTMLAnchorElement>(".makers-wall .maker").forEach((link) => {
-    const img = link.querySelector<HTMLImageElement>("img[data-sharp]");
-    if (!img) return;
-    const sharpen = () => {
-      img.src = img.dataset.sharp!;
-      img.classList.add("is-sharp");
-    };
-    link.addEventListener("pointerenter", sharpen, { once: true });
-    link.addEventListener("focus", sharpen, { once: true });
   });
 </script>

@@ -1,0 +1,41 @@
+---
+// The makers wall on the homepage: one avatar per plugin author.
+import { avatarHtml } from "../lib/card";
+import { loadAuthors } from "../lib/plugins";
+
+const authors = loadAuthors();
+---
+
+<section id="makers" class="hud-panel mt-4 scroll-mt-24" aria-labelledby="makers-title">
+  <div class="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+    <h2 id="makers-title" class="hud-label">Makers · {authors.length}</h2>
+    <a href="/submit" class="font-mono text-xs text-cyan hover:underline">Become one →</a>
+  </div>
+  <ul class="makers-wall flex flex-wrap gap-2">
+    {authors.map((a) => (
+      <li>
+        <a
+          href={`/authors/${a.username}`}
+          class="maker block rounded-[4px] outline-offset-2 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-cyan"
+          title={`${a.name} · ${a.plugins.length} plugin${a.plugins.length === 1 ? "" : "s"}`}
+          aria-label={`${a.name}, ${a.plugins.length} plugin${a.plugins.length === 1 ? "" : "s"}`}
+          set:html={avatarHtml(a.username, 36, { sharp: true })}
+        />
+      </li>
+    ))}
+  </ul>
+</section>
+
+<script>
+  // Makers sharpen from 8-bit to full resolution on hover.
+  document.querySelectorAll<HTMLAnchorElement>(".makers-wall .maker").forEach((link) => {
+    const img = link.querySelector<HTMLImageElement>("img[data-sharp]");
+    if (!img) return;
+    const sharpen = () => {
+      img.src = img.dataset.sharp!;
+      img.classList.add("is-sharp");
+    };
+    link.addEventListener("pointerenter", sharpen, { once: true });
+    link.addEventListener("focus", sharpen, { once: true });
+  });
+</script>
