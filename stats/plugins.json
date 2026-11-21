@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-20T21:38:17.375Z",
+  "generated_at": "2026-11-21T20:18:51.195Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-11-20T22:00:00Z"
+    "end": "2026-11-21T21:00:00Z"
   },
   "plugins": {
-    "caveman": 28,
+    "caveman": 29,
     "agent-teams": 12,
     "iconify": 9,
     "ani-skills": 9,
@@ -17,12 +17,12 @@
     "gt-sdlc": 4,
     "bmad-plugin": 4,
     "meigen-ai-design": 4,
+    "startup-business-analyst": 4,
     "product-skills": 3,
     "security-scanner-plugin": 3,
     "claude-council": 3,
     "agentic-actions-auditor": 3,
     "code-to-prd": 3,
-    "startup-business-analyst": 3,
     "dart-analyzer": 2,
     "claude-context-optimizer": 2,
     "gauntlet": 2,
@@ -40,6 +40,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "conductor": 1,
     "stitch-design": 1,
     "wshobson-cicd-automation": 1,
     "supply-chain-risk-auditor": 1,
