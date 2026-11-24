@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T01:25:00.306Z",
+  "generated_at": "2026-11-24T23:19:30.983Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-11-24T02:00:00Z"
+    "end": "2026-11-25T00:00:00Z"
   },
   "plugins": {
     "caveman": 30,
@@ -40,6 +40,7 @@
     "archetypes": 2,
     "dev-browser": 2,
     "a11y-audit": 2,
+    "learning-opportunities": 1,
     "conductor": 1,
     "stitch-design": 1,
     "wshobson-cicd-automation": 1,
