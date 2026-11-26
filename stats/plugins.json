@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T22:52:35.223Z",
+  "generated_at": "2026-11-26T22:42:50.665Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-11-25T23:00:00Z"
+    "end": "2026-11-26T23:00:00Z"
   },
   "plugins": {
     "caveman": 30,
@@ -18,12 +18,12 @@
     "bmad-plugin": 4,
     "meigen-ai-design": 4,
     "startup-business-analyst": 4,
+    "dart-analyzer": 3,
     "product-skills": 3,
     "security-scanner-plugin": 3,
     "claude-council": 3,
     "agentic-actions-auditor": 3,
     "code-to-prd": 3,
-    "dart-analyzer": 2,
     "claude-context-optimizer": 2,
     "gauntlet": 2,
     "gstack": 2,
