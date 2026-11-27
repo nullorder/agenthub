@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-26T22:42:50.665Z",
+  "generated_at": "2026-11-27T22:25:51.343Z",
   "source": "goatcounter",
   "range": {
     "start": "2024-01-01T00:00:00Z",
-    "end": "2026-11-26T23:00:00Z"
+    "end": "2026-11-27T23:00:00Z"
   },
   "plugins": {
-    "caveman": 30,
+    "caveman": 31,
     "agent-teams": 12,
     "iconify": 10,
     "ani-skills": 9,
+    "plugin-eval": 6,
     "c4-architecture": 6,
     "feluda": 6,
     "abstract": 6,
-    "plugin-eval": 5,
     "gt-sdlc": 4,
     "bmad-plugin": 4,
     "meigen-ai-design": 4,
